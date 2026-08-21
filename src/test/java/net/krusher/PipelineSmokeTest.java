@@ -14,7 +14,12 @@ import java.nio.file.Paths;
  * placed name, the names follow the data rules from CARTELES.md, and the
  * header checksum is consistent.
  *
- * Plain main(), no JUnit: the project builds with javac alone. Exit 0 on
+ * Lives under src/test (not shipped with the tool's own classes) but is a
+ * plain main(), no JUnit: the project builds with javac alone and there is
+ * no test runner on the toolchain. Compile against the main classes and run:
+ *   javac -cp target/classes -d target/test-classes src/test/java/net/krusher/PipelineSmokeTest.java
+ *   java -cp target/classes;target/test-classes net.krusher.PipelineSmokeTest
+ * Exit 0 on
  * success, 1 on any failed assertion, 2 when the base ROM is missing
  * (the ROM is not part of the repo; drop "Soleil (Spain).md" next to the
  * sources to make the suite runnable).
