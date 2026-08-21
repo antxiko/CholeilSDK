@@ -102,6 +102,10 @@ public class CholeilSDK
             TextInserter.run( OUT_ROM, SCRIPT, TBL, FREE_SPACE, OUT_ROM );
 
             System.out.println();
+            System.out.println("=== fixing map balloon widths ===");
+            MapBalloonInserter.run( OUT_ROM, TBL, OUT_ROM );
+
+            System.out.println();
             System.out.println("=== inserting stray text ===");
             StrayTextInserter.main( new String[] { OUT_ROM, STRAY_TEXT, TBL, OUT_ROM, CREDITS_POINTERS } );
 
