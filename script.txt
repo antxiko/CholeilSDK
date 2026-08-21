@@ -15,86 +15,65 @@ Ts ... ts ... ts ...
 ==== room=0 npc=3 str=0 textAddr=0x1c0372 ptrFieldAddr=0x1c0348 ====
 Choleil
 
-
 ==== room=0 npc=3 str=1 textAddr=0x1c037a ptrFieldAddr=0x1c034a ====
 Choleil
 
-
 ==== room=0 npc=3 str=2 textAddr=0x1c0382 ptrFieldAddr=0x1c034c ====
-Rabesa
-
+ Rabesa 
 
 ==== room=0 npc=3 str=3 textAddr=0x1c038c ptrFieldAddr=0x1c034e ====
 Valle Baila
 
-
 ==== room=0 npc=3 str=4 textAddr=0x1c039a ptrFieldAddr=0x1c0350 ====
 Playa Benalmádena
 
-
 ==== room=0 npc=3 str=5 textAddr=0x1c03aa ptrFieldAddr=0x1c0352 ====
-Cabo Benalmádena
-
+ Cabo Benalmádena 
 
 ==== room=0 npc=3 str=6 textAddr=0x1c03b8 ptrFieldAddr=0x1c0354 ====
 Nenúfar
 
-
 ==== room=0 npc=3 str=7 textAddr=0x1c03c2 ptrFieldAddr=0x1c0356 ====
 Córdoba
-
 
 ==== room=0 npc=3 str=8 textAddr=0x1c03ce ptrFieldAddr=0x1c0358 ====
 Ibi
 
-
 ==== room=0 npc=3 str=9 textAddr=0x1c03d4 ptrFieldAddr=0x1c035a ====
 Pueblo de Ibi
-
 
 ==== room=0 npc=3 str=10 textAddr=0x1c03e4 ptrFieldAddr=0x1c035c ====
 Soria
 
-
 ==== room=0 npc=3 str=11 textAddr=0x1c03ea ptrFieldAddr=0x1c035e ====
 Rosa Mágica
-
 
 ==== room=0 npc=3 str=12 textAddr=0x1c03f8 ptrFieldAddr=0x1c0360 ====
 Desierto Tabernas
 
-
 ==== room=0 npc=3 str=13 textAddr=0x1c040a ptrFieldAddr=0x1c0362 ====
-Palacio Tabernas
-
+ Palacio Tabernas 
 
 ==== room=0 npc=3 str=14 textAddr=0x1c041c ptrFieldAddr=0x1c0364 ====
 Soria
 
-
 ==== room=0 npc=3 str=15 textAddr=0x1c0424 ptrFieldAddr=0x1c0366 ====
-Torre de Papel
-
+ Torre de Papel 
 
 ==== room=0 npc=3 str=16 textAddr=0x1c0434 ptrFieldAddr=0x1c0368 ====
 Castillo Calipo
 
-
 ==== room=0 npc=3 str=17 textAddr=0x1c0444 ptrFieldAddr=0x1c036a ====
-Guadalpark
-
+ Guadalpark 
 
 ==== room=0 npc=3 str=18 textAddr=0x1c0452 ptrFieldAddr=0x1c036c ====
 Chipiona
 
-
 ==== room=0 npc=3 str=19 textAddr=0x1c045c ptrFieldAddr=0x1c036e ====
 San Cielo
 
-
 ==== room=0 npc=3 str=20 textAddr=0x1c0468 ptrFieldAddr=0x1c0370 ====
-Barrio La Mina
-
+ Barrio La Mina 
 
 ==== room=1 npc=0 str=0 textAddr=0x1c04a4 ptrFieldAddr=0x1c0478 ====
 Tu visio quedará guardao en
