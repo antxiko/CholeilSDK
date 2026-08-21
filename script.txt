@@ -2841,123 +2841,125 @@ cholos!
 
 
 ==== room=33 npc=4 str=0 textAddr=0x1c8c58 ptrFieldAddr=0x1c8c56 ====
-FANGOSO: Gracias a ti pude
-decirle como me sentía.
-Muchas gracias. No me
-arrepiento de nada porque al
-fin y al cabo los fangosos
-son fangosos y los humanos
-son humanos.
+FANGOSO: Gñe, me molan las payas,
+les daba como un sordo a una
+campana. Ojalá me al hubiera
+trincado, pero al menos le
+he hecho el chocho pesicola.
 
 
 ==== room=34 npc=0 str=0 textAddr=0x1c8d0e ptrFieldAddr=0x1c8d06 ====
-AROMA: Los humanos
-intentaron construir la
-Torre de Babel para poder
-llegar al cielo. Pero no
-llegaron a terminarla.
-Me pregunto qué pasó.
+AROMA: Los payos intentaron
+construír la torre de Papel
+pero les salió rana, cada
+uno empezó hablando en friki
+una cosa distinta y se fue
+todo a la puta, y ni
+acabarobn na. ¡Son como los
+de Charengo Translations!
 
 
 ==== room=34 npc=0 str=1 textAddr=0x1c8d9a ptrFieldAddr=0x1c8d08 ====
-AROMA: ¿Ese dinosaurio
-decidió dejar el oasis?
+AROMA: ¿El dinosaurio ese
+se ha ido a tomar por culo
+con sus llantos ya?
 
 
 ==== room=34 npc=0 str=2 textAddr=0x1c8dca ptrFieldAddr=0x1c8d0a ====
-AROMA: Puede que sea un
-desierto, pero es un sitio
-estupendo para vivir.
-También hay agua.
+AROMA: Hace más calor que
+vigilando un puchero, pero
+al menos tenemos piscina.
 
 
 ==== room=34 npc=0 str=3 textAddr=0x1c8e26 ptrFieldAddr=0x1c8d0c ====
-AROMA: Hay árboles que
-crecen en el desierto y hay
-incluso un manantial de
-agua. Qué maravilloso.
-Este "oasis" es un sueño
-hecho realidad.
-¿No te parece?
+AROMA: Es to raro que haya
+árboles tochos con la
+calufa que cae. Hasta hay
+una alberca y todo. No está
+mal, pero le verdad es que
+estamos hasta la polla del
+calor que hace.
 
 
 ==== room=34 npc=1 str=0 textAddr=0x1c8eca ptrFieldAddr=0x1c8ec2 ====
-ZORRA: ¡Ese dinosaurio! Le
-pedí que me ayudara a cruzar
-los mares, pero tiene miedo.
-Su cuerpo será muy grande,
-pero no tiene ningún coraje.
+ZORRA: ¡Puto dinosaurio, es
+más flojo que un muelle de
+guita! ¡No quiere ayudare
+a cruzar el estrecho! ¡Está
+cagao! Es tope grande pero
+es una maricona.
 
 
 ==== room=34 npc=1 str=1 textAddr=0x1c8f58 ptrFieldAddr=0x1c8ec4 ====
-ZORRA:¡Venga ya! Con un
-dinosaurio puedes cruzar el
-mar fácilmente ... Es cierto.
-Debería quedarme aquí con
-el perfumado Aroma, ¿no?
+ZORRA: ¡Venga, coño! Con el
+dinosaurio puedes crusar
+en patera el estrecho. Anque
+yo prefiero quedarme aquí,
+que me dan una paguita.
 
 
 ==== room=34 npc=1 str=2 textAddr=0x1c8fde ptrFieldAddr=0x1c8ec6 ====
-ZORRA: Puede que sea un
-desierto, pero es un sitio
-estupendo para vivir.
-También hay agua ... ¡Lo que
-no soporto es tener que
-vivir con alguien tan
-apestoso como Aroma!
+ZORRA: Hace más calor que
+follando debajo de un
+plástico, pero si me voy
+me quitan el ingreso mínimo
+vital ese. ¡Si no fuera por
+los mojaítos que vienen
+por aquí!
 
 
 ==== room=34 npc=1 str=3 textAddr=0x1c9088 ptrFieldAddr=0x1c8ec8 ====
-ZORRA: ¿Ves esas ruinas?
-No sé mucho de ellas, pero
-solían pertenecer a
-humanos. Probablemente
-tuvieran una guerra. Les
-gusta luchar entre sí, ¿no?
+ZORRA: Mira esas ruínas,
+están hechas mierda porque
+los payos se lo gastan to
+en mariconadas. Lo mismo
+se liaban a guantazos y
+pasaban de to.
 
 
 ==== room=35 npc=0 str=0 textAddr=0x1c9128 ptrFieldAddr=0x1c9122 ====
-TAPIR: Yo soy Tapir. Esto
-es el desierto de Camelia.
-Está lleno de sueños
-tristes.
+TAPIR: Uepa, soy Tapir,
+este sitio es una mierda,
+así que estoy tripado hasta
+las trancas.
 
 
 ==== room=35 npc=0 str=1 textAddr=0x1c917c ptrFieldAddr=0x1c9124 ====
-TAPIR: No ha dejado de
-nevar en Iris. Sólo espero
-que no pase nada malo.
+TAPIR: En Ibi esá nevando
+más que el copón. Debe ser
+el clima cambiático ese.
 
 
 ==== room=35 npc=0 str=2 textAddr=0x1c91c6 ptrFieldAddr=0x1c9126 ====
-TAPIR: Has visto un sueño
-triste. Pero porque tiene
-final sabes que debe haber
-otro principio. Hay mucha
-vida aquí. Cuando una se
-acaba, comienza otra.
+TAPIR: ¿Has flipao un
+poquito? ¿Te has fumao algo
+chunguis? Bueno, no te rayes
+porque algo se podrá hacer.
+¡Pero si ves que te rayas
+mucho, cambia de camello!
 
 
 ==== room=35 npc=1 str=0 textAddr=0x1c926c ptrFieldAddr=0x1c9260 ====
-DINOSAURIO: No he salido
-nunca del desierto. ¿Es
-divertido vivir en el mundo
-exterior? Vivir aquí está
-bien y no tengo valor para
-irme. ¿Qué debo hacer?
+DINOSAURIO, Bueh soy tope
+autista y no he salido
+nunca del desierto. ¿Hay
+cosas chachis en el mundo
+por ahí? Estoy acojonao
+por irme y por quedarme.
 
 
 ==== room=35 npc=1 str=1 textAddr=0x1c9306 ptrFieldAddr=0x1c9262 ====
 DINOSAURIO: ¿Quieres que
-cruce el mar? No puedo
-hacerlo. Nunca he hecho
-algo así.
+cruce como una patera? Ni de
+coña, me da un canguelo que
+flipas. Paso del todo, tío.
 
 
 ==== room=35 npc=1 str=2 textAddr=0x1c935a ptrFieldAddr=0x1c9264 ====
-PIGºI: Entonces, ¿vas a
-vivir aquí deprimido el
-resto de tu vida?
+PIGUI: ¡Valiente maricona!
+¿Has venido de Marruecos pa
+quedarte aquí viviendo
+de las paguitas?
 
 
 ==== room=35 npc=1 str=3 textAddr=0x1c939e ptrFieldAddr=0x1c9266 ====
@@ -2965,18 +2967,20 @@ DINOSAURIO: ..............
 
 
 ==== room=35 npc=1 str=4 textAddr=0x1c93ba ptrFieldAddr=0x1c9268 ====
-DINOSAURIO: ¡Espera! Yo
-también voy. No quiero vivir
-así de deprimido. No sé si
-puedo cruzar el mar, pero
-lo intentaré. Si no lo
-intento, no lo sabré
-nunca, ¿no?
+DINOSAURIO: ¡Espera, coño!
+¡Me apunto a lo que sea
+que vayas! ¡Estoy hasta la
+polla de estar aquí
+esperando que me ingresen
+la paguita! No sé si puedo
+ir como en patera en el
+estrecho, pero ¡vamos a
+intentarlo!
 
 
 ==== room=35 npc=1 str=5 textAddr=0x1c945e ptrFieldAddr=0x1c926a ====
 El dinosaurio se une al
-grupo.
+grupo de animalicos.
 
 
 ==== room=36 npc=0 str=0 textAddr=0x1c9486 ptrFieldAddr=0x1c9484 ====
@@ -3004,15 +3008,14 @@ grupo.
 
 
 ==== room=36 npc=2 str=0 textAddr=0x1c94a8 ptrFieldAddr=0x1c94a4 ====
-Ascensor rápido.
-No para hasta el último.
+Asensó rápido.
+Como un petardo nel culo.
 
 
 ==== room=36 npc=2 str=1 textAddr=0x1c94d4 ptrFieldAddr=0x1c94a6 ====
--Fuera de servicio-
-Ascensor rápido.
-No para hasta el último.
-
+-Asensor estropeao-
+Asensó rápido.
+Como un petardo nel culo.
 
 ==== room=37 npc=0 str=0 textAddr=0x1c9486 ptrFieldAddr=0x1c9484 ====
 <SAME room=36 npc=0 str=0>
@@ -3033,15 +3036,16 @@ No para hasta el último.
 <SAME room=36 npc=2 str=1>
 
 ==== room=38 npc=0 str=0 textAddr=0x1c951e ptrFieldAddr=0x1c951a ====
-ROXIE: ¡Eh, tú! ¡No me
-escales como si fuera una
-cuerda!
+ROXIE: ¡Tú machirulo! ¿Cómo
+te atreves a tocarme sin
+consentimiento? ¡Violador!
 
 
 ==== room=38 npc=0 str=1 textAddr=0x1c9558 ptrFieldAddr=0x1c951c ====
-ROXIE: Me has ... pegado.
-Pero ya no  ... llegarás
-nunca hasta arriba ...
+ROXIE: ¡Machirulo asqueroso!
+¡Me has agredido
+sesuarmente! ¡Voy a ir a un
+punto violeta de esos!
 
 
 ==== room=38 npc=1 str=0 textAddr=0x1c95a6 ptrFieldAddr=0x1c95a4 ====
