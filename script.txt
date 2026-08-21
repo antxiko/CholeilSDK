@@ -2417,236 +2417,247 @@ como nosotros.
 
 
 ==== room=29 npc=0 str=3 textAddr=0x1c791a ptrFieldAddr=0x1c783e ====
-PAPA ARDILLA: ¿Has venido
-aquí a calentarte en este
-clima?
+PAPA ARDILLA: Niño, ¿te has
+perdido? ¿Sabe tu madre que
+andas por ahí sin abrigar?
 <YESNO>
 
 
 ==== room=29 npc=0 str=4 textAddr=0x1c7958 ptrFieldAddr=0x1c7840 ====
-PAPA ARDILLA: ¡Lárgate!
-Por eso odio a los extraños.
-Son tan insolentes.
-
+PAPA ARDILLA: Pues estás a
+tomar por culo de casa, ¿y
+si te raptan los cholos qué?
 
 ==== room=29 npc=0 str=5 textAddr=0x1c79a2 ptrFieldAddr=0x1c7842 ====
-PAPA ARDILLA: Eso es.
-La nieve no puede ser
-demasiado fría para ti.
+PAPA ARDILLA: ¿No serás un
+mongolito que se ha escapao
+del Cottolengo, no? Mira que
+con esa cabeza pareces uno.
 
 
 ==== room=29 npc=0 str=6 textAddr=0x1c79e8 ptrFieldAddr=0x1c7844 ====
 {E0} x
-PAPA ARDILLA: Veo que has
-arreglado el suelo sin que
-te lo pidiera. He cambiado
-de opinión, me caes bien.
-Deja que te recompense.
+PAPA ARDILLA: Arsa, has
+arreglao los bujeros del
+suelo sin decirte na. Tienes
+cabeza pa tres pescuezos
+pero molas. ¡Pilla esto!
 
 
 ==== room=29 npc=0 str=7 textAddr=0x1c7a70 ptrFieldAddr=0x1c7846 ====
-PAPA ARDILLA: Lo siento, no
-puedo darte demasiadas
-chucherías. Por eso odio
-a los humanos.
+PAPA ARDILLA: Ya no te puedo
+dar mas chucherías niño, que
+vas a coger un empacho.
 
 
 ==== room=29 npc=0 str=8 textAddr=0x1c7acc ptrFieldAddr=0x1c7848 ====
-PAPA ARDILLA: Veo que has
-arreglado el suelo sin que
-te lo pidiera. Gracias.
+PAPA ARDILLA: Has arreglao
+to los bujeros del suelo sin
+que te diga na, ¡mola!
 
 
 ==== room=29 npc=1 str=0 textAddr=0x1c7b22 ptrFieldAddr=0x1c7b1a ====
-MAMA ARDILLA: Estoy
-cocinando. El menú de hoy es
-estofado de nueces. Lo
-siento, pero no hay bastante
-para ti.
+MAMA ARDILLA: ¿Que qué hay
+de comer? ¡Comida!
+¡Ya estoy fritita de tanta
+preguntita, coño!
 
 
 ==== room=29 npc=1 str=1 textAddr=0x1c7b92 ptrFieldAddr=0x1c7b1c ====
-MAMA ARDILLA: ¡Oh! Has
-arreglado nuestra casa.
-Gracias.
+MAMA ARDILLA: ¡Has tapao to
+los bujeros! ¡El mamonaso de
+mi marío se mueve menos que
+un reloj de corcho!
 
 
 ==== room=29 npc=1 str=2 textAddr=0x1c7bcc ptrFieldAddr=0x1c7b1e ====
-MAMA ARDILLA: Estoy
-cocinando. Vamos a comer
-gachas con nueces. Lo
-siento, pero no tenemos
-suficiente para ti.
+MAMA ARDILLA: ¿Otra vez que
+qué hay de comer?
+¡Chincholas! ¿Sabes lo que
+es?
 
 
 ==== room=29 npc=1 str=3 textAddr=0x1c7c3c ptrFieldAddr=0x1c7b20 ====
-MAMA ARDILLA: Oh, gracias.
-Pero sigo sin tener bastante
-comida para ti.
+MAMA ARDILLA: ¡Creía que
+eras un mongolito que se
+había perdío, pero molas!
+¡Nos has arreglao el suelo!
 
 
 ==== room=29 npc=2 str=0 textAddr=0x1c7c8e ptrFieldAddr=0x1c7c86 ====
-HIJO ARDILLA: Mi casa está
-vieja y tiene agujeros.
+HIJO ARDILLA: ¡Alucina! ¡Mi
+keli tiene carcoma o algo y
+hay bujeros como tu cabeza!
 
 
 ==== room=29 npc=2 str=1 textAddr=0x1c7cc2 ptrFieldAddr=0x1c7c88 ====
-HIJO ARDILLA: ¡Wai! Ya no
-tropezaré en los agujeros.
-¡Los humanos son
-tan fuertes!
+HIJO ARDILLA: ¡Has arreglao
+los bujeros! ¿Ande esconderé
+las revistas guarras ahora?
 
 
 ==== room=29 npc=2 str=2 textAddr=0x1c7d16 ptrFieldAddr=0x1c7c8a ====
-HIJO ARDILLA: ¡Mira mi
-casa! ¡Puedes hacer agujeros
-en todas partes!
+HIJO ARDILLA: ¡Va mierda de
+casa! ¡Está to llena de
+bujeros! Al menos puedo
+esconder revistas guarras.
 
 
 ==== room=29 npc=2 str=3 textAddr=0x1c7d5c ptrFieldAddr=0x1c7c8c ====
-HIJO ARDILLA: Gracias ...
-Pero si te vas ahora, habrá
-más agujeros cuando
-te hayas ido.
+HIJO ARDILLA: Pos te van a
+dar por culo, pienso hacer
+más bujeros para guardar
+mis revistillas cochinas.
 
 
 ==== room=30 npc=0 str=0 textAddr=0x1c7dd6 ptrFieldAddr=0x1c7dc0 ====
-BRUJA: Ah, eres tú, Fangoso.
-Hueles a niño humano ...
-Veo que Klin te echó un
-hechizo de metamorfosis,
-Le dije que no lo hiciera.
-Lo siento mucho. Pero
-¡Fangoso quería
-hacerse humano!
+BRUJA: Anda, eres el payo
+del cabezón que han
+convertido en pringue. El
+jodío del pringoso tiene un
+rollo raro con las payas y
+querría ligarse una. Klin te
+habrá hecho brujerida sesuar
+y te ha transformado. La
+llevas cruda, coleguita.
+Le dije que se metiera la
+magia por el culo pero me
+hizo una peineta.
 
 
 ==== room=30 npc=0 str=1 textAddr=0x1c7e90 ptrFieldAddr=0x1c7dc2 ====
-BRUJA: Debido a mi
-edad, sé más de los humanos
-que Klin. En verdad quieres
-volver a tu forma humana,
-¿tengo razón?
+BRUJA: Tengo más años que un
+bosque, y sé más de los
+payos que Klin. Tú lo que
+quieres es ser un payo otra
+vez, ¿no, gañán?
+
 <YESNO>
 
 
 ==== room=30 npc=0 str=2 textAddr=0x1c7f06 ptrFieldAddr=0x1c7dc4 ====
 {E0} ü
-BRUJA: Sí, sí. Pero ni yo
-puedo devolvértela tan
-fácilmente. Debes resolverlo
-tú solo.
+BRUJA: Sí, claro, y yo
+quiero un Ford Fiesta, no
+te jode. ¡Las cosas no son
+asín, chavalote!
 
 
 ==== room=30 npc=0 str=3 textAddr=0x1c7f62 ptrFieldAddr=0x1c7dc6 ====
-BRUJA: Ya veo ... Entonces
-te quedarás así para
-siempre.
+BRUJA: Ah, nada, si te chana
+ser un cholo como nosotros
+está guay, ¡mola!
 
 
 ==== room=30 npc=0 str=4 textAddr=0x1c7f9c ptrFieldAddr=0x1c7dc8 ====
-BRUJA: Ya veo. Voy a darte
-otra oportunidad. Estoy
-preparando un hechizo. Si lo
-superas con tu ingenio, te
-devolveré tu forma original.
+BRUJA: Además de cabezón
+eres más pesao que un collar
+de melones. Mira, estoy
+preparando un hechiso cholo.
+Si ties cojones de hacerlo
+volverás a ser un payo.
 
 
 ==== room=30 npc=0 str=5 textAddr=0x1c8026 ptrFieldAddr=0x1c7dca ====
-BRUJA: Ve a la habitación de
-al lado y sigue las
-instrucciones del espejo.
+BRUJA: Tira pa la habitación
+de al lao y habla con el
+espejito satireta.
 
 
 ==== room=30 npc=0 str=6 textAddr=0x1c8072 ptrFieldAddr=0x1c7dcc ====
-BRUJA: ¡Lo conseguiste!
-No está mal para ser tan
-pequeño, ¿eh? Bien, te
-devolveré tu forma original.
-¡Abra ... Cadabra ... Yaaaa!
+BRUJA: ¡Mira con el niño, yo
+que creía que era lentito!
+Debe ser por ese cabezón que
+gastas. Bueno, te devolveré
+a la forma de payo.
+¡Abra-cadabra-tápate-guarra!
 
 
 ==== room=30 npc=0 str=7 textAddr=0x1c80f6 ptrFieldAddr=0x1c7dce ====
-BRUJA: Cumplí mi palabra.
-Vuelves a tener forma
-humana. Tu esfuerzo ha ...
-¿qué? ¿Has oído algo?
+BRUJA: Bueno niño, ya hice
+mi parte, ¿qué más quieres?
+¡Vete a tomar por...! Un
+momento, ¿qué se oye por
+ahín?
 
 
 ==== room=30 npc=0 str=8 textAddr=0x1c8158 ptrFieldAddr=0x1c7dd0 ====
-ORUGA: ¡Eh, espera! He hecho
-mi trabajo y puede que no te
-sea de gran ayuda, pero ...
-me caes muy bien. Quizá ...
-¿podríamos ser amigos?
+ORUGA: ¡Estoy hasta la polla
+de tanto experimentito! todo
+el día pacá y pallá y venga
+pócimas y mierdas. ¡Venga a
+tomar por culo hombre! ¡Yo
+me largo con el payo!
 
 
 ==== room=30 npc=0 str=9 textAddr=0x1c81e2 ptrFieldAddr=0x1c7dd2 ====
-La oruga se une al grupo
+La oruga te sigue, quieras
+o no.
 
 
 ==== room=30 npc=0 str=10 textAddr=0x1c81fc ptrFieldAddr=0x1c7dd4 ====
-BRUJA: Te has ganado hasta
-el corazón de esta oruga.
-Muy extraño, sin duda.
-De todos modos, mantén tu
-ingenio y tu perseverancia.
+BRUJA: Puto gusano
+desagradesío, ¡asín te folle
+un pez polla! En fin, vete
+con el payo y no des mucho
+por culo, ¿ein?
 
 
 ==== room=30 npc=1 str=0 textAddr=0x1c828a ptrFieldAddr=0x1c8280 ====
-BRUJA: Ya ha empezado.
-¿O necesitas una
-explicación?
+BRUJA: Ya puedes empesar,
+¿eres cortito y te lo tengo
+que explicar pa monos?
 <YESNO>
 
 
 ==== room=30 npc=1 str=1 textAddr=0x1c82c2 ptrFieldAddr=0x1c8282 ====
-BRUJA: Los pájaros comen
-orugas. Las orugas comen
-flores. Los pájaros no comen
-flores. Mientras que sigas
-en la alfombra esto no podrá
-suceder. Con esto en mente,
-debes llevarlos a los tres
-a la alfombra roja.
+BRUJA: Con la cabeza que
+tienes y lo torpe que eres.
+A ver, los pájaros zampan
+orujas, las orugas zampan
+flores, y ties que llevarlos
+al otro lao sin que se
+maten. ¡Venga coño, que esto
+está mascaíto! ¿Qué más
+quieres, cojones?
 
 
 ==== room=30 npc=1 str=2 textAddr=0x1c8396 ptrFieldAddr=0x1c8284 ====
-Ahora, a trabajar.
+Pues ale, que nos van a dar
+las putas uvas como sigamos
+haciendo el gilipollas.
 
 
 ==== room=30 npc=1 str=3 textAddr=0x1c83aa ptrFieldAddr=0x1c8286 ====
-BRUJA: Fracasaste. Pero no
-te desanimes. Inténtalo
-otra vez.
+BRUJA: Hijoputa, mucho has
+vivido para lo torpe que
+eres. Inténtalo otra vez.
 
 
 ==== room=30 npc=1 str=4 textAddr=0x1c83e8 ptrFieldAddr=0x1c8288 ====
-BRUJA: ¡Lo conseguiste!
-Mantendré mi palabra.
-Ven conmigo.
+BRUJA: ¡Hombre, por fin! ¡El
+tontito lo ha conseguido!
+Mira, cumpliré con el trato.
 
 
 ==== room=30 npc=2 str=0 textAddr=0x1c8426 ptrFieldAddr=0x1c8424 ====
-PAJARO: Por fin me libré
-de este "experimento".
-Ahora puedo relajarme.
+PAJARO: Estoy fritito de
+tanta gilipollez.
 
 
 ==== room=30 npc=3 str=0 textAddr=0x1c8470 ptrFieldAddr=0x1c846e ====
-ORUGA: ¡Eres muy listo!
-Pensé que te resultaría
-demasiado difícil. Te
-respeto. ¿Son todos los
-humanos tan listos como tú?
+ORUGA: Con esa cara de
+parguela creía que nos
+íbamos a tirar aquí hasta el
+día del juicio final por la
+tarde.
 
 
 ==== room=30 npc=4 str=0 textAddr=0x1c84ee ptrFieldAddr=0x1c84ec ====
-FLOR: Soy una flor.
-¡Cómo odio este experimento!
-¡No volveré a hacer un
-experimento como éste
-en la vida!
+FLOR: Hasta yo estoy hasta
+los huevings de mongolerías
+de estas. ¡A ver si la vieja
+la espicha ya!
 
 
 ==== room=31 npc=0 str=0 textAddr=0x1c7dd6 ptrFieldAddr=0x1c7dc0 ====
@@ -2707,129 +2718,126 @@ en la vida!
 <SAME room=30 npc=4 str=0>
 
 ==== room=32 npc=0 str=0 textAddr=0x1c8570 ptrFieldAddr=0x1c8562 ====
-MAMA FANGOSA: Los humanos
-atacan a cualquiera sólo
-por ser monstruos.
-Ten cuidado.
+MAMA FANGOSA: Los payos son
+mu malos, nos atacan sólo
+por ser cholos. Ten cuidaíco,
+miarma.
 
 
 ==== room=32 npc=0 str=1 textAddr=0x1c85c4 ptrFieldAddr=0x1c8564 ====
-MAMA FANGOSA: ¡......!
-Tú no eres Fangoso, ¿verdad?
-Una madre sabe distinguir a
-su hijo de un impostor.
-Ahora, ¡contéstame! Debes
-ser humano ... Sí, ¿verdad?
+MAMA FANGOSA: ¡Tú!
+¡Tú no eres Fangoso, mamón!
+Tú hueles a payo, y una
+madre no se confunde con
+el olor de sus niños.
+¡Contesta, pecador!
 <YESNO>
 
 
 ==== room=32 npc=0 str=2 textAddr=0x1c8666 ptrFieldAddr=0x1c8566 ====
 {E0} {4B}
-MAMA FANGOSA: ... Eso pensé.
-Fangoso se enamoró de los
-humanos y quiso convertirse
-en uno. Estoy segura de que
-el joven mago Klin le
-ayudó ... ¿Qué voy a hacer?
-Deberías ir a la casa de
-Klin y pedirle que te
-devuelva a tu forma
-original.
+MAMA FANGOSA: Eso disía yo.
+Fangoso tiene un rollo raro
+con una paya y quiso hacerse
+un cosplay de payo. Fijo que
+el mamón de Klin le echó un
+cable. ¡Me cago en sus
+muertos pisoteas! ¡Ve para
+allá y dale unas pocas de
+hostias que espabile!
 
 
 ==== room=32 npc=0 str=3 textAddr=0x1c875a ptrFieldAddr=0x1c8568 ====
-MAMA FANGOSA: ¡No me
-mientas!
+MAMA FANGOSA: ¡Una polla
+como una olla!
 
 
 ==== room=32 npc=0 str=4 textAddr=0x1c877a ptrFieldAddr=0x1c856a ====
-MAMA FANGOSA: Dile a Klin
-que me enteré porque hizo
-una chapuza. Ahora vete.
+MAMA FANGOSA: Dile al mamón
+del Klin que le voy a dar
+una hostia que lo visto de
+torero como no lo arregle.
 
 
 ==== room=32 npc=0 str=5 textAddr=0x1c87c8 ptrFieldAddr=0x1c856c ====
-MAMA FANGOSA: Ya veo.
-¿No puede ayudar? Entonces
-debes acudir a la vieja
-bruja, la maestra de Klin.
-Es la única que podrá
-devolverte tu forma. En el
-bosque hay un terreno en
-forma estrellada. Entra y
-pisa el centro diez veces.
-Entonces podrás entrar en la
-casa de la bruja y pedirle
-ayuda.
+MAMA FANGOSA: Claro, si
+es que el chaval este es
+medio gilipollas. Vas a
+tener que ir a la vieja,
+la maestra del inútil este.
+En el bosque hay una
+estrella escondía, pega 10
+botes en el centro y entra
+en su keli. Está un poco ida
+de la olla pero le puedes
+pedir ayuda, a ver.
 
 
 ==== room=32 npc=0 str=6 textAddr=0x1c88ec ptrFieldAddr=0x1c856e ====
-MAMA FANGOSA: Entra y pisa
-el centro del terreno en
-forma estrellada diez veces.
-No lo olvides.
+MAMA FANGOSA: ¿Ya te has
+perdido, tontito? ¡La
+estrella, cabezón! ¡Pisa 10
+veces en el centro!
 
 
 ==== room=32 npc=1 str=0 textAddr=0x1c8952 ptrFieldAddr=0x1c894e ====
-SUAVON: Eso fue peligroso.
-Ese hombre es un héroe.
-Has de tener cuidado.
+SUAVON: Fuas, ese tío es un
+maromazo peligroso, hay que
+tener cuidao.
 
 
 ==== room=32 npc=1 str=1 textAddr=0x1c899c ptrFieldAddr=0x1c8950 ====
-SUAVON: Mamá parece tan
-triste últimamente. Me
-pregunto si ha sucedido
-algo ...
+SUAVON: ¿Crees que el Madrid
+ganará la liga este año?
 
 
 ==== room=32 npc=2 str=0 textAddr=0x1c89f2 ptrFieldAddr=0x1c89ee ====
-PEGAJOSO: No hemos hecho
-nada malo. ¿Por qué nos
-tratan tan mal?
+PEGAJOSO: ¡Ay, los payos
+malos! ¿Qué les habremos
+hecho los cholos! ¡Malajes!
 
 
 ==== room=32 npc=2 str=1 textAddr=0x1c8a34 ptrFieldAddr=0x1c89f0 ====
-PEGAJOSO: Ese héroe sigue
-dando vueltas por ahí.
-¿Por qué no se larga?
+PEGAJOSO: Hay un maromo
+dando más vueltas que un
+pollo asao por ahí. ¡A ver
+si se va a tomar por culo!
 
 
 ==== room=32 npc=3 str=0 textAddr=0x1c8a80 ptrFieldAddr=0x1c8a7c ====
-PALIDO: Es un sombrero
-humano, ¿verdad? ¿Aún
-quieres hacerte humano?
-¡Olvídalo! No merece
-la pena. Déjalo, ¿vale?
+PALIDO: Hostia, vaya cabeza,
+hermano. ¿Desde cuándo
+gastas ese cholondrio? Bueh,
+eres mi compi igual.
 
 
 ==== room=32 npc=3 str=1 textAddr=0x1c8af4 ptrFieldAddr=0x1c8a7e ====
-PALIDO: Klin es aún un
-aprendiz de brujo. No puede
-convertirte en humano.
+PALIDO: Klin es brujo pero
+está empanao, no te puede
+convertir en payo.
 
 
 ==== room=33 npc=0 str=0 textAddr=0x1c8b4c ptrFieldAddr=0x1c8b4a ====
-SUAVON: Oye, Fangoso, ¿por
-qué no vienes a jugar con
+SUAVON: ¿no te vienes a 
+echar un fumbito con
 nosotros?
 
 
 ==== room=33 npc=1 str=0 textAddr=0x1c8b8e ptrFieldAddr=0x1c8b8c ====
-PEGAJOSO: ¡Es muy divertido!
-Da gusto jugar en la calle.
+PEGAJOSO: ¡Mola tope jugar
+en la calle! ¿Ein?
 
 
 ==== room=33 npc=2 str=0 textAddr=0x1c8bca ptrFieldAddr=0x1c8bc8 ====
-PALIDO: ¡Atención! Viene ese
-humano. Es el héroe.
-Aprisa, ¡corred!
+PALIDO: ¡Ojocuidao, que
+viene el payo encocao este!
+¡Es el maromo!
 
 
 ==== room=33 npc=3 str=0 textAddr=0x1c8c10 ptrFieldAddr=0x1c8c0e ====
-HEROE: Basta de juegos. Yo
-me encargaré de los fangosos
-de un golpe.
+HEROE: ¡Gñéé! ¡Arribaspaña!
+¡Me voy a cargar a todos los
+cholos!
 
 
 ==== room=33 npc=4 str=0 textAddr=0x1c8c58 ptrFieldAddr=0x1c8c56 ====
