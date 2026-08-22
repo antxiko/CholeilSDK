@@ -60,6 +60,19 @@ public final class TextInserter {
     // box rendering; a line over this length would overflow the box.
     static final int MAX_LINE_LENGTH = 28;
 
+    // The dialogue box holds three lines at a time, and the Yes/No prompt
+    // (0xF2) has to be reached on a page boundary -- i.e. after a whole number
+    // of three-line pages -- or it is drawn against a partially-filled box.
+    // Strings that break the rule are padded with blank lines rather than
+    // rejected; see alignYesNoPrompts.
+    static final int LINES_PER_BOX = 3;
+    static final String YESNO = "<YESNO>";
+
+    // Raw byte placeholders as emitted by TextExtractor for codes with no TBL
+    // glyph ({e0}, {f3}, ...). These are control opcodes, not printed text, so
+    // a line made of nothing but these occupies no line in the box.
+    static final Pattern OPCODE = Pattern.compile("\\{[0-9A-Fa-f]{2}\\}");
+
     // Longest slot value still read as a relative offset by the fetch helper
     // (and by the game's original adda.w, which sign-extends -- offsets with
     // the high bit set were never usable). Anything farther goes indirect.
@@ -169,6 +182,12 @@ public final class TextInserter {
 
         for (Entry e : entries) {
             e.strTableAddr = e.ptrFieldAddr - e.str * 2;
+        }
+
+        int realigned = alignYesNoPrompts(entries);
+        if (realigned > 0) {
+            System.out.println(realigned + " string(s) had their <YESNO> prompt padded onto a "
+                    + LINES_PER_BOX + "-line box boundary.");
         }
 
         // Lines longer than the dialogue box can hold are logged, but the
@@ -652,6 +671,91 @@ public final class TextInserter {
             if (cur < f[1]) result.add(new int[]{cur, f[1]});
         }
         return result;
+    }
+
+    /**
+     * Pads the text ahead of every &lt;YESNO&gt; with blank lines so the prompt
+     * is always reached on a LINES_PER_BOX boundary, i.e. after a whole number
+     * of full dialogue pages. Text that already sits on a boundary is left
+     * byte-identical. Line counting restarts after each prompt.
+     *
+     * Lines made of nothing but raw opcode placeholders ({e0} and friends) are
+     * control data rather than printed text and take up no room in the box, so
+     * they don't count -- which also means a prompt sharing its line with only
+     * opcodes ("{e0} &lt;YESNO&gt;") is already at the start of a line and needs
+     * no break inserted ahead of it.
+     *
+     * @return how many entries had to be changed (each is warned about individually)
+     */
+    static int alignYesNoPrompts(List<Entry> entries) {
+        int changed = 0;
+        // Entries that came in as <SAME> references share one original
+        // textAddr and therefore one string: warn about it once, not once per
+        // NPC that happens to say it.
+        Set<Integer> warned = new HashSet<Integer>();
+        for (Entry e : entries) {
+            if (e.text.indexOf(YESNO) < 0) continue;
+
+            StringBuilder out = new StringBuilder();
+            StringBuilder line = new StringBuilder(); // current line, as far as it's been written
+            int lines = 0;      // counted display lines since the last page boundary
+            int inserted = 0;
+            int pos = 0;
+            while (pos < e.text.length()) {
+                if (e.text.startsWith(YESNO, pos)) {
+                    if (hasVisibleText(line.toString())) { // close the partial line first
+                        out.append('\n');
+                        line.setLength(0);
+                        lines++;
+                        inserted++;
+                    }
+                    while (lines % LINES_PER_BOX != 0) {
+                        out.append('\n');
+                        lines++;
+                        inserted++;
+                    }
+                    out.append(YESNO);
+                    line.append(YESNO);
+                    lines = 0; // the prompt closes the page
+                    pos += YESNO.length();
+                    continue;
+                }
+                char c = e.text.charAt(pos++);
+                out.append(c);
+                if (c == '\n') {
+                    if (countsAsLine(line.toString())) lines++;
+                    line.setLength(0);
+                } else {
+                    line.append(c);
+                }
+            }
+
+            if (inserted > 0) {
+                if (warned.add(e.textAddr)) {
+                    System.out.println("WARN: room=" + e.room + " npc=" + e.npc + " str=" + e.str
+                            + " (textAddr=0x" + Integer.toHexString(e.textAddr) + ") reaches <YESNO> mid-box; "
+                            + "inserted " + inserted + " blank line(s) to land it on a "
+                            + LINES_PER_BOX + "-line boundary.");
+                    changed++;
+                }
+                e.text = out.toString();
+            }
+        }
+        return changed;
+    }
+
+    /** True if the line prints anything once its opcode placeholders are dropped. */
+    static boolean hasVisibleText(String line) {
+        return !OPCODE.matcher(line).replaceAll("").trim().isEmpty();
+    }
+
+    /**
+     * True if the line takes up a line of the dialogue box. A genuinely empty
+     * line does (it's a deliberate blank); a line that only carries opcodes
+     * does not.
+     */
+    static boolean countsAsLine(String line) {
+        return hasVisibleText(line) || !OPCODE.matcher(line).find();
     }
 
     /**
