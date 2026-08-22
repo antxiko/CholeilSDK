@@ -19,13 +19,13 @@ CHOLEIL
 CHOLEIL                                         
 
 ==== ascii addr=0x568 len=40 ====
-      DEVELOPED FOR USE ONLY WITH       
+     TE HAS CARGAO LA JANGA PRIMO.      
 
 ==== ascii addr=0x592 len=40 ====
-    PAL AND FRENCH SECAM MEGA DRIVE     
+  ESTE JUEGO SOLO VALE EN LAS MEGADRAI  
 
 ==== ascii addr=0x5bc len=40 ====
-                SYSTEMS.                
+        EUROPEAS Y GABACHAS             
 
 ==== ascii addr=0x58ac len=13 ====
 STATUS WINDOW
@@ -34,7 +34,7 @@ STATUS WINDOW
 OBJECT OVER
 
 ==== ascii addr=0x32250 len=6 ====
- PERRO
+ COSMO
 
 ==== ascii addr=0x32260 len=11 ====
 MUERDE EN  
@@ -46,19 +46,19 @@ LAS PELOTAS
  MOA  
 
 ==== ascii addr=0x32294 len=11 ====
-REFUERZA   
+MEJORA AL  
 
 ==== ascii addr=0x322a0 len=11 ====
-HABILIDADES
+DE AL LAO  
 
 ==== ascii addr=0x322b8 len=6 ====
  LEON 
 
 ==== ascii addr=0x322c8 len=11 ====
-QUEMA      
+QUEMA PITO 
 
 ==== ascii addr=0x322d4 len=11 ====
-ENEMIGO    
+DEL NEMIGO 
 
 ==== ascii addr=0x322e0 len=11 ====
 CON LLAMA  
@@ -70,10 +70,10 @@ CON LLAMA
  GUINO
 
 ==== ascii addr=0x322fc len=11 ====
-CONGELA    
+LE CONGELA 
 
 ==== ascii addr=0x32308 len=11 ====
-ENEMIGO    
+LAS PELOTAS
 
 ==== ascii addr=0x32320 len=6 ====
  GUE- 
@@ -82,10 +82,10 @@ ENEMIGO
  PARDO
 
 ==== ascii addr=0x32330 len=11 ====
-DOBLA LA   
+CORRE COMO 
 
 ==== ascii addr=0x3233c len=11 ====
-VELOCIDAD  
+EL CORRECAM
 
 ==== ascii addr=0x32354 len=6 ====
  DINO-
@@ -94,46 +94,46 @@ VELOCIDAD
 SAURIO
 
 ==== ascii addr=0x32364 len=11 ====
-CRUZA ZONA 
+SIRVE COMO 
 
 ==== ascii addr=0x32370 len=11 ====
-PELIGROSA  
+PATERA AGUA
 
 ==== ascii addr=0x32388 len=6 ====
  DODO 
 
 ==== ascii addr=0x32398 len=11 ====
-PEGA       
+SE LE QUEDA
 
 ==== ascii addr=0x323a4 len=11 ====
-ENEMIGO    
+PEGAO TO   
 
 ==== ascii addr=0x323b0 len=11 ====
 A TU ESPADA
 
 ==== ascii addr=0x323bc len=6 ====
-LEVIA-
+FALETE
 
 ==== ascii addr=0x323c4 len=6 ====
-TAN   
+      
 
 ==== ascii addr=0x323cc len=11 ====
-DOBLA VELO-
+NAVAJERO TO
 
 ==== ascii addr=0x323d8 len=11 ====
-CIDAD DE   
+LOCO Y EM- 
 
 ==== ascii addr=0x323e4 len=11 ====
-ESPADA     
+PASTILLAO  
 
 ==== ascii addr=0x323f0 len=6 ====
-PERO  
+TANUKI
 
 ==== ascii addr=0x32400 len=11 ====
-MAPACHE SE 
+SE DISFRASA
 
 ==== ascii addr=0x3240c len=11 ====
-DISFRAZA   
+PA DESPISTA
 
 ==== ascii addr=0x32424 len=6 ====
 ARDI- 
@@ -145,7 +145,7 @@ LLA HA
 CE REBOTAR 
 
 ==== ascii addr=0x32440 len=11 ====
-ESPADA EN  
+NAVAJA EN  
 
 ==== ascii addr=0x3244c len=11 ====
 LA PARED   
@@ -154,10 +154,10 @@ LA PARED
 ORUGA 
 
 ==== ascii addr=0x32468 len=11 ====
-SIN        
+MAS INUTIL 
 
 ==== ascii addr=0x32474 len=11 ====
-HABILIDAD  
+QUE BADBUNY
 
 ==== ascii addr=0x3248c len=6 ====
  ARMA-
@@ -166,13 +166,13 @@ HABILIDAD
  DILLO
 
 ==== ascii addr=0x3249c len=11 ====
-ACTIVA O   
+HACE DE TA-
 
 ==== ascii addr=0x324a8 len=11 ====
-HACE DE    
+RUGO Y AC- 
 
 ==== ascii addr=0x324b4 len=11 ====
-TABLA      
+TIVA COSAS 
 
 ==== ascii addr=0x324c0 len=6 ====
 MURCIE
@@ -187,10 +187,10 @@ TE PROTEGE
 HUEVO 
 
 ==== ascii addr=0x32504 len=11 ====
-BOMBARDEA  
+REVIENTA TO
 
 ==== ascii addr=0x32510 len=11 ====
-AL ENEMIGO 
+COMO UN BAN
 
 ==== ascii addr=0x32528 len=6 ====
 MARI- 
@@ -199,31 +199,31 @@ MARI-
 POSA  
 
 ==== ascii addr=0x32538 len=11 ====
-USA LA     
+NAVAJA COMO
 
 ==== ascii addr=0x32544 len=11 ====
-ESPADA     
+URI GUELLER
 
 ==== ascii addr=0x3265c len=11 ====
-COMBINACION
+ESTOS JUNTO
 
 ==== ascii addr=0x32668 len=11 ====
-SIN EFECTO 
+NO HASEN NA
 
 ==== ascii addr=0x3269c len=11 ====
-REFUERZA   
+BOCAO MAS  
 
 ==== ascii addr=0x326a8 len=11 ====
-EL TACTO   
+GORDO      
 
 ==== ascii addr=0x326dc len=11 ====
 REFUERZA   
 
 ==== ascii addr=0x3271c len=11 ====
-REFUERZA   
+BIRUJI QUE 
 
 ==== ascii addr=0x32728 len=11 ====
-HIELO      
+TE CAGAS   
 
 ==== ascii addr=0x32734 len=11 ====
 MAGICO     
@@ -238,19 +238,19 @@ VELOCIDAD
 REFUERZA   
 
 ==== ascii addr=0x327a8 len=11 ====
-ACCION DE  
+SE PEGA MAS
 
 ==== ascii addr=0x327b4 len=11 ====
-PEGAR      
+QUEL PERRO 
 
 ==== ascii addr=0x327dc len=11 ====
-TRIPLICA   
+DE DESGUACE
 
 ==== ascii addr=0x327e8 len=11 ====
 VELOCIDAD  
 
 ==== ascii addr=0x327f4 len=11 ====
-ESPADA     
+NAVAJA     
 
 ==== ascii addr=0x3281c len=11 ====
 SIGUE      
@@ -262,34 +262,34 @@ REBONTANDO
 SIGUE      
 
 ==== ascii addr=0x32868 len=11 ====
-FUNCIONANDO
+FUNSIONANDO
 
 ==== ascii addr=0x3289c len=11 ====
-EL MAS FUER
+HIELO MAS 
 
 ==== ascii addr=0x328a8 len=11 ====
-TE HIELO   
+FUEGO, NO  
 
 ==== ascii addr=0x328b4 len=11 ====
-MAGICO     
+SE PA QUE  
 
 ==== ascii addr=0x328dc len=11 ====
-REDUCE PUN-
+LE CHUPA LA
 
 ==== ascii addr=0x328e8 len=11 ====
-TOS SALUD  
+VIDA A LOS 
 
 ==== ascii addr=0x328f4 len=11 ====
-DEL ENEMIGO
+CHOLOS     
 
 ==== ascii addr=0x3291c len=11 ====
-REDUCE PUN-
+LE CHUPA LA
 
 ==== ascii addr=0x32928 len=11 ====
-TOS SALUD  
+VIDA A LOS 
 
 ==== ascii addr=0x32934 len=11 ====
-DEL ENEMIGO
+CHOLOS     
 
 ==== ascii addr=0x3295c len=11 ====
 REFUERZA   
@@ -298,10 +298,10 @@ REFUERZA
 HABILIDAD  
 
 ==== ascii addr=0x3299c len=11 ====
-ES UN      
+NO TENGO NI
 
 ==== ascii addr=0x329a8 len=11 ====
-SECRETO    
+PUTA IDEA  
 
 ==== ascii addr=0x33af6 len=20 ====
 SELECT BB_RAM NUMBER

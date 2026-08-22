@@ -145,7 +145,7 @@ navaja, como moneas.
 
 
 ==== room=1 npc=0 str=13 textAddr=0x1c0726 ptrFieldAddr=0x1c0492 ====
-Leviatán: ¡Estoy espitoso!
+Falete: ¡Estoy espitoso!
 ¡Conmigo darás tajos con la
 navaja a cascoporro!
 
@@ -3095,7 +3095,7 @@ de hielo.
 
 ==== room=40 npc=0 str=2 textAddr=0x1c97c6 ptrFieldAddr=0x1c9788 ====
 LUIS: Gñee, tengo más frío
-que el pasillo de los
+que en el pasillo de los
 yogures. ¡Deja de hacer el
 lila y échame un cable!
 
@@ -3117,201 +3117,217 @@ lila y échame un cable!
 cofre del tesoro. Hay una
 semilla de una planta que
 crece más que la deuda de
-Venezuela.
+Venezuela, pero no se puede
+fumar.
 
 
 ==== room=42 npc=1 str=0 textAddr=0x1c9872 ptrFieldAddr=0x1c986e ====
-MORGANA: ¡Oye! ¡Las semillas
-de Petunia son todas mías!
-No te vas a llevar ninguna.
+MORGANA: ¡Eh, aunque no se
+fumen, esas semillas son
+mías! ¡Te voy a hacer un
+amatoma en el fistro del
+cuerpo humano!
 
 
 ==== room=42 npc=1 str=1 textAddr=0x1c98c8 ptrFieldAddr=0x1c9870 ====
-MORGANA: ¡Grrr! ¡Voy a darte
-una lección que no
-olvidarás nunca!
+MORGANA: ¡Grrfs! ¡Me cago en
+to tus muelas! ¡Te voy a dar
+en el diodeno vaginal!
 
 
 ==== room=43 npc=0 str=0 textAddr=0x1c9918 ptrFieldAddr=0x1c9912 ====
-CONEJILLO: ¡Eres tú, Pigüi!
-Me alegro de que estés a
-salvo. Estamos todos
-escondidos aquí. Había
-tantos monstruos que no
-podíamos salir.
+CONEJILLO: ¡Hostia, es
+puto Pigüi! ¡Me alegro de
+que tus pelotas congeladas
+estén a salvo! Estamos aquí
+escondíos porque tenemos
+jiñe de todos los cholos que
+anadn por aquí.
 
 
 ==== room=43 npc=0 str=1 textAddr=0x1c99a2 ptrFieldAddr=0x1c9914 ====
 CONEJILLO: <NAME>,
-cuida de Pigüi por favor, y
-¡ten cuidado!
+cuida del Pigüi, que es un
+macarrilla y se mete en
+follones.
 
 
 ==== room=43 npc=0 str=2 textAddr=0x1c99dc ptrFieldAddr=0x1c9916 ====
-PIGºI: <NAME> me
-salvó la vida. Es un buen
-tipo. Quiero quedarme aquí
-contigo pero también quiero
-ayudarle, así que me voy
-con él.
+PIGUI: El <NAME> es
+un tío porrúo, va por ahí
+arrajando a los malos y mola
+mucho. ¡Me voy a quedar con
+él pa ver como se carga al
+personal!
 
 
 ==== room=43 npc=1 str=0 textAddr=0x1c9a62 ptrFieldAddr=0x1c9a5c ====
-PENI: Ves. El monstruo
-llamado Morgana está
-intentando tomar la isla.
+PENI: Pos hay un cholo todo
+grande llamado Morgana que
+está hecho un fascista, todo
+el día dando porculo.
 
 
 ==== room=43 npc=1 str=1 textAddr=0x1c9aaa ptrFieldAddr=0x1c9a5e ====
-PENI: ¡Muchas gracias! Has
-derrotado al jefe enemigo y
-todo vuelve a ser genial,
-.. y si todo es "genial" eso
-significa que va a hacer
-más calor aquí ..., lo que
-significa, pues ...
+PENI: ¡Eres un maromazo! Te
+has cargao al cholo gigante
+y ahora está todo de fruta
+madrem. Aunque ahora va a
+hacer más calufa... no sé si
+entre eso y el clima
+cambiático la vamos a liar.
 
 
 ==== room=43 npc=1 str=2 textAddr=0x1c9b62 ptrFieldAddr=0x1c9a60 ====
-PENI: ¡Muchísimas gracias!
-¡Gracias a ti todo está
-"frío" aquí!
+PENI: ¡Mola un cojón de
+mico! ¡Gracias a ti está
+todo aquí chachi piruli!
 
 
 ==== room=43 npc=2 str=0 textAddr=0x1c9ba8 ptrFieldAddr=0x1c9ba4 ====
-PENIPE: He oído que hay un
-templo llamado Raíz, muy,
-muy por debajo del agua.
-Dicen que está conectado a
-la isla, pero no lo sé ...
+PENIPE: Me he enterao que
+hay un tempo llamado 
+Cruzcampo, tope hundío
+endebajo del agua. Dicen que
+está conectado la isla esta,
+pero bueh, puede ser una
+milonga guarra.
 
 
 ==== room=43 npc=2 str=1 textAddr=0x1c9c2e ptrFieldAddr=0x1c9ba6 ====
-PENIPE: ¿¡Has visto eso!?
-Se podía ver el Templo Raíz
-por encima del agua.
+PENIPE: ¡Su puta madre! ¿Se
+ha podido ver el Templo
+Cruzcampo por encima del
+agua!
 
 
 ==== room=43 npc=3 str=0 textAddr=0x1c9c80 ptrFieldAddr=0x1c9c7a ====
-COBAYITA: ¿Sabías que hay
-un monstruo llamado Leviatán
-en el templo?
+COBAYITA: ¿Sabes que hay un
+cholo gigantesco llamado
+Falete en el templo?
 <YESNO>
 
 
 ==== room=43 npc=3 str=1 textAddr=0x1c9cc8 ptrFieldAddr=0x1c9c7c ====
-COBAYITA: Supongo que ya
-sabrás que hay muchos tipos
-de monstruos diferentes.
+COBAYITA: No todos los
+cholos son tan malos. Tu
+sabe, algunos son peores.
 
 
 ==== room=43 npc=3 str=2 textAddr=0x1c9d18 ptrFieldAddr=0x1c9c7e ====
-COBAYITA: Leviatán será un
-monstruo, pero es tranquilo
-y afable. Todas las
-criaturas submarinas lo
-respetan, a mí me cuesta
-creerlo.
+COBAYITA: Falete es un cholo
+pero es tranquilo y es güena
+gente. O eso disen, yo no
+iría a verle disfrazao de
+bocata de mortadela.
 
 
 ==== room=44 npc=0 str=0 textAddr=0x1c9db2 ptrFieldAddr=0x1c9da0 ====
-LEVIATAN: No perdonaré a
-nadie que manche este
-tranquilo mar con baños de
-sangre y masacres.
+FALETE: ¿Eso es un bocaíllo
+de salchichón? ¡Ven pacá! Te
+lo voy a quitar pa que
+aprendas a meterte con los
+cholos.
 
 
 ==== room=44 npc=0 str=1 textAddr=0x1c9e10 ptrFieldAddr=0x1c9da2 ====
-LEVIATAN: ... Entonces te
-gustan mucho las batallas.
-Bien, mi plan es este.
-Crearé algo que quieres
-mucho. Echa un vistazo.
+FALETE: ¿Ah, que no tienes?
+¡Pues me traeré a tu madre
+para que haga uno! ¡Mira!
 
 
 ==== room=44 npc=0 str=2 textAddr=0x1c9e8e ptrFieldAddr=0x1c9da4 ====
 MAMA: ¡... <NAME>!
-¿Dónde estoy? ¿Cómo? No
-puedo moverme.
+¿Dónde me has llevao, niño?
+¡Te dije que no te perdieras
+so cabesón!
 
 
 ==== room=44 npc=0 str=3 textAddr=0x1c9ec4 ptrFieldAddr=0x1c9da6 ====
-LEVIATAN: Aquí tienes a tu
-madre. Ahora comenzaré la
-batalla tal y como deseas.
-Pero mi ataque irá en todas
-direcciones. Puede que le de
-a tu madre.
+FALETE: Tu madre me
+preparará un bocaíllo de
+salchicón, pero lo mismo le
+puedes hacer daño. ¡A que
+soy malo! ¡Hua hua hua!
+¡Venga, a calentarnos la
+carita!
 
 
 ==== room=44 npc=0 str=4 textAddr=0x1c9f5a ptrFieldAddr=0x1c9da8 ====
-MAMA: No sé qué está
-pasando, pero no te
-preocupes por mi. ¡Lucha!
-Mi vida no es importante.
-Sólo cuida de la tuya y
-lucha lo mejor que puedas.
+MAME: Hay que ver qué sucio
+lo tenéis to, tiene una que
+estar pendiente siempre. En
+fin, me pondré a preparar
+el bocata para Falete.
 
 
 ==== room=44 npc=0 str=5 textAddr=0x1c9fec ptrFieldAddr=0x1c9daa ====
-LEVIATAN: Eso es inútil.
-¡No moriré nunca!
+FALETE: ¡Eres más torpe que
+un guardagujas! ¡No me
+haces na! ¡Juas!
 
 
 ==== room=44 npc=0 str=6 textAddr=0x1ca018 ptrFieldAddr=0x1c9dac ====
-LEVIATAN: ... Pero has
-protegido bien la vida de
-tu madre. Si hubieras sido
-de los que abandonan a sus
-madres te habría matado.
-Pero esto no es tu madre.
-Es una imagen de tu corazón.
+FALETE: Pero tu madre me
+ha hecho un bocadillo de
+salchichón que quita el
+sentido. Si no hubieras
+protegido a tu madre lo
+mismo no hubiera acabado
+y te hubiera comido a ti.
+Bueh, de todas formas era
+un señuelo desos pa que
+te esforzaras.
 
 
 ==== room=44 npc=0 str=7 textAddr=0x1ca0d0 ptrFieldAddr=0x1c9dae ====
-LEVIATAN: Humano, tienes
-muchos amigos. ¿Es por tu
-perseverancia? Yo soy
-Leviatán, monstruo del Mar
-Profundo. Aunque viva en
-este templo hundido, me
-gusta saber qué pasa en la
-superficie donde existen
-humanos como tú. ¡Elevaré
-este templo! Y ahora es hora
-de que comience mi viaje.
+FALETE: Ostras, llevas
+cantidad de bichos contigo.
+Debes de ser un tío enrollao
+aunque con esa cabeza...
+Bueh, me apetece ir a cantar
+a otros sitios y ver tapitas
+buenas por ahí. ¡Pos voy a
+levantar este templo y a
+viajar contigo!
 
 
 ==== room=44 npc=0 str=8 textAddr=0x1ca1ec ptrFieldAddr=0x1c9db0 ====
-Leviatán se une al grupo.
+Falete se une al grupo.
 
 
 ==== room=45 npc=0 str=0 textAddr=0x1ca21e ptrFieldAddr=0x1ca21c ====
-Seguiré cantando para
-siempre, incluso en San
-Cielo.
+¡Imallin oool de pipoool,
+liviin for tudeeeeyyy!
+¡ah ah ah ah!
+
 
 
 ==== room=45 npc=1 str=0 textAddr=0x1ca256 ptrFieldAddr=0x1ca254 ====
-No sé cuánto tiempo llevo
-aquí. El tiempo no importa.
+Llevo aquí más horas que el
+reloj. Estoy más aburrido
+que un enano en un
+concierto. Su puta madre.
 
 
 ==== room=45 npc=2 str=0 textAddr=0x1ca290 ptrFieldAddr=0x1ca28e ====
-¿Un nombre? Eso es sólo una
-etiqueta, algo innecesario.
+¿Mi nombre? Jo, después de
+todas las dronjas que nos
+dan por aquí ni me acuerdo.
 
 
 ==== room=45 npc=3 str=0 textAddr=0x1ca2cc ptrFieldAddr=0x1ca2ca ====
-Sabía hace mucho que
-vendrías. Por duro que sea,
-no abandones.
+¿Tienes hambre? Tengo una
+bolsa de papitas fritas, me
+salen por las orejas, así
+que pruébalas.
 
 
 ==== room=45 npc=4 str=0 textAddr=0x1ca30e ptrFieldAddr=0x1ca30c ====
-Cualquiera puede comunicarse
-aquí, animal o humano. Todos
-usamos el mismo lenguaje.
+Ya me podrían haber puesto
+un cuerpo como a los demás,
+que así es difícil hacerse
+una pajuela en condiciones.
 
 
 ==== room=45 npc=5 str=0 textAddr=0x1ca366 ptrFieldAddr=0x1ca364 ====
@@ -3321,9 +3337,10 @@ pasar a la historia.
 
 
 ==== room=45 npc=6 str=0 textAddr=0x1ca3b0 ptrFieldAddr=0x1ca3ae ====
-He vivido demasiado
-tiempo ...  Hay más malos
-tiempos que buenos.
+Ojalá me hubieran permitido
+traerme al cielo la Game
+Boy... qué aburrimiento
+macho.
 
 
 ==== room=45 npc=7 str=0 textAddr=0x1ca3f6 ptrFieldAddr=0x1ca3f4 ====
