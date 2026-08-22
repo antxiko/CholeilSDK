@@ -1812,7 +1812,8 @@ pasota.
 
 
 ==== room=14 npc=3 str=0 textAddr=0x1c59fc ptrFieldAddr=0x1c59fa ====
-Animales de frenopático.
+Casa Tomás: Animales de 
+frenopático de alquiler.
 Más locos que una cabra
 harta de speed.
 
@@ -2720,8 +2721,8 @@ la espicha ya!
 ==== room=32 npc=0 str=0 textAddr=0x1c8570 ptrFieldAddr=0x1c8562 ====
 MAMA FANGOSA: Los payos son
 mu malos, nos atacan sólo
-por ser cholos. Ten cuidaíco,
-miarma.
+por ser cholos. Ten
+cuidaíco, miarma.
 
 
 ==== room=32 npc=0 str=1 textAddr=0x1c85c4 ptrFieldAddr=0x1c8564 ====
@@ -2841,11 +2842,12 @@ cholos!
 
 
 ==== room=33 npc=4 str=0 textAddr=0x1c8c58 ptrFieldAddr=0x1c8c56 ====
-FANGOSO: Gñe, me molan las payas,
-les daba como un sordo a una
-campana. Ojalá me al hubiera
-trincado, pero al menos le
-he hecho el chocho pesicola.
+FANGOSO: Gñe, me chanan las
+payas, les daba como un
+sordo a una campana. Ojalá
+me al hubiera trincado, pero
+al menos le he hecho el
+chocho pesicola.
 
 
 ==== room=34 npc=0 str=0 textAddr=0x1c8d0e ptrFieldAddr=0x1c8d06 ====
@@ -3049,41 +3051,40 @@ punto violeta de esos!
 
 
 ==== room=38 npc=1 str=0 textAddr=0x1c95a6 ptrFieldAddr=0x1c95a4 ====
-PIGºI: Oye, <NAME>.
-Si quieres llegar hasta
-arriba deberías ir a Fresa,
-mi ciudad. Está al otro
-lado del mar, al sur.
-Allí puedes encontrar
-la planta que crece
-rápidamente. Usala y
-llegarás hasta arriba.
+PIGUI: Payo <NAME>,
+eres un cochino. Es mejor
+algo y no alguien pa subir.
+En el Castillo Calipo hay
+una semilla que crece de la
+hoxtia, auqnue no fumable.
+Necesitamos a un mojaíto pa
+ir a por ella.
 
 
 ==== room=38 npc=2 str=0 textAddr=0x1c9670 ptrFieldAddr=0x1c966e ====
 <NAME> plantó la
-semilla de una planta
-gigante.
+semilla no fumable.
 
 
 ==== room=39 npc=0 str=0 textAddr=0x1c96a2 ptrFieldAddr=0x1c969e ====
-LEON: Soy el león de la
-melena en llamas. Vengo a
-vencer a los monstruos.
-Por desgracia me capturaron
-justo enfrente de ese
-interruptor. Necesito
-entrenar más a menudo.
-Ahora veamos cuánto sabes.
+LEON: Tengo el culo al rojo.
+Vine a pegarme con los
+cholos, pero me dieron pal
+pelo, al lao del mierda
+interruptor este. ¡Tú eres
+un payo bravo, me voy
+contigo a liarla parda.
 
 
 ==== room=39 npc=0 str=1 textAddr=0x1c9768 ptrFieldAddr=0x1c96a0 ====
-El leon se une al grupo.
+El leon se une al grupo de
+los animalicos.
 
 
 ==== room=40 npc=0 str=0 textAddr=0x1c978a ptrFieldAddr=0x1c9784 ====
-Una cara muy familiar está
-enterrada bajo el hielo.
+Hay un payo con cara de
+geliposchas hecho un cubito
+de hielo.
 
 
 ==== room=40 npc=0 str=1 textAddr=0x1c97c0 ptrFieldAddr=0x1c9786 ====
@@ -3093,9 +3094,10 @@ enterrada bajo el hielo.
 
 
 ==== room=40 npc=0 str=2 textAddr=0x1c97c6 ptrFieldAddr=0x1c9788 ====
-LUIS: ¡Oye! Deja de jugar
-conmigo. Estoy helado y me
-derrito.
+LUIS: Gñee, tengo más frío
+que el pasillo de los
+yogures. ¡Deja de hacer el
+lila y échame un cable!
 
 
 ==== room=41 npc=0 str=0 textAddr=0x1c980c ptrFieldAddr=0x1c980a ====
@@ -3112,9 +3114,10 @@ derrito.
 
 ==== room=42 npc=0 str=0 textAddr=0x1c9820 ptrFieldAddr=0x1c981e ====
 <NAME> abrió el
-cofre del tesoro. Se
-encontró una semilla de una
-planta gigante.
+cofre del tesoro. Hay una
+semilla de una planta que
+crece más que la deuda de
+Venezuela.
 
 
 ==== room=42 npc=1 str=0 textAddr=0x1c9872 ptrFieldAddr=0x1c986e ====
