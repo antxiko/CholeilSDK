@@ -69,6 +69,20 @@ falta un savestate con una moneda EN PANTALLA (desaparecen a los segundos
 de soltarse; guardar el state antes de recogerla). Al recargar el state la
 animacion refresca los tiles desde la ROM en pocos frames.
 
+## El icono del contador del HUD
+
+El icono de la moneda que sale arriba (junto al contador) es aparte: vive en
+la hoja comprimida LZ `gfx_out/gfx_0f2000.png` (bloque ROM `0xf2000`, con
+paleta real conocida), que se carga 1:1 en VRAM. El icono son los tiles
+236 (arriba-izq), 237 (abajo-izq), 238 (arriba-dcha) y 239 (abajo-dcha) de
+esa hoja; en el PNG estan seguidos en la fila 14 (x=96..128, y=112..120).
+Los tiles 240-243 de al lado son el icono de la fruta roja del HUD.
+
+Se edita el PNG y el paso "recompressing and inserting graphics" del
+pipeline `i` lo reinserta (recolocando el bloque si crece). Para verlo en
+juego desde un savestate hay que forzar la recarga del HUD: abrir y cerrar
+el menu (Start) basta.
+
 ## Como se encontro (metodo reutilizable para otros sprites)
 
 1. Savestate con el sprite en pantalla y volcado de VRAM por Lua.
