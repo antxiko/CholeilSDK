@@ -151,13 +151,28 @@ public final class MapBalloonInserter {
 
         int scriptBase = TextInserter.SCRIPT_BASE + readS32(rom, TextInserter.SCRIPT_BASE);
         int tableBase = scriptBase + readU16(rom, scriptBase + 6);
-        int count = readU16(rom, tableBase) / 2;
+        // slot 0 doubles as the table-size hint only while it's a relative
+        // offset; if TextInserter had to move the first town name behind an
+        // indirect slot, fall back to the marker table's highest town id
+        // (the only ids this step -- and the save screen -- ever look up).
+        int count;
+        int slot0 = readU16(rom, tableBase);
+        if (slot0 < 0x8000) {
+            count = slot0 / 2;
+        } else {
+            count = 0;
+            for (int off = MARKER_TABLE; readU16(rom, off) < 0x8000; off += REC_SIZE) {
+                count = Math.max(count, readU16(rom, off + REC_TOWN_ID) + 1);
+            }
+        }
 
         int[] lengths = new int[count];
         String[] names = new String[count];
         boolean[] endsInNewline = new boolean[count];
         for (int k = 0; k < count; k++) {
-            int addr = tableBase + readU16(rom, tableBase + 2 * k);
+            // resolveStringAddr: a translated name that outgrew its table's
+            // relative reach may live behind an indirect slot.
+            int addr = TextInserter.resolveStringAddr(rom, tableBase, k);
             StringBuilder sb = new StringBuilder();
             int len = 0;
             while ((rom[addr + len] & 0xFF) < 0xFE) {
@@ -214,23 +229,12 @@ public final class MapBalloonInserter {
     }
 
     static void applyCodePatches(byte[] rom) {
-        for (int[][] p : CODE_PATCHES) {
-            int addr = p[0][0];
-            if (matches(rom, addr, p[2])) continue; // already applied
-            if (!matches(rom, addr, p[1])) {
-                throw new IllegalStateException(String.format(
-                        "code patch at 0x%x: ROM bytes match neither the original nor the patch -- wrong ROM?", addr));
-            }
-            for (int i = 0; i < p[2].length; i++) rom[addr + i] = (byte) p[2][i];
-        }
+        TextInserter.applyCodePatches(rom, CODE_PATCHES);
         System.out.println("Centering code patch applied (0x315a stash, 3x jsr -> thunk 0x1fffe0, RTL renderer at 0x0419b0).");
     }
 
     static boolean matches(byte[] rom, int addr, int[] bytes) {
-        for (int i = 0; i < bytes.length; i++) {
-            if ((rom[addr + i] & 0xFF) != bytes[i]) return false;
-        }
-        return true;
+        return TextInserter.patchMatches(rom, addr, bytes);
     }
 
     static int readU16(byte[] rom, int off) {

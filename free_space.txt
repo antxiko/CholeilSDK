@@ -1,7 +1,7 @@
 ; Candidate free-space regions. Most are auto-detected by scanning for long
 ; runs of a single repeated byte value -- a heuristic, not a guarantee, so
 ; review before trusting and delete any line you're not sure is safe to
-; overwrite. A few (currently just 0xf6000-0xfd000, fill byte 0x00 as a
+; overwrite. A few (currently just 0xf6060-0xfd000, fill byte 0x00 as a
 ; placeholder) are FreeSpaceScanner.VERIFIED_GAPS entries instead: manually
 ; confirmed unreferenced by cross-checking every LEA-absolute instruction and
 ; known table base in the ROM, not by the byte-run heuristic -- see that
@@ -14,4 +14,4 @@
 0x1ef69b,2405,0xff
 0x1f63aa,3158,0xff
 0x1f7afd,1283,0xff
-0xf601e,28642,0x00
+0xf607e,28546,0x00

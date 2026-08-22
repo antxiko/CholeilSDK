@@ -24,10 +24,27 @@ import java.util.regex.Pattern;
  * Room, NPC, and string INDEX tables never move (their sizes are fixed by
  * counts that don't change) -- only the 2-byte offset VALUES inside the
  * existing string-index tables are rewritten, to point at each string's new
- * location. Because those offsets are unsigned and forward-only with a
- * 16-bit range, a string can only be placed within 65535 bytes after its
- * own NPC's string-index table; this is checked for every string before
- * anything is written.
+ * location.
+ *
+ * Slot values are dual-mode, backed by a small fetch helper this inserter
+ * installs at FETCH_HELPER_ADDR and jsr-patches into all nine of the game's
+ * inlined table-walk sites (found by scanning the ROM for every $1C0000
+ * constant and disassembling each hit with capstone):
+ *
+ *   slot &lt; 0x8000  classic offset relative to the string-index table,
+ *                     byte-identical to the game's native behavior. The
+ *                     original code reads it with adda.w, which SIGN-EXTENDS,
+ *                     so 0x8000-0xFFFF never worked on real hardware anyway
+ *                     -- the high bit was always free for the taking.
+ *   slot &gt;= 0x8000 bits 0-14 index a global table of 4-byte absolute
+ *                     addresses (allocated from the free pool, address baked
+ *                     into the helper's lea), so the string can live anywhere
+ *                     in the ROM at any length that fits the pool.
+ *
+ * Strings are still placed relatively whenever they fit within 0x7FFF bytes
+ * of their table (keeping ROM layout close to stock); only overflow -- and
+ * str=0 entries whose mandatory adjacent slot collides with the next fixed
+ * table -- falls back to an indirect slot.
  */
 public final class TextInserter {
 
@@ -42,6 +59,70 @@ public final class TextInserter {
     // segment between 0xFE line breaks). Confirmed against the game's text
     // box rendering; a line over this length would overflow the box.
     static final int MAX_LINE_LENGTH = 28;
+
+    // Longest slot value still read as a relative offset by the fetch helper
+    // (and by the game's original adda.w, which sign-extends -- offsets with
+    // the high bit set were never usable). Anything farther goes indirect.
+    static final int MAX_RELATIVE_REACH = 0x7FFF;
+
+    // The dual-mode fetch helper lives in the manually-verified free gap in
+    // front of FreeSpaceScanner.VERIFIED_GAPS (which starts at 0xf6060
+    // precisely to keep every free-space consumer off this block).
+    static final int FETCH_HELPER_ADDR = 0xF6000;
+    // lea TABLE operands inside the helper, patched with the real pointer-
+    // table address once it's allocated. Tools resolve indirect slots by
+    // reading the d0 variant's operand back (see resolveStringAddr).
+    static final int FETCH_LEA_D0_OPERAND = FETCH_HELPER_ADDR + 0x18;
+    static final int FETCH_LEA_D2_OPERAND = FETCH_HELPER_ADDR + 0x38;
+
+    // helper_str0 (entry for the two sites with a constant str index of 0),
+    // falling through into helper_d0; helper_d2 is the same routine for the
+    // one site that keeps the index in d2. In: a0 = string-index table,
+    // dN = str index. Out: a0 = string address. Clobbers dN (the original
+    // 6-byte sequences clobbered it too -- verified dead at all nine sites).
+    static final byte[] FETCH_HELPER_CODE = {
+        (byte)0x70, 0x00,                                     // f6000 moveq  #0,d0
+        (byte)0xD0, 0x40,                                     // f6002 add.w  d0,d0
+        (byte)0x30, 0x30, 0x00, 0x00,                         // f6004 move.w (a0,d0.w),d0
+        (byte)0x6B, 0x04,                                     // f6008 bmi.s  .ind
+        (byte)0xD0, (byte)0xC0,                               // f600a adda.w d0,a0
+        (byte)0x4E, 0x75,                                     // f600c rts
+        0x02, (byte)0x80, 0x00, 0x00, 0x7F, (byte)0xFF,       // f600e andi.l #$7fff,d0
+        (byte)0xE5, (byte)0x88,                               // f6014 lsl.l  #2,d0
+        0x41, (byte)0xF9, 0x00, 0x00, 0x00, 0x00,             // f6016 lea    TABLE,a0
+        0x20, 0x70, 0x08, 0x00,                               // f601c movea.l (0,a0,d0.l),a0
+        (byte)0x4E, 0x75,                                     // f6020 rts
+        (byte)0xD4, 0x42,                                     // f6022 add.w  d2,d2
+        0x34, 0x30, 0x20, 0x00,                               // f6024 move.w (a0,d2.w),d2
+        (byte)0x6B, 0x04,                                     // f6028 bmi.s  .ind2
+        (byte)0xD0, (byte)0xC2,                               // f602a adda.w d2,a0
+        (byte)0x4E, 0x75,                                     // f602c rts
+        0x02, (byte)0x82, 0x00, 0x00, 0x7F, (byte)0xFF,       // f602e andi.l #$7fff,d2
+        (byte)0xE5, (byte)0x8A,                               // f6034 lsl.l  #2,d2
+        0x41, (byte)0xF9, 0x00, 0x00, 0x00, 0x00,             // f6036 lea    TABLE,a0
+        0x20, 0x70, 0x28, 0x00,                               // f603c movea.l (0,a0,d2.l),a0
+        (byte)0x4E, 0x75,                                     // f6040 rts
+    };
+
+    /**
+     * The nine inlined table-walk sites, each ending in the same 6-byte
+     * string step (add.w dN,dN / adda.w (a0,dN.w),a0 -- or moveq #0,d0 for
+     * the two constant-str=0 sites), each replaced by an exact-fit 6-byte
+     * jsr to the matching helper entry. {address}, {expected original
+     * bytes}, {replacement bytes}, same contract as
+     * MapBalloonInserter.CODE_PATCHES.
+     */
+    static final int[][][] FETCH_SITE_PATCHES = {
+        { {0x03326}, {0xD0,0x40, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x02} }, // town-popup list (0x331a)
+        { {0x04900}, {0xD0,0x40, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x02} }, // town-popup (0x48f4)
+        { {0x3210E}, {0xD0,0x40, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x02} }, // room0/npc3 (0x32102)
+        { {0x3212C}, {0xD4,0x42, 0xD0,0xF0,0x20,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x22} }, // general dialogue (0x32118), index in d2
+        { {0x32150}, {0x70,0x00, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x00} }, // room1/npc0/str0 (0x3213e)
+        { {0x33220}, {0xD0,0x40, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x02} }, // $b62e/$b628/$b62a dialogue (0x331f8)
+        { {0x333C6}, {0xD0,0x40, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x02} }, // same vars, address-only variant (0x333a2)
+        { {0x33478}, {0x70,0x00, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x00} }, // room0/npc0/str0 (0x3346a)
+        { {0x3B8F0}, {0xD0,0x40, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x02} }, // signs, room 0x62 (0x3b8d4)
+    };
 
     static final class Entry {
         int room, npc, str;
@@ -64,6 +145,8 @@ public final class TextInserter {
         List<Entry> members = new ArrayList<Entry>();
         int representativeAddr;
         int newAddr = -1;
+        boolean indirect;  // placed anywhere, referenced via the absolute-pointer table
+        int indirectIndex = -1;
     }
 
     /** usage: TextInserter [romPath] [scriptPath] [tblPath] [freeSpacePath] [outPath] */
@@ -142,15 +225,15 @@ public final class TextInserter {
         // never be touched -- only the text itself is free to repack.
         List<int[]> tableRanges = computeTableRanges(rom);
 
-        // CRITICAL: string counts aren't stored anywhere explicitly -- the game
-        // derives strCount for an NPC as (offset stored at that NPC's str=0 slot)/2.
-        // That only works if str=0's text sits at EXACTLY strTableAddr+strCount*2
-        // (immediately after its own index table); the offset value doubles as a
-        // self-describing table-size encoding. Unlike str>=1, str=0 can never be
-        // freely relocated -- doing so silently corrupts the derived string count
-        // for that NPC, which is exactly what broke the game on the first attempt.
-        // So str=0 gets a mandatory fixed placement, reserved before anything else
-        // is packed; only str>=1 goes through the general flexible allocator.
+        // In the original data every str=0 sits at EXACTLY strTableAddr+
+        // strCount*2 (immediately after its own index table), making its slot
+        // value double as a self-describing table-size encoding. A full
+        // disassembly pass found no game code that actually derives a count
+        // from it (all nine fetch sites just add the offset -- the historical
+        // breakage when relocating str=0 is better explained by adda.w's sign
+        // extension), but the adjacent slot is still reserved first as
+        // belt-and-braces; only a str=0 that no longer fits there falls back
+        // to an indirect slot.
         Map<Integer, Integer> strCountByTable = new LinkedHashMap<Integer, Integer>();
         for (Entry e : entries) {
             Integer cur = strCountByTable.get(e.strTableAddr);
@@ -161,8 +244,15 @@ public final class TextInserter {
             if (e.str == 0) str0ByTable.put(e.strTableAddr, e);
         }
 
+        // str=0's slot value doubles as a table-size hint in the original data
+        // (offset == strCount*2 when the text sits right after its own table),
+        // so the adjacent slot stays the first choice as belt-and-braces. When
+        // the translated text no longer fits there -- it would collide with
+        // the next fixed table -- the string simply falls back to an indirect
+        // slot like any other, since no game code was found that actually
+        // derives a count from it (all nine fetch sites just add the offset).
         List<int[]> reservations = new ArrayList<int[]>();
-        List<Entry> str0Failures = new ArrayList<Entry>();
+        List<Group> indirectGroups = new ArrayList<Group>();
         for (Map.Entry<Integer, Entry> me : str0ByTable.entrySet()) {
             int strTableAddr = me.getKey();
             Entry str0 = me.getValue();
@@ -176,23 +266,20 @@ public final class TextInserter {
                 if (requiredAddr < r[1] && requiredEnd > r[0]) { collision = true; break; }
             }
             if (collision) {
-                str0Failures.add(str0);
+                Group g = new Group();
+                g.encoded = str0.encoded;
+                g.representativeAddr = str0.strTableAddr;
+                g.indirect = true;
+                g.members.add(str0);
+                str0.group = g;
+                indirectGroups.add(g);
+                System.out.println("INFO: room=" + str0.room + " npc=" + str0.npc + " str=0 (" + str0.encoded.length
+                        + " bytes) doesn't fit after its table (0x" + Integer.toHexString(strTableAddr)
+                        + ") -- using an indirect slot.");
                 continue;
             }
             str0.newAddr = requiredAddr;
             reservations.add(new int[]{strTableAddr, requiredEnd});
-        }
-
-        if (!str0Failures.isEmpty()) {
-            System.out.println();
-            System.out.println(str0Failures.size() + " str=0 string(s) don't fit immediately after their own "
-                    + "string table (mandatory position -- these can't be relocated). " + outPath + " was NOT written.");
-            for (Entry e : str0Failures) {
-                System.out.println("  room=" + e.room + " npc=" + e.npc + " str=0: needs " + e.encoded.length
-                        + " bytes right after its table (0x" + Integer.toHexString(e.strTableAddr)
-                        + ") but collides with the next fixed table. Shorten this string.");
-            }
-            throw new IllegalStateException(str0Failures.size() + " str=0 string(s) don't fit; " + outPath + " was NOT written.");
         }
 
         List<int[]> pool = new ArrayList<int[]>();
@@ -205,6 +292,9 @@ public final class TextInserter {
         }
         List<int[]> excluded = new ArrayList<int[]>(tableRanges);
         excluded.addAll(reservations);
+        // Never place anything over the fetch helper block, even when a stale
+        // free_space.txt (from before the 0xf6060 gap start) still offers it.
+        excluded.add(new int[]{FETCH_HELPER_ADDR, 0xF6060});
         List<int[]> ranges = subtractRanges(mergeRanges(pool), mergeRanges(excluded));
         System.out.println("Writable pool ranges (after reserving " + reservations.size() + " str=0 slots):");
         long totalCapacity = 0;
@@ -254,71 +344,113 @@ public final class TextInserter {
             groups.addAll(subGroups.values());
         }
         Collections.sort(groups, (a, b) -> Integer.compare(a.representativeAddr, b.representativeAddr));
-        System.out.println(entries.size() + " strings, " + str0ByTable.size() + " placed at mandatory str=0 slots, "
+        System.out.println(entries.size() + " strings, " + reservations.size() + " placed at mandatory str=0 slots, "
                 + groups.size() + " unique flexible locations for the rest ("
                 + ((entries.size() - str0ByTable.size()) - groups.size()) + " shared copies avoided).");
 
+        // First pass: relative placement, exactly like the game's stock layout.
+        // A group that can't sit within MAX_RELATIVE_REACH of every member's
+        // table (or that this floor-constrained cursor can't fit anywhere)
+        // falls back to an indirect slot instead of failing the build.
         int rangeIndex = 0;
         int cursor = ranges.get(0)[0];
-        List<Entry> failures = new ArrayList<Entry>();
         long totalBytesUsed = 0;
         for (int[] r : reservations) totalBytesUsed += str0ByTable.get(r[0]).encoded.length;
 
         for (Group g : groups) {
-            cursor = Math.max(cursor, g.representativeAddr);
-            while (rangeIndex < ranges.size() && cursor >= ranges.get(rangeIndex)[1]) rangeIndex++;
-            if (rangeIndex < ranges.size() && cursor < ranges.get(rangeIndex)[0]) cursor = ranges.get(rangeIndex)[0];
-            while (rangeIndex < ranges.size() && cursor + g.encoded.length > ranges.get(rangeIndex)[1]) {
-                rangeIndex++;
-                if (rangeIndex < ranges.size()) cursor = Math.max(ranges.get(rangeIndex)[0], cursor);
+            int tryCursor = Math.max(cursor, g.representativeAddr);
+            int tryRange = rangeIndex;
+            while (tryRange < ranges.size() && tryCursor >= ranges.get(tryRange)[1]) tryRange++;
+            if (tryRange < ranges.size() && tryCursor < ranges.get(tryRange)[0]) tryCursor = ranges.get(tryRange)[0];
+            while (tryRange < ranges.size() && tryCursor + g.encoded.length > ranges.get(tryRange)[1]) {
+                tryRange++;
+                if (tryRange < ranges.size()) tryCursor = Math.max(ranges.get(tryRange)[0], tryCursor);
             }
-            if (rangeIndex >= ranges.size()) {
-                g.newAddr = -1;
-                failures.addAll(g.members);
-                continue;
-            }
-            g.newAddr = cursor;
-            cursor += g.encoded.length; // always advance, so later groups' reports stay accurate
-
-            boolean groupOk = true;
-            for (Entry e : g.members) {
-                int reach = g.newAddr - e.strTableAddr;
-                if (reach < 0 || reach > 0xFFFF) {
-                    failures.add(e);
-                    groupOk = false;
+            boolean placeable = tryRange < ranges.size();
+            if (placeable) {
+                for (Entry e : g.members) {
+                    int reach = tryCursor - e.strTableAddr;
+                    if (reach < 0 || reach > MAX_RELATIVE_REACH) { placeable = false; break; }
                 }
             }
-            if (groupOk) totalBytesUsed += g.encoded.length;
+            if (!placeable) {
+                g.indirect = true;
+                indirectGroups.add(g);
+                continue; // doesn't consume pool space here
+            }
+            g.newAddr = tryCursor;
+            cursor = tryCursor + g.encoded.length;
+            rangeIndex = tryRange;
+            totalBytesUsed += g.encoded.length;
         }
 
-        if (!failures.isEmpty()) {
+        // Second pass: indirect groups (and then the pointer table itself) go
+        // into whatever the relative pass left over, anywhere, no reach or
+        // floor constraint -- the floor-skipping above leaves usable holes,
+        // so repack from the true remaining space rather than the cursor.
+        if (indirectGroups.size() > 0x8000) {
+            throw new IllegalStateException(indirectGroups.size()
+                    + " indirect strings exceed the 15-bit slot index limit (32768); " + outPath + " was NOT written.");
+        }
+        List<int[]> placed = new ArrayList<int[]>();
+        for (Group g : groups) {
+            if (!g.indirect) placed.add(new int[]{g.newAddr, g.newAddr + g.encoded.length});
+        }
+        List<int[]> remaining = subtractRanges(ranges, mergeRanges(placed));
+        int irRange = 0;
+        int irCursor = remaining.isEmpty() ? Integer.MAX_VALUE : remaining.get(0)[0];
+        List<Group> unplaced = new ArrayList<Group>();
+        for (Group g : indirectGroups) {
+            while (irRange < remaining.size() && irCursor + g.encoded.length > remaining.get(irRange)[1]) {
+                irRange++;
+                if (irRange < remaining.size()) irCursor = remaining.get(irRange)[0];
+            }
+            if (irRange >= remaining.size()) { unplaced.add(g); continue; }
+            g.newAddr = irCursor;
+            irCursor += g.encoded.length;
+            totalBytesUsed += g.encoded.length;
+        }
+
+        // The absolute-pointer table: 4 bytes per indirect group, even-aligned.
+        int tableSize = indirectGroups.size() * 4;
+        int tableAddr = -1;
+        if (unplaced.isEmpty()) {
+            if (irRange < remaining.size()) irCursor = (irCursor + 1) & ~1;
+            while (irRange < remaining.size() && irCursor + tableSize > remaining.get(irRange)[1]) {
+                irRange++;
+                if (irRange < remaining.size()) irCursor = (remaining.get(irRange)[0] + 1) & ~1;
+            }
+            if (irRange < remaining.size()) {
+                tableAddr = irCursor;
+                totalBytesUsed += tableSize;
+            }
+        }
+
+        if (!unplaced.isEmpty() || tableAddr < 0) {
             System.out.println();
-            System.out.println(failures.size() + " string(s) could not be placed. " + outPath + " was NOT written.");
-            for (Entry e : failures) {
-                Group g = e.group;
-                if (g.newAddr == -1) {
+            int failCount = 0;
+            for (Group g : unplaced) failCount += g.members.size();
+            System.out.println((tableAddr < 0 && unplaced.isEmpty()
+                    ? "The absolute-pointer table (" + tableSize + " bytes)"
+                    : failCount + " string(s)") + " ran out of writable space. " + outPath + " was NOT written.");
+            for (Group g : unplaced) {
+                for (Entry e : g.members) {
                     System.out.println("  room=" + e.room + " npc=" + e.npc + " str=" + e.str
                             + ": ran out of writable space (needs " + g.encoded.length + " bytes)");
-                } else {
-                    int reach = g.newAddr - e.strTableAddr;
-                    System.out.println("  room=" + e.room + " npc=" + e.npc + " str=" + e.str
-                            + ": shared text at 0x" + Integer.toHexString(g.newAddr)
-                            + " is " + reach + " bytes past its string table (0x" + Integer.toHexString(e.strTableAddr)
-                            + "), limit is 65535 -- over by " + (reach - 0xFFFF) + " bytes. Shorten this string"
-                            + " (or an earlier one in the same table); note it's shared with "
-                            + (g.members.size() - 1) + " other pointer(s).");
                 }
             }
-            throw new IllegalStateException(failures.size() + " string(s) could not be placed; " + outPath + " was NOT written.");
+            throw new IllegalStateException("out of writable space; " + outPath + " was NOT written.");
         }
 
         System.out.println();
         System.out.println("All " + entries.size() + " strings placed successfully ("
                 + totalBytesUsed + " / " + (totalCapacity + reservations.stream().mapToLong(r -> r[1] - r[0]).sum())
-                + " bytes used).");
+                + " bytes used); " + indirectGroups.size() + " indirect slot(s), pointer table at 0x"
+                + Integer.toHexString(tableAddr) + ".");
 
         int moved = 0;
         for (Entry str0 : str0ByTable.values()) {
+            if (str0.newAddr < 0) continue; // fell back to an indirect slot, handled below
             for (int i = 0; i < str0.encoded.length; i++) {
                 rom[str0.newAddr + i] = str0.encoded[i];
             }
@@ -328,6 +460,7 @@ public final class TextInserter {
             if (str0.newAddr != str0.textAddr) moved++;
         }
         for (Group g : groups) {
+            if (g.indirect) continue;
             for (int i = 0; i < g.encoded.length; i++) {
                 rom[g.newAddr + i] = g.encoded[i];
             }
@@ -338,7 +471,31 @@ public final class TextInserter {
                 if (g.newAddr != e.textAddr) moved++;
             }
         }
+        for (int idx = 0; idx < indirectGroups.size(); idx++) {
+            Group g = indirectGroups.get(idx);
+            g.indirectIndex = idx;
+            for (int i = 0; i < g.encoded.length; i++) {
+                rom[g.newAddr + i] = g.encoded[i];
+            }
+            writeS32(rom, tableAddr + 4 * idx, g.newAddr);
+            int slot = 0x8000 | idx;
+            for (Entry e : g.members) {
+                rom[e.ptrFieldAddr] = (byte) ((slot >> 8) & 0xFF);
+                rom[e.ptrFieldAddr + 1] = (byte) (slot & 0xFF);
+                moved++;
+            }
+        }
         System.out.println(moved + " string(s) relocated, " + (entries.size() - moved) + " stayed at their original address.");
+
+        // Install the dual-mode fetch helper and detour the game's nine
+        // table-walk sites through it. Applied unconditionally (even with an
+        // empty pointer table) so every build exercises the same code path.
+        System.arraycopy(FETCH_HELPER_CODE, 0, rom, FETCH_HELPER_ADDR, FETCH_HELPER_CODE.length);
+        writeS32(rom, FETCH_LEA_D0_OPERAND, tableAddr);
+        writeS32(rom, FETCH_LEA_D2_OPERAND, tableAddr);
+        applyCodePatches(rom, FETCH_SITE_PATCHES);
+        System.out.println("Fetch helper installed at 0x" + Integer.toHexString(FETCH_HELPER_ADDR)
+                + ", 9 table-walk sites patched.");
 
         fixChecksum(rom);
 
@@ -362,6 +519,52 @@ public final class TextInserter {
         rom[0x18e] = (byte) ((sum >> 8) & 0xFF);
         rom[0x18f] = (byte) (sum & 0xFF);
         System.out.println("Checksum fixed: 0x" + Integer.toHexString(sum));
+    }
+
+    static void writeS32(byte[] rom, int off, int value) {
+        rom[off] = (byte) (value >>> 24);
+        rom[off + 1] = (byte) (value >>> 16);
+        rom[off + 2] = (byte) (value >>> 8);
+        rom[off + 3] = (byte) value;
+    }
+
+    /**
+     * Applies {address}, {expected original bytes}, {replacement bytes}
+     * patches: verifies the ROM still holds the expected bytes before
+     * touching anything (already-applied patches are skipped, so re-running
+     * on a patched ROM is a no-op), and fails loudly on anything else.
+     */
+    static void applyCodePatches(byte[] rom, int[][][] patches) {
+        for (int[][] p : patches) {
+            int addr = p[0][0];
+            if (patchMatches(rom, addr, p[2])) continue; // already applied
+            if (!patchMatches(rom, addr, p[1])) {
+                throw new IllegalStateException(String.format(
+                        "code patch at 0x%x: ROM bytes match neither the original nor the patch -- wrong ROM?", addr));
+            }
+            for (int i = 0; i < p[2].length; i++) rom[addr + i] = (byte) p[2][i];
+        }
+    }
+
+    static boolean patchMatches(byte[] rom, int addr, int[] bytes) {
+        for (int i = 0; i < bytes.length; i++) {
+            if ((rom[addr + i] & 0xFF) != bytes[i]) return false;
+        }
+        return true;
+    }
+
+    /**
+     * Resolves a string-index-table slot the same way the patched game does:
+     * values below 0x8000 are offsets relative to the table, values with the
+     * high bit set index the absolute-pointer table (whose address is read
+     * back from the fetch helper's lea operand). Works on unpatched ROMs
+     * too, where every slot is relative.
+     */
+    static int resolveStringAddr(byte[] rom, int strTableAddr, int index) {
+        int slot = TextExtractor.readU16(rom, strTableAddr + 2 * index);
+        if (slot < 0x8000) return strTableAddr + slot;
+        int tableBase = TextExtractor.readU32(rom, FETCH_LEA_D0_OPERAND);
+        return TextExtractor.readU32(rom, tableBase + 4 * (slot & 0x7FFF));
     }
 
     static String bytesToHex(byte[] bytes) {
@@ -401,6 +604,15 @@ public final class TextInserter {
                 int strTableAddr = npcTableAddr + npcOffset;
 
                 int firstStrOffset = TextExtractor.readU16(rom, strTableAddr);
+                if (firstStrOffset >= 0x8000) {
+                    // An indirect slot no longer encodes the table size, so
+                    // this walk (and the whole repack, which reassembles the
+                    // script from the ORIGINAL layout) can't run on its own
+                    // output. The pipeline always passes a fresh ROM here.
+                    throw new IllegalStateException(String.format(
+                            "string table at 0x%x already holds an indirect slot -- the input ROM was already "
+                            + "text-inserted. Run against a ROM with the original script instead.", strTableAddr));
+                }
                 int strCount = firstStrOffset / 2;
                 ranges.add(new int[]{strTableAddr, strTableAddr + strCount * 2});
             }

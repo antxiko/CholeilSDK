@@ -32,7 +32,7 @@ public final class FreeSpaceScanner {
      * unlike the heuristic scan below, these aren't uniform byte runs, so
      * they'd never be found automatically.
      *
-     * 0xf6000-0xfd000: sits between the font glyph table (0xf5000-0xf5fff,
+     * 0xf6060-0xfd000: sits between the font glyph table (0xf5000-0xf5fff,
      * 256 reserved 16-byte slots, only up to index 0xaf ever populated --
      * confirmed live via the `lea $f5000,a3` in the character-tile renderer)
      * and the next real compressed graphics block (0xfd000, per
@@ -42,10 +42,13 @@ public final class FreeSpaceScanner {
      * stack overflow", and mmsystem.dll/audio-driver names like
      * "wavemapper") -- clearly not game data. The rest, out to 0xfd000, is
      * unreferenced padding/noise. No code or pointer table in the ROM
-     * targets any address in this range.
+     * targets any address in this range. The first 0x60 bytes (0xf6000-
+     * 0xf6060) are excluded: TextInserter installs its absolute-pointer
+     * fetch helper there (see TextInserter.FETCH_HELPER_ADDR), and keeping
+     * the block out of this list keeps every free-space consumer off it.
      */
     static final int[][] VERIFIED_GAPS = {
-            {0xf6000, 0xfd000},
+            {0xf6060, 0xfd000},
     };
 
     /**
@@ -168,7 +171,7 @@ public final class FreeSpaceScanner {
         sb.append("; Candidate free-space regions. Most are auto-detected by scanning for long\n");
         sb.append("; runs of a single repeated byte value -- a heuristic, not a guarantee, so\n");
         sb.append("; review before trusting and delete any line you're not sure is safe to\n");
-        sb.append("; overwrite. A few (currently just 0xf6000-0xfd000, fill byte 0x00 as a\n");
+        sb.append("; overwrite. A few (currently just 0xf6060-0xfd000, fill byte 0x00 as a\n");
         sb.append("; placeholder) are FreeSpaceScanner.VERIFIED_GAPS entries instead: manually\n");
         sb.append("; confirmed unreferenced by cross-checking every LEA-absolute instruction and\n");
         sb.append("; known table base in the ROM, not by the byte-run heuristic -- see that\n");

@@ -60,12 +60,15 @@ public final class PipelineSmokeTest {
         }
 
         // --- town names and marker widths ---
+        // (counts read from the BASE ROM: an indirect str=0 slot in the
+        // output no longer doubles as the table-size hint)
+        byte[] orig = Files.readAllBytes(Paths.get(baseRom));
         int scriptBase = TextInserter.SCRIPT_BASE + MapBalloonInserter.readS32(rom, TextInserter.SCRIPT_BASE);
         int tableBase = scriptBase + MapBalloonInserter.readU16(rom, scriptBase + 6);
-        int count = MapBalloonInserter.readU16(rom, tableBase) / 2;
+        int count = MapBalloonInserter.readU16(orig, tableBase) / 2;
         int[] lengths = new int[count];
         for (int k = 0; k < count; k++) {
-            int addr = tableBase + MapBalloonInserter.readU16(rom, tableBase + 2 * k);
+            int addr = TextInserter.resolveStringAddr(rom, tableBase, k);
             int len = 0;
             while ((rom[addr + len] & 0xFF) < 0xFE) len++;
             lengths[k] = len;
@@ -90,6 +93,47 @@ public final class PipelineSmokeTest {
         }
         check(markers >= 20, "marker table walk found a sane record count (" + markers + ")");
         check(patchedWidths >= 10, "at least 10 enabled markers verified (" + patchedWidths + ")");
+
+        // --- absolute-pointer fetch helper and the nine site detours ---
+        expectBytes(rom, TextInserter.FETCH_HELPER_ADDR,
+                new int[]{0x70,0x00, 0xd0,0x40, 0x30,0x30,0x00,0x00, 0x6b,0x04},
+                "fetch helper head (moveq/add/move/bmi) present at 0xf6000");
+        for (int[][] p : TextInserter.FETCH_SITE_PATCHES) {
+            expectBytes(rom, p[0][0], p[2],
+                    String.format("table-walk site 0x%x detours through the fetch helper", p[0][0]));
+        }
+        int ptrTable = TextExtractor.readU32(rom, TextInserter.FETCH_LEA_D0_OPERAND);
+        check(ptrTable == TextExtractor.readU32(rom, TextInserter.FETCH_LEA_D2_OPERAND),
+                "both helper lea operands agree on the pointer table address");
+        check(ptrTable > 0 && ptrTable < rom.length && (ptrTable & 1) == 0,
+                String.format("pointer table address 0x%x is inside the ROM and even", ptrTable));
+
+        // --- every script slot resolves to a terminated string ---
+        int roomCount = TextExtractor.readU32(rom, TextInserter.SCRIPT_BASE) / 4 - 1;
+        int resolved = 0, indirectSlots = 0;
+        boolean allTerminated = true;
+        for (int roomIndex = 0; roomIndex < roomCount; roomIndex++) {
+            int npcTableAddr = TextInserter.SCRIPT_BASE + TextExtractor.readU32(rom, TextInserter.SCRIPT_BASE + roomIndex * 4);
+            int npcCount = TextExtractor.readU16(rom, npcTableAddr) / 2;
+            for (int npcIndex = 0; npcIndex < npcCount; npcIndex++) {
+                int strTableAddr = npcTableAddr + TextExtractor.readU16(rom, npcTableAddr + npcIndex * 2);
+                int strCount = TextExtractor.readU16(orig, strTableAddr) / 2;
+                for (int str = 0; str < strCount; str++) {
+                    if (TextExtractor.readU16(rom, strTableAddr + 2 * str) >= 0x8000) indirectSlots++;
+                    int addr = TextInserter.resolveStringAddr(rom, strTableAddr, str);
+                    int len = 0;
+                    while (addr + len < rom.length && (rom[addr + len] & 0xFF) != 0xFF && len < 4096) len++;
+                    if (addr <= 0 || addr + len >= rom.length || (rom[addr + len] & 0xFF) != 0xFF) {
+                        fail(String.format("room=%d npc=%d str=%d resolves to 0x%x but finds no 0xFF terminator",
+                                roomIndex, npcIndex, str, addr));
+                        allTerminated = false;
+                    }
+                    resolved++;
+                }
+            }
+        }
+        if (allTerminated) ok("all " + resolved + " script slots resolve to 0xFF-terminated strings ("
+                + indirectSlots + " indirect)");
 
         // --- header checksum ---
         int sum = 0;
