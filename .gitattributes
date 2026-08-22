@@ -1,0 +1,8 @@
+# Scoped deliberately to these launchers only -- a repo-wide "* text=auto"
+# would renormalize every tracked file in one noisy commit.
+#
+# The Maven wrapper's POSIX script has to keep LF endings: with CRLF it dies
+# as "bad interpreter: /bin/sh^M". The Windows launchers want CRLF.
+mvnw       text eol=lf
+mvnw.cmd   text eol=crlf
+choleil.cmd text eol=crlf
