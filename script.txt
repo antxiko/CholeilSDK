@@ -3344,41 +3344,48 @@ macho.
 
 
 ==== room=45 npc=7 str=0 textAddr=0x1ca3f6 ptrFieldAddr=0x1ca3f4 ====
-¿Por qué a todos los que
-viven aquí abajo les gusta
-luchar? No lo entiendo.
+Lo bueno del cielo es que
+aquí no pueden venir los
+mo... ah. perdón, eso no se
+puede decir en el juego.
 
 
 ==== room=45 npc=8 str=0 textAddr=0x1ca44a ptrFieldAddr=0x1ca444 ====
-Las flores te aman. Se ponen
-a bailar cuando pasas. Si
-tocas todas las flores este
-lugar se pondrá muy alegre.
+Las flores se mueven menos
+que un avión de mármol, pero
+si andas sobre ellas se
+menean. ¡Molaría mazo que
+las pusieras todas a moverse
+para darles porsaco un poco!
 
 
 ==== room=45 npc=8 str=1 textAddr=0x1ca4ba ptrFieldAddr=0x1ca446 ====
-¡Oh, qué maravilloso! Nunca
-he visto flores que bailen
-tan contentas. Debes ser una
-persona muy amable. Por tu
-amabilidad te daré una
-manzana de la vida.
+¡Hostia puta, están todas
+como extasiadas! ¿Se podrán
+fumar o algo? ¡Grasias por
+cabrearlas todas, seguro que
+las podremos cosechar o
+algo! Toma, por las
+molestias te rulo algo guay.
 
 
 ==== room=45 npc=8 str=2 textAddr=0x1ca556 ptrFieldAddr=0x1ca448 ====
-Es tan maravilloso ver esto.
-Creo que las flores son
-sensibles a tu energía.
+¡Fuas, nos vamos a poner
+moraos de fumar! Espero que
+coloquen o algo, porque si
+no esto ha sido una
+gilipollez.
 
 
 ==== room=45 npc=9 str=0 textAddr=0x1ca5a6 ptrFieldAddr=0x1ca5a4 ====
-Aunque estoy aquí, mi esposa
-está esperando que vuelva
-al peligroso Valle de las
-Dalias. La vida está llena
-de ironías. Si no hubiera
-lucha, la familia podría
-convivir felizmente ...
+La he tenido que diñar y
+venir hasta aquí para que mi
+mujer me deje tranquilo. La
+puñetera se ha quedado en el
+Calle de las Bailas
+emperrada que vuelva. ¡Pero
+echo muchísimo de menos la
+tele!
 
 
 ==== room=46 npc=0 str=0 textAddr=0x1ca21e ptrFieldAddr=0x1ca21c ====
@@ -3418,25 +3425,25 @@ convivir felizmente ...
 <SAME room=45 npc=9 str=0>
 
 ==== room=47 npc=0 str=0 textAddr=0x1ca664 ptrFieldAddr=0x1ca660 ====
-DRAGON: Qué valiente eres
-por seguirme sin saber lo
-que hacías ... Pero este es
-el final del camino. Yo soy
-el que abrirá la puerta.
+DRAGON: ¿Adónde vas, con ese
+cabezón? ¡Te voy a dejar
+hecho una piltrafa!
+¿Qué te crees que vas a
+hacerme con esa navajita de
+mierda, mariquita?
 
 
 ==== room=47 npc=0 str=1 textAddr=0x1ca6ea ptrFieldAddr=0x1ca662 ====
-DRAGON: No puedo morir aquí
- ... No ... Yo ... Debo ...
+DRAGON: Hijoputa niño...
+¡Está más fuerte que la
+radio de un asilo!
 
 
 ==== room=48 npc=0 str=0 textAddr=0x1ca736 ptrFieldAddr=0x1ca72c ====
-CURA: Algo terrible pasó
-aquí hace mucho.
-La gente ya no
-viene... ¡Oh, Santo Padre,
-deja que tu presencia llene
-de nuevo sus corazones!
+CURA: Arfs... niño, tengo
+caramelitos ahí detrás, ¿por
+qué no te vienes y hablamos
+un ratito? Uy, vaya cabeza.
 
 
 ==== room=48 npc=0 str=1 textAddr=0x1ca7c0 ptrFieldAddr=0x1ca72e ====
@@ -3446,61 +3453,60 @@ de nuevo sus corazones!
 
 
 ==== room=48 npc=0 str=2 textAddr=0x1ca7c6 ptrFieldAddr=0x1ca730 ====
-CURA: Me dicen que
-nieva sin parar en
-Iris... ¡Qué miedo!
-El Santo Padre debe estar
-muy enfadado por la
-falta de fe.
+CURA: Dicen que en Ibi
+parece Huesca de todo lo que
+está nevando. ¡La madre que
+los parió! ¿Será el clima
+cambiático ese? ¡Los
+pingüinos entran en las
+casas pidiendo Frenadol!
 
 
 ==== room=48 npc=0 str=3 textAddr=0x1ca83c ptrFieldAddr=0x1ca732 ====
-CURA: ¿Sabes que aquí
-murió un monstruo? Te lo
-han contado. Fue algo
-abominable.
-Si no fuera por eso
-la gente seguiría viniendo.
+CURA: ¿Sabías que aquí palmó
+un cholo? ¡Moló que te
+cagas! Aunque ahora le peña
+no viene porque son unas
+mariconas.
 
 
 ==== room=48 npc=0 str=4 textAddr=0x1ca8be ptrFieldAddr=0x1ca734 ====
-CURA: Jovencito, qué fiel
-eres al venir a ofrecer
-plegarias.
+CURA: Mffs... ¿Te has
+pensado lo de venirte ahí
+detrás conmigo para que te
+de chucherías?
 
 
 ==== room=48 npc=1 str=0 textAddr=0x1ca910 ptrFieldAddr=0x1ca8fc ====
-ANITA: Llevo pensando
-desde que tu madre nos
-habló de ello. Luchar está
-bien, pero quitar vidas
-es terrible.
-Si no lo hacemos, el
-monstruo nos matará ...
-¿Qué debemos
-hacer?
+ANITA: Estaba dándole al
+coco de eso de los cholos.
+¿Has visto cholos machos y
+hembras? ¿Se reproducen por
+esporas como los orkos del
+espasio? ¡Es que me chana
+mogollón el Warhammer! ¿Tú
+qué dices?
 
 
 ==== room=48 npc=1 str=1 textAddr=0x1ca9c0 ptrFieldAddr=0x1ca8fe ====
 ANITA: Oye, <NAME>.
-¿No es posible que todos
-vivamos en armonía sin
-herirnos los unos a
-los otros?
+¿Te he contado ya el
+fantabuloso chiste de la
+vaca?
 <YESNO>
 
 
 ==== room=48 npc=1 str=2 textAddr=0x1caa22 ptrFieldAddr=0x1ca900 ====
-ANITA: ¡La felicidad que
-proviene de las desgracias
-de otros no está bien!
+ANITA: ¡Es la monda ese
+chiste, por eso todo el
+mundo lo conoce!
 
 
 ==== room=48 npc=1 str=3 textAddr=0x1caa6e ptrFieldAddr=0x1ca902 ====
-ANITA: Yo también quiero
-creerlo. La vida es
-importante para todos.
-
+ANITA: ¿¿No?? Pues te lo
+contaría ahora mismo, pasa
+que es largo de contar y
+ahora no tengo tiempo.
 
 ==== room=48 npc=1 str=4 textAddr=0x1caab4 ptrFieldAddr=0x1ca904 ====
 {F3}
@@ -3509,73 +3515,71 @@ importante para todos.
 
 
 ==== room=48 npc=1 str=5 textAddr=0x1caaba ptrFieldAddr=0x1ca906 ====
-ANITA: Te he echado tanto
-de menos. ¿ Cómo estás?
-Veo que te has hecho amigo
-de muchos animales,
-¿no?
-
+ANITA: Hace mogollón que no
+te veía el cholondrio, ¿otra
+vez te habías perdido? Mira
+que te hemos dicho que como
+eres medio tontito no puedes
+andar por ahí solo.
 
 ==== room=48 npc=1 str=6 textAddr=0x1cab22 ptrFieldAddr=0x1ca908 ====
-ANITA: Ten cuidado. Como
-sólo soy una niña no puedo
-hacer mucho, pero rezaré
-por ti siempre.
+ANITA: Ten cuidadito, anda,
+menos mal que con el cabezón
+que gastas se te ve desde
+lejos y te podemos ver.
 
 
 ==== room=48 npc=1 str=7 textAddr=0x1cab80 ptrFieldAddr=0x1ca90a ====
-ANITA: Entonces has oído
-hablar de los monstruos que
-murieron aquí. ¿Por qué me
-da pena? ¿Crees que había
-que matar a esos
-monstruos?
+ANITA: ¿Te enteraste de los
+cholos que entraron aquí?
+¡Les dimos matarile! Mola,
+¿ein? ¿te hubiera molado
+darles de navajasos?
 <YESNO>
 
 
 ==== room=48 npc=1 str=8 textAddr=0x1cac0a ptrFieldAddr=0x1ca90c ====
-ANITA: De acuerdo ... Hay
-monstruos. Enemigos muy
-malvados. Pero cuando
-escaparon, no intentaron
-atacar a nadie... Me
-pregunto por qué.
+ANITA: Ains, eres un
+maromazo del copón, si no
+fuera porque soy una cría
+ajquerosa mojaría las
+bragas.
 
 
 ==== room=48 npc=1 str=9 textAddr=0x1cac94 ptrFieldAddr=0x1ca90e ====
-ANITA: ¿¡En serio!? Nunca
-pensé que dirías eso.
-<NAME>,
-Sabía que eras distinto
-del resto de la gente.
+ANITA: ¿¡En serio!? No sabía
+que eras medio mariquita,
+<NAME>. ¿No te
+molarán los cholos, o peor,
+los maromos, no?
 
 
 ==== room=48 npc=2 str=0 textAddr=0x1cacfe ptrFieldAddr=0x1cacf8 ====
 {E0}0á
-SABIO: Usa los medios
-y Dios te dará la
-bendición. ¿Comprendes
-lo que quiero decir?
+SABIO: Egh... sabes... lo
+que cuando tú... y entonces
+coges y... uuhhrfs... eh...
+...eso, que haces... ffrs...
+¿Sabeloquetequierodesí?
 <YESNO>
 
 
 ==== room=48 npc=2 str=1 textAddr=0x1cad5a ptrFieldAddr=0x1cacfa ====
-SABIO: Eres un niño tan
-sabio. No olvides
-este pensamiento.
+SABIO: ¡Aaeeeso éh! Saee...
+eeehhj... ¡Ja ja ja ja ja!
+¡Qué pelotasso niño!
 
 
 ==== room=48 npc=2 str=2 textAddr=0x1cad98 ptrFieldAddr=0x1cacfc ====
-SABIO: Haz todo lo que
-puedas y deja los resultados
-a Dios .... Eso es lo que
-significa.
+SABIO: Urfs... tengo una
+papa como un castillo...
+sabes... que cuando...
+ughrs... ffrsgs...
 
 
 ==== room=48 npc=3 str=0 textAddr=0x1cadf4 ptrFieldAddr=0x1cadf2 ====
-ANCIANA: Gracias por
-hacer posible que viva
-feliz hoy.
+ANCIANA: ¡¡Yeppaa!! Estoy
+tripada, ¿y tú?
 
 
 ==== room=49 npc=0 str=0 textAddr=0x1cae36 ptrFieldAddr=0x1cae32 ====
@@ -3605,8 +3609,8 @@ atrás.
 
 ==== room=49 npc=2 str=0 textAddr=0x1caef0 ptrFieldAddr=0x1caeee ====
 {E0} {8B}
-NARRACION: <NAME>
-ganó la medalla de plata.
+¡<NAME> ha trincado
+la medalla de aluminio!
 
 
 ==== room=50 npc=0 str=0 textAddr=0x1cae36 ptrFieldAddr=0x1cae32 ====
