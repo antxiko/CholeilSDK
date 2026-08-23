@@ -3589,9 +3589,10 @@ tripada, ¿y tú?
 
 
 ==== room=49 npc=0 str=1 textAddr=0x1cae3c ptrFieldAddr=0x1cae34 ====
-APRENDIZ: Si me das una vez
-más estaré en peligro. Por
-eso estoy desesperado.
+APRENDIZ: Esto es tope
+jarcor, si me endiñan otra
+vez me voy al patio de los
+callaítos. ¡Ay!
 
 
 ==== room=49 npc=1 str=0 textAddr=0x1cae90 ptrFieldAddr=0x1cae8c ====
@@ -3601,10 +3602,10 @@ eso estoy desesperado.
 
 
 ==== room=49 npc=1 str=1 textAddr=0x1cae96 ptrFieldAddr=0x1cae8e ====
-GUERRERO: Ayyyy ... Sufrí
-la enfermedad de los viajes
-cuando me arrojaron hacia
-atrás.
+GUERRERO: Puarrgss... tengo
+un resacón del quince, y
+entre tanta pruebecita voy
+a echar las higadillas.
 
 
 ==== room=49 npc=2 str=0 textAddr=0x1caef0 ptrFieldAddr=0x1caeee ====
@@ -3650,10 +3651,11 @@ la medalla de aluminio!
 
 
 ==== room=52 npc=0 str=1 textAddr=0x1caf2c ptrFieldAddr=0x1caf24 ====
-GUERRERO: ¡Jolín! ...
-¡Fuego! ... Este método de
-entrenamiento es realmente
-cruel.
+GUERRERO: ¡Fuas, cómo mola!
+¡Aquí podríamos hacer una
+barbacoa to guapa! Aunque
+como te acerques serás el
+plato principal, hue hue.
 
 
 ==== room=52 npc=1 str=0 textAddr=0x1caf84 ptrFieldAddr=0x1caf80 ====
@@ -3670,8 +3672,8 @@ ayude un guepardo.
 
 ==== room=52 npc=2 str=0 textAddr=0x1cafd2 ptrFieldAddr=0x1cafd0 ====
 {E0} {8C}
-NARRACION: <NAME> ganó
-la medalla de oro.
+¡<NAME> consiguió
+trincar la medalla de latón!
 
 
 ==== room=53 npc=0 str=0 textAddr=0x1caf26 ptrFieldAddr=0x1caf22 ====
@@ -3690,27 +3692,30 @@ la medalla de oro.
 <SAME room=52 npc=2 str=0>
 
 ==== room=54 npc=0 str=0 textAddr=0x1cb004 ptrFieldAddr=0x1caffe ====
-ANCIANA: Por aquí salen
-monstruos de los agujeros de
-la roca. Debe ser un truco
-pero me temo que no tengo
-ni idea de cómo se hace.
+ANCIANA: Fuas, no sé si es
+por las pastillas o qué,
+pero veo cholos salir de los
+bujeros de la roca. ¿Voy a
+tener que dejar el pan
+integral?
 
 
 ==== room=54 npc=0 str=1 textAddr=0x1cb088 ptrFieldAddr=0x1cb000 ====
-ANCIANA: ¿Quieres decir que
-todo este valle es un gran
-monstruo? ¡Qué horrible!
-Espera, eso quiere decir que
-esta casa está levantada
-encima del monstruo.
-Señor, apiádate ...
+ANCIANA: ¿Entonces no es de
+las drogas? ¿El valle entero
+es un cholo gigante que se
+pone a parir otros cholos?
+¡Su puta madre en vinagre!
+¡Y mi casa está levantada
+en un cholo gigante y aún
+así me llega el IBI de
+urbanizado!
 
 
 ==== room=54 npc=0 str=2 textAddr=0x1cb138 ptrFieldAddr=0x1cb002 ====
-ANCIANA: Sigue habiendo
-muchas cosas que ni la edad
-puede enseñarte.
+ANCIANA: ¡Ay arcarde, dame
+una casa, arcarde, hijo por
+dió! ¡Dame una casa!
 
 
 ==== room=55 npc=0 str=0 textAddr=0x1cb004 ptrFieldAddr=0x1caffe ====
@@ -3732,333 +3737,350 @@ puede enseñarte.
 <SAME room=54 npc=0 str=2>
 
 ==== room=57 npc=0 str=0 textAddr=0x1cb188 ptrFieldAddr=0x1cb184 ====
-LOLA: Hay mapaches que se
-burlan de ti por
-costumbre ... pero los niños
-no caen. Los adultos no son
-listos y por eso caen.
+LOLA: Una vez vi un
+mapachito. Le dije: "¿Quiere
+un purito?" ¡Y el muy jodío
+me lo quitó! ¡Tienen manitas
+como los humanos!
 
 
 ==== room=57 npc=0 str=1 textAddr=0x1cb204 ptrFieldAddr=0x1cb186 ====
-LOLA: ¡Guau! Tienes un
-mapache contigo. Los
-mapaches pueden
-transformarse en humanos,
-¿verdad?
+LOLA: ¡Mola, tienes un
+tanuki! ¿Dónde te lo has
+comprado, en el Corte
+Inglés? ¡Mola un cojón
+de mico!
 
 
 ==== room=57 npc=1 str=0 textAddr=0x1cb268 ptrFieldAddr=0x1cb264 ====
 CHICO: Desde que se fue la
-adivina este lugar ha estado
-muy solitario.
+gitana ya no tenemos quien
+nos venda costo, qué rollo.
 
 
 ==== room=57 npc=1 str=1 textAddr=0x1cb2b0 ptrFieldAddr=0x1cb266 ====
-CHICO: Paco me enseñó su
-medalla de plata. ¿A que es
-genial?
+CHICO: Paco se ha mangado
+una medalla de aluminio,
+¡es mi puto ídolo!
 
 
 ==== room=57 npc=2 str=0 textAddr=0x1cb2f4 ptrFieldAddr=0x1cb2ee ====
-PEPE: ¡<NAME>! Vuelves a
-estar normal. Qué alivio
-me da.
+PEPE: ¡<NAME>! ¿Ya no
+estás mudito? ¡Pensábamos
+que te habías vuelto
+autista otra vez o algo!
 
 
 ==== room=57 npc=2 str=1 textAddr=0x1cb32a ptrFieldAddr=0x1cb2f0 ====
-PEPE: <NAME>. He
-escondido mi manzana en
-algún lugar del parque.
-¿Sabes dónde?
+PEPE: <NAME>, he
+escondío un alijo aquí en el
+parque para que no me lo
+pillen los municipales. Ni
+media, ¿eh?
 
 
 ==== room=57 npc=2 str=2 textAddr=0x1cb376 ptrFieldAddr=0x1cb2f2 ====
-PEPE: ¡Has cogido mi
-manzana! La había escondido
-para mí. Eso es muy cruel.
-Era inevitable que crecieras
-y te convirtieras en un
-adulto e hicieras cosas
-crueles.
+PEPE: ¡Me has trincado mi
+alijo! ¡Comemierda! ¡Como te
+vuelva a ver te voy a
+arrajar! ¡Malparío!
 
 
 ==== room=58 npc=0 str=0 textAddr=0x1cb420 ptrFieldAddr=0x1cb41c ====
-SABIO: ¡Te, te, te vi
-transformarte en fango ..!
-¡Monstruo!
-No conseguirás engañarme.
-Vete de aquí inmediatamente.
+SABIO: ¡Tú! ¡Te ví! ¡Eres
+un cholo, te vi cuando te
+transformaste en un cholo!
+¡Voy a llamá a la Guardia
+Siví! ¡Te van a meter preso
+hasta que toree manolete!
 
 
 ==== room=58 npc=0 str=1 textAddr=0x1cb494 ptrFieldAddr=0x1cb41e ====
-NARRACION: <NAME> abrió
-el cofre del tesoro. Pero
-estaba vacío.
+<NAME> abrió el
+el cofre del tesoro, pero
+está vacío como su enorme
+coco.
 
 
 ==== room=59 npc=0 str=0 textAddr=0x1cb4dc ptrFieldAddr=0x1cb4d6 ====
-CHICO: Al principio me
-divertía la nieve, pero
-ahora estoy harto. Hace
-tanto frío fuera.
+CHICO: Al principio estaba
+to guay la nieve, y no ir
+al cole y eso. Pero estoy
+ya hasta la polla de tanta
+nieve. ¡Cagon Dios!
 
 
 ==== room=59 npc=0 str=1 textAddr=0x1cb536 ptrFieldAddr=0x1cb4d8 ====
-CHICO: ¡Qué aburrimiento!
-Estoy harto de nieve. Ojalá
-pudiera ir al campo de
-entrenamiento.
+CHICO: ¡Su puta madre! ¡Hace
+más frío que pelando
+rábanos! ¡Tengo los cojones
+congelaos!
 
 
 ==== room=59 npc=0 str=2 textAddr=0x1cb594 ptrFieldAddr=0x1cb4da ====
 CHICO: ¿La caverna de
-Amapola? ¿No sabes que
-no existe?
+Córdoba? ¿No estarás de
+flipe otra vez?
 
 
 ==== room=59 npc=1 str=0 textAddr=0x1cb5d4 ptrFieldAddr=0x1cb5ce ====
-CIRO: La nieve hace que
-haga demasiado frío fuera.
-Hasta mi dueño está harto.
+CIRO: Me cago en la puta,
+con el frío que hace salgo
+menos que el cero en el
+bingo.
 
 
 ==== room=59 npc=1 str=1 textAddr=0x1cb624 ptrFieldAddr=0x1cb5d0 ====
-CIRO: Dicen que también
-hay un ciclón. ¿Cuál es la
-causa de este tiempo tan
-extraño?
+CIRO: Dicen que hay un
+ciclón también ahora. ¡Pa
+que digan del clima
+cambiático ese!
 
 
 ==== room=59 npc=1 str=2 textAddr=0x1cb67a ptrFieldAddr=0x1cb5d2 ====
-CIRO: ¿Un monstruo tocón?
-¿Una oruga gigante?
-Esas cosas no existen.
+CIRO: ¿Cholos con forma de
+tocón o de oruga? ¿Qué te
+has metío? Comparte, ¿no?
 
 
 ==== room=59 npc=2 str=0 textAddr=0x1cb6c6 ptrFieldAddr=0x1cb6c0 ====
-AMA DE CASA: Ese anciano
-que está fuera de mi casa
-nunca entra en la suya
-propia. Cree que te has
-convertido en fango.
-Me da pena ...
+AMA DE CASA: El viejales ese
+de fuera le da al pirriaque
+que es un gusto, y se pone
+a decir paridas de que te
+has convertido en un cholo.
+Tú ni puto caso.
 
 
 ==== room=59 npc=2 str=1 textAddr=0x1cb74e ptrFieldAddr=0x1cb6c2 ====
-AMA DE CASA: Hace cinco
-meses que nieva sin parar.
-Es horrible, ¿verdad?
+AMA DE CASA: La madre que
+parió, lleva más tiempo
+nevando que en una película
+de cartel blanco.
 
 
 ==== room=59 npc=2 str=2 textAddr=0x1cb798 ptrFieldAddr=0x1cb6c4 ====
-AMA DE CASA: Rábano no
-permitirá que la nieve frene
-su crecimiento.
-¡Qué tipo más duro!
-¿verdad?
+AMA DE CASA: Los rábanos son
+más duros que una infancia
+en siria, siguen creciendo
+hasta con esta nieve.
 
 
 ==== room=60 npc=0 str=0 textAddr=0x1cb806 ptrFieldAddr=0x1cb800 ====
-MUJER: ¿Te ha molestado mi
-abuelo? Lo siento mucho ...
-Se emocionó diciendo que te
-habías convertido en fango
-... ¿Es debido a su edad?
+MUJER: ¿Te está dando
+porsaco el viejales? Debe
+haber estado dándole otra
+vez al alpiste. Nada más
+que dice gilipolleces.
 
 
 ==== room=60 npc=0 str=1 textAddr=0x1cb890 ptrFieldAddr=0x1cb802 ====
-MUJER: Oí una historia
-extraña de que un ciclón
-salido del cráter se dirigió
-al Desierto de Camelia.
-¡Qué miedo!
+MUJER: La Maruja dice que
+salió un ciclón del bujero
+bordo y que se fue al
+desierto de Tabernas. ¿Qué
+cojones significa eso?
+Se le va la olla a la gente.
 
 
 ==== room=60 npc=0 str=2 textAddr=0x1cb902 ptrFieldAddr=0x1cb804 ====
-MUJER: Parece como si el
-ciclón se moviera por algún
-motivo. ¡Tengo miedo!
+MUJER: ¡El ciclón se mueve
+por algún motivo! ¡Qué mal
+rollo, chaval! ¿Será como
+en la penícula aquella?
 
 
 ==== room=60 npc=1 str=0 textAddr=0x1cb95c ptrFieldAddr=0x1cb94e ====
-LOLA: Me visitas muy de
-tarde en tarde. Tendrás que
-venir más a menudo. Estaba
-escuchando las historias de
-mi abuela. Vamos a
-oirlas, <NAME>.
+LOLA: ¡<NAME>, guapetón!
+Ya no vienes a verme casi
+nunca, ¿eh? ¿No me vas a dar
+ni un besito? ¿ein?
 
 
 ==== room=60 npc=1 str=1 textAddr=0x1cb9e6 ptrFieldAddr=0x1cb950 ====
-LOLA: Vamos a oir las
-historias de mi abuela. No
-permitiré que te vayas tan
-pronto.
+LOLA: Ni puto caso a la yaya
+que está más pallá que pacá.
+Tú ven a darme un abracito,
+ricura.
 
 
 ==== room=60 npc=1 str=2 textAddr=0x1cba3c ptrFieldAddr=0x1cb952 ====
-LOLA: ¿A que la historia de
-la abuela parece un sueño?
-Escucharla es divertidísimo.
+LOLA: Bueno, ya está bien de
+hacerle caso a la abuela que
+se pone más pesada que un
+tanque en el párpado. ¿Nos
+vamos a un cuartito de ahí
+detras?
 
 
 ==== room=60 npc=1 str=3 textAddr=0x1cba92 ptrFieldAddr=0x1cb954 ====
-LOLA: Sé dónde están
-escondidos los zapatos
-mágicos. ¿Quieres saberlo?
+LOLA: Sé dónde escondieron
+unas Nikes to guapas. ¡Son
+mágicas, de verdad! ¿Quieres
+saber dónde?
 <YESNO>
 
 
 ==== room=60 npc=1 str=4 textAddr=0x1cbadc ptrFieldAddr=0x1cb956 ====
 {E0} {A1}
-LOLA: Estaban en el
-interior de un cofre junto
-al estanque pero parece que
-alguien los ha robado. Me
-irrita saber que hay gente
-así.
+LOLA: Las pusieron en un
+cofre en el estanque de al
+lao, pero algún cholo se las
+ha debido de mangar. Ojalá
+los mandaran todos a picar
+piedra, cabrones.
 
 
 ==== room=60 npc=1 str=5 textAddr=0x1cbb66 ptrFieldAddr=0x1cb958 ====
-LOLA: Ya veo. Bueno, a ti
-nunca te interesaron los
-zapatos mágicos, ¿no?
+LOLA: Qué aburrido eres.
+Bueno, qué, ¿nos enrollamos?
 
 
 ==== room=60 npc=1 str=6 textAddr=0x1cbbb0 ptrFieldAddr=0x1cb95a ====
-LOLA: ¿Has venido
-expresamente a verme?
-¡Gracias! Para mostrar mi
-gratitud te libraré de tu
-cansancio.
+LOLA: ¿Has venido a verme
+sólo a mí? ¡Cariñito mío!
+¡Ven pacá, que te doy un
+morreo que te quito el frío!
 
 
 ==== room=60 npc=2 str=0 textAddr=0x1cbc24 ptrFieldAddr=0x1cbc18 ====
-DOROTEA: A Lola le caes muy
-bien, ¿verdad? Acabo de
-acordarme de que tenía que
-contarte una historia.
-¿Te gustaría oirla?
+DOROTEA: Tienes loquita a la
+Lola, ¿ein? Estaba pensando
+en una historia de estas que
+duran más que un fin de
+semana sin dinero. ¿Quieres
+que te la cuente?
 <YESNO>
 
 
 ==== room=60 npc=2 str=1 textAddr=0x1cbca2 ptrFieldAddr=0x1cbc1a ====
 {E0} {9E}
-DOROTEA: Cuando yo era niña,
-el ciclón me arrastró y me
-llevó al pasado. ¡En serio!
-Fue muy raro porque me
-encontré en un mundo en el
-que mis padres eran aún
-niños. El ciclón tiene poder
-para conectar el pasado con
-el presente. ¿Cómo regresé?
-Me puse los zapatos mágicos
-que habían sido robados
-hacía mucho tiempo.
+DOROTEA: El caso es que era
+una puta cría y un ciclón me
+arrastró, ¡y me llevó al
+pasado como en la peli esa!
+¡Te lo juro por mis niño!
+Yo creo que el ciclón ese
+puede conectar el pasado,
+el presente y no sé qué
+cojones más. ¡Pero estaba
+en color, no en blanco y
+negro como en las películas!
+¿Que cómo volví? ¡Me puse
+unas Nike mágicas to chulas!
+Pero unos cholos han debido
+de mangarlas o algo.
 
 
 ==== room=60 npc=2 str=2 textAddr=0x1cbde2 ptrFieldAddr=0x1cbc1c ====
-DOROTEA: Ya, pero algunas
-de las viejas historias
-pueden ser muy útiles a
-veces.
+DOROTEA: Eso, tú sígue
+besuqueándote con la guarra
+de mi nieta, desgraciao.
 
 
 ==== room=60 npc=2 str=3 textAddr=0x1cbe34 ptrFieldAddr=0x1cbc1e ====
-DOROTEA: Parece que a Lola
-le caes muy bien. ¿Por qué
-no vienes más a menudo?
+DOROTEA: Niño deja de
+hacerle caso a la Lola que
+esta está deseando tener
+un bombo o algo para que
+la mantengan.
 
 
 ==== room=60 npc=2 str=4 textAddr=0x1cbe84 ptrFieldAddr=0x1cbc20 ====
-DOROTEA: El Desierto de
-Camelia fue una vez un país
-de avanzada tecnología pero
-lo destruyeron los
-monstruos. Me pregunto
-porqué pasó.
+DOROTEA: Vi en un documental
+de estos del Discovery que
+en el desierto de Tabernas
+había una civilización tope
+avanzadas, pero los cholos
+la destruyeron. ¿Serían los
+ANCIENT ALIENS?
 
 
 ==== room=60 npc=2 str=5 textAddr=0x1cbf0c ptrFieldAddr=0x1cbc22 ====
-DOROTEA: Mi marido es tan
-cabezota. Te entendió mal.
+DOROTEA: ¿El vino que tiene
+Asuncióóón, no es blanco ni
+tinto ni tiene coloooor!
 
 
 ==== room=61 npc=0 str=0 textAddr=0x1cbf52 ptrFieldAddr=0x1cbf44 ====
-FLOR: ................ ¿Ha
-pasado algo?Algo le ha
-sorprendido tanto que no
-puede ni hablar.
+FLOR: ................ 
+
+¿Qué le ha pasao a esta?
+¿Se ha quedado muda de un
+susto o algo?
 
 
 ==== room=61 npc=0 str=1 textAddr=0x1cbfb0 ptrFieldAddr=0x1cbf46 ====
-FLOR: ¡Oye, chico! Tengo
-algo de información
-estupenda. Sólo cobro 50
-malines o sea que vuelve
-cuando los hayas ganado.
+FLOR: ¡Paisa! ¡Tengo
+información que mola de la
+hostia! Cobro 50 pavitos,
+asín que lárgate y vuelve
+cuando tengas molla, ¿ein?
 
 
 ==== room=61 npc=0 str=2 textAddr=0x1cc02a ptrFieldAddr=0x1cbf48 ====
-FLOR: ¡Oye, chico! Tengo
-algo de información
-estupenda. Sólo cobro 50
-malines. ¿Quieres oirla?
+FLOR: ¡Paisa! ¡Tengo
+información que mola de la
+hostia! Cobro 50 pavitos,
+¿Quieres oirla?
 <YESNO>
 
 
 ==== room=61 npc=0 str=3 textAddr=0x1cc08c ptrFieldAddr=0x1cbf4a ====
 {E0} {A4}
-FLOR: Trato hecho. Como te
-habrás imaginado, se trata
-de ese agujero. Justo antes
-de que vinieras le cayó un
-rayo encima. Desde entonces
-ha estado como el cielo
-por la noche. Colócate al
-borde y oirás ... ¿Que no
-puedes oírlo? Ve y escucha
-con atención.
+FLOR: ¡Pos mira! ¡Es sobre
+ese bujero gordo de ahí!
+Cayó un explotío y dije...
+¡¡BUMM!! ¡Ya está aquí la
+guerra! Desde entonces na
+de na, pero si te arrimas
+sescucha algo chungo...
+¿Que no oyes na? ¡Arrímate,
+no me seas una maricona!
 
 
 ==== room=61 npc=0 str=4 textAddr=0x1cc190 ptrFieldAddr=0x1cbf4c ====
-FLOR: En fin, ya veo que el
-mundo se ha convertido en
-un sitio muy barato.
+FLOR: Puto agarrao, por 50
+chapas de mierda no quieres
+pistas para el juego.
 
 
 ==== room=61 npc=0 str=5 textAddr=0x1cc1dc ptrFieldAddr=0x1cbf4e ====
-FLOR: No me queda nada por
-vender, Señorito. Conseguiré
-más para la próxima vez.
+FLOR: Ya te he largado todo
+lo que me sabía, asín que
+tira palante, cabezón
 
 
 ==== room=61 npc=0 str=6 textAddr=0x1cc22e ptrFieldAddr=0x1cbf50 ====
-FLOR: ¿Te has preguntado
-alguna vez porqué te cobra
-dinero una flor? Es un modo
-de vengarse de los seres que
-destrozan el césped sin
-motivo.
+FLOR: ¿Que por qué una flor
+necesita pelas? ¡Hombre que
+pregunta! El IBI, los
+impuestos locales, el
+sellito del coche... ¡Es
+una locura la cantidad de
+impuestos que cobra el
+gobierno hasta a las
+flores!
 
 
 ==== room=62 npc=0 str=0 textAddr=0x1cc2c4 ptrFieldAddr=0x1cc2c2 ====
-PEDRO: Esta nevada es la
-causa de todos nuestros
-problemas. Hasta que no
-cese no saldrá el sol.
+PEDRO: Tanta nievecita,
+tanta nievecita... ¡Me
+voy a cagar en las cuatro
+farolas que alumbran la
+tumba de su puta madre!
 
 
 ==== room=62 npc=1 str=0 textAddr=0x1cc328 ptrFieldAddr=0x1cc326 ====
-SALVA: ¡Oh, no! La nieve ha
-destrozado mi linda casita.
+SALVA: ¡Mierda puta, los
+daños de la nieve no creo
+que los cubra el seguro!
 
 
 ==== room=62 npc=2 str=0 textAddr=0x1cc364 ptrFieldAddr=0x1cc362 ====
 ROSITA: No te preocupes,
-cariño. Siempre podemos
-arreglarla.
+cariño, siempre podemos
+hacer fraude al seguro.
 
 
 ==== room=63 npc=0 str=0 textAddr=0x1cc3a6 ptrFieldAddr=0x1cc3a4 ====
