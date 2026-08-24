@@ -4539,125 +4539,139 @@ saludas de mis partes.
 
 
 ==== room=75 npc=0 str=0 textAddr=0x1cdb20 ptrFieldAddr=0x1cdb1e ====
-Estoy tratando de empezar
-una nueva vida. En el Este.
-Sólo fui allí a cosechar.
-Este sitio será un desierto,
-pero si buscas puedes
-encontrar agua. Eso espero.
-Algún día, este sitio estará
-lleno de árboles. Estoy
-seguro de que la vida
-empezará allí también. La
-sonrisa del chico. Es la
-cosa más reluciente que he
-visto jamás en este
-desierto.
+Vengo del este, a intentar
+encontrar costo guapo. El
+sitio este es un secarral y
+parece Murcia, pero me han
+soplado que tienen unos
+polvitos blancos y un costo
+de la hoxtia puta. Todo es
+ponerse a buscar, como to
+en la vida.
+Bueno, me piro, que no tengo
+ganas de estar aquí de
+palique y los Civiles no
+se pueden quedar con mi
+cara.
 
 
 ==== room=76 npc=0 str=0 textAddr=0x1cdc82 ptrFieldAddr=0x1cdc7e ====
-DODO: Oye, ¡hay alguien
-aquí! No puedo moverme
-porque este suelo es
-demasiado endeble. Me
-salvaste la vida. Aunque no
-me gustan los humanos, haré
-una excepción. Más adelante
-existe también un tipo malo
-llamado el Maestro
-Marioneta. Le echa hechizos
-a los tocones y a las orugas
-¡y los convierte en
-monstruos!
+DODO: ¡Anda, hay un payo por
+aquí! No me puedo mover
+porque el suelo este es más
+flojo que un muelle de guita
+y me voy a quemar el culo.
+No me gustan los payos, pero
+tú pareces un tío guay,
+aunque macho, vaya cabezón
+que gastas, ¿ein?
+Bueno eso, que como me has
+salvado me voy contigo,
+seguro que eres un tío
+enrollao.
+¡Ojocuidao, ahí delante hay
+un colgao de Metallica que
+se hace llamar Maestro de
+Marionetas que hace
+hechizos para crear cholos!
 
 
 ==== room=76 npc=0 str=1 textAddr=0x1cddb8 ptrFieldAddr=0x1cdc80 ====
-NARRACION : Dodo se une
-al grupo.
+Dodo se une al grupo
+de los animalicos.
 
 
 ==== room=76 npc=1 str=0 textAddr=0x1cdde0 ptrFieldAddr=0x1cdddc ====
-MAESTRO MARIONETA: Soy el
-Maestro Marioneta. Le doy
-vida a objetos inanimados.
-Los tocones y las orugas
-son mis obras de arte.
-Ahora, ¡devuélveme mis
-marionetas!
+MAESTRO MARIONETA: ¡Master,
+master! ¡Yeaaah! ¡Soy un
+flipao de Metallica, tronco!
+Soy el que crea cholos como
+tocones y orugas tochas.
+¡Son mis obras de arte!
+¡Devuélveme mis marionetas,
+pringao! ¡OBEY YOUR MASTER,
+MASTER!
 
 
 ==== room=76 npc=1 str=1 textAddr=0x1cde84 ptrFieldAddr=0x1cddde ====
-MAESTRO MARIONETA: ¡No puede
-ser! Un gran brujo como yo
-derrotado por
-un simple niño.
+MAESTRO MARIONETA: ¡Puto
+crío cabezón! ¡Me ha dado
+pal pelo! ¡Su puta madreee!
+¡A todo un metalero como yo!
 
 
 ==== room=76 npc=2 str=0 textAddr=0x1cdede ptrFieldAddr=0x1cdedc ====
-NARRACION: El Maestro
-Marioneta que creó esta
-mazmorra ya no existe.
-Por eso esta mazmorra y
-todas sus creaciones están
-a punto de desaparecer.
+El flipao de Metallica, el
+maestro de marionetas, la
+ha espichao y ya no existe.
+Como él creó la mazmorra,
+todo lo que hizo va a dejar
+de existir.
 
 
 ==== room=77 npc=0 str=0 textAddr=0x1cdf88 ptrFieldAddr=0x1cdf7a ====
-Un monstruo llamado Barón
-amenza al pueblo de Nenúfar.
-Es hora de que nos unamos
-todos para luchar contra
-él, pero primero debemos
-persuadirles.
+Un cholo enorme llamado
+Barón está sembrando el
+terror en Benalmádena.
+¡Tenemos que unirnos como
+los Power Rangers y luchar!
+Pero primero hay que
+convencer a la mancha
+de maricones esta.
 
 
 ==== room=77 npc=0 str=1 textAddr=0x1ce01a ptrFieldAddr=0x1cdf7c ====
-Nadie escucha la llamada de
-unidad de este viejo mono.
-Vd. tiene una buene espada,
-señor. ¿Podría persuadirlos
-por mí?
+Como tengo más años que la
+puntilla del almanaque a mi
+no me hace caso ni Dios.
+Tú tienes una navaja del
+copón, ¿por qué no intentas
+persuadirlos?
 <YESNO>
 
 
 ==== room=77 npc=0 str=2 textAddr=0x1ce094 ptrFieldAddr=0x1cdf7e ====
 {E0} {DE}
-¡Oh, lo hará! Gracias.
-Hágales saber que mediante
-la unión podremos derrotar
-al malvado monstruo Barón.
+¡De puta madre! Diles que
+entre todos le podemos dar
+una paliza rollo skinhead
+que se va a cagar por las
+patas abajo.
 
 
 ==== room=77 npc=0 str=3 textAddr=0x1ce102 ptrFieldAddr=0x1cdf80 ====
-Tal y como pensaba ...
-Entonces váyase por favor.
+Bah, tendrás una navaja pero
+eres una maricona, no tienes
+nada de maromo.
 
 
 ==== room=77 npc=0 str=4 textAddr=0x1ce136 ptrFieldAddr=0x1cdf82 ====
-Quiero que persuada a
-todos los del pueblo.
+¿Le has preguntado ya a tos
+los que viven aquí? Alguno
+habrá con cojones, digo yo.
 
 
 ==== room=77 npc=0 str=5 textAddr=0x1ce164 ptrFieldAddr=0x1cdf84 ====
-Comprendo. Si no quieren
-luchar, así sea. Si no lo
-hacen su pueblo será
-destrozado. Gracias por
-intentar persuadirles.
+¡Menuda mancha de mariconas!
+Está claro que hace falta un
+machote como yo para hacer
+las cosas. ¡Estos putos
+millennials! ¡No valen pa
+un carajo!
 
 
 ==== room=77 npc=0 str=6 textAddr=0x1ce1dc ptrFieldAddr=0x1cdf86 ====
-Aquí es donde nací y crecí.
-Depende de mí el salvar
-este pueblo.
+Ale, que no se diga, voy a
+calentarme la carita con
+el cholo desgraciao este.
 
 
 ==== room=77 npc=1 str=0 textAddr=0x1ce220 ptrFieldAddr=0x1ce21e ====
-¿Quieres que luche por este
-pueblo? De eso nada, no
-quiero morir aún. Pero tú
-tienes una buena espada, ¿por
-qué no luchas tú?
+¿Quieres que me pegue con
+un cholo gigante? ¿Estás
+majarón? Ni con un palo toco
+yo a ese bicharraco. ¡Ve
+tú con los cojones!
 
 
 ==== room=77 npc=2 str=0 textAddr=0x1ce2a4 ptrFieldAddr=0x1ce2a0 ====
@@ -4691,7 +4705,7 @@ respeto mucho.
 ==== room=77 npc=4 str=0 textAddr=0x1ce408 ptrFieldAddr=0x1ce406 ====
 CASA TOMAS
 Prohibida la entrada a
-monstruos.
+todos los cholos.
 
 
 ==== room=78 npc=0 str=0 textAddr=0x1ce43a ptrFieldAddr=0x1ce438 ====
