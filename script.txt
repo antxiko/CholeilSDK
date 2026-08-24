@@ -4683,9 +4683,10 @@ esa cabeza!
 
 ==== room=77 npc=2 str=1 textAddr=0x1ce2de ptrFieldAddr=0x1ce2a2 ====
 Buah, somos unos gayorros,
-dejaron al mono pal arrastre.
-Pero bueno, ¿qué se le va a
-hacer? Que habiera estudiao.
+dejaron al mono pal 
+arrastre. Pero bueno, ¿qué
+se le va a hacer? Que
+habiera estudiao.
 
 
 ==== room=77 npc=3 str=0 textAddr=0x1ce36e ptrFieldAddr=0x1ce36a ====
@@ -4718,34 +4719,38 @@ niño cabezón.
 
 
 ==== room=79 npc=0 str=0 textAddr=0x1ce4ec ptrFieldAddr=0x1ce4e4 ====
-Como los otros no ayudaron,
-mi marido intentó en vano
-salvar este pueblo. Estaba
-muy preocupada de que fuera
-a hacer algo precipitado.
+Como nel pueblo son todos
+una mancha de gayorros,
+ninguno quiso ayudar, así
+que mi marido fue a
+intentarlo, to pa ná.
+Este puto viejo tiene cosas
+de bombero torero.
 
 
 ==== room=79 npc=0 str=1 textAddr=0x1ce574 ptrFieldAddr=0x1ce4e6 ====
 {E0} <YESNO>
-Todos estaban preocupados.
-Fueron a la playa a
-buscarlo. Estoy segura de
-que se alegrará de
-saberlo, si vuelve en sí.
+Todos creíamos que la iba
+a espichar, menos mal que
+fuimos a la playa a
+buscarlo. Si la diña yo
+ya me he pedido su Mega
+Drive.
 
 
 ==== room=79 npc=0 str=2 textAddr=0x1ce5f0 ptrFieldAddr=0x1ce4e8 ====
 {E0} {FA}
-Todos los del pueblo fueron
-a buscarte y te trajeron de
-vuelta aquí.
+Fuimos to los animalicos del
+pueblo a buscarte, y te
+trajimos aquí hecho una
+piltrafa.
 
 
 ==== room=79 npc=0 str=3 textAddr=0x1ce63a ptrFieldAddr=0x1ce4ea ====
 {E0}0 
-Ahora, descansa un poco por
-favor. ¡No te muevas o te
-harás daño!
+Descansa, mangarrián, que a
+ver si por gilipollas te van
+a saltar los puntos.
 
 
 ==== room=79 npc=1 str=0 textAddr=0x1ce68c ptrFieldAddr=0x1ce682 ====
@@ -4754,24 +4759,25 @@ harás daño!
 
 ==== room=79 npc=1 str=1 textAddr=0x1ce6a8 ptrFieldAddr=0x1ce684 ====
 {E0} {F9}
-NARRACION: En ese momento
-el mono volvió en sí ...
+En ese momento el mono se
+desperto con un ¡JAAARL!
 
-¿Mmmm? ¿Dónde? Estoy en
-casa. ¿Qué ha pasado? ¿Por
-qué están todos aquí? Me
-hirió ... Barón, y ...
-¿correcto? Estaba en la
-playa y ...
+¿Eings? ¿Dónde? ¿Estoy en
+mi keli? ¿Qué ha pasado?
+Iba a darle una paliza al
+Barón cuando... y entonces,
+uhmm... pues no sé qué pasó.
+¿Qué hacen todos los
+membrillos estos en mi casa?
 
 
 ==== room=79 npc=1 str=2 textAddr=0x1ce768 ptrFieldAddr=0x1ce686 ====
 {E0} {FB}
-¿Por qué ...? ¿Por qué
-salvaste a este viejo
-mono ...?
+¿Y tú... por qué te metes en
+camisa de once varas? ¿Me
+salvaste, a mí?
 (El mono miró a su
-alrededor sorprendido.)
+alrededor alelao.)
 
 
 ==== room=79 npc=1 str=3 textAddr=0x1ce7d0 ptrFieldAddr=0x1ce688 ====
@@ -4779,38 +4785,41 @@ alrededor sorprendido.)
 
 ==== room=79 npc=1 str=4 textAddr=0x1ce8a4 ptrFieldAddr=0x1ce68a ====
 {E0}03
-... Mmmm. Ahora debería
-descansar. Estoy seguro de
-que el sol brillará cuando
-me despierte mañana.
+...Uffa, estoy molío macho,
+me han dado de hostias hasta
+en el DNI. Más vale que
+descanse un poquillo.
 
-Según el mono cerraba los
-ojos una niebla blanca
-envolvió la zona ...
+
+El mono cierra los ojos y
+enderrepente una niebla
+blanca envuelve la zona...
 
 
 ==== room=79 npc=2 str=0 textAddr=0x1ce958 ptrFieldAddr=0x1ce954 ====
 {E0} {F3}
-Qué valiente para ser un
-viejo mono. Supongo que
-deberíamos trabajar más
-duramente que él.
+El mono es más viejo que el
+hilo negro, pero tiene los
+cojones cuadraos. Snif,
+tendríamos que haberle
+echado cojones todos.
 
 
 ==== room=79 npc=2 str=1 textAddr=0x1ce9b8 ptrFieldAddr=0x1ce956 ====
 {E0} {FC}
-Bien, ya sabes porqué.
-Porque somos camaradas.
-Pero gracias, viejo.
-(El oso parece
-avergonzado al hablar.)
+¡La virgen con el mono! ¡Le
+echa la pata a cualquiera 
+de nosotros en tener los
+huevos negros! ¡Me llena
+de emosión!
 
 
 ==== room=79 npc=3 str=0 textAddr=0x1cea2c ptrFieldAddr=0x1cea28 ====
 {E0} {F4}
-Soy una dama, pero él es un
-viejo mono. Debería haber
-ayudado más.
+Soy una nena, pero la verdad
+es que al menos podría
+haberle prestado mi
+escopeta o algo.
 
 
 ==== room=79 npc=3 str=1 textAddr=0x1cea74 ptrFieldAddr=0x1cea2a ====
