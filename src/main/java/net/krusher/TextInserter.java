@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -67,11 +68,31 @@ public final class TextInserter {
     // rejected; see alignYesNoPrompts.
     static final int LINES_PER_BOX = 3;
     static final String YESNO = "<YESNO>";
+    static final String NAME = "<NAME>";
 
-    // Raw byte placeholders as emitted by TextExtractor for codes with no TBL
-    // glyph ({e0}, {f3}, ...). These are control opcodes, not printed text, so
-    // a line made of nothing but these occupies no line in the box.
-    static final Pattern OPCODE = Pattern.compile("\\{[0-9A-Fa-f]{2}\\}");
+    // The 0xFE line break, as TextExtractor decodes it. Spelled numerically so
+    // the byte it stands for is unmistakable.
+    static final char NEWLINE = 0x0A;
+
+    // One decoded byte of extracted text: a {XX} placeholder for a code with no
+    // TBL glyph, a <NAME>/<YESNO> marker, or a single glyph character (every
+    // mapping in soleil.tbl is one character wide once <SPACE> is expanded).
+    static final Pattern TOKEN = Pattern.compile("\\{[0-9A-Fa-f]{2}\\}|" + NAME + "|" + YESNO + "|[\\s\\S]");
+
+    // Opcodes that consume raw operand bytes following the placeholder. The
+    // operands are data, but TextExtractor has no way to know that and renders
+    // whatever glyph each byte happens to map to, so "{e0}0^" is one opcode
+    // plus two data bytes -- not a printed line of three characters. Counting
+    // them as text made alignYesNoPrompts pad one line short.
+    //
+    // 0xE0 is the only one identified so far, and firmly: all 84 occurrences in
+    // the script are {e0} followed by exactly two further bytes, the first
+    // always the glyph for 0x30 and the second ranging over the whole byte
+    // space. Add an entry here as other operand-taking opcodes are identified.
+    static final Map<String, Integer> OPCODE_OPERANDS = new HashMap<String, Integer>();
+    static {
+        OPCODE_OPERANDS.put("{E0}", 2);
+    }
 
     // Longest slot value still read as a relative offset by the fetch helper
     // (and by the game's original adda.w, which sign-extends -- offsets with
@@ -679,11 +700,17 @@ public final class TextInserter {
      * of full dialogue pages. Text that already sits on a boundary is left
      * byte-identical. Line counting restarts after each prompt.
      *
-     * Lines made of nothing but raw opcode placeholders ({e0} and friends) are
-     * control data rather than printed text and take up no room in the box, so
-     * they don't count -- which also means a prompt sharing its line with only
-     * opcodes ("{e0} &lt;YESNO&gt;") is already at the start of a line and needs
-     * no break inserted ahead of it.
+     * Counting is done over tokenized bytes rather than characters, because
+     * only some of what TextExtractor prints is actually drawn in the box:
+     * opcode placeholders ({e0} and friends) are control data, and so are the
+     * operand bytes an opcode consumes -- even though those render as ordinary
+     * glyphs ("{e0}0^" is one opcode and two data bytes, not a line of text).
+     * A line made of nothing but those takes up no room in the box, which also
+     * means a prompt sharing its line with only opcodes is already at the start
+     * of a line and needs no break inserted ahead of it.
+     *
+     * A &lt;YESNO&gt; that is itself an operand byte is not a prompt at all and
+     * is skipped; both cases are warned about.
      *
      * @return how many entries had to be changed (each is warned about individually)
      */
@@ -693,40 +720,41 @@ public final class TextInserter {
         // textAddr and therefore one string: warn about it once, not once per
         // NPC that happens to say it.
         Set<Integer> warned = new HashSet<Integer>();
+        Set<Integer> opWarned = new HashSet<Integer>();
         for (Entry e : entries) {
             if (e.text.indexOf(YESNO) < 0) continue;
 
+            List<Tok> toks = tokenize(e.text);
+            if (opWarned.add(e.textAddr)) reportOperandBytes(e, toks);
+
             StringBuilder out = new StringBuilder();
-            StringBuilder line = new StringBuilder(); // current line, as far as it's been written
+            List<Tok> line = new ArrayList<Tok>(); // current line, as far as it's been written
             int lines = 0;      // counted display lines since the last page boundary
             int inserted = 0;
-            int pos = 0;
-            while (pos < e.text.length()) {
-                if (e.text.startsWith(YESNO, pos)) {
-                    if (hasVisibleText(line.toString())) { // close the partial line first
-                        out.append('\n');
-                        line.setLength(0);
+            for (Tok t : toks) {
+                if (YESNO.equals(t.text) && !t.operand) {
+                    if (hasVisibleText(line)) { // close the partial line first
+                        out.append(NEWLINE);
+                        line.clear();
                         lines++;
                         inserted++;
                     }
                     while (lines % LINES_PER_BOX != 0) {
-                        out.append('\n');
+                        out.append(NEWLINE);
                         lines++;
                         inserted++;
                     }
                     out.append(YESNO);
-                    line.append(YESNO);
+                    line.add(t);
                     lines = 0; // the prompt closes the page
-                    pos += YESNO.length();
                     continue;
                 }
-                char c = e.text.charAt(pos++);
-                out.append(c);
-                if (c == '\n') {
-                    if (countsAsLine(line.toString())) lines++;
-                    line.setLength(0);
+                out.append(t.text);
+                if (t.isNewline() && !t.operand) {
+                    if (countsAsLine(line)) lines++;
+                    line.clear();
                 } else {
-                    line.append(c);
+                    line.add(t);
                 }
             }
 
@@ -744,18 +772,88 @@ public final class TextInserter {
         return changed;
     }
 
-    /** True if the line prints anything once its opcode placeholders are dropped. */
-    static boolean hasVisibleText(String line) {
-        return !OPCODE.matcher(line).replaceAll("").trim().isEmpty();
+    /**
+     * Warns about operand bytes that don't look like operands: ones that render
+     * as ordinary glyphs (and so would read as printed text), and &lt;YESNO&gt;
+     * markers that are really an opcode's operand rather than a prompt.
+     */
+    static void reportOperandBytes(Entry e, List<Tok> toks) {
+        int disguised = 0;
+        int falsePrompts = 0;
+        for (Tok t : toks) {
+            if (!t.operand) continue;
+            if (YESNO.equals(t.text)) falsePrompts++;
+            else if (!t.isPlaceholder() && !t.isNewline()) disguised++;
+        }
+        if (disguised == 0 && falsePrompts == 0) return;
+
+        String where = "room=" + e.room + " npc=" + e.npc + " str=" + e.str
+                + " (textAddr=0x" + Integer.toHexString(e.textAddr) + ")";
+        if (disguised > 0) {
+            System.out.println("WARN: " + where + ": " + disguised
+                    + " operand byte(s) of a text opcode render as glyphs; counted as data, not as a printed line.");
+        }
+        if (falsePrompts > 0) {
+            System.out.println("WARN: " + where + ": " + falsePrompts
+                    + " <YESNO> marker(s) are operand bytes of a text opcode, not a Yes/No prompt; not aligned.");
+        }
+    }
+
+    /** One decoded byte of extracted script text; see TOKEN. */
+    static final class Tok {
+        final String text;
+        boolean operand; // consumed as an operand byte of a preceding opcode
+
+        Tok(String text) { this.text = text; }
+
+        boolean isPlaceholder() { return text.length() == 4 && text.charAt(0) == '{'; }
+
+        boolean isNewline() { return text.length() == 1 && text.charAt(0) == NEWLINE; }
+    }
+
+    /**
+     * Splits extracted text into one token per encoded byte, flagging those
+     * that are an operand of a preceding opcode rather than text of their own.
+     * An opcode that is itself an operand consumes nothing, since tokens are
+     * flagged left to right before they are examined.
+     */
+    static List<Tok> tokenize(String text) {
+        List<Tok> toks = new ArrayList<Tok>();
+        Matcher m = TOKEN.matcher(text);
+        while (m.find()) toks.add(new Tok(m.group()));
+
+        for (int i = 0; i < toks.size(); i++) {
+            Tok t = toks.get(i);
+            if (t.operand || !t.isPlaceholder()) continue;
+            Integer operands = OPCODE_OPERANDS.get(t.text.toUpperCase());
+            if (operands == null) continue;
+            for (int k = 1; k <= operands.intValue() && i + k < toks.size(); k++) {
+                toks.get(i + k).operand = true;
+            }
+        }
+        return toks;
+    }
+
+    /** True if the line prints anything once opcodes and their operands are dropped. */
+    static boolean hasVisibleText(List<Tok> line) {
+        for (Tok t : line) {
+            if (t.operand || t.isPlaceholder()) continue;
+            if (t.text.trim().length() > 0) return true;
+        }
+        return false;
     }
 
     /**
      * True if the line takes up a line of the dialogue box. A genuinely empty
-     * line does (it's a deliberate blank); a line that only carries opcodes
-     * does not.
+     * line does (it's a deliberate blank); a line that carries only opcodes and
+     * their operands does not.
      */
-    static boolean countsAsLine(String line) {
-        return hasVisibleText(line) || !OPCODE.matcher(line).find();
+    static boolean countsAsLine(List<Tok> line) {
+        if (hasVisibleText(line)) return true;
+        for (Tok t : line) {
+            if (t.isPlaceholder() || t.operand) return false;
+        }
+        return true;
     }
 
     /**
