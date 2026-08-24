@@ -670,7 +670,7 @@ PARKE
 
 Proivido jugar a la pelota
 
-¡Pues nos drogamos!
+(¡Pues nos drogamos!)
 
 
 ==== room=3 npc=8 str=1 textAddr=0x1c2374 ptrFieldAddr=0x1c232c ====
@@ -4825,66 +4825,71 @@ escopeta o algo.
 ==== room=79 npc=3 str=1 textAddr=0x1cea74 ptrFieldAddr=0x1cea2a ====
 {E0} {FD}
 
-La zorrita gritó.
+La zorrita pegó un berrío.
 
-¡En serio! ¡Si te sucediera
-algo nos arrepentiríamos
-toda la vida!
+¡Puto mono, estás como una
+cabra!
 
 
 ==== room=79 npc=4 str=0 textAddr=0x1cead4 ptrFieldAddr=0x1cead0 ====
 {E0} {F5}
-¿Qué son todos esos animales
-detrás de ti? ... Mmm, mmm,
-mmm. ... Mmm, mmm, mmm.
-... Mmm, mmm, mmm. ¡Ya veo!
-Estáis viajando y
-ayudándoos unos a otros.
-Eso es una buena idea.
+Oye, ¿y esos animalicos
+detrás de tí? ¿Les has
+tenido que pagar mucho
+dinero? ¡Oye, eso me da
+una idea de negocio dabuten!
 
 
 ==== room=79 npc=4 str=1 textAddr=0x1ceb88 ptrFieldAddr=0x1cead2 ====
 {E0} 
 
-En serio, de ahora en
-adelante deberíamos hacer a
-este viejo mono jefe de
-nuestro pueblo.
+Bueno, el mono es el tío
+más machote y maromo que hay
+en el pueblo, y debería ser
+el jefe. ¡Votos a favor!
 
-Todos estuvieron de acuerdo con el viejo Tom.
+
+¡Yooooooo!
+
+
+¿Votos en contra?
+
+
+Yo no.
 
 
 ==== room=80 npc=0 str=0 textAddr=0x1cec1c ptrFieldAddr=0x1cec18 ====
-Soy fuerte, pero mi poder es
-para mí solo. No lo
-malgastaré en otros.
+Yo soy un tío macizo, paso
+de ayudar a estos pringaos.
+¡Son unos mileuristas y
+unos perdedores! ¡Que se
+las apañen!
 
 
 ==== room=80 npc=0 str=1 textAddr=0x1cec64 ptrFieldAddr=0x1cec1a ====
-Soy un chico muy grande y no
-hice nada por ayudar. Estoy
-avergonzado. De ahora en
-adelante voy a tener mucho
-coraje y lo usaré para
-ayudar a otros.
+¡Bro! Mi fucking ego me ha
+nublado la vista y me he
+portado como un pussy.
+¡Así que nada, a hacer
+burpees para redimirse!
 
 
 ==== room=81 npc=0 str=0 textAddr=0x1cecfe ptrFieldAddr=0x1cecfc ====
-¿Animales de alquilar? Lo
-siento, pero ninguno de
-nosotros quiere luchar.
+¿Animalicos pa alquilar?
+Están como una cabra, pero
+no me queda ninguno suicida.
 
 
 ==== room=82 npc=0 str=0 textAddr=0x1ced54 ptrFieldAddr=0x1ced50 ====
 {E0} {EA}
-Barón ... si fuera ...
-un poco ... más joven...
+Puto Barón... me ha dejad
+para que me den el arrastre
+las mulillas. Su... puta...
 
 
 ==== room=82 npc=0 str=1 textAddr=0x1ced8a ptrFieldAddr=0x1ced52 ====
-NARRACION: Perdió el
-conocimiento debido a
-sus heridas.
+Perdió el conocimiento de
+la paliza que le han arreao.
 
 
 ==== room=82 npc=1 str=0 textAddr=0x1cedcc ptrFieldAddr=0x1cedc4 ====
