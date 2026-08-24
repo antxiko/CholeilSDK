@@ -4084,29 +4084,29 @@ hacer fraude al seguro.
 
 
 ==== room=63 npc=0 str=0 textAddr=0x1cc3a6 ptrFieldAddr=0x1cc3a4 ====
-ALITA: ¡Mira qué de nieve!
-Hubo hasta truenos en el
-pueblo humano.
+ALITA: ¿De qué está hecha
+esta nieve? ¿De hielo?
+¡Joder, qué frío!
 
 
 ==== room=64 npc=0 str=0 textAddr=0x1cc3f0 ptrFieldAddr=0x1cc3ec ====
 El ciclón arrastró a Dorotea
-y se perdió. Me alegro mucho
-de que esté a salvo. Dijo
-que viajó al pasado. ¿Estaba
-soñando?
+y la mandó a tomar viento,
+nunca mejor dicho. Dijo que
+viajó al pasado. ¿Sería el
+LSD o algo así?
 
 
 ==== room=64 npc=0 str=1 textAddr=0x1cc46c ptrFieldAddr=0x1cc3ee ====
-NARRACION: ¡<NAME> ganó
-los zapatos mágicos!
+¡<NAME> trincó
+las Nike mágicas!
 
-Con estos zapatos puedes
-viajar en el tiempo y volver
-del pasado.
-
-<NAME> decide
-ponérselos.
+Con estos peasos de
+deportivos puedes molar
+mucho y viajar en el tiempo
+y volver al pasado.
+<NAME> se los
+pone sin pensar.
 
 
 ==== room=65 npc=0 str=0 textAddr=0x1cc3f0 ptrFieldAddr=0x1cc3ec ====
@@ -4122,110 +4122,125 @@ ponérselos.
 <SAME room=64 npc=0 str=1>
 
 ==== room=67 npc=0 str=0 textAddr=0x1cc4f8 ptrFieldAddr=0x1cc4f4 ====
-Mi padre lleva yendo al
-campo de entrenamiento de
-Rafresa desde que lo
-construyeron. Voy a echarle
-mucho de menos. ¡No necesita
-entrenarse!
+Mi padre esta dale que te
+pego yendo a Rabesa a
+entrenarse, dice. ¡Yo creo
+que a lo que va es a pillar
+una bellotita de vez en
+cuando!
 
 
 ==== room=67 npc=0 str=1 textAddr=0x1cc586 ptrFieldAddr=0x1cc4f6 ====
-Papá se ha ido. No voy a
-poder jugar con él por un
-tiempo.
+Mi padre se ha ido a por
+tabaco. Espero que al menos
+me traiga un cartón de
+Marlboro.
 
 
 ==== room=67 npc=1 str=0 textAddr=0x1cc5c4 ptrFieldAddr=0x1cc5c2 ====
-Debo dejar atrás a mi
-familia e ir a Rafresa a
-entrenar. Sólo voy por
-proteger a mi familia.
+Menudo rollo de familia,
+están aquí todo el tiempo
+viendo Antena 3 y se creen
+todas las gilipolleces que
+dicen. Un día cojo el camino
+y me voy a tomar por culo.
 
 
 ==== room=67 npc=2 str=0 textAddr=0x1cc626 ptrFieldAddr=0x1cc622 ====
-Sé que es por el bien del
-pueblo, pero me siento tan
-sola sin mi marido. Volverá
-en cuanto gane las 3
-medallas. Mientras tanto
-debo ser paciente.
+Mi marido dice que ha ido a
+pillar cobre, aluminio y
+latón el campo de Rabesa,
+y dice que no volverá hasta
+que no lo tenga. Me parece
+que lo que ha hecho es ir a
+por tabaco o irse con una
+pilingui. ¡Mal rayo le
+parta a ese cabronazo!
 
 
 ==== room=67 npc=2 str=1 textAddr=0x1cc6ba ptrFieldAddr=0x1cc624 ====
-Mi marido acaba de irse al
-campo de entrenamiento de
-Rafresa. Mi hijo le echa
-mucho de menos, y yo
-tampoco puedo aguantarlo.
+Mi marido dice que se ha ido
+al campo de entrenamiento.
+Y siempre viene con la cara
+llena de carmín y borracho
+como una cuba.
+¡Entrenamiento ni porras!
+Este va a ver a una pilingui
+seguro.
 
 
 ==== room=68 npc=0 str=0 textAddr=0x1cc742 ptrFieldAddr=0x1cc73e ====
-Dorotea insiste en que ha
-estado en el pasado. Debe
-haber sido duro para ella.
-Pero yo sé mucho del pasado;
-no puede ser verdad.
+Dorotea insiste en que viaja
+al pasado. Fijo que se pone
+hasta el culo de LSD. Yo
+esas cosas no las he probado
+pero me han dicho que se
+ven cosas guays. Pero yo no,
+yo no lo he probado, ¿ein?
 
 
 ==== room=68 npc=0 str=1 textAddr=0x1cc7c4 ptrFieldAddr=0x1cc740 ====
-Dorotea ha vuelto pero mi
-marido se ha ido al campo de
-entrenamiento.
+Dorotea ha volvido, pero el
+inútil de mi marido se ha
+ido a Rabesa, seguramente a
+pillar costo.
 
 
 ==== room=68 npc=1 str=0 textAddr=0x1cc812 ptrFieldAddr=0x1cc80c ====
 {E0} {A9}
-Me monté en el ciclón para
-ir al pasado pero nadie me
-cree. Y también tengo
-zapatos mágicos ... Odio a
-los adultos, no quiero ser
-mayor nunca.
+Me monté en el ciclón como
+si fuera la feria y fui al
+pasado, pero estaba colocada
+y no me cree nadie. También
+tengo estas Nike to guapas.
 
 
 ==== room=68 npc=1 str=1 textAddr=0x1cc8a6 ptrFieldAddr=0x1cc80e ====
-¿Qué, quieres mis zapatos?
-De ninguna manera. Los
-cuido mucho. No te los daré
-nunca. Los guardaré donde
-no puedas cogerlos nunca.
+¿Que quieres mis fabulosas
+Nike mágicas? ¡Me comes el
+coño a bocaos, vamos! No
+se las dejaría ni a mi
+puta madre. Las tengo
+guardadas donde no podrás
+trincarlas.
 
 
 ==== room=68 npc=1 str=2 textAddr=0x1cc92a ptrFieldAddr=0x1cc810 ====
-Mi papá se ha ido. No
-debería haber dicho nada del
-pasado porque he preocupado
-a mi papá. Qué mala soy.
+Mi padre se ha largado, creo
+que por mis paranoyas de lo
+del ciclón y las Nike y
+todas esas cosas. Bueno pues
+que le den morcilla, digo.
 
 
 ==== room=68 npc=2 str=0 textAddr=0x1cc996 ptrFieldAddr=0x1cc994 ====
-Mi hija estuvo perdida mucho
-tiempo. Por eso dice cosas
-raras.
+Mi hija yo creo que tiene
+una tarita o algo, se
+inventa cada gilipollez...
 
 
 ==== room=69 npc=0 str=0 textAddr=0x1cc9dc ptrFieldAddr=0x1cc9da ====
-Este bosque parece un lugar
-tranquilo para vivir, ¿no
-crees? Solía vivir en
-Nenúfar, pero voy a empezar
-una nueva vida aquí. Es un
-buen sitio. Seguro que puedo
-hacer muchos amigos aquí.
+Hay animalicos aquí que
+están como una puta regadera
+y creo que se puede sacar
+provecho de ellos. Lo mismo
+monto una empresa para
+alquilarlos.
 
 
 ==== room=69 npc=1 str=0 textAddr=0x1cca9c ptrFieldAddr=0x1cca98 ====
-ARMI: Soy un armadillo.
-Estaba disfrutando del agua.
-Gracias por nada ... Vaya,
-tienes muchos amigos aquí.
-¿Puedo unirme a vosotros?
+ARMI: Soy un armadillo, y
+estaba disfrutando del agua,
+gilipollas. ¿Pa qué me
+molestas? ¡Oye, tú vas con
+un montón de animalicos!
+¿Puedo ir con vosotros
+de farra?
 
 
 ==== room=69 npc=1 str=1 textAddr=0x1ccb22 ptrFieldAddr=0x1cca9a ====
 ¡Armi el armadillo se une
-al grupo!
+al grupo de animalicos!
 
 
 ==== room=70 npc=0 str=0 textAddr=0x1cc9dc ptrFieldAddr=0x1cc9da ====
@@ -4238,268 +4253,289 @@ al grupo!
 <SAME room=69 npc=1 str=1>
 
 ==== room=71 npc=0 str=0 textAddr=0x1ccb66 ptrFieldAddr=0x1ccb64 ====
-¡Por favor, créeme! No soy
-un monstruo. Soy una niña
-humana normal. La puerta se
-abrió simplemente a
-consecuencia del Polvo
-Despertador. ¡Por favor,
-créeme!
+¡Que no, que no son drogas
+ni na, por favor! ¡Soy una
+paya normal! ¡La puerta
+se abrió por los polvitos
+blancos, pero yo ni tomo
+ni na! ¡De verdá de la
+buena, joder!
 
 
 ==== room=71 npc=1 str=0 textAddr=0x1ccc06 ptrFieldAddr=0x1ccc04 ====
-¡Silencio monstruo! Sólo
-puedes llegar a la
-habitación con Polvo
-Despertador por el sexto
-piso. Ningún humano normal
-puede volver de ahí vivo,
-¡no me engañarás!
+¡Cállate, cholo de mierda!
+Ningún payo podría volver
+del sexto piso vivo, tú
+has tenido que meterte los
+polvitos blancos fijo.
+¡Sinvergüenza! ¡Grifota!
 
 
 ==== room=71 npc=2 str=0 textAddr=0x1cccaa ptrFieldAddr=0x1ccca8 ====
 La habitación del fondo a la
-izquierda está sellada,
-luego no debería poder
-abrirse, pero ella la abrió.
-Lo más raro de todo es que
-cuando miramos hacia allá,
-la puerta se cerró
-rápidamente.
+izquierda está cerrada a cal
+y canto, y no se debería
+poder abrir, pero la paya o
+lo que sea la abrió.
+Cuando miramos, la puerta
+se cerró de un portazo.
 
 
 ==== room=71 npc=3 str=0 textAddr=0x1ccd6c ptrFieldAddr=0x1ccd6a ====
-La gente desaparece de esa
-habitación. Es por eso que
-está sellada. El abrirla
-sólo implica problemas.
+La peña va a esa habitación
+y desaparece como si fuera
+la magia del David
+Copperfield ese. Por eso la
+hemos dejado chapada. No
+la vamos a abrir ni de coña.
 
 
 ==== room=71 npc=4 str=0 textAddr=0x1ccdd6 ptrFieldAddr=0x1ccdd4 ====
-El Polvo Despertador es una
-medicina legendaria, pero
-no tengo ni idea de lo que
-es. Hoy en día si algo es
-misterioso, simplemente
-lo encerramos.
+Los polvitos blancos son una
+sustansia prohibida, la peña
+que la consumía se volvía
+triquinósica o algo, pero
+yo no la he probao, ein.
+La hemos tenido que guardar
+bien porque no sabemos
+exactamente lo que hase.
 
 
 ==== room=71 npc=5 str=0 textAddr=0x1cce6c ptrFieldAddr=0x1cce6a ====
-¡Te vi abrir esa habitación!
-No puedes negarlo. Aquí eres
-un forastero, luego no hay
-necesidad de juicio. ¡Voy
-a llevarte a la cárcel!
+¡Tú, maricón! ¡Has habierto
+la habitación! ¡No digas que
+no! ¡Además eres un ilegal
+que ha venido sin papeles
+ni na! ¡Aquí no hay ni
+juicio ni juicia! ¡Al talego
+que vas a ir!
 
 
 ==== room=71 npc=6 str=0 textAddr=0x1ccef8 ptrFieldAddr=0x1ccef4 ====
-Aquí encerramos a las
-personas a las que juzgamos
-por monstruos. Tengo la
-sensación de que ya las han
-ejecutado ...
+Aquí tenemos a la escoria
+de la sosiedá, a los cholos
+y demás sinvergüenzas. Me
+parece que ya le hemos dado
+matarile a más de uno...
 
 
 ==== room=71 npc=6 str=1 textAddr=0x1ccf6e ptrFieldAddr=0x1ccef6 ====
-¡Shhhh! Por favor, no
-empieces rumores peligrosos.
+¡Calla, coño! ¿Quieres que
+nos trinquen por chismosos?.
 
 
 ==== room=71 npc=7 str=0 textAddr=0x1ccfa6 ptrFieldAddr=0x1ccfa2 ====
-¡Shhhh! Por favor, cariño,
-no digas cosas así. Puede
-que te oiga alguien.
+¡Cierra la puta boca, coño!
+¡Que nos van a oír y nos
+van a echar del pueblo!
 
 
 ==== room=71 npc=7 str=1 textAddr=0x1ccff2 ptrFieldAddr=0x1ccfa4 ====
-He oído un rumor de que se
-oyen gemir voces procedentes
-de debajo de la tierra ...
+Dicen que endebajo de la
+tierra se oye mascullar algo
+o alguien... ¡Qué jiñe!
 
 
 ==== room=71 npc=8 str=0 textAddr=0x1cd04a ptrFieldAddr=0x1cd046 ====
-Las gentes del desierto
-tienen un código para vivir
-aquí. Pero ya estoy harto.
-Si haces algo sospechoso te
-juzgaremos y te declararemos
-culpable. Eso no es justo.
+Aquí en el desierto este de
+mierda está todo el mundo
+con la mosca detrás de la
+oreja, son unos paranollas
+de la hostia. ¡Me tienen
+hasta los huevos! ¡Miras
+mal a alguien y ya la has
+liado parda! ¡Su puta madre!
 
 
 ==== room=71 npc=8 str=1 textAddr=0x1cd0ee ptrFieldAddr=0x1cd048 ====
-¿Cómo? ¿Que salió un
-monstruo del suelo? Ya, no
-me hagas reir.
+¿Qué dices, payo? ¿Que un
+cholo salió del suelo? ¡Sí,
+claro! ¡Y mis cojones en
+vinagre también!
 
 
 ==== room=71 npc=9 str=0 textAddr=0x1cd132 ptrFieldAddr=0x1cd12e ====
-No puedo soportarlo. Si
-empiezas una pelea conmigo,
-¡te acusaré de eso!
+¡Eh! ¡A que te meto! ¿Y esa
+navaja? ¿Quieres bronca, eh?
+¡Que yo soy muy piligroso!
 
 
 ==== room=71 npc=9 str=1 textAddr=0x1cd17c ptrFieldAddr=0x1cd130 ====
-Oye, si dices algo así te la
-vas a buscar.
+¿Qué dices, payaso? ¡A que
+te meto un meco por listo!
 
 
 ==== room=71 npc=10 str=0 textAddr=0x1cd1ac ptrFieldAddr=0x1cd1a8 ====
-Están matando a gente ¿y no
-puedes ir más allá del
-tercer piso? Son sólo
-monstruos. La sellamos
-corriendo y puede que haya
-gente dentro. Pero creo que
-es demasiado tarde para
-ellos.
+Uhh, la cosa está mu chunga,
+chavás. Como vayas más allá
+del tercer piso te van a dar
+matarile. Por eso hemos
+dejao una tranca gorda en
+la puerta. Los que se han
+quedado dentro tienen que
+estar frititos ya.
 
 
 ==== room=71 npc=10 str=1 textAddr=0x1cd264 ptrFieldAddr=0x1cd1aa ====
-¿Cómo? ¿Que salieron
-monstruos del suelo ...? ¿Y
-qué tiene de malo? ¡Déjame
-en paz, por favor! ¡No
-quiero problemas!
+¿Cómor? ¿Que salieron unos
+cholos del suelo? ¿Y a mí
+qué me cuentas, pringao?
+¡Vete a la mierda, que han
+puesto columpios! ¡No te
+jode, con el personal!
 
 
 ==== room=71 npc=11 str=0 textAddr=0x1cd2de ptrFieldAddr=0x1cd2da ====
-Han arrestado a algunos
-porque los otros les
-echaron  la culpa. Haz algo
-rápido antes de que te hagan
-lo mismo a ti. ¡Eso si
-valoras tu vida!
+La peña tiene el culo hecho
+agüilla, les coge la Guardia
+Siví y se chivan de todo
+quisque para que no los
+metan en el talego. Tú
+por si acaso no has visto ni
+olido na, ¡no te metas en
+follones!
 
 
 ==== room=71 npc=11 str=1 textAddr=0x1cd36e ptrFieldAddr=0x1cd2dc ====
-¿Y qué tiene de malo? Todo
-el mundo lo sabe. Lo único
-es que tenemos miedo, eso es
-todo. Yo tengo más miedo de
-las personas que de los
-monstruos.
+¿Y qué, eh, Y QUE? ¿Que vas
+a hacer, pringao? Toda la
+peña lo sabe ya. Estamos
+acojonaos, pero me acojonan
+más los payos estos que los
+cholos.
 
 
 ==== room=71 npc=12 str=0 textAddr=0x1cd406 ptrFieldAddr=0x1cd402 ====
-¡Tú eres el que me salvó en
-el sexto piso! Te lo
-agradezco de veras. Nadie me
-cree. Dicen que soy un
-monstruo porque regresé del
-sexto piso. Me temo que no
-me queda mucho tiempo. Y
-este palacio ... ¡Vete de
-aquí enseguida, por favor!
+¡Payo, tu me salvaste en el
+sexto piso! ¡Eres un tío de
+puta madrem! Nadie me cree,
+dicen que soy un cholo
+porque salí coleando del
+sexto piso de los cojones.
+Me van a mandar al patio
+de los callaítos en na,
+¡pírate mientras puedas,
+no seas gilipollas!
 
 
 ==== room=71 npc=12 str=1 textAddr=0x1cd4f2 ptrFieldAddr=0x1cd404 ====
-NARRACION: La niña no se
-mueve. Parece que ya está
-muerta.
+La niña se mueve menos que
+un avión de mármol. Parece
+que está más bien pasadita.
 
 
 ==== room=71 npc=13 str=0 textAddr=0x1cd530 ptrFieldAddr=0x1cd52e ====
 {E0} {B9}
-NARRACION: ¡<NAME>
+¡<NAME> abrió
 abrió el cofre del tesoro!
-¡<NAME> encontró Polvo
-Despertador en su interior!
+¡<NAME> encontró los
+polvitos blancos mágicos!
 
 
 ==== room=72 npc=0 str=0 textAddr=0x1cd598 ptrFieldAddr=0x1cd58e ====
-CAMALEON: Eso es. Todo es
-obra mía. Ji, ji, ji. Ese
-polvo me despertó a mi
-también y ahora voy a
-comerte.
+CAMALEON: Juazz, está todo
+el mundo emparanollao y todo
+es obra mía. Los polvitos
+blanco son la HOXTIA,
+chaval, me pusieron a tope,
+¡¡Y ahora te voy a zampar!!
 
 
 ==== room=72 npc=0 str=1 textAddr=0x1cd604 ptrFieldAddr=0x1cd590 ====
-CAMALEON: Ay ... ¿Voy a
-morirme? Pero humano, tú
-eres el loco. Los humanos
-han olvidado cómo confiar
-y sólo piensan en sí mismos
-... Aunque me venzas no
-podrás reparar los corazones
-de las gentes.
+CAMALEON: Args... ¡Jodío
+cabezón! Payos malos,
+¡Vosotros sí que vivís,
+que tenéis economato!
+¡Aunque me hayas amochao,
+seguiréis peleando por
+gelipolleces, que os den
+morcilla a todos!
 
 
 ==== room=72 npc=0 str=2 textAddr=0x1cd6ca ptrFieldAddr=0x1cd592 ====
-NARRACION: <NAME>
-encontró el Polvo
-Despertador.
+<NAME> encontró
+los polvitos blancos
+mágicos.
 
 
 ==== room=72 npc=0 str=3 textAddr=0x1cd6f8 ptrFieldAddr=0x1cd594 ====
-MOA: Soy Moa, un pájaro
-legendario. He pasado muchos
-años en el interior de este
-cuadro. No te vayas aún, por
-favor. Quiero que le cuentes
-a la gente la verdad sobre
-los monstruos. Si puedes
-arreglar el malentendido,
-puede que empiecen a creerse
-los unos a los otros. Ahora,
-vámonos.
+MOA: Pasa tronco, yo soy
+MOA, un pájaro tope enrollao
+que tenían secuestrado en
+el cuadro este. Tranqui,
+tronco, no te najes aún,
+tienes que contarle a la
+peña lo que ha pasado aquí
+con los cholos. Los payos
+están locos perdidos y no
+tienen ni idea. Lo mismo si
+le explicamos la movida al
+personal empiezan a dejar
+de darse de hoxtias.
+Bueno, ¡tirando!
 
 
 ==== room=72 npc=0 str=4 textAddr=0x1cd816 ptrFieldAddr=0x1cd596 ====
-NARRACION: ¡Moa se unió al
-grupo!
+¡Moa se unió al
+grupo de los animalicos!
 
 
 ==== room=73 npc=0 str=0 textAddr=0x1cd842 ptrFieldAddr=0x1cd83e ====
-Busca con atención donde no
-hay sombra. Mi hija ...
-por favor ...
+Urghs... esta parte del
+juego es tope chunga. Busca
+una habitación donde no hay
+sombra. No digo más por no
+hacerte spoilers.
 
 
 ==== room=73 npc=0 str=1 textAddr=0x1cd886 ptrFieldAddr=0x1cd840 ====
-El hombre no se mueve.
-Parece que ya está muerto.
+El colega está más tieso
+que el pellejo de una
+pandereta.
 
 
 ==== room=73 npc=1 str=0 textAddr=0x1cd8bc ptrFieldAddr=0x1cd8ba ====
-¡Has venido a salvarme!
-Entonces mi padre debe estar
-también por aquí cerca.
-Llevo tanto tiempo
-esperando. Comenzaba a
-preguntarme si se habían
-olvidado de mí. Me dijo que
-no me moviera, pero me
-voy a ir.
+¿Qué haces aquí, desgraciao?
+¡No jodas, has venido a
+salvarme! Fijo que mi viejo
+anda por aquí también.
+Llevo aquí más tiempo
+esperando que el copón,
+macho. ¿Se habrán olvidado
+de mi? ¡Al carajo, yo me
+voy echando hostias de aquí
+pero ya!
 
 
 ==== room=74 npc=0 str=0 textAddr=0x1cd990 ptrFieldAddr=0x1cd98e ====
-Eres un forastero, ¿eh? Yo
-me escapé del Palacio de
-Camelia.
+Hostia, menuda cabeza, tú no
+eres de por aquí, ¿no? Yo
+me piré del Palacio de
+Tabernas.
 
 
 ==== room=74 npc=1 str=0 textAddr=0x1cd9d4 ptrFieldAddr=0x1cd9ce ====
-Ahora escucha. Si sabes lo
-que es bueno, no entres en
-el palacio.
+Escucha payo, no entres en
+el palacio que están todos
+como una jodida regadera.
+¡Cuidadito!
 
 
 ==== room=74 npc=1 str=1 textAddr=0x1cda18 ptrFieldAddr=0x1cd9d0 ====
-También te mandaron a la
-cárcel, ¿eh? Este sitio es
-tan horrible. Mi amigo se
-marchó para empezar una
-nueva vida. Comprendo cómo
-se siente, pero ... no sirve
-de nada. ¿Qué voy a hacer
-yo solo?
+Te han entalegado a ti
+también, ¿eins? Este sitio
+es el puto Vietnam, macho.
+Mi colega se piró por ahí
+a montar algún trapicheo o
+chapuz para ver si se ganaba
+la vida. Me ha dejado
+solito, snif.
 
 
 ==== room=74 npc=1 str=2 textAddr=0x1cdada ptrFieldAddr=0x1cd9d2 ====
-Si tienes tiempo, ve a
-verlo. Lo está intentando
-muy duramente.
+Si tienes tiempo date un
+rulo a ver si lo ves y lo
+saludas de mis partes.
 
 
 ==== room=75 npc=0 str=0 textAddr=0x1cdb20 ptrFieldAddr=0x1cdb1e ====

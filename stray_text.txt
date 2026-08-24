@@ -85,7 +85,7 @@ LAS PELOTAS
 CORRE COMO 
 
 ==== ascii addr=0x3233c len=11 ====
-EL CORRECAM
+EL USAIN B 
 
 ==== ascii addr=0x32354 len=6 ====
  DINO-
