@@ -4675,46 +4675,46 @@ tú con los cojones!
 
 
 ==== room=77 npc=2 str=0 textAddr=0x1ce2a4 ptrFieldAddr=0x1ce2a0 ====
-Oye, soy sólo un niño ¿y
-quieres que luche? No es
-justo.
+¡Qué dices, tío! ¡Yo sólo
+soy un crío! ¿Cómo quieres
+que pelee! ¡Pelea tú, con
+esa cabeza!
 
 
 ==== room=77 npc=2 str=1 textAddr=0x1ce2de ptrFieldAddr=0x1ce2a2 ====
-Nadie sabe cómo ser duro. El
-ataque es la mejor
-defensa, ¿no? Todos deberían
-tener más valor, no sólo por
-el pueblo sino por ellos
-mismos.
+Buah, somos unos gayorros,
+dejaron al mono pal arrastre.
+Pero bueno, ¿qué se le va a
+hacer? Que habiera estudiao.
 
 
 ==== room=77 npc=3 str=0 textAddr=0x1ce36e ptrFieldAddr=0x1ce36a ====
-¿Conoces a Barón? Está en el
-desierto en alguna parte.
-Pero no es fácil
-encontrarle.
+¿Conoces al Barón? Está en
+el desierto en algún lao,
+pero se esconde más que el
+Roldán.
 
 
 ==== room=77 npc=3 str=1 textAddr=0x1ce3c4 ptrFieldAddr=0x1ce36c ====
-¿Que el pequeño mono va a
-luchar contra Barón? Le
-respeto mucho.
+¿El mono viejales va a
+partirse la cara con el
+Barón? ¡Tiene los huevos
+cuadraos! ¡Qué tío!
 
 
 ==== room=77 npc=4 str=0 textAddr=0x1ce408 ptrFieldAddr=0x1ce406 ====
-CASA TOMAS
+Casa Tomás:
 Prohibida la entrada a
 todos los cholos.
 
 
 ==== room=78 npc=0 str=0 textAddr=0x1ce43a ptrFieldAddr=0x1ce438 ====
-ZORRITA: Tienes razón.
-Barón es peligroso. Nuestra
-única esperanza es huir. Yo
-soy una dama, o sea que no
-voy a luchar. Búscate a otro
-para que luche para ti.
+ZORRITA: A mi no me mires,
+sólo soy una chica, ¡jiji!
+En serio, va a ir un romano
+a pegarse contra el bigardo
+ese. Búscate a otro,
+niño cabezón.
 
 
 ==== room=79 npc=0 str=0 textAddr=0x1ce4ec ptrFieldAddr=0x1ce4e4 ====
@@ -4770,8 +4770,8 @@ playa y ...
 ¿Por qué ...? ¿Por qué
 salvaste a este viejo
 mono ...?
-{47}El mono miró a su
-alrededor sorprendido.{48}
+(El mono miró a su
+alrededor sorprendido.)
 
 
 ==== room=79 npc=1 str=3 textAddr=0x1ce7d0 ptrFieldAddr=0x1ce688 ====
@@ -4802,8 +4802,8 @@ duramente que él.
 Bien, ya sabes porqué.
 Porque somos camaradas.
 Pero gracias, viejo.
-{47}El oso parece
-avergonzado al hablar.{48}
+(El oso parece
+avergonzado al hablar.)
 
 
 ==== room=79 npc=3 str=0 textAddr=0x1cea2c ptrFieldAddr=0x1cea28 ====
@@ -5943,7 +5943,7 @@ dices en serio? Entonces,
 
 
 ==== room=100 npc=0 str=11 textAddr=0x1d220e ptrFieldAddr=0x1d1db2 ====
-{E0}0{47}
+{E0}0(
 PERRO MAPACHE: Entonces,
 ¿has cambiado de opinión?
 <YESNO>

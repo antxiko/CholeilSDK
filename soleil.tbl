@@ -127,6 +127,14 @@
 57=ü
 
 /*
+ * 47 = (, 48 = ) -- confirmed. They bracket narration-style lines
+ * ("(El mono miro a su alrededor sorprendido.)"), which is what made them
+ * look like a quote glyph or an input cue before the pair was recognised.
+ */
+47=(
+48=)
+
+/*
  * 62 = º, masculine ordinal indicator (e.g. "tu 14º cumpleanos") -- confirmed.
  * The one outlier occurrence ("PIG{62}I") that made this ambiguous against
  * uppercase U-diaeresis (Ü) is just that: an outlier.
@@ -150,18 +158,21 @@
  */
 
 /*
- * Lower confidence / unresolved - left OUT of the table on purpose so the
- * extractor flags them as {XX} instead of guessing wrong:
- *   47, 48    - only ever appear at the start/end of narration-style lines;
- *               possibly a narration quote glyph or a "wait for input" cue.
- *   E0        - always followed by one more code byte (space, '0', a letter,
- *               or a byte in the 0x84-0xFD range); the pattern strongly
- *               suggests E0 is a control code (e.g. "insert icon/portrait")
- *               rather than a text glyph, with the following byte an icon
- *               index rather than a character. Left for the font/graphics
- *               table to resolve.
- *   F3        - always appears alone as the entire string; likely another
- *               non-text control/icon code.
- *   58,59,5A,84,8B,8C,94,95,F4,F5,F9,FA,FB,FC,FD - only seen as the byte
- *               following E0; same reasoning as E0 above.
+ * Control codes, deliberately left OUT of the table: they are not glyphs, and
+ * the extractor is meant to surface them as {XX}.
+ *   E0 nnnn   - set event flag nnnn. Handler at ROM 0x332C2 reads two more
+ *               bytes as a 16-bit id, calls 0x307AA (bset of bit nnnn in the
+ *               flag array at RAM $FFC500), then skips to the next 0xFE. So
+ *               the two bytes after {E0} are operand DATA even when they
+ *               happen to map to a glyph, and the trailing 0xFE is consumed
+ *               by the handler rather than drawn as a line break.
+ *   E1 nnnn   - same shape, but 0x307E2 does bclr: clear event flag nnnn.
+ *               Not used anywhere in Soleil's script.
+ *   F3        - always alone as the entire string. Handler at 0x334B6 does
+ *               lea (pc+8),a0, redirecting the read pointer at inline data
+ *               rather than taking operands. Still unresolved.
+ *
+ * The bytes 58,59,5A,84,8B,8C,94,95,F4,F5,F9,FA,FB,FC,FD were previously
+ * listed here as suspected glyphs "only seen after E0". They are just the low
+ * half of an E0 flag id, so there is nothing to map.
  */
