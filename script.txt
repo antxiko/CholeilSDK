@@ -1711,6 +1711,7 @@ todo lo que tengas, machote!
 ==== room=13 npc=0 str=5 textAddr=0x1c5400 ptrFieldAddr=0x1c52d6 ====
 LIEBRE: ¡Fuera de aquí,
 niño! ¡Déjanos solos!
+¡Venga, a saltar!
 ¡Ooorghs! ¡Así! ¡Dame!
 ¡Aaaaooaaaghrs!
 
@@ -1739,7 +1740,7 @@ rapidito!
 
 
 ==== room=13 npc=1 str=1 textAddr=0x1c5540 ptrFieldAddr=0x1c54f8 ====
-TINTIN: ¡Que sí, que ya la
+COSMO: ¡Que sí, que ya la
 tengo como un tanque
 apuntando a un campanario!
 ¡Te voy a dejar seca! ¡Arfs!
@@ -4882,7 +4883,7 @@ no me queda ninguno suicida.
 
 ==== room=82 npc=0 str=0 textAddr=0x1ced54 ptrFieldAddr=0x1ced50 ====
 {E0} {EA}
-Puto Barón... me ha dejad
+Puto Barón... me ha dejado
 para que me den el arrastre
 las mulillas. Su... puta...
 
