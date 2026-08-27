@@ -4894,229 +4894,256 @@ la paliza que le han arreao.
 
 
 ==== room=82 npc=1 str=0 textAddr=0x1cedcc ptrFieldAddr=0x1cedc4 ====
-Un inmenso monstruo llamado
-Barón está hecho una furia.
+Hay un cholo más grande que
+el copón liándola parda.
 
 
 ==== room=82 npc=1 str=1 textAddr=0x1cee06 ptrFieldAddr=0x1cedc6 ====
 {E0} {EC}
-¡Lo he visto! De repente
-Barón surgió de la playa.
-Era un mono tan valiente.
-Atacó a Barón sin tener ni
-un arma.
+¡Telojuroporesnupi!
+Enderrepente el Barón
+salió de la playa.
+El puto mono tuvo los santos
+cojones de ir a pegarse con
+el, sin navaja ni na.
 
 
 ==== room=82 npc=1 str=2 textAddr=0x1cee7c ptrFieldAddr=0x1cedc8 ====
-¿Qué te parece Barón? No
-sé, pero ese mono estaba
-dando vueltas. Algo sobre
-lugares que no dejan huellas
-... Lo siento pero no lo
-recuerdo.
+¿Cómo trincar al Barón? Ni
+guarra, pero el mono loco
+ese estaba mascullando
+de dar vueltas por donde
+la arena no deja huellas...
+¿Estaría limpiado con
+Estrella? Ni puta idea,
+no me acuerdo de más.
 
 
 ==== room=82 npc=1 str=3 textAddr=0x1cef0a ptrFieldAddr=0x1cedca ====
-Los animales del pueblo se
-llevaron al mono. Espero que
-esté bien. Pero dado lo
-cobardes que son, ¿cómo se
-las arreglaron para venir
-aquí?
+Los nimalicos del pueblo se
+llevaron al moro. Digo, al
+mono. Tenía el careto hecho
+un puzzle, espero que esté
+bien. Lo jodido es que, con
+lo amariconaos que están,
+vinieran hasta aquí.
 
 
 ==== room=82 npc=2 str=0 textAddr=0x1cef98 ptrFieldAddr=0x1cef96 ====
-NARRACION: ¡<NAME>
-saltó del lugar que no
-deja huellas!
+¡<NAME> sartó
+del lugar que no deja
+huella porque está limpado
+con Estrella!
 
 
 ==== room=83 npc=0 str=0 textAddr=0x1cefd2 ptrFieldAddr=0x1cefce ====
-BARON: Eres un loco por
-venir. ¡Vas a morir!
+BARON: ¡Ande vas tú con la
+tajá vinagre! ¡Te voy a
+dejar el culo como la
+bandera de Japón!
 
 
 ==== room=83 npc=0 str=1 textAddr=0x1cf000 ptrFieldAddr=0x1cefd0 ====
-BARON: ¿Por qué ...? Estamos
-destinados a vivir ... ¿Por
-qué nos perciben a los
-monstruos como ...
+BARON: Ay, virgensita, por
+qué, si no hemos hecho na,
+¡Malditos payos malos!
+¡Asín sus de tos y diarrea!
 
 
 ==== room=84 npc=0 str=0 textAddr=0x1cf06c ptrFieldAddr=0x1cf068 ====
-MADRE MONSTRUO: Eres un
-humano. Este no es lugar
-para ti.
+MADRE CHOLO: Tú eres un
+payo, ¡fuera de asquí!
 
 
 ==== room=84 npc=0 str=1 textAddr=0x1cf0a8 ptrFieldAddr=0x1cf06a ====
-MADRE MONSTRUO: ¿Por qué
-nos elimináis? ¿Es que esta
-tierra es sólo para humanos?
-Un mundo gobernado por
-humanos está bien, pero
-¿es que un mundo gobernado
-por monstruos es malvado?
+MADRE CHOLO: ¡Ay, várgame el
+sielo! ¿Por qué los payos
+sois tan malos? ¿Es que
+no tenemos derecho a
+matar y robar disnamente?
+¡Ay, que en un puchero te
+veas con la calavera de
+tus muertos!
 
 
 ==== room=84 npc=1 str=0 textAddr=0x1cf162 ptrFieldAddr=0x1cf160 ====
-NARRACION: ¡Ganó un cuerno
-de Madre Monstruo! El Valle
-de las Dalias era el ser
-llamado Madre Monstruo.
-Pero gracias a que fue
-aniquilada ya no nacerán más
-monstruos en este valle ...
+<NAME> trinca un
+cuenno de la Madre de los
+Cholos. El Valle de las
+Vailas era en verdás un
+cholo más grande que un día
+sin pan. Pero gracias a que
+le has puesto el piajama
+de madera ya no nacerán
+más cholos de los bujeros
+de este valle.
 
 
 ==== room=85 npc=0 str=0 textAddr=0x1cf224 ptrFieldAddr=0x1cf222 ====
-Cuando sea mayor seré tu
-novia. Seremos una
-familia feliz.
+¡Mamonazo! ¡Cabrito!
+¡Sinvergüenza! ¡Irte con esa
+guarra estando conmigo!
 
 
 ==== room=85 npc=1 str=0 textAddr=0x1cf262 ptrFieldAddr=0x1cf260 ====
-Te lo prometo. Quiero tener
-un hijo como tú. Quiero
-llamarlo <NAME>.
+¡Me cago en sus muertos!
+¡Un día cojo y te pongo
+los cuernos con
+el <NAME>!
 
 
 ==== room=85 npc=2 str=0 textAddr=0x1cf2a6 ptrFieldAddr=0x1cf2a4 ====
-Qué precoz ... niños
-prometiéndose en matrimonio
-a esa edad.
+Putos críos, no tienen ni
+pelo en los huevos y ya se
+están poniendo los cuernos.
 
 
 ==== room=86 npc=0 str=0 textAddr=0x1cf2fa ptrFieldAddr=0x1cf2f6 ====
-Aún no han decidido qué
-estatua poner en la fuente.
+En el ayuntamiento aún no
+han decido qué chorrada
+quieren poner en la fuente.
 
 
 ==== room=86 npc=0 str=1 textAddr=0x1cf330 ptrFieldAddr=0x1cf2f8 ====
-He oído que van a esculpir
-la estatua de la fuente como
-tú. ¡Caramba!
+He escuchado que están
+buscando un bloque lo
+bastante grande para hacer
+la estatua por el cacho
+de cabeza que gastas.
 
 
 ==== room=86 npc=1 str=0 textAddr=0x1cf37c ptrFieldAddr=0x1cf378 ====
-El Rey encerró a los
-monstruos en la mazmorra del
-castillo. Espero que se
-libre de ellos.
+El orejúo del Rey metió a
+los cholos en la mazmorra
+del castillo. ¡Así los
+cuelgue!
 
 
 ==== room=86 npc=1 str=1 textAddr=0x1cf3d8 ptrFieldAddr=0x1cf37a ====
-He oído que el monstruo que
-estaba encerrado en la
-mazmorra del castillo se ha
-escapado ... ¡Qué miedo!
+¡Que sascapao, paco! ¡El
+cholo que estaba encerrao
+en la mazmorra del castillo
+se ha escapao! ¡Qué jiñe!
 
 
 ==== room=86 npc=2 str=0 textAddr=0x1cf444 ptrFieldAddr=0x1cf442 ====
-¡Apártete! ¡He oído que hay
-un monstruo dentro de esta
+¡Quieto, no hagas locuras
+con el cuerpo humano! ¡Hay
+un cholo dentro de la
 iglesia!
 
 
 ==== room=86 npc=3 str=0 textAddr=0x1cf488 ptrFieldAddr=0x1cf486 ====
-Me he entusiasmado un poco
-pero ya estoy tranquilo ...
-¡Vamos a cazar al monstruo!
+¡Estoy espitoso! ¡Mensiego!
+¡Vamos a arrajarlos! ¡A
+sacarle las tripas!
+¡Amos to los tíos!
+¡Ueeeeeh!
 
 
 ==== room=86 npc=4 str=0 textAddr=0x1cf4e0 ptrFieldAddr=0x1cf4dc ====
-Casi todos están en la
-iglesia. Hoy es domingo.
+Hoy es domingo y están en
+la Iglesia, no sé pa qué.
 
 
 ==== room=86 npc=4 str=1 textAddr=0x1cf512 ptrFieldAddr=0x1cf4de ====
-Eres el chico que salvó al
-Rey, ¿verdad? Qué valiente.
-La señal enfrente de la
-fuente será una lección para
-este pueblo.
+¡Ostras, esa cabeza! ¡Tú
+eres el chavalín que salvó
+al rey! ¿no? ¡Eres todo un
+maromazo del copón! ¡No te
+vamos a poner una rotonda
+porque no hay aún, pero sí
+la estatua del pueblo!
 
 
 ==== room=86 npc=5 str=0 textAddr=0x1cf590 ptrFieldAddr=0x1cf58c ====
-Fuente en construcción. Se
-terminará tan pronto como
-esté hecha la estatua.
+Fuente en construcsión. El
+dinero nos lo hemos gastado
+en putes y la hemos tenido
+que retrasar.
 
 
 ==== room=86 npc=5 str=1 textAddr=0x1cf5de ptrFieldAddr=0x1cf58e ====
 {E0}0a
-Fuente del Héroe.
-¡Jovencito, coge tu espada!
-Ahora es el momento de
-luchar. <NAME>
-comprendió la importancia
-de estas palabras.
+FUENTE DEL MAROMO.
+
+De la ciudad a los machotes.
+
+A <NAME> se le 
+puso la carne de membrillo
+al leer esto.
 
 
 ==== room=86 npc=6 str=0 textAddr=0x1cf662 ptrFieldAddr=0x1cf660 ====
-Hogar de Milú.
-Por favor, échenle de comer.
+Caseta del Cosmo.
+Echarle algo de comer que
+tiene más hambre que el
+Tamagochi de un sordo.
 
 
 ==== room=86 npc=7 str=0 textAddr=0x1cf692 ptrFieldAddr=0x1cf690 ====
-Propietario, hazte ver o lo
-subastaremos: firmado el
-Rey.
+KASA OKUPA
+UN DESALOJO OTRA
+OKUPACION
 
 
 ==== room=86 npc=8 str=0 textAddr=0x1cf6d0 ptrFieldAddr=0x1cf6ce ====
-Parque. ¡En construcción!
-¡Prohibido el paso!
+Parke en construcsión.
+Nos hemos gastao el dinero
+en farlopa.
 
 
 ==== room=87 npc=0 str=0 textAddr=0x1cf708 ptrFieldAddr=0x1cf702 ====
-Los monstruos se han
-escapado de la prisión ...
-¡Date prisa! ¡Debemos salvar
-al Rey!
+¡Los cholos se han fugao
+del talego! ¡Rápido, huevón!
+¡Hay que salvar al orejúo
+del Rey!
 
 
 ==== room=87 npc=0 str=1 textAddr=0x1cf75e ptrFieldAddr=0x1cf704 ====
-Su Alteza, ¿está bien?
-Oh, perdóneme mi error.
+Shur Alteza, ¿está bien?
+Qué patinazo, ¿eh?
 
 
 ==== room=87 npc=0 str=2 textAddr=0x1cf78e ptrFieldAddr=0x1cf706 ====
-No pude moverme cuando hizo
-falta. Debo entrenar más
-todos los días.
+Me jiñao vivo, colega. No
+tuve pelotas. Tengo que
+entrenar más como Rocky.
 
 
 ==== room=88 npc=0 str=0 textAddr=0x1cf7e6 ptrFieldAddr=0x1cf7e0 ====
-¡Oh, no! ¡El Rey está en
-peligro!
+¿Otra vez se ha metido el
+orejúo del Rey en follón?
 
 
 ==== room=88 npc=0 str=1 textAddr=0x1cf80a ptrFieldAddr=0x1cf7e2 ====
-¡Oh, no! ¡La gente está en
-peligro! ¡Estamos todos en
-peligro!
+¡Vamos a morir todos!
+¡¡AAAAAAHHH!! ¡Cosorro!
+¡Suquilio!
 
 
 ==== room=88 npc=0 str=2 textAddr=0x1cf84a ptrFieldAddr=0x1cf7e4 ====
-¡Qué horrible! Sirvo al Rey
-y no pude salvarlo ... Hace
-un momento los soldados
-partieron a cazar al
-monstruo.
+¡El puto orejúo este siempre
+tiene un follón por un lao o
+por otro! En fin, los
+soldaos que se apañen, que
+para eso cobran.
 
 
 ==== room=88 npc=1 str=0 textAddr=0x1cf8c0 ptrFieldAddr=0x1cf8ba ====
-Los monstruos que estaban en
-la cárcel están ahora en la
-habitación del Rey ...
-¡Por favor, ayuda al Rey!
+¡Los cholos que estaban
+entalegaos se han najao y
+ahora están en la habitación
+del Rey! ¡Serán carteristas!
+¡Mamones! ¡Ve a ayudar,
+cojones!
 
 
 ==== room=88 npc=1 str=1 textAddr=0x1cf92c ptrFieldAddr=0x1cf8bc ====
-Los monstruos se dirigen al
-pueblo. ¡Ve a buscarlos por
-favor!
+Los cholos se han escapao al
+pueblo, ¡esto va a parecer
+como los sanfermines pero
+a lo bextia! ¡Ve, anda!
 
 
 ==== room=88 npc=1 str=2 textAddr=0x1cf96c ptrFieldAddr=0x1cf8be ====
@@ -5126,79 +5153,90 @@ meten con nosotros.
 
 
 ==== room=88 npc=2 str=0 textAddr=0x1cf9be ptrFieldAddr=0x1cf9b8 ====
-¡Los monstruos se han
-escapado de la cárcel!
-¡Tenemos que hacer algo!
+¡Putos cholos! ¡Han empetao
+la puerta del talego y han
+salido por patas! ¡Corre,
+no seas gelipollas!
 
 
 ==== room=88 npc=2 str=1 textAddr=0x1cfa06 ptrFieldAddr=0x1cf9ba ====
-Los monstruos se dirigen al
-pueblo. ¡Tenemos que
-hacer algo!
+¡Los cholos del pueblo se
+han escapau, riau riau!
+(qué acojone)
 
 
 ==== room=88 npc=2 str=2 textAddr=0x1cfa44 ptrFieldAddr=0x1cf9bc ====
-... Tu valentía es un acto
-muy noble ...
+...Tienes las pelotas bien
+puestas, chavás...
 
 
 ==== room=88 npc=3 str=0 textAddr=0x1cfa74 ptrFieldAddr=0x1cfa6e ====
-No he cogido una espada en
-mi vida. ¡Haz algo, por
-favor!
+Lo más afilado que he cogido
+en mi vida es una cuchara,
+¡Ayúdanos, yo soy más torpe
+que un bocao en la polla!
 
 
 ==== room=88 npc=3 str=1 textAddr=0x1cfab0 ptrFieldAddr=0x1cfa70 ====
-¡Los monstruos se dirigen al
-pueblo! ¡Haz algo, por
-favor!
+¡Los cho-choooloos! ¡Se han
+ido pal pueblo! ¡AAAAH!
+¡Susmuertos!
 
 
 ==== room=88 npc=3 str=2 textAddr=0x1cfaec ptrFieldAddr=0x1cfa72 ====
-El Rey está construyendo un
-campo de entrenamiento en
-Rafresa. Me entrenaré mucho.
+El Rey ha mandao a construir
+un campo de entrenamiento en
+Rabesa. Fijo que se ha
+llevao una comisión del
+copón.
 
 
 ==== room=88 npc=4 str=0 textAddr=0x1cfb44 ptrFieldAddr=0x1cfb40 ====
-Oh, has venido. Recuerdo el
-trabajo que hiciste en el
-pasado. Haré una estatua en
-la fuente en honor a tu
-valentía. Ya se está
-construyendo. ¡Ya la
-verás, jovencito!
+¡Eres el niño cabezon! Me
+acuerdo de lo machote que te
+portaste en el pasado. Voy
+a mandar a traer más piedras
+para hacer una estatua en
+tu honor con tu cabeza y
+todo. ¡Te va a molar!
 
 
 ==== room=88 npc=4 str=1 textAddr=0x1cfbec ptrFieldAddr=0x1cfb42 ====
-He reflexionado mucho y me
-faltaba experiencia.
-Construiré un campo de
-entrenamiento para ayudar
-a los guerreros a que sean
-como tú.
+Estaba pensando en
+recalificar unos terrenitos
+y construir un campo de
+entrenamiento en Rabesa. Ni
+que decir tiene que me
+tendré que llevar mi
+pellizquito, claro. Todo sea
+por los chavalines para que
+se entrenen y sean unos
+maromazos.
 
 
 ==== room=88 npc=5 str=0 textAddr=0x1cfc74 ptrFieldAddr=0x1cfc72 ====
-Qué horror ... ¡Monstruos
-malvados en nuestra santa
-iglesia ...! Vine corriendo
-a informar, pero ya habían
-profanado la iglesia.
+¡Su puta madre! ¡Se han
+metido los cholos en la
+iglesia! Aunque con lo
+quemao que anda el cura lo
+mismo los que salen con
+el ojete abierto son ellos.
 
 
 ==== room=89 npc=0 str=0 textAddr=0x1cfcfc ptrFieldAddr=0x1cfcf8 ====
 {E0}0H
-Gracias a ti los monstruos
-huyeron despavoridos. Me has
-salvado la vida. Tu acto de
-valentía es muy noble.
+Menos mal, con tu cabeza
+descomunal has asustao a
+los cholos, me has salvado
+la pelleja. ¡Te recompensaré
+por lo menos con medio vaso
+de agua del grifo!
 
 
 ==== room=89 npc=0 str=1 textAddr=0x1cfd6c ptrFieldAddr=0x1cfcfa ====
-Me pregunto adónde fueron
-todos esos monstruos. Espero
-que estén todos a salvo ...
+¿Ande sabrán pirao los
+mamones estos? ¡Seguro que
+a saquear y a violar!
 
 
 ==== room=90 npc=0 str=0 textAddr=0x1cfdd8 ptrFieldAddr=0x1cfdd6 ====
