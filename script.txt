@@ -5075,7 +5075,7 @@ al leer esto.
 
 
 ==== room=86 npc=6 str=0 textAddr=0x1cf662 ptrFieldAddr=0x1cf660 ====
-Caseta del Cosmo.
+Caseta del Melón.
 Echarle algo de comer que
 tiene más hambre que el
 Tamagochi de un sordo.
@@ -5240,149 +5240,161 @@ a saquear y a violar!
 
 
 ==== room=90 npc=0 str=0 textAddr=0x1cfdd8 ptrFieldAddr=0x1cfdd6 ====
-Dios Todopoderoso, vigíla
-nuestro hoy, nuestro mañana
-y nuestro futuro.
-
+Dios Todopoderoso, blablabla
+y blablabla y todo eso del
+pecado y bla bla bla.
 
 ==== room=90 npc=1 str=0 textAddr=0x1cfe24 ptrFieldAddr=0x1cfe22 ====
 ¡Oh, Santo Padre! ¡Te ruego
-cures a mi hijo!
+que el Athletic gane la
+Liga!
 
 
 ==== room=90 npc=2 str=0 textAddr=0x1cfe54 ptrFieldAddr=0x1cfe52 ====
-Soy un niño, por eso quiero
-ser fuerte y sano. Sálvame
-por favor, Santo Padre.
+Por favor Diosito, haz que
+el cura se eche novia o
+algo, que me tiene el ojete
+en carne viva.
 
 
 ==== room=90 npc=3 str=0 textAddr=0x1cfea6 ptrFieldAddr=0x1cfea4 ====
-¡Oh, Santo Padre! Te
-agradezco que me permitas
-vivir tanto tiempo.
+ZzzzZzzZz... ZzzZzZZz...
+ZzZzzZZ... ZzzZZzZ....
+Grfs...
 
 
 ==== room=90 npc=4 str=0 textAddr=0x1cfeec ptrFieldAddr=0x1cfeea ====
-¡Oh, Señor! Guíanos hacia
-una vida pacífica, sin baños
-de sangre.
+¡Oh, Señor! Mi esposo tiene
+94 años, se bebe una botella
+de Johnny Walker a la semana
+y se fuma un carton de
+tabaco. ¡A ver si te lo
+llevas ya, que sale
+carísimo!
 
 
 ==== room=90 npc=5 str=0 textAddr=0x1cff34 ptrFieldAddr=0x1cff30 ====
 {E0}0I
-No hicimos nada. Nos
-capturaron simplemente
-porque somos monstruos.
+Ay payo, nusotro no hemos
+hecho na, nos han trincao
+simplemente porque semos
+cholos.
 
 
 ==== room=90 npc=5 str=1 textAddr=0x1cff7e ptrFieldAddr=0x1cff32 ====
-Intenté hablarle, pero no
-hubo respuesta.
-Probablemente ya esté
-muerto.
+Está más tieso que una
+mojama. Sólo le falta el
+pijama de madera.
 
 
 ==== room=90 npc=6 str=0 textAddr=0x1cffcc ptrFieldAddr=0x1cffc8 ====
 {E0}0J
-Huímos en busca de
-libertad, ¿es que eso es tan
-malo? Nuestra vida es
-larga ... ¡pero dices que
-debemos pasar unos cientos
-de años en la cárcel!
+Ay pay, nusotro sólo queremo
+libertás, y bueno, también
+una paguita. ¿Tan malo es
+ser un cholo? ¡Ay que malos
+que son los payos! ¡Nos
+quieren enserral a todos!
 
 
 ==== room=90 npc=6 str=1 textAddr=0x1d0062 ptrFieldAddr=0x1cffca ====
-Intenté hablarle, pero no hubo
-respuesta. Probablemente
-ya esté muerto.
+Está más tieso que una
+mojama. Sólo le falta el
+pijama de madera.
 
 
 ==== room=90 npc=7 str=0 textAddr=0x1d00b2 ptrFieldAddr=0x1d00ac ====
 {E0}0K
-Sólo quería hablar con el
-Rey. No quería atacarle,
-pero ... Quería hacer que
-nos comprendiera, pero
-no sirvió de nada.
+Ay payo, yo sólo quería
+hablar con el Rey pa ver
+si me daba una casa o argo,
+no quería haserle na, te
+lo juro por mis niño.
+Pero se puso hecho una
+fiera, qué malos son los
+payos.
 
 
 ==== room=90 npc=7 str=1 textAddr=0x1d012e ptrFieldAddr=0x1d00ae ====
 {E0}0U
-¿Es un crimen haber nacido
-monstruo? Los humanos
-son los monstruos ... No
-me arrepiento de mi vida,
-pero lo único que quería era
-saborear la vida.
+Ay payo, ni que fuera un
+crimen haber nacío cholo.
+¡Mal rayo los parta y se
+le corte la bayonesa!
+Yo sólo quería una paguita
+como cualquier payo...
 
 
 ==== room=90 npc=7 str=2 textAddr=0x1d01c6 ptrFieldAddr=0x1d00b0 ====
-Intenté hablarle, pero no hubo
-respuesta. Probablemente
-ya esté muerto.
+Está más tieso que una
+mojama. Sólo le falta el
+pijama de madera.
 
 
 ==== room=90 npc=8 str=0 textAddr=0x1d0218 ptrFieldAddr=0x1d0210 ====
 {E0}0L
-Los humanos están llenos de
-prejuicios. TODOS los
-monstruos tienen reputación
-de ser malvados. Como los
-humanos, todos somos
-distintos. ¿Cuándo van a
-entenderlo?
+¡Ay, várgame estos payos,
+que son tos unos rasistas!
+¡No todos los cholos somos
+malos! Es verda que hay
+malos como to, pero habemo
+buenos y malo, como en to
+los laos! ¿Por qué no nos
+quieren entendel?
 
 
 ==== room=90 npc=8 str=1 textAddr=0x1d02c0 ptrFieldAddr=0x1d0212 ====
-¡Espera por favor! No quiero
-hacerte daño, sólo quiero
-que me escuches.
+¡Ay payo, dónde vas con esa
+navaja! ¡No me haga na, que
+no llevo dinero! ¡Várgame!
 
 
 ==== room=90 npc=8 str=2 textAddr=0x1d030a ptrFieldAddr=0x1d0214 ====
 {E0}0V
-Si morimos ... ¿adónde
-iremos a parar ...?
+Me paice que nos hemos metio
+en un follón que no se va a
+sabé ni ande sa metío.
 
 
 ==== room=90 npc=8 str=3 textAddr=0x1d033a ptrFieldAddr=0x1d0216 ====
-Intenté hablarle, pero no hubo
-respuesta. Probablemente
-ya esté muerto.
+Está más tieso que una
+mojama. Sólo le falta el
+pijama de madera.
 
 
 ==== room=90 npc=9 str=0 textAddr=0x1d0386 ptrFieldAddr=0x1d0384 ====
-¿Era una lágrima en el ojo
-de ese monstruo? Debo estar
-muy cansado.
+¿Ese cholo estaba llorando?
+¡Fijo que la patá en los
+cojones le ha dolido!
 
 
 ==== room=90 npc=10 str=0 textAddr=0x1d03ce ptrFieldAddr=0x1d03cc ====
-Chico, ¡qué sorpresa! Estos
-monstruos ni siquiera
-intentaron resistirse.
+¡Jua! ¡Vaya paliza que les
+hemos pegao a los cholos!
+¡Los hemos dado hasta en
+el carnet de identidad!
 
 
 ==== room=91 npc=0 str=0 textAddr=0x1d0438 ptrFieldAddr=0x1d0426 ====
 {E0}0h
-MADRE MONSTRUO: Ese
-cuerno ... ¡Ese cuerno que
-tienes es mío! ¿Por qué? No
-debería haber dos cuernos
-míos en este mundo.
-¿Quién eres?
+MADRE CHOLO: ¡Várgame er
+sielo! ¡Ese cuerno es mío!
+¿Quien eres tú, niño
+cabesón que tiene mi cuenno?
+¡No debería haber dos!
 
 
 ==== room=91 npc=0 str=1 textAddr=0x1d04c4 ptrFieldAddr=0x1d0428 ====
 {E0}0i
-NARRACION: <NAME>
-comenzó a contar la historia
-del mundo de la luz, las
-formas vivientes y la
-historia pasada ... Madre
-Monstruo escuchó a
-<NAME> sin inmutarse.
+<NAME> le da la turra
+a la madre de los cholos
+sobre el mundo de la luz,
+los payos, y toda la pesca.
+De paso también le cuenta
+el famoso chiste de la vaca.
+La madre de los cholos
+escuchó a <NAME>
+sin inmutarse.
 
 
 ==== room=91 npc=0 str=2 textAddr=0x1d0560 ptrFieldAddr=0x1d042a ====
