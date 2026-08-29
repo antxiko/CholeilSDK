@@ -58,7 +58,7 @@ Desierto Tabernas
 Soria
 
 ==== room=0 npc=3 str=15 textAddr=0x1c0424 ptrFieldAddr=0x1c0366 ====
- Torre de Papel 
+ Torre Pelli 
 
 ==== room=0 npc=3 str=16 textAddr=0x1c0434 ptrFieldAddr=0x1c0368 ====
 Castillo Calipo
@@ -2385,7 +2385,7 @@ bricomanía! ¡Tope apañao!
 
 ==== room=28 npc=0 str=0 textAddr=0x1c7728 ptrFieldAddr=0x1c7726 ====
 ALITA: Algo ha pasao en la
-Torre de Papel, los payos no
+Torre Pelli, los payos no
 se entienden y se vuelven
 más geliposchas. Seguro que
 es por contratar indios.
@@ -2395,7 +2395,7 @@ es por contratar indios.
 COSMO: ¿Que no pueden qué?
 ¡Cómo al cabesón del amo!
 <NAME>, vamos a
-la Torre de Papel a ver
+la Torre Pelli esa a ver
 qué se cuece.
 
 
@@ -2853,7 +2853,7 @@ chocho pesicola.
 
 ==== room=34 npc=0 str=0 textAddr=0x1c8d0e ptrFieldAddr=0x1c8d06 ====
 AROMA: Los payos intentaron
-construír la torre de Papel
+construír la torre Pelli
 pero les salió rana, cada
 uno empezó hablando en friki
 una cosa distinta y se fue
@@ -5399,134 +5399,144 @@ sin inmutarse.
 
 ==== room=91 npc=0 str=2 textAddr=0x1d0560 ptrFieldAddr=0x1d042a ====
 {E0}0j
-MADRE MONSTRUO: Parece
-mentira que si no fuera por
-ese cuerno no tendríamos
-mundo futuro ni otras formas
-vivientes. Y, ¿qué es "la
-luz"? ¿Lo contrario de la
-oscuridad? Igual que las
-estrellas del cielo, tan
-llenas de misterios ...
+MADRE CHOLO: Ay várgame la
+virgensita, si no fuera por
+el cuerno no nos habiéramo
+enterao de los payos, de
+eso de la luz, ni de na.
+¿Eso de qué es, de Estar
+Guors?
 
 
 ==== room=91 npc=0 str=3 textAddr=0x1d064c ptrFieldAddr=0x1d042c ====
-Cuando nació este planeta
-hubo una explosión que
-afectó a nuestro mundo.
-Cuando recuperamos el
-sentido nos encontrábamos
-en este planeta. Intentamos
-muchas veces volver a
-nuestro planeta pero la
-puerta parece estar sellada
-con algún tipo de energía.
-Si destruimos esta energía
-se abrirán las puertas, pero
-la energía es tan poderosa.
+Cuando nasió el planeta de
+los payos hubo una explosión
+que afectó al mundo de los
+cholos. Cuando nos
+despertamos en esta tierra
+de majaras intentamos volver
+a nuestro mundo de cholos,
+pero la puerta está cerrada
+calicanto con algo como
+magia potagia.
+¡Mal rayo la parta! Si la
+destruyéramo podríamos
+vover a nuestro mundo de los
+cholos.
 
 
 ==== room=91 npc=0 str=4 textAddr=0x1d079c ptrFieldAddr=0x1d042e ====
 {E0}0k
-NARRACION: Fue el destino
-quien envió aquí a estos
-monstruos. No podían
-regresar a su planeta, pero
-aún así no estaban
-destinados a vivir solos en
-este mundo. ¿Quién puede
-culparles? Que los
-monstruos son malvados es
-sólo cómo los perciben los
-humanos. Por primera vez en
-su vida <NAME>
-comprendió la situación en
-que se encontraban los
-monstruos. Los sacrificios
-y los baños de sangre
-... ¿crees que podemos
-alcanzar la paz así?
+Fue el destino quien envió
+al mundo de los payos a
+todos los cholos. No podían
+regresar al mundo de los
+cholos, que no eran más
+que migrantes racializados,
+o eso fue lo que dijo la
+TVE1. Que los cholos sean
+malvados es sólo como los
+payos los perciben. Por
+primera vez en su vida,
+<NAME> comprendió
+la situación en la que se
+encontraban los cholos.
+¿Pero quién escribió este
+argumento tan malo? En
+Charnego Translations no
+lo sabemos.
 
 
 ==== room=91 npc=0 str=5 textAddr=0x1d094a ptrFieldAddr=0x1d0430 ====
 {E0}0l
-Humano, quizá puedas abrir
-la puerta al Mundo
-Subterráneo. ¡Pero es
-peligroso! Muchos de
-nuestros amigos perdieron
-así la vida.
+Payo, a lo mejón puedes
+abril la puerta al mundo
+susterráneo, ¡pero tiene
+más peligro que una piraña
+en un bidet! Todos los que
+han entrado han quedado
+Palmolivo y Coronita sin
+limón.
 
 
 ==== room=91 npc=0 str=6 textAddr=0x1d09d0 ptrFieldAddr=0x1d0432 ====
-Esa mirada en tus ojos ...
-¿vas a ir de verdad? No
-tienes que perder la vida
-ahora. ... Te lo preguntaré
-otra vez, ¿vas a ir de
-verdad?
+Hostia, esa cabeza tuya...
+¿De verdad vas a entrar?
+Mira si cabe de verdad,
+hue hue hue.
+Bueno, ¿te vas a jugar
+las pelotas, chavalín?
 <YESNO>
 
 
 ==== room=91 npc=0 str=7 textAddr=0x1d0a5c ptrFieldAddr=0x1d0434 ====
 {E0}0n
-Entonces no diré más. Rezaré
-por tu seguridad.
+¡Ole tus cojones cuadraos,
+chaval! ¡Ya sabes, valor
+y al toro!
 
 
 ==== room=91 npc=0 str=8 textAddr=0x1d0a90 ptrFieldAddr=0x1d0436 ====
-Has tomado una decisión
-difícil. Debemos respetar
-que quieras salvar tu
-propia vida ...
+Ya desía yo que eras una
+maricona, pero bueh, en
+verdad te iban a dejar
+el ojete como un bebedero
+de patos, asín que...
 
 
 ==== room=91 npc=1 str=0 textAddr=0x1d0af0 ptrFieldAddr=0x1d0aea ====
-¿Conoces los cinco sentidos?
+¡Payo! ¿Te sabes lo de los
+cinco sentidos?
 <YESNO>
 
 
 ==== room=91 npc=1 str=1 textAddr=0x1d0b10 ptrFieldAddr=0x1d0aec ====
-Ya veo que los conoces.
-Eso está bien.
+Ah, eres un enteraíllo,
+¿ein? Mu bien, mu bien.
 
 
 ==== room=91 npc=1 str=2 textAddr=0x1d0b38 ptrFieldAddr=0x1d0aee ====
-Estos son los cinco sentidos
-que experimenta el mundo
-exterior: la vista, el oído,
-el tacto, el olfato y el
-gusto. Recuérdalos.
+Pues chacho, los cinco
+sentidos, la discandí, el
+junelo, el pajaboy, el
+jingloy y el pesquiben.
+¡To el mundo lo sabe!
 
 
 ==== room=91 npc=2 str=0 textAddr=0x1d0bbc ptrFieldAddr=0x1d0bba ====
-Tienes un aspecto extraño,
-¿no? Pero seré tu amigo.
+Ostras con esa cabeza no
+te puedes meter en algunos
+callejones porque no cabes,
+¿ein? Peor seré tu colega.
 
 
 ==== room=91 npc=3 str=0 textAddr=0x1d0bf4 ptrFieldAddr=0x1d0bf2 ====
-Es peligroso ahí delante.
-No te acerques.
+Ten cuidao julandrón,
+que allí delante es peor
+que el puto Vietnam.
 
 
 ==== room=91 npc=4 str=0 textAddr=0x1d0c22 ptrFieldAddr=0x1d0c20 ====
-Los cinco sentidos protegen
-la Energía Espíritu. Es muy
-difícil vencerla.
+Los sinco sentidos protegen
+a la energía espíritu. Ni
+folla de por qué tiene un
+nombre tan moña, pero es
+más dura que el Alcoyano.
 
 
 ==== room=91 npc=5 str=0 textAddr=0x1d0c70 ptrFieldAddr=0x1d0c6e ====
-Muchos han ido antes a
-destruir a la Energía
-Espíritu, pero ninguno
-ha regresado.
+Cantidad de peña ha
+intentado darle madera a la
+energía espírutu esa de
+los cojones, pero la han
+diñao como cucarachas.
 
 
 ==== room=91 npc=6 str=0 textAddr=0x1d0cc6 ptrFieldAddr=0x1d0cc4 ====
-NARRACION: Cuando se
-purifique la puerta de los
-sentidos, aparecerá la
-verdadera forma.
+Cuando se purifique la
+puerta de los sentíos,
+aparecerá la verdadera
+forma. O algo.
 
 
 ==== room=92 npc=0 str=0 textAddr=0x1d0438 ptrFieldAddr=0x1d0426 ====
@@ -5581,61 +5591,70 @@ verdadera forma.
 <SAME room=91 npc=6 str=0>
 
 ==== room=93 npc=0 str=0 textAddr=0x1d0d30 ptrFieldAddr=0x1d0d22 ====
-KLIN; ¡Lárgate! Estoy muy
-ocupado.
+KLIN: ¡Deja de rayarme,
+coño! ¡Vete a tomar por
+saco!
 
 
 ==== room=93 npc=0 str=1 textAddr=0x1d0d54 ptrFieldAddr=0x1d0d24 ====
-KLIN: ¿Mamá Fangosa se ha
-enterado? Al fin y al cabo
-es una madre. ¿Estaba
-triste?
+KLIN: ¿La chon gorda se
+ha coscao? Pues claro, tiene
+un alfato del copón, y es
+una madre. Fijo que estaba
+inritada como cuando no
+le echan de comer.
 <YESNO>
 
 
 ==== room=93 npc=0 str=2 textAddr=0x1d0daa ptrFieldAddr=0x1d0d26 ====
 {E0} ñ
-KLIN: Ya veo. ¿Qué pasa?
-Pero Fangoso iba muy en
-serio. Se enamoró de una
-humana ... Yo obviamente
-intenté evitarlo pero iba
-tan en serio que le eché una
-mano. Usé mi magia para
-intercambiaros a Fangoso
-y a ti.
+KLIN: Pos ya ves, ¿qué?
+Es que el Pringoso estaba
+tope colao de la paya.
+Es mi coleguilla, y claro,
+le tenia que echar un cable.
+Macho, es que se le ponía
+como el brazo de un hombre
+pequeño cogiendo fruta de
+un árbol, el tío andaba
+quemao como la pipa de un
+indio. Y eso.
 
 
 ==== room=93 npc=0 str=3 textAddr=0x1d0e82 ptrFieldAddr=0x1d0d28 ====
-KLIN: No te preocupes tanto
-por ser un fangoso. Acéptalo
-y continúa tu vida lo mejor
-que puedas ...
+KLIN: Anda no te rayes tanto
+por ser un pringoso. ¿Qué
+más te da, si total ibas a
+pinchar menos que un
+tornillo en un charco?
+Ale, aire.
 
 
 ==== room=93 npc=0 str=4 textAddr=0x1d0ee8 ptrFieldAddr=0x1d0d2a ====
-KLIN: Se lo prometí a
-Fangoso. Debo deshacer mi
-magia a toda costa ... Lo
-siento mucho por Mamá
-Fangosa ... y por ti, claro.
-¡Tuviste mala suerte, eso
-es todo!
+KLIN: Es que el pringoso es
+mi colegui, tronco. Tendría
+que deshacer la magia como
+pueda, pero es más complicao
+que tirar un penalti por un
+globo. Lo siento por la
+Chon Gorda... y por tí,
+claro, pero te toca pringar
+chavalote. Ale, a cascarla.
 
 
 ==== room=93 npc=0 str=5 textAddr=0x1d0f8a ptrFieldAddr=0x1d0d2c ====
-KLIN: ¿Eres Fangoso? No. Tú
-eres humano. Debes ser mi
-maestra la bruja, ¿verdad?
-¿Tenías que hacer esto?
-Pero ... no sé porqué pero
-me siento aliviado.
+KLIN: ¿Eres un pringoso? No,
+tú eres un payo. Mi maestra
+la bruja te ha echado un
+cable, ¿no? Uf, en verdás
+estaba acojonado, porque
+la había liado parda.
 
 
 ==== room=93 npc=0 str=6 textAddr=0x1d1024 ptrFieldAddr=0x1d0d2e ====
-KLIN: Odio a cualquiera que
-use una espada en estos
-bosques, ahora ¡piérdete!
+KLIN: ¡Eh, aparta esa navaja
+de aquí! ¡Todos los payos
+sois unos kinkis!
 
 
 ==== room=94 npc=0 str=0 textAddr=0x1d0d30 ptrFieldAddr=0x1d0d22 ====
@@ -5672,100 +5691,113 @@ bosques, ahora ¡piérdete!
 
 
 ==== room=96 npc=0 str=0 textAddr=0x1d1092 ptrFieldAddr=0x1d108a ====
-Estúpidos humanos, os puse
-esta prueba para haceros
-recordar lo que es
-importante. Os quité la
-habilidad de hablar con los
-humanos y os dí el don de
-comunicaros con animales y
-monstruos. Creí que la
-historia, plagada de
-batallas, cambiaría, pero
-demostró ser un esfuerzo
-inútil. Además, habéis
-manchado también este
-lugar sagrado.
+Jodío niño cabezón, eres
+más tonto que pichote, que
+le mandaron a Colombia a por
+coca y trajo Pepsi. Y mira
+que te he puesto a prueba
+quitándote la posibilidad
+de hablar con otros payos
+y darte el don de hablar
+con los animalicos. Desde
+luego eres gilipollas,
+macho. Encima vas con la
+navajita cortando todo como
+si fueras un tontito.
 
 
 ==== room=96 npc=0 str=1 textAddr=0x1d11de ptrFieldAddr=0x1d108c ====
-Os devolveré el don del
-habla, pero recordad que las
-palabras no son importantes.
-Es más importante comprender
-el "corazón". Intentad ver
-las cosas desde otro punto
-de vista ... A los que no
-puedan aprender esto los
-veré en el juicio final.
+¡A tomar por culo!
+te devolveré el don del
+habla, a ver si aprendes
+algo porque que sigas vivo
+con lo zopenco que eres es
+un milagro. Anda, lárgate de
+aquí y deja de dar la vara,
+que eres más pesao que un
+collar de melones.
 
 
 ==== room=96 npc=0 str=2 textAddr=0x1d12d0 ptrFieldAddr=0x1d108e ====
-NARRACION: Ahora es el
-momento de poner fin a esta
-larga historia. Ya no
-existirán las leyes de la
-naturaleza y el mundo de
-Soleil desaparecerá.
-Aprended a conocer la
-magnitud de vuestro pecado.
+Bueno, ya casi te has petao
+el juego. Es verdad, el
+argumento a veces ha sido
+más flojo que un muelle de
+guita, esperemos que hayas
+disfrutado del Choleil.
+Ahora, magia potagia,
+aprende a descubrir la
+magintud de tus pecados y
+todas esas gilichorradas.
+¡Venga, a seguir!
 
 
 ==== room=96 npc=0 str=3 textAddr=0x1d1394 ptrFieldAddr=0x1d1090 ====
-La puerta se ha cerrado y
-no se abrirá nunca más.
+La puerta se ha cerrado para
+siempre, so cabezón.
+Anda a tomar por saco.
 
 
 ==== room=97 npc=0 str=0 textAddr=0x1d13d6 ptrFieldAddr=0x1d13d0 ====
-ORUGA: <NAME>, es hora
-de que me convierta en
-crisálida. Hacía frío en
-Fresa. Lo aguanté, pero
-estoy agotada. Fue
-divertido estar contigo.
+ORUGA: <NAME>, he
+pasao más frío que
+alicantando un iglú
+en Soria, se me han
+helao hasta las pestañas.
+Asín que ale, voy a
+convertirme en crisálida.
+Ya te veré si salgo de
+esta, chao pescao.
 
 
 ==== room=97 npc=0 str=1 textAddr=0x1d145e ptrFieldAddr=0x1d13d2 ====
-MARIPOSA: ¡Buenos días!
-Había tanta luz que me
-desperté. Soy una mariposa
-de verdad. Esta vez estaré
-realmente a tu servicio.
+MARIPOSA: OLA KE ASE!
+Hostia macho, menuda siesta
+que me he echao, un poco
+más y me declaran en coma.
+¡Ahora soy un mariposón,
+qué te parece! Me voy
+contigo otra vez, ahora sí
+que valdré pa algo.
+Digo yo.
 
 
 ==== room=97 npc=0 str=2 textAddr=0x1d14de ptrFieldAddr=0x1d13d4 ====
-¡La mariposoa se une al
-grupo!
+¡El mariposón se une al
+grupo de animalicos!
 
 
 ==== room=97 npc=1 str=0 textAddr=0x1d1504 ptrFieldAddr=0x1d14fe ====
-TRABAJADOR: Salté de la
-torre queriendo huir. ¿Tú
-también? Supongo que no
-tenemos mucha suerte. Ahora
-sí que no podemos
-escaparnos.
+CURRELA: La lié y me caí
+del andamio queriendo salir.
+¿Tú también? Ahora a ver
+si tenemos cojones de
+salir de aquí. Mierda
+de suerte, me cago en
+san peo.
 
 
 ==== room=97 npc=1 str=1 textAddr=0x1d158a ptrFieldAddr=0x1d1500 ====
 {E0} {79}
-TRABAJADOR: La única
-diversión que me queda es
-ver transformarse a esa
-crisálida. Ojalá fuera una
-mariposa. Así podría volar
-a cualquier parte.
+CURRELA: Si al menos me
+hubiera traido un arradio
+pos podría haber escuchado
+el Athletic o algo. Lo único
+que hay interesante es el
+bichejo ese que hay ahí
+colgao.
 
 
 ==== room=97 npc=1 str=2 textAddr=0x1d1620 ptrFieldAddr=0x1d1502 ====
-TRABAJADOR: Vaya, una
-mariposa. Ahora no tengo
-ningún motivo para mirar
-atrás con arrepentimientos.
+CURRELA: Pues nada, ya  no
+tengo ni el bichejo ese para
+mirar. No sé si pegarme un
+espiochazo o algo. Desde
+luego no me sale bien na.
 
 
 ==== room=97 npc=2 str=0 textAddr=0x1d1688 ptrFieldAddr=0x1d1686 ====
-OBRERO: He oído que está
+CURRELA: He oído que está
 nevando mucho en Iris. Es
 muy raro. Creo que el mundo
 está yendo en la dirección
@@ -5774,12 +5806,14 @@ equivocada ...
 
 
 ==== room=97 npc=3 str=0 textAddr=0x1d1706 ptrFieldAddr=0x1d1704 ====
-ARTESANO: Levantaron esta
+CURRELA: Levantaron esta
 torre para estar lo más
-cerca posible de Dios. Creo
-que hemos pagado por ello.
-Fue estúpido intentar una
-cosa así.
+cerca posible del Señó,
+pero la liaron parda.
+Se trajeron curritos de
+fuera y nadie se entendía
+un pimiento. Al final salió
+todo hecho una mierda.
 
 
 ==== room=98 npc=0 str=0 textAddr=0x1d17b2 ptrFieldAddr=0x1d1796 ====
@@ -5875,12 +5909,12 @@ y empiesan a robar, violar,
 
 
 ==== room=99 npc=0 str=0 textAddr=0x1d1b50 ptrFieldAddr=0x1d1b46 ====
-CARCELERO: Esta es la cárcel
-para los monstruos que
-entran en el pueblo. Los
-usamos para investigación,
-pero yo preferiría
-eliminarlos.
+CARCELERO: Este es el
+telago, chavás. Aquí tenemos
+a los cholos. ¡Mola entrar
+en las celdas y darles de
+hostias! Yo por mí me los
+cargaba ya.
 
 
 ==== room=99 npc=0 str=1 textAddr=0x1d1bda ptrFieldAddr=0x1d1b48 ====
