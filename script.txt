@@ -99,7 +99,7 @@ Retirar al animalico B.
 ==== room=1 npc=0 str=5 textAddr=0x1c0528 ptrFieldAddr=0x1c0482 ====
 Misi: Tengo más salida que
 el Lute, te devuelvo a la
-vida.
+vida si la diñas.
 
 
 ==== room=1 npc=0 str=6 textAddr=0x1c055c ptrFieldAddr=0x1c0484 ====
@@ -233,12 +233,16 @@ culo o qué?
 ==== room=2 npc=0 str=4 textAddr=0x1c0bb6 ptrFieldAddr=0x1c09bc ====
 MAMA: Mi niño es mu bueno,
 pero es ceporro como lo era
-su viejo.
+su viejo. Es el que la tiene
+más grande de su clase, eso
+sí.
 
 
 ==== room=2 npc=0 str=5 textAddr=0x1c0c18 ptrFieldAddr=0x1c09be ====
 MAMA: Dile al orejúo del Rey
 que ya has cumplido los 14.
+Y no te pierdas, que eres
+capaz de llegar a Utrera.
 
 
 ==== room=2 npc=0 str=6 textAddr=0x1c0c54 ptrFieldAddr=0x1c09c0 ====
@@ -250,7 +254,7 @@ aunque sea?
 ==== room=2 npc=0 str=7 textAddr=0x1c0c94 ptrFieldAddr=0x1c09c2 ====
 MAMA: Me ha dicho la puri
 que has mangao la medalla de
-cobre. ¡Ole mi gitano ahí!
+cobre. ¡Ole mi niño ahí!
 
 
 ==== room=2 npc=0 str=8 textAddr=0x1c0cf0 ptrFieldAddr=0x1c09c4 ====
@@ -353,7 +357,7 @@ PEPE: ¿Tan tirando cobetes?
 PEPE: ¡Vamos, arrea! ¡Quiero
 ver a Luis! ¡Es medio
 mongolo y se le va la
-lengua!
+mandíbula al hablar!
 
 
 ==== room=2 npc=4 str=0 textAddr=0x1c126c ptrFieldAddr=0x1c1266 ====
@@ -383,8 +387,8 @@ que ya has cumplío los 14.
 
 ==== room=3 npc=0 str=1 textAddr=0x1c13a4 ptrFieldAddr=0x1c134a ====
 PACO: ¡Pasa, <NAME>!
-¡Me han largao que has trin-
-cado la medalla de cobre!
+¡Me han largao que no has
+trincao la medalla de cobre!
 Si la afanas me dirás, ¿no?
 
 
@@ -2131,7 +2135,8 @@ Con el botón C te protegen.
 
 ==== room=21 npc=0 str=0 textAddr=0x1c6b68 ptrFieldAddr=0x1c6b66 ====
 Paece un pajarraco, pero
-está más bien churruscaíto.
+está más bien churruscaíto,
+como a la brasa.
 
 
 ==== room=21 npc=1 str=0 textAddr=0x1c6bb6 ptrFieldAddr=0x1c6bb2 ====
@@ -6427,8 +6432,8 @@ que un desfile de cojos!
 
 ==== room=114 npc=1 str=4 textAddr=0x1d2f36 ptrFieldAddr=0x1d2d36 ====
 {E0}0¿
-HEIDI: A todo esto, tienes el
-carnet de conducir, ¿no?
+HEIDI: A todo esto, tienes
+el carnet de conducir, ¿no?
 ¿Sabes cómo va?
 <YESNO>
 
