@@ -128,8 +128,7 @@ congelar cosas.
 ==== room=1 npc=0 str=10 textAddr=0x1c0646 ptrFieldAddr=0x1c048c ====
 Carlos: Soy el puto Usaín
 Bolt de los bichos, corro
-más que una gallina en
-Somalia.
+más que Indurain.
 
 
 ==== room=1 npc=0 str=11 textAddr=0x1c0688 ptrFieldAddr=0x1c048e ====
@@ -139,8 +138,8 @@ papeles ni na.
 
 
 ==== room=1 npc=0 str=12 textAddr=0x1c06d6 ptrFieldAddr=0x1c0490 ====
-Dodo: Soy catalán y las
-cosas se quedan pegás a tu
+Dodo: Soc catalá y les
+coses se quedan pegás a tu
 navaja, como moneas.
 
 
@@ -2190,9 +2189,9 @@ molan, siempre están en plan
 "gñe, tubarro, amooh" y
 con su navajita como si
 fueran los putos amos.
-¡Es arrancaba las pelotas de
+Les arrancaba las pelotas de
 un bocao, pero mi amo luego
-me canearía!
+me canearía.
 
 
 ==== room=23 npc=1 str=1 textAddr=0x1c6d62 ptrFieldAddr=0x1c6cc0 ====
@@ -2405,7 +2404,7 @@ qué se cuece.
 
 
 ==== room=29 npc=0 str=0 textAddr=0x1c784a ptrFieldAddr=0x1c7838 ====
-PAPA ARDILLA: ¿ú no serás
+PAPA ARDILLA: ¿Tú no serás
 un payo de esos que van por
 ahí masacrando, ¿no?
 <YESNO>
@@ -2725,14 +2724,14 @@ la espicha ya!
 <SAME room=30 npc=4 str=0>
 
 ==== room=32 npc=0 str=0 textAddr=0x1c8570 ptrFieldAddr=0x1c8562 ====
-MAMA FANGOSA: Los payos son
+CHON GORDA: Los payos son
 mu malos, nos atacan sólo
 por ser cholos. Ten
 cuidaíco, miarma.
 
 
 ==== room=32 npc=0 str=1 textAddr=0x1c85c4 ptrFieldAddr=0x1c8564 ====
-MAMA FANGOSA: ¡Tú!
+CHON GORDA: ¡Tú!
 ¡Tú no eres Fangoso, mamón!
 Tú hueles a payo, y una
 madre no se confunde con
@@ -2743,31 +2742,31 @@ el olor de sus niños.
 
 ==== room=32 npc=0 str=2 textAddr=0x1c8666 ptrFieldAddr=0x1c8566 ====
 {E0} {4B}
-MAMA FANGOSA: Eso disía yo.
+CHON GORDA: Eso disía yo.
 Fangoso tiene un rollo raro
 con una paya y quiso hacerse
 un cosplay de payo. Fijo que
 el mamón de Klin le echó un
 cable. ¡Me cago en sus
-muertos pisoteas! ¡Ve para
+muertos pisoteaos! ¡Ve para
 allá y dale unas pocas de
 hostias que espabile!
 
 
 ==== room=32 npc=0 str=3 textAddr=0x1c875a ptrFieldAddr=0x1c8568 ====
-MAMA FANGOSA: ¡Una polla
+CHON GORDA: ¡Una polla
 como una olla!
 
 
 ==== room=32 npc=0 str=4 textAddr=0x1c877a ptrFieldAddr=0x1c856a ====
-MAMA FANGOSA: Dile al mamón
+CHON GORDA: Dile al mamón
 del Klin que le voy a dar
 una hostia que lo visto de
 torero como no lo arregle.
 
 
 ==== room=32 npc=0 str=5 textAddr=0x1c87c8 ptrFieldAddr=0x1c856c ====
-MAMA FANGOSA: Claro, si
+CHON GORDA: Claro, si
 es que el chaval este es
 medio gilipollas. Vas a
 tener que ir a la vieja,
@@ -2781,7 +2780,7 @@ pedir ayuda, a ver.
 
 
 ==== room=32 npc=0 str=6 textAddr=0x1c88ec ptrFieldAddr=0x1c856e ====
-MAMA FANGOSA: ¿Ya te has
+CHON GORDA: ¿Ya te has
 perdido, tontito? ¡La
 estrella, cabezón! ¡Pisa 10
 veces en el centro!
@@ -2892,7 +2891,7 @@ calor que hace.
 ==== room=34 npc=1 str=0 textAddr=0x1c8eca ptrFieldAddr=0x1c8ec2 ====
 ZORRA: ¡Puto dinosaurio, es
 más flojo que un muelle de
-guita! ¡No quiere ayudare
+guita! ¡No quiere ayudarme
 a cruzar el estrecho! ¡Está
 cagao! Es tope grande pero
 es una maricona.
@@ -5604,7 +5603,7 @@ saco!
 ==== room=93 npc=0 str=1 textAddr=0x1d0d54 ptrFieldAddr=0x1d0d24 ====
 KLIN: ¿La chon gorda se
 ha coscao? Pues claro, tiene
-un alfato del copón, y es
+un olfato del copón, y es
 una madre. Fijo que estaba
 inritada como cuando no
 le echan de comer.
@@ -5640,7 +5639,7 @@ KLIN: Es que el pringoso es
 mi colegui, tronco. Tendría
 que deshacer la magia como
 pueda, pero es más complicao
-que tirar un penalti por un
+que tirar un penalti con un
 globo. Lo siento por la
 Chon Gorda... y por tí,
 claro, pero te toca pringar
@@ -5724,17 +5723,13 @@ collar de melones.
 
 
 ==== room=96 npc=0 str=2 textAddr=0x1d12d0 ptrFieldAddr=0x1d108e ====
-Bueno, ya casi te has petao
-el juego. Es verdad, el
-argumento a veces ha sido
-más flojo que un muelle de
-guita, esperemos que hayas
-disfrutado del Choleil.
 Ahora, magia potagia,
 aprende a descubrir la
 magintud de tus pecados y
 todas esas gilichorradas.
 ¡Venga, a seguir!
+¡Que menudo follón que
+estás armando!
 
 
 ==== room=96 npc=0 str=3 textAddr=0x1d1394 ptrFieldAddr=0x1d1090 ====
@@ -6409,10 +6404,6 @@ circuito de carreras! Por
 contra Carlos el guepardo.
 Si ganas te quedas con el
 bicho. ¿Qué te parece?
-¿
-carrera y el guepardo se te
-unirá. Entonces, ¿te
-gustaría intentarlo?
 <YESNO>
 
 
@@ -6823,34 +6814,38 @@ este sitio es para mayores.
 
 
 ==== room=124 npc=0 str=0 textAddr=0x1d36f6 ptrFieldAddr=0x1d36f4 ====
-Ahora, echa un vistazo. La
-historia del mundo ha
-cambiado en tus manos. Yo
-habré creado este mundo,
-pero habéis sido vosotros
-los que habéis hecho la
-historia. No olvidéis que
-los humanos no sóis los
-únicos habitantes del
-mundo ...
+Pos ya casi te has petao el
+juego. ¿A que ha molao mazo?
+Echate una vuelta por el
+barrio, como la has estado
+liando parda por allá por
+donde has ido navajeando
+al persona, has cambiado la
+historia y esas cosas. Pero
+eso ya te lo imaginabas,
+¿no? Y no olvides, los payos
+no son los únicos habitantes
+de este mundo de majaras...
 
 
 ==== room=125 npc=0 str=0 textAddr=0x1d37e4 ptrFieldAddr=0x1d37e2 ====
 La Energía Espíritu que
 protegían los cinco sentidos
-ha desaparecido por
-completo. La puerta que
-lleva al Mundo Subterráneo
-se ha abierto y se ha
-tragado a innumerables
-monstruos. Los monstruos,
-que habían vivido en este
-mundo durante siglos, han
-desaparecido y con ellos la
-oportunidad de ver la luz y
-las vidas que estaban a
-punto de nacer. Han vuelto
-a su suelo patrio sin hacer
-historia en este mundo.
+ha estirao la pata y está
+seca como un bacalao.
+La puerta del mundo de los
+cholos se abre y los
+Mossos Desquadra se los
+han llevado esposaos y a
+palos a su mundo. Los cholos
+que habían pululado en este
+mundo más tiempo que el
+copón han desaparecido,
+y también la posibilidad
+de ver la luz, y por suerte
+también la factura de la
+luz. Han vuelto a su mundo
+sin armar follón en el
+nuestro...
 
 

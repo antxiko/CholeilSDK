@@ -340,101 +340,101 @@ ERASE  BB_RAM NUMBER
       QUIT          
 
 ==== ascii addr=0x3a1d0 len=16 ====
-SOUND EFFECT NO 
+PRESENTED BAY 
 
 ==== ascii addr=0x3b2de len=8 ====
-PRODUCE 
+CHARNEGO TRANSLATIONS 
 
 ==== ascii addr=0x3b2e7 len=20 ====
-SCENARIO/GAME DESIGN
+TEXTOS Y ROMHACK
 
 ==== ascii addr=0x3b2fc len=7 ====
-Y:ONDA@
+KRUSHER
 
 ==== ascii addr=0x3b304 len=12 ====
-MAIN PROGRAM
+GRASFICOS Y COSAS
 
 ==== ascii addr=0x3b311 len=6 ====
-Y:TANI
+SCORPIONMSX
 
 ==== ascii addr=0x3b318 len=12 ====
-SUB PROGRAM 
+DETALLITOS Y COSAS 
 
 ==== ascii addr=0x3b325 len=16 ====
-  & GAME DESIGN 
+ANTXIKO 
 
 ==== ascii addr=0x3b336 len=8 ====
-T:TOYOTA
+TANKES DE COMBATE
 
 ==== ascii addr=0x3b33f len=12 ====
-SUB PROGRAM 
+Y SALUDOS 
 
 ==== ascii addr=0x3b34c len=8 ====
-S:OHTAKE
+AL CHRONO Y AL POS
 
 ==== ascii addr=0x3b355 len=12 ====
-CHARACTER   
+A LA GENTE DEL CANAL
 
 ==== ascii addr=0x3b362 len=20 ====
-  & GRAPHIC DESIGN  
+DE CHARNEGO DEL TELEGRAMO 
 
 ==== ascii addr=0x3b377 len=10 ====
-T:YAMAMOTO
+A VLADIMIR KONOVICH
 
 ==== ascii addr=0x3b382 len=16 ====
-GRAPHIC DESIGN  
+POR EL CODIGO DE LOS GRAFICOS
 
 ==== ascii addr=0x3b393 len=8 ====
-K:NAGATA
+TAMBIEN A EVILJAGAGENIUS
 
 ==== ascii addr=0x3b39c len=12 ====
-M:MATSUSHIMA
+POR EL CODIGO DE LOS
 
 ==== ascii addr=0x3b3a9 len=16 ====
-OBJECT DESIGN   
+PUTOS PUNTEROS
 
 ==== ascii addr=0x3b3ba len=9 ====
-Y:SHIMIZU
+Y YASTA NADIE MAS
 
 ==== ascii addr=0x3b3c4 len=8 ====
-K:TAJIMA
+AHORA DEBERIA IR AQUI
 
 ==== ascii addr=0x3b3cd len=24 ====
-BOSS CHARACTER DESIGN   
+UNA RECETA O ALGO
 
 ==== ascii addr=0x3b3e6 len=6 ====
-Y:MAKI
+PERO SOY MAS TORPE QUE UN
 
 ==== ascii addr=0x3b3ed len=12 ====
-GAME DESIGN 
+COCHINO AMARRAO POR EL RABO
 
 ==== ascii addr=0x3b3fa len=9 ====
-ALL@STAFF
+ASI QUE NA
 
 ==== ascii addr=0x3b404 len=16 ====
-MUSIC COMPOSER  
+ESPERAMOS QUE TE HAYA
 
 ==== ascii addr=0x3b415 len=9 ====
-M:SHINODA
+MOLAO EL CHOLEIL
 
 ==== ascii addr=0x3b41f len=16 ====
-SOUND OPERATOR  
+SI ESO DEJATE CAER
 
 ==== ascii addr=0x3b430 len=9 ====
-N:IWADARE
+POR NUESTRA WEB
 
 ==== ascii addr=0x3b43a len=16 ====
-SPECIAL THANKS  
+PA MAS NOVEDADES
 
 ==== ascii addr=0x3b44b len=5 ====
-MUCKY
+ALA VA POR USTEDE
 
 ==== ascii addr=0x3b451 len=11 ====
-I:MIZOGUCHI
+ARSA AHI
 
 ==== ascii addr=0x3b45d len=20 ====
-EXECTIVE PRODUCER   
+HASTA LUEGO GENTE
 
 ==== ascii addr=0x3b472 len=8 ====
-K:AOYAMA
+:CHARNEGO TRANSLATIONS:
 
