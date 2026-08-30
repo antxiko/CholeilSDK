@@ -5924,174 +5924,190 @@ cargaba ya.
 
 
 ==== room=99 npc=0 str=2 textAddr=0x1d1be0 ptrFieldAddr=0x1d1b4a ====
-CARCELERO: Mi abuelo era
-carcelero. Hace mucho
-tiempo. Una vez se escapó un
-monstruo y por eso ahora
-tengo que tener mucho
-cuidado.
+CARCELERO: Mi yayo era el
+carcelero del pueblo, pero
+era más bestia que una
+infusión de pan rallao. Una
+vez se dejó la puerta
+abierta y se escaparon los
+cholos.
 
 
 ==== room=99 npc=0 str=3 textAddr=0x1d1c66 ptrFieldAddr=0x1d1b4c ====
-CARCELERO: Yo solía pensar
-sólo en el trabajo, pero
-ahora tengo una vida mejor.
+CARCELERO: Bueno vale ya de
+tanta preguntita, ¿no? ¿qué
+más cojones quieres que te
+cuente, mi vida en verso?
 
 
 ==== room=99 npc=0 str=4 textAddr=0x1d1cb8 ptrFieldAddr=0x1d1b4e ====
-CARCELERO: Esto es una
-cárcel. Aquí está encerrado
-un tipo especialmente duro.
-Está a la que salta. Creo
-que se equivocó al nacer
-en esta época.
+CARCELERO: ¿Qué haces en el
+talego? ¡Aquí hay gente mu
+piligrosa! Fíjate en el
+colega este, es medio
+taraíto y está zumbao.
+Se ve que la droga le ha
+dejado el celebro hecho
+una porquería.
 
 
 ==== room=99 npc=1 str=0 textAddr=0x1d1d4c ptrFieldAddr=0x1d1d4a ====
-CRIADA: ¡Qué valiente! ¡Te
-respeto por vigilar a ese
-monstruo tú solo!
+CRIADA: ¡Ois, qué carcelero
+tan salao! ¡Me lo empotraba
+como una loca!
 
 
 ==== room=100 npc=0 str=0 textAddr=0x1d1dba ptrFieldAddr=0x1d1d9c ====
 {E0}0,
-¡Has vuelto, <NAME>!
-¿No te acuerdas de tu propia
-madre? Compré esta casa
-porque pensaba en tu futuro.
-Me costó  50.000 malines,
-pero era una ganga.
+¡Mi niño <NAME>!
+¿Cómo está el niño de mamá?
+¡Mira que casa he comprado,
+la cipoteca una ganga, sólo
+he pagado de entrada 50.000
+piastras.
 
 
 ==== room=100 npc=0 str=1 textAddr=0x1d1e50 ptrFieldAddr=0x1d1d9e ====
-El único problema es que
-ahora no tengo dinero.
-¿Puedes dejarme 10 malines?
-Pero parece que tú tampoco
-tienes dinero. Por favor,
-¿puedes ir a ganar algo de
-dinero para mí?
+Lo único es que me he
+quedado más pelada que el
+chocho de una Barbie, y
+tengo menos dinero que el
+que se está bañando. Si
+pudieras dejarme 10 eurillos
+estaría bien... pero veo que
+tú también estás tiesumbre
+total. ¿No puedes buscar
+algo pa tu mama?
 
 
 ==== room=100 npc=0 str=2 textAddr=0x1d1efe ptrFieldAddr=0x1d1da0 ====
-El único problema es que
-ahora no tengo dinero.
-¿Puedes dejarme 10 malines?
+Lo malo es que me he quedao
+más tiesa que la pata de un
+perro envenenao. ¿No me
+puedes dejar 10 eurillos?
 <YESNO>
 
 
 ==== room=100 npc=0 str=3 textAddr=0x1d1f4e ptrFieldAddr=0x1d1da2 ====
 {E0}0'
-Gracias, <NAME>. Me
-alegro tanto de tener un
-hijo tan atento como tú.
+Gracias, <NAME>. Qué
+bueno es mi niño, coño.
 
 
 ==== room=100 npc=0 str=4 textAddr=0x1d1f94 ptrFieldAddr=0x1d1da4 ====
-Qué vergüenza, no recuerdo
-haberte enseñado a ser
-egoísta.
+¡A tu madre, niño malo!
+¡Vergüenza de tu familia!
+Snif, esas cosas no se
+hacen a su mare.
 
 
 ==== room=100 npc=0 str=5 textAddr=0x1d1fd0 ptrFieldAddr=0x1d1da6 ====
-¡Oh, <NAME>! ¿Por qué
-me miras así ...? No
-sospecharás de tu propia
-madre, ¿no?
+Niño, ¿qué miras a tu madre?
+¡<NAME>! ¡Que tu
+madre no te engaña nunca!
 
 
 ==== room=100 npc=0 str=6 textAddr=0x1d201c ptrFieldAddr=0x1d1da8 ====
 {E0}0.
-¡<NAME>! ¿Estás
-azuzando al perro contra tu
-propia madre?
+¡<NAME>! ¿Me estás
+echando al perro?
+!Sinvergüenza!
+¡Joío porculo!
 
 
 ==== room=100 npc=0 str=7 textAddr=0x1d2056 ptrFieldAddr=0x1d1daa ====
-¡No, lo siento! ¡Perdóname,
-por favor! ¡No lo volveré
-a hacer!
+¡Mierda, me has trincao! ¡De
+verdad que lo siento! ¡Es
+que la vida de un taunki es
+mu dura, nadie me da curro!
 
 
 ==== room=100 npc=0 str=8 textAddr=0x1d2096 ptrFieldAddr=0x1d1dac ====
 {E0}0{43}
-PERRO MAPACHE: Soy un perro
-mapache del oriente. Puedo
-cambiar de forma para
-engañar a la gente ... Así
-es como me gano la vida,
-pero prometo no volverlo a
-hacer. ¿Me perdonas, por
-favor?
+TANUKI: Soy un Tanuki,
+¡Tengo manitas como los
+humanos! Es verdad, estaba
+de okupa engañando a la peña
+para sacarle pelas. Pero es
+que la culpa es de la
+sosiedá, yo soy una víctima.
+¡Perdóname, payo!
 <YESNO>
 
 
 ==== room=100 npc=0 str=9 textAddr=0x1d215a ptrFieldAddr=0x1d1dae ====
 {E0}0;
-PERRO MAPACHE: ¡Gracias!
-Eres un buen humano. Ya
-entiendo. Me uniré a tu
-grupo, no te arrepentirás.
+TANUKI: ¡Gracias, eres un
+payo bueno! ¡Me voy contigo,
+así podremos estafar...
+digo... ayudar a más peña!
 
 
 ==== room=100 npc=0 str=10 textAddr=0x1d21c4 ptrFieldAddr=0x1d1db0 ====
 {E0}0{45}
-PERRO MAPACHE: No, ¿no lo
-dices en serio? Entonces,
-¿qué debo hacer?
+TANUKI: ¿Y qué hago
+entonces? ¡Pues seguiré
+aquí de okupa hiriéndole la
+de ubrique a los payos!
 
 
 ==== room=100 npc=0 str=11 textAddr=0x1d220e ptrFieldAddr=0x1d1db2 ====
 {E0}0(
-PERRO MAPACHE: Entonces,
-¿has cambiado de opinión?
+TANUKI: Snif, de verdá que
+estoy muy arrepentío, ¿me
+perdonas, payo bueno?
 <YESNO>
 
 
 ==== room=100 npc=0 str=12 textAddr=0x1d2248 ptrFieldAddr=0x1d1db4 ====
-PERRO MAPACHE: Mira que eres
-indeciso, chico. Vale, me
-uniré a vosotros.
+TANUKI: Coño, te cuesta
+decidirte, ¿eh, cabezón?
+Venga, me voy con vosotros
+a ganar más pelas.
 
 
 ==== room=100 npc=0 str=13 textAddr=0x1d2292 ptrFieldAddr=0x1d1db6 ====
-PERRO MAPACHE: Venga hombre,
-quieres que sea tu amigo,
-¿no?
+TANUKI: ¿Y qué coño quieres
+que haga, que te la chupe?
+¡Anda a tomar por saco!
 
 
 ==== room=100 npc=0 str=14 textAddr=0x1d22d0 ptrFieldAddr=0x1d1db8 ====
-El perro mapache se une
-al grupo.
+El Tanuki se une a tu
+grupo de animalicos.
 
 
 ==== room=100 npc=1 str=0 textAddr=0x1d22f6 ptrFieldAddr=0x1d22f4 ====
-TINTIN: ¡Es una impostora!
-Mi madre verdadera no diría
-algo así de mí.
+COSMO: ¡Que la detengan, que
+es una mentirosa, malvada y
+peligrosa! Ahora en serio,
+tu madre es una santa, no
+como el colega este.
 
 
 ==== room=100 npc=2 str=0 textAddr=0x1d2340 ptrFieldAddr=0x1d233e ====
-ANCIANA: Mi marido está en
-el bosque de Rafresa.
-Nuestros hijos y él comen
-tanto que siempre estoy
-liada preparando la cena.
+ANCIANA: Mi marido se fue a
+Rabesa a entrenar, pero yo
+creo que se ha ido al bar a
+jugar al dominó y a beber
+vino. ¡Menudo cabronazo!
 
 
 ==== room=100 npc=3 str=0 textAddr=0x1d23c0 ptrFieldAddr=0x1d23be ====
-LUCAS: Voy a construir un
-colegio en el pueblo y
-enseñaré a los niños, ¡ese
-es mi sueño!
+LUCAS: ¡Construiré mi propio
+colegio en el pueblo! ¡Con
+casinos! ¡Y furcias! ¡Es
+más, paso del colegio!
 
 
 ==== room=101 npc=0 str=0 textAddr=0x1d2430 ptrFieldAddr=0x1d2426 ====
-CRIADA: ¡Ayyyyy! ¿Qué? ¡No
-me des esos sustos! ¡Este
-es el aposento del Rey! No
-es lugar para un niño como
-tú. Ahora, ¡lárgate!
+CRIADA: ¡Niño cabezón! ¿Qué
+haces aquí? ¡Te pierdes más
+que la 10-11! ¡Anda y tira,
+que este es el cuarto del
+Rey! ¡Como te coja te suelto
+un guantazo que te visto de
+torero!
 
 
 ==== room=101 npc=0 str=1 textAddr=0x1d24b2 ptrFieldAddr=0x1d2428 ====
@@ -6102,54 +6118,62 @@ tú. Ahora, ¡lárgate!
 
 ==== room=101 npc=0 str=2 textAddr=0x1d24b8 ptrFieldAddr=0x1d242a ====
 {E0}0*
-CRIADA: Qué tarde va hoy Su
-Alteza. ¿Cómo?, ¿quién eres
-tú? ¡Largo de aquí! Tengo
-que limpiar aquí. Ahora,
-¡largo!
+CRIADA: Su alteza, ¿la misma
+limpieza de sable de
+siemp...? ¡Un momento! ¡Tú
+no eres el rey! ¡Tú eres
+sólo un niño cabezón!
+¡Lárgate que tengo cosas
+que hacer!
 
 
 ==== room=101 npc=0 str=3 textAddr=0x1d2530 ptrFieldAddr=0x1d242c ====
-CRIADA: ¿Sigues
-molestándome? Ye te he dicho
-que sólo vine aquí a
-limpiar.
+CRIADA: ¿Otra vez tú aqui?
+¿Te quieres ir a pegarle
+peos a una lata o algo, que
+tienes más cabeza que un
+campo de ajos?
 
 
 ==== room=101 npc=0 str=4 textAddr=0x1d257c ptrFieldAddr=0x1d242e ====
-CRIADA: Al perro de Su
-Alteza no le caigo bien. Me
-pregunto qué piensa.
+CRIADA: Puto perro el del
+rey, se mea y se caga en
+tos laos. ¡Y yo lo tengo
+que limpiar!
 
 
 ==== room=101 npc=1 str=0 textAddr=0x1d25ce ptrFieldAddr=0x1d25c6 ====
-CACHORRO: ¡Guau, guau!
+CACHORRO: ¡Guadus, guadus!
 
 
 ==== room=101 npc=1 str=1 textAddr=0x1d25e6 ptrFieldAddr=0x1d25c8 ====
-CACHORRO: Soy un perro real.
-No vivo en una perrera.
-¡Esta es mi habitación!
+CACHORRO: Jo tío, menuda
+vidorra la mía. Soy el perro
+del Rey y puedo hacer lo que
+me salga de la polla.
 
 
 ==== room=101 npc=1 str=2 textAddr=0x1d2634 ptrFieldAddr=0x1d25ca ====
-CACHORRO: ¡Odio a esa
-criada! Cada vez que se va
-el Rey se pone muy
-antipática.
+CACHORRO: ¡Puta criada! ¡To
+el día haciéndole arrumacos
+al Rey! ¡Seguro que la reina
+tiene más cuernos que un
+saco de caracoles!
 
 
 ==== room=101 npc=1 str=3 textAddr=0x1d2686 ptrFieldAddr=0x1d25cc ====
-CACHORRO: Me alegro tanto
-de que la criada se haya ido
-para siempre. ¿Por qué no se
-dió cuenta el Rey antes?
+CACHORRO: Menos mal que han
+largado a la criada, era más
+vaga que la chaqueta de un
+guarda, y más puta que las
+gallinas!
 
 
 ==== room=101 npc=2 str=0 textAddr=0x1d26fc ptrFieldAddr=0x1d26f4 ====
-SOLDADO: ¿Qué estás
-haciendo? ¡Lo estoy usando
-yo!
+SOLDADO: ¡Urrrgh! ¡No
+debería haber comido Kebab!
+¡Oye, largo de aquí, que
+estoy cagando yo!
 
 
 ==== room=101 npc=2 str=1 textAddr=0x1d2730 ptrFieldAddr=0x1d26f6 ====
@@ -6159,63 +6183,74 @@ yo!
 
 
 ==== room=101 npc=2 str=2 textAddr=0x1d2736 ptrFieldAddr=0x1d26f8 ====
-SOLDADO: Ay, como pica ...
-Au, ¿qué quieres? ¡No me
-molestes ahora!
+SOLDADO: ¡Urrrgh! Gññññfs...
+¡Niño, qué haces aquí!
+¡Venga a tomar por culo,
+hombre ya!
 
 
 ==== room=101 npc=2 str=3 textAddr=0x1d277c ptrFieldAddr=0x1d26fa ====
-SOLDADO: Ah, ese sitio ..
-No, no puede ser. ¡Piérdete!
+SOLDADO: ¡Juas, vaya cabeza!
+¿Dónde vas, niño? ¿A hacerle
+sombra al pueblo? ¡Anda a
+la mierda!
 
 
 ==== room=101 npc=3 str=0 textAddr=0x1d27b6 ptrFieldAddr=0x1d27b4 ====
 {E0}0<
-CARLOS: Esta alfombra es
-única. ¡Qué cruel!
+CARLOS: Esta alfombra...
+¡Es mi primo Pepe! (Snif!)
 
 
 ==== room=101 npc=4 str=0 textAddr=0x1d27ea ptrFieldAddr=0x1d27e8 ====
 {E0}0>
-NARRACION: La lágrima de
-Carlos aterrizó en la
-alfombra. De repente la
-alfombra empezó a hablar.
-Perdí la batalla por el Rey.
-Si hubiera ganado, el Rey
-estaría muerto ahora. Mi
-espíritu sigue deambulando
-por este mundo ... Me
-entregaré a ti. Por aquí hay
-agua, encuéntrala. Hazme
-un favor y sé valiente ...
+Carlos derrama una lágrima
+de tristeza en la alfombra.
+
+
+De repente, la alfombra
+le habla:
+
+
+¡El hijoputa del Rey me
+mató! Bueno, en verdad lo
+hizo porque si no me lo
+hubiera zampado, las cosas
+como son. Primo Carlos,
+me alegro de que te vaya
+bien. Un secretito: hay
+agua por aquí. Sé un
+machote. ¿Qué significa
+esto? ¡Tú sabrás!
 
 
 ==== room=101 npc=5 str=0 textAddr=0x1d2926 ptrFieldAddr=0x1d2922 ====
 {E0}0{64}
-TINTIN: ¡Guau, guau, guau!
+COSMO: ¡Guau, guau, guau!
 
 
 ==== room=101 npc=5 str=1 textAddr=0x1d2946 ptrFieldAddr=0x1d2924 ====
-NARRACION: El perro Tintín
+Cosmo Kramer, el perro,
 te sigue.
 
 
 ==== room=102 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
 PEPE: ¡Hola, <NAME>!
 Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
+¿ein? 14 años y sigues en
+quinto de EGB, eres tela
+de espesito para la cabeza
+que tienes.
 
 
 ==== room=102 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
+PACO: ¡Hombre, que pasa,
+colegui! Me invitarás a
+tu cumple, ¿no? Espero
+que haya strippers o algo,
+manda a tu vieja a paseo
+y le digo al pijota que
+nos pase media bellotita.
 
 
 ==== room=103 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
@@ -6285,76 +6320,91 @@ cumpleaños, ¡fue horrible!
 <SAME room=102 npc=1 str=0>
 
 ==== room=114 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
-CARLOS: ¡Tú ganas! Vale, me
-uniré al grupo como te
-prometí.
+CARLOS: ¡La virgen, corres
+más que una gallina en
+Somalia! Vale, me uniré
+a ti.
 
 
 ==== room=114 npc=0 str=1 textAddr=0x1d2acc ptrFieldAddr=0x1d2a80 ====
 {E0} z
 ¡Carlos el guepardo se
-une al grupo!
+une al grupo de animalicos!
 
 
 ==== room=114 npc=0 str=2 textAddr=0x1d2af6 ptrFieldAddr=0x1d2a82 ====
-¡Oh, no! ¡Carlos el guepardo
-llegó a la meta antes!
-CARLOS: Venga, hazlo lo
-mejor que puedas. ¡Parece
-mentira!
+¡Juas, eres más lento que 
+una paja con la izquierda!
+¡Carlos el guepardo te ha
+ganado! Venga, gástate los
+jurdeles e inténtalo otra
+vez, pringao.
 
 
 ==== room=114 npc=0 str=3 textAddr=0x1d2b66 ptrFieldAddr=0x1d2a84 ====
-CARLOS: ¡Liebre tacaña! Sólo
-me paga el 10 por ciento de
-las ganancias. Por 50
-malines iré más despacio,
-pero es inútil si no tienes
-el dinero.
+CARLOS: La puta que parió a
+la liebre, catalana agarrá.
+Sólo me da el 10 por ciento
+de las ganancias. Si me
+rulas 50 chapas iré más
+despacito para que ganes.
+¡Pero estás pelao,
+desgraciao! Te dan por saco.
 
 
 ==== room=114 npc=0 str=4 textAddr=0x1d2bf8 ptrFieldAddr=0x1d2a86 ====
-CARLOS: ¡Liebre tacaña! Sólo
-me paga el 10 por ciento de
-las ganancias. 50 malines e
-iré más despacio, ¿qué
-dices?
+CARLOS: La puta que parió a
+la liebre, catalana agarrá.
+Sólo me da el 10 por ciento
+de las ganancias. Si me
+rulas 50 chapas iré más
+despacito para que ganes.
+¿Qué dices, chavalín?
 <YESNO>
 
 
 ==== room=114 npc=0 str=5 textAddr=0x1d2c6e ptrFieldAddr=0x1d2a88 ====
 {E0}0ü
-CARLOS: ¡Trato hecho! Eres
-un tipo razonable.
+CARLOS: ¡De puta madre!
+¡Pero date vidilla, que
+tampoco puedo ir a paso
+de tortuga!
 
 
 ==== room=114 npc=0 str=6 textAddr=0x1d2ca2 ptrFieldAddr=0x1d2a8a ====
-CARLOS: Bien, ¿crees que
-puedes ganarme, eh?
-Adelante, inténtalo.
+CARLOS: Ah, conque te crees
+Fitipaldi, ¿eh? Pues te voy
+a dar pal pelo, niñato
+cabezúo.
 
 
 ==== room=114 npc=0 str=7 textAddr=0x1d2ce6 ptrFieldAddr=0x1d2a8c ====
-CARLOS: Lo siento. No puede
-ir más despacio. La liebre
-se dará cuenta.
+CARLOS: Macho no puedo ir
+más despacio, que la liebre
+tampoco es gilipollas, ¿lo
+pillas? Anda, haz algo por
+tu parte, cojones.
 
 
 ==== room=114 npc=1 str=0 textAddr=0x1d2d4a ptrFieldAddr=0x1d2d2e ====
-HEIDI: Esto es una pista
-de carreras. Por 20 malines
-puedes competir contra
-Carlos el guepardo. Pero no
-puedes pasar si no tienes el
-dinero. ¿Otra vez quizá?
+HEIDI: ¡Bienvenido al
+circuito de carreras! Por
+20 chapas te dejo correr
+contra Carlos el guepardo.
+Pero estás seco como el
+ojo de un tuerto, así que
+ya sabes, reune pelas.
 
 
 ==== room=114 npc=1 str=1 textAddr=0x1d2dea ptrFieldAddr=0x1d2d30 ====
 {E0}0é
-HEIDI: Esto es una pista de
-carreras. Por 20 malines
-puedes competir contra
-Carlos el guepardo. Gana la
+HEIDI: ¡Bienvenido al
+circuito de carreras! Por
+20 chapas te dejo correr
+contra Carlos el guepardo.
+Si ganas te quedas con el
+bicho. ¿Qué te parece?
+¿
 carrera y el guepardo se te
 unirá. Entonces, ¿te
 gustaría intentarlo?
@@ -6363,95 +6413,103 @@ gustaría intentarlo?
 
 ==== room=114 npc=1 str=2 textAddr=0x1d2ea0 ptrFieldAddr=0x1d2d32 ====
 {E0}0ú
-HEIDI: ¡Vale! El guepardo es
-muy rápido, o sea que hazlo
-lo mejor que puedas.
+HEIDI: ¡Así se habla,
+machote! ¡Dale duro, que
+el guepardo es un bicho
+que corre que te cagas.
 
 
 ==== room=114 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
-HEIDI: ¡Oh, estás dejando
-pasar tu oportunidad!
-Mala suerte ...
+HEIDI: ¡Menuda maricona!
+¡Seguro que eres más lento
+que un desfile de cojos!
 
 
 ==== room=114 npc=1 str=4 textAddr=0x1d2f36 ptrFieldAddr=0x1d2d36 ====
 {E0}0¿
-HEIDI: A todo esto, ¿conoces
-las reglas de la carrera?
+HEIDI: A todo esto, tienes el
+carnet de conducir, ¿no?
+¿Sabes cómo va?
 <YESNO>
 
 
 ==== room=114 npc=1 str=5 textAddr=0x1d2f74 ptrFieldAddr=0x1d2d38 ====
-HEIDI: Entonces vale.
-¡Buena suerte!
+HEIDI: Claro que sí, ¡Venga,
+dale caña, tío!
 
 
 ==== room=114 npc=1 str=6 textAddr=0x1d2f9a ptrFieldAddr=0x1d2d3a ====
-HEIDI: El primero en
-completar tres vueltas gana
-la carrera. Botón A para
-acelerar, botón B para
-frenar y PanelºD para girar.
-Puedes hablar con el
-guepardo antes de la
-carrera. ¡Buena suerte!
+HEIDI: Jodo, mira que eres
+espesito. El primero en
+completar tres vueltas gana.
+Dale al botón A para
+acelerar y al B para frenar,
+o lo que sea que tenga tu
+puto mando, y dale pa los
+laos para darle al volante.
+¿No es tan difícil, no?
+¡Y nada de darle palique
+al guepardo antes de correr!
 
 
 ==== room=114 npc=1 str=7 textAddr=0x1d305c ptrFieldAddr=0x1d2d3c ====
-HEIDI: Esto es una pista de
-carreras. Por 10 malines
-puedes correr contra reloj.
-Pero no puedes inscribirte
-si no tienes dinero. ¡Quizá
-la próxima vez!
+HEIDI: Bueh, pues esto es la
+pista de carreras, por 10
+chapas puedes correr pero
+contra el reloj, ya que te
+has sisao mi bicho. Pero eso
+da igual, ¡estás más tieso
+que una vela!
 
 
 ==== room=114 npc=1 str=8 textAddr=0x1d30f6 ptrFieldAddr=0x1d2d3e ====
 {E0}0{58}
-HEIDI: Esto es una pista de
-carreras. Por 10 malines
-puedes correr contra reloj.
-Esto es para ver qué rápido
-puedes correr. ¿Te gustaría
-intentarlo?
+HEIDI: Bueh, pues esto es la
+pista de carreras, por 10
+chapas puedes correr pero
+contra el reloj, ya que te
+has sisao mi bicho. Bueno,
+qué, ¿te mola correr?
 <YESNO>
 
 
 ==== room=114 npc=1 str=9 textAddr=0x1d3192 ptrFieldAddr=0x1d2d40 ====
 {E0}0{59}
-HEIDI: Vale, trato hecho.
-¡Ve a por tu mejor récord!
-¡Buena suerte!
+HEIDI: ¡Dale ahí! Ya sabes,
+¡A tabla y frenar es de
+maricones!
 
 
 ==== room=114 npc=1 str=10 textAddr=0x1d31dc ptrFieldAddr=0x1d2d42 ====
-HEIDI: Oh, mala suerte. La
-próxima vez será mejor.
+HEIDI: Menuda maricona,
+así nunca vas a impresionar
+a ninguna chavala.
 
 
 ==== room=114 npc=1 str=11 textAddr=0x1d3210 ptrFieldAddr=0x1d2d44 ====
 {E0}0{5A}
-HEIDI: Ah, a todo esto,
-¿conoces ya las reglas de
-la carrera contra reloj?
+HEIDI: Bueno, a estas
+alturas sabrás conducir ya,
+¿no, chavalín?
 <YESNO>
 
 
 ==== room=114 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
-HEIDI: Vale, ¡Buena suerte!
+HEIDI: Poj claro, eres un
+profesional. ¡Venga, pedal
+al metal, vamoooooo!
 
 
 ==== room=114 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
-HEIDI: Compites contra reloj
-para completar tres vueltas
-alrededor de la pista. Botón
-A para acelerar, botón B
-para los frenos y la marcha
-atrás y PanelºD para girar.
-El tiempo aparece en la
-esquina superior derecha de
-la pantalla. ¡Ve a por el
-récord, y buena suerte!
+HEIDI: Pero mira que eres
+tontito, hijo. A ver, le das
+tres vueltas al circuito
+para marcar tu mejor tiempo.
+Le das a la A para acelerar
+y a la B para frenar, y pa
+los laos pa girar. No es que
+sea ingeniería aeroespacial,
+¿no? ¡Venga coño, dale ya!
 
 
 ==== room=115 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
@@ -6653,19 +6711,19 @@ récord, y buena suerte!
 <SAME room=114 npc=1 str=13>
 
 ==== room=118 npc=0 str=0 textAddr=0x1d3396 ptrFieldAddr=0x1d3390 ====
-¿Quieres salvar tu
-información ahora?
+¿Quieres guardar el visio
+como lo llevas ahora?
 
 <YESNO>
 
 
 ==== room=118 npc=0 str=1 textAddr=0x1d33c0 ptrFieldAddr=0x1d3392 ====
-Información salvada.
+Visio guardado.
 
 
 ==== room=118 npc=0 str=2 textAddr=0x1d33d6 ptrFieldAddr=0x1d3394 ====
-No se ha salvado la
-información.
+Algo se ha escacharrao y
+no se ha guardao na :(
 
 
 ==== room=119 npc=0 str=0 textAddr=0x1d3396 ptrFieldAddr=0x1d3390 ====
@@ -6696,57 +6754,64 @@ información.
 <SAME room=118 npc=0 str=2>
 
 ==== room=122 npc=0 str=0 textAddr=0x1d33fe ptrFieldAddr=0x1d33fc ====
-NARRACION: ¡El máximo de
-puntos de salud de
-<NAME> ha aumentado!
+¡La vida máxima de
+<NAME> ha aumentao!
+¡Notas como estás más
+petaíto!
 
 
 ==== room=122 npc=1 str=0 textAddr=0x1d343e ptrFieldAddr=0x1d343c ====
-¡<NAME> encontró la
-manzana de la vida! Ahora el
-máximo de puntos de salud
-ha aumentado.
+¡<NAME> ha trincao
+una manzana de la vida!
+¡Qué tío más bravo! ¡Ahora
+tiene más cojones que antes!
 
 
 ==== room=123 npc=0 str=0 textAddr=0x1d34a2 ptrFieldAddr=0x1d3498 ====
-SIRENA: ¿Te gustaría
-aumentar tu máximo de puntos
-de salud? Te lo vendo, pero
-te costará 800 malines.
-¿Puedes permitírtelo?
+SIRENA: ¡Hola, guapetón! ¿No
+eres un poco joven para
+entrar en el puti? Bueno, da
+igual. ¿Quieres aumentar tus
+puntos de salud? ¡Solo 800
+pavías! ¿Tienes pasta,
+bonico?
 
 
 ==== room=123 npc=0 str=1 textAddr=0x1d3520 ptrFieldAddr=0x1d349a ====
-SIRENA: ¿Te gustaría
-aumentar tu máximo de puntos
-de salud? Te lo vendo, pero
-te costará 800 malines. El
-precio de la vida no es
-barato. ¿Lo compras?
+SIRENA: ¡Hola, guapetón! ¿No
+eres un poco joven para
+entrar en el puti? Bueno, da
+igual. ¿Quieres aumentar tus
+puntos de salud? ¡Solo 800
+pavías! Es caro, pero es que
+me tengo que ganar la vida,
+¿sabes?
 <YESNO>
 
 
 ==== room=123 npc=0 str=2 textAddr=0x1d35ba ptrFieldAddr=0x1d349c ====
 {E0}0{65}
-¡<NAME> ganó una
-manzana de la vida! Tu
-máximo de puntos de salud
-ha aumentado.
+¡<NAME> ha trincao
+una manzana de la vida!
+¡Qué tío más bravo! ¡Ahora
+tiene más cojones que antes!
 
 
 ==== room=123 npc=0 str=3 textAddr=0x1d360a ptrFieldAddr=0x1d349e ====
-SIRENA: ... Ya me lo
-parecía: demasiado caro. No
-tienes que comprarlo si no
-puedes permitírtelo.
+SIRENA: Bah, eres un tieso
+de mierda, ¡fuera de aquí,
+o llamo al machaca para que
+te de de hostias hasta en
+el carnet de identidad!
+¡Puto salido!
 
 
 ==== room=123 npc=0 str=4 textAddr=0x1d366c ptrFieldAddr=0x1d34a0 ====
-SIRENA: No me quedan más
-manzanas restauradoras de
-salud. Los humanos quieren
-tener vidas muy largas.
-
+SIRENA: Ya me he quedado sin
+manzanas, bonico, esa era la
+última. Anda, vete por ahí
+a zurrarte la sardina, que
+este sitio es para mayores.
 
 ==== room=123 npc=1 str=0 textAddr=0x1d36d6 ptrFieldAddr=0x1d36d4 ====
 .........................
