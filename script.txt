@@ -884,7 +884,7 @@ SOLDADO: Mi vieja se ha
 comprao la casa que estaba
 en venta, y se ve que ahora
 tiene menos dinero que el
-que se está balando. Se lo
+que se está bañando. Se lo
 habrá gastado todo en el
 bingo.
 
@@ -3065,7 +3065,7 @@ eres un cochino. Es mejor
 algo y no alguien pa subir.
 En el Castillo Calipo hay
 una semilla que crece de la
-hoxtia, auqnue no fumable.
+hoxtia, aunque no fumable.
 Necesitamos a un mojaíto pa
 ir a por ella.
 
@@ -3255,7 +3255,7 @@ so cabesón!
 ==== room=44 npc=0 str=3 textAddr=0x1c9ec4 ptrFieldAddr=0x1c9da6 ====
 FALETE: Tu madre me
 preparará un bocaíllo de
-salchicón, pero lo mismo le
+salchichón, pero lo mismo le
 puedes hacer daño. ¡A que
 soy malo! ¡Hua hua hua!
 ¡Venga, a calentarnos la
@@ -3340,9 +3340,9 @@ una pajuela en condiciones.
 
 
 ==== room=45 npc=5 str=0 textAddr=0x1ca366 ptrFieldAddr=0x1ca364 ====
-Aquí puedo relajarme. No
-tengo que preocuparme de
-pasar a la historia.
+¡Soy el pollo volante!
+¡Palmé en Isla Barbate y
+aquí me quedao!
 
 
 ==== room=45 npc=6 str=0 textAddr=0x1ca3b0 ptrFieldAddr=0x1ca3ae ====
@@ -3391,7 +3391,7 @@ La he tenido que diñar y
 venir hasta aquí para que mi
 mujer me deje tranquilo. La
 puñetera se ha quedado en el
-Calle de las Bailas
+Valle de las Bailas
 emperrada que vuelva. ¡Pero
 echo muchísimo de menos la
 tele!
@@ -3674,9 +3674,9 @@ plato principal, hue hue.
 
 
 ==== room=52 npc=1 str=1 textAddr=0x1caf8a ptrFieldAddr=0x1caf82 ====
-APRENDIZ: ¡Eh! ¡Salta tú
-solo! No es justo que te
-ayude un guepardo.
+APRENDIZ: ¡Hijoputa!
+¡Tramposo! ¡El bicho ese
+va contigo y saltas más!
 
 
 ==== room=52 npc=2 str=0 textAddr=0x1cafd2 ptrFieldAddr=0x1cafd0 ====
@@ -5746,10 +5746,10 @@ Anda a tomar por saco.
 ORUGA: <NAME>, he
 pasao más frío que
 alicantando un iglú
-en Soria, se me han
-helao hasta las pestañas.
-Asín que ale, voy a
-convertirme en crisálida.
+en el Castillo Calipo, se me
+han helao hasta las 
+pestañas. Asín que ale, voy
+a convertirme en crisálida.
 Ya te veré si salgo de
 esta, chao pescao.
 
@@ -5793,7 +5793,7 @@ colgao.
 
 
 ==== room=97 npc=1 str=2 textAddr=0x1d1620 ptrFieldAddr=0x1d1502 ====
-CURRELA: Pues nada, ya  no
+CURRELA: Pues nada, ya no
 tengo ni el bichejo ese para
 mirar. No sé si pegarme un
 espiochazo o algo. Desde
@@ -5801,11 +5801,12 @@ luego no me sale bien na.
 
 
 ==== room=97 npc=2 str=0 textAddr=0x1d1688 ptrFieldAddr=0x1d1686 ====
-CURRELA: He oído que está
-nevando mucho en Iris. Es
-muy raro. Creo que el mundo
-está yendo en la dirección
-equivocada ...
+CURRELA: He escuchado que en
+Ibi está nevando de la
+hoxtia, y eso es raro porque
+en Alicante no nieva ni
+aunque eches cubutos de
+hielo de un avión.
 
 
 
