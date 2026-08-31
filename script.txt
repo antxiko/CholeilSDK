@@ -496,8 +496,8 @@ aunque sea!
 ==== room=3 npc=2 str=0 textAddr=0x1c19a6 ptrFieldAddr=0x1c19a2 ====
 PEPE: Estoy esperando para
 ver al Luis, lo mismo le
-pido un autógrafo... O un
-par de gramillos.
+pido un autógrafo... 
+(O un par de gramillos.)
 
 
 ==== room=3 npc=2 str=1 textAddr=0x1c19f8 ptrFieldAddr=0x1c19a4 ====
@@ -635,8 +635,8 @@ culo ya!
 
 ==== room=3 npc=5 str=0 textAddr=0x1c21e0 ptrFieldAddr=0x1c21de ====
 CASA DE COSMO
-¡No le des na que se
-escagarrucia!
+¡No le des na de comer que
+se escagarrucia!
 Firmado: <NAME>
 
 
@@ -752,8 +752,8 @@ la Navaja de Albacete.
 REY: ¡Ahora eres un
 auténtico maromo! Aunque
 seas un poco espesito y
-sigas en sexto de EGB con 14
-tacos ya.
+sigas en quinto de EGB con
+14 tacos ya.
 
 
 ==== room=4 npc=0 str=9 textAddr=0x1c2790 ptrFieldAddr=0x1c23d8 ====
@@ -1239,12 +1239,14 @@ a los payos!
 GITANA: Ties que tener
 cuidaico y tirar pol la
 sombra, que lo vas a tener
-más difísi que tirar un
-penalti con un globo.
+más difísi que hasr gárgaras
+con polvos de talco.
 
 
 ==== room=7 npc=5 str=0 textAddr=0x1c3c32 ptrFieldAddr=0x1c3c2c ====
 FLOR: "..................."
+(Es una flor, ¿qué va a
+decir, tontopolla?)
 
 
 
@@ -1581,20 +1583,20 @@ su marido iba a volver!
 
 
 ==== room=11 npc=0 str=3 textAddr=0x1c4d7a ptrFieldAddr=0x1c4c12 ====
-ANCIANO: Quería convertir
-esto en una posada pero no
-tiene sentido porque la
-gente ahora prefiere
-recuperar la salud con
-manzanas. No puedes ganarte
-la vida como posadero pero
-me di cuenta tarde....
+ANCIANO: Iba a montar aquí
+un Love Hotel de esos pa
+parejitas, pero aqui la peña
+jinca menos que una puntilla
+de goma, así que me voy a ir
+a la puñeta. Voy a tener que
+empeñar hasta la dentadura.
 
 
 ==== room=11 npc=1 str=0 textAddr=0x1c4e44 ptrFieldAddr=0x1c4e42 ====
 CHAVEA: Los pringaos de mis
 viejos están en la iglesia.
-¡Mola!
+¡Mola! ¡Puedo ver mujeres
+en pelotas en Internet!
 
 
 ==== room=12 npc=0 str=0 textAddr=0x1c4eac ptrFieldAddr=0x1c4e96 ====
