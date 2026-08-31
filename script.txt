@@ -2186,14 +2186,9 @@ animalicos.
 
 
 ==== room=23 npc=1 str=0 textAddr=0x1c6cc2 ptrFieldAddr=0x1c6cbe ====
-CIRO: Los maromos no me
-molan, siempre están en plan
-"gñe, tubarro, amooh" y
-con su navajita como si
-fueran los putos amos.
-Les arrancaba las pelotas de
-un bocao, pero mi amo luego
-me canearía.
+{F3}
+
+
 
 
 ==== room=23 npc=1 str=1 textAddr=0x1c6d62 ptrFieldAddr=0x1c6cc0 ====
@@ -2219,7 +2214,14 @@ un saco de ratones.
 <SAME room=23 npc=0 str=0>
 
 ==== room=24 npc=1 str=0 textAddr=0x1c6cc2 ptrFieldAddr=0x1c6cbe ====
-<SAME room=23 npc=1 str=0>
+CIRO: Los maromos no me
+molan, siempre están en plan
+"gñe, tubarro, amooh" y
+con su navajita como si
+fueran los putos amos.
+Les arrancaba las pelotas de
+un bocao, pero mi amo luego
+me canearía.
 
 ==== room=24 npc=1 str=1 textAddr=0x1c6d62 ptrFieldAddr=0x1c6cc0 ====
 <SAME room=23 npc=1 str=1>

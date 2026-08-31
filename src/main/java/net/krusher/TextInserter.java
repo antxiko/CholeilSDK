@@ -22,10 +22,12 @@ import java.util.regex.Pattern;
  * the original script region (fully reusable, since all of it is being
  * rewritten) followed by known/scanned free space further in the ROM.
  *
- * Room, NPC, and string INDEX tables never move (their sizes are fixed by
- * counts that don't change) -- only the 2-byte offset VALUES inside the
- * existing string-index tables are rewritten, to point at each string's new
- * location.
+ * Room, NPC, and string INDEX tables normally never move (their sizes are
+ * fixed by counts that don't change) -- only the 2-byte offset VALUES inside
+ * the existing string-index tables are rewritten, to point at each string's
+ * new location. The one exception is a room that shares its NPC table with
+ * another room and whose translation diverged from it: that room is given its
+ * own copy of the table structure, see forkDivergedRooms.
  *
  * Slot values are dual-mode, backed by a small fetch helper this inserter
  * installs at FETCH_HELPER_ADDR and jsr-patches into all nine of the game's
@@ -183,6 +185,34 @@ public final class TextInserter {
         int indirectIndex = -1;
     }
 
+    /**
+     * One or more rooms that shared an NPC table with an earlier room but
+     * whose translated text no longer matches it, moved onto their own copy
+     * of that room's table structure. See forkDivergedRooms.
+     */
+    static final class Fork {
+        List<Integer> rooms = new ArrayList<Integer>(); // rooms pointing at this block
+        int anchorRoom;          // the room that keeps the original tables
+        int origNpcTableAddr;
+        int npcCount;
+        int[] strCounts;
+        int[] strOffsets;        // each string table's offset from addr, even-aligned
+        int[] strTableAddrs;     // filled in once the block is allocated
+        int addr = -1;           // block base = the new NPC table
+        int size;
+        List<Entry> entries = new ArrayList<Entry>();
+
+        /** The index tables inside the block, to keep the text pool off them. */
+        List<int[]> tableRanges() {
+            List<int[]> r = new ArrayList<int[]>();
+            r.add(new int[]{addr, addr + npcCount * 2});
+            for (int npc = 0; npc < npcCount; npc++) {
+                r.add(new int[]{strTableAddrs[npc], strTableAddrs[npc] + strCounts[npc] * 2});
+            }
+            return r;
+        }
+    }
+
     /** usage: TextInserter [romPath] [scriptPath] [tblPath] [freeSpacePath] [outPath] */
     public static void main(String[] args) throws IOException {
         String romPath = args.length > 0 ? args[0] : "Soleil (Spain).md";
@@ -265,6 +295,24 @@ public final class TextInserter {
         // never be touched -- only the text itself is free to repack.
         List<int[]> tableRanges = computeTableRanges(rom);
 
+        // Everything that may be written to, before anything is reserved out
+        // of it. Built here (rather than just before placement) because the
+        // fork pass below allocates from it too.
+        List<int[]> poolSources = new ArrayList<int[]>();
+        poolSources.add(new int[]{minTextAddr, trueScriptEnd});
+        poolSources.add(new int[]{trueScriptEnd, DEFAULT_GAP_END});
+        if (freeSpacePath != null && Files.exists(Paths.get(freeSpacePath))) {
+            for (FreeSpaceScanner.Region r : FreeSpaceScanner.readRegionsFile(freeSpacePath)) {
+                poolSources.add(new int[]{r.start, r.end()});
+            }
+        }
+
+        // Rooms that share an NPC table but whose translations no longer match
+        // get their own copy of that table structure; see forkDivergedRooms.
+        // With no divergence this is a complete no-op.
+        List<Fork> forks = forkDivergedRooms(rom, entries, tableRanges, poolSources, outPath);
+        for (Fork f : forks) tableRanges.addAll(f.tableRanges());
+
         // In the original data every str=0 sits at EXACTLY strTableAddr+
         // strCount*2 (immediately after its own index table), making its slot
         // value double as a self-describing table-size encoding. A full
@@ -322,14 +370,7 @@ public final class TextInserter {
             reservations.add(new int[]{strTableAddr, requiredEnd});
         }
 
-        List<int[]> pool = new ArrayList<int[]>();
-        pool.add(new int[]{minTextAddr, trueScriptEnd});
-        pool.add(new int[]{trueScriptEnd, DEFAULT_GAP_END});
-        if (freeSpacePath != null && Files.exists(Paths.get(freeSpacePath))) {
-            for (FreeSpaceScanner.Region r : FreeSpaceScanner.readRegionsFile(freeSpacePath)) {
-                pool.add(new int[]{r.start, r.end()});
-            }
-        }
+        List<int[]> pool = poolSources;
         List<int[]> excluded = new ArrayList<int[]>(tableRanges);
         excluded.addAll(reservations);
         // Never place anything over the fetch helper block, even when a stale
@@ -527,6 +568,20 @@ public final class TextInserter {
         }
         System.out.println(moved + " string(s) relocated, " + (entries.size() - moved) + " stayed at their original address.");
 
+        // Forked rooms: their string-index tables were filled in by the slot
+        // writes above (the entries' ptrFieldAddrs point into the block), so
+        // only the NPC table and the room-table entries are left.
+        for (Fork f : forks) {
+            for (int npc = 0; npc < f.npcCount; npc++) {
+                int offset = f.strTableAddrs[npc] - f.addr;
+                rom[f.addr + npc * 2] = (byte) ((offset >> 8) & 0xFF);
+                rom[f.addr + npc * 2 + 1] = (byte) (offset & 0xFF);
+            }
+            for (int room : f.rooms) {
+                writeS32(rom, SCRIPT_BASE + room * 4, f.addr - SCRIPT_BASE);
+            }
+        }
+
         // Install the dual-mode fetch helper and detour the game's nine
         // table-walk sites through it. Applied unconditionally (even with an
         // empty pointer table) so every build exercises the same code path.
@@ -541,6 +596,186 @@ public final class TextInserter {
 
         Files.write(Paths.get(outPath), rom);
         System.out.println("Wrote " + outPath);
+    }
+
+    /**
+     * Splits rooms that share one NPC table but no longer share their text.
+     *
+     * Fifteen offsets in the room table at SCRIPT_BASE are held by two or more
+     * rooms (0x1296c by twelve), so those rooms share ONE NPC table and
+     * therefore every string-index slot in it -- which is why TextExtractor
+     * emits the later rooms entirely as "&lt;SAME room=R ...&gt;". Replacing one of
+     * those markers with different text used to be unrepresentable: both
+     * entries name the same 2-byte slot, so the last one written would win for
+     * both rooms.
+     *
+     * A room whose text diverges from the room it shares with gets its own
+     * copy of the table structure, allocated from reclaimed script space:
+     *
+     *   A                  NPC table          npcCount*2 bytes
+     *   A + npcCount*2     npc 0 str table    strCount*2 bytes
+     *                      npc 0 str=0 text
+     *                      npc 1 str table
+     *                      npc 1 str=0 text
+     *                      ...
+     *
+     * The order keeps both self-describing-count invariants intact (slot 0 of
+     * each table is the offset of the thing right behind it, i.e. the count
+     * doubled), so the block walks like stock data. Only str=0 texts live in
+     * the block -- their position is mandatory anyway; every other string is
+     * placed by the normal machinery and, when it didn't actually change, is
+     * still shared with the anchor room's copy through the usual Group.
+     *
+     * Nothing new is needed in the 68k code: the room-&gt;NPC and NPC-&gt;string-
+     * table steps stay plain forward relative offsets (all within the block),
+     * and the string step is the already-patched dual-mode slot.
+     *
+     * Rewriting each forked entry's strTableAddr/ptrFieldAddr is the whole
+     * integration: the rest of the inserter is keyed on those two fields, so
+     * reservations, grouping, placement and slot writing all follow along.
+     * textAddr is deliberately left alone -- it is the original-sharing key,
+     * and unchanged strings should keep sharing storage with the anchor room.
+     */
+    static List<Fork> forkDivergedRooms(byte[] rom, List<Entry> entries, List<int[]> tableRanges,
+                                        List<int[]> poolSources, String outPath) {
+        int firstRoomOffset = TextExtractor.readU32(rom, SCRIPT_BASE);
+        int roomCount = (firstRoomOffset / 4) - 1;
+
+        Map<Integer, List<Integer>> roomsByNpcTable = new LinkedHashMap<Integer, List<Integer>>();
+        int[] npcTableOf = new int[roomCount];
+        for (int room = 0; room < roomCount; room++) {
+            npcTableOf[room] = SCRIPT_BASE + TextExtractor.readU32(rom, SCRIPT_BASE + room * 4);
+            roomsByNpcTable.computeIfAbsent(npcTableOf[room], k -> new ArrayList<Integer>()).add(room);
+        }
+
+        Map<Integer, List<Entry>> byRoom = new LinkedHashMap<Integer, List<Entry>>();
+        for (Entry e : entries) {
+            byRoom.computeIfAbsent(e.room, k -> new ArrayList<Entry>()).add(e);
+        }
+
+        List<Fork> forks = new ArrayList<Fork>();
+        for (Map.Entry<Integer, List<Integer>> me : roomsByNpcTable.entrySet()) {
+            List<Integer> rooms = me.getValue();
+            if (rooms.size() < 2) continue;
+            if (byRoom.get(rooms.get(0)) == null) continue; // a room with no dialogue at all
+
+            // The lowest room index keeps the original tables; every other
+            // distinct text content gets one block, shared by the rooms with
+            // that content.
+            int anchorRoom = rooms.get(0);
+            if (anchorRoom == 0) {
+                throw new IllegalStateException("room 0 shares its NPC table with another room; forking it would "
+                        + "corrupt the room count encoded in its offset. " + outPath + " was NOT written.");
+            }
+            String anchorKey = contentKey(byRoom.get(anchorRoom));
+            Map<String, Fork> byContent = new LinkedHashMap<String, Fork>();
+            for (int room : rooms) {
+                String key = contentKey(byRoom.get(room));
+                if (key.equals(anchorKey)) continue; // still identical: leave it sharing
+                Fork f = byContent.get(key);
+                if (f == null) {
+                    f = new Fork();
+                    f.anchorRoom = anchorRoom;
+                    f.origNpcTableAddr = me.getKey();
+                    byContent.put(key, f);
+                    forks.add(f);
+                }
+                f.rooms.add(room);
+                f.entries.addAll(byRoom.get(room));
+            }
+        }
+        if (forks.isEmpty()) return forks;
+
+        // Size each block from the entries it holds.
+        for (Fork f : forks) {
+            List<Entry> template = byRoom.get(f.rooms.get(0));
+            int npcCount = 0;
+            for (Entry e : template) npcCount = Math.max(npcCount, e.npc + 1);
+            f.npcCount = npcCount;
+            f.strCounts = new int[npcCount];
+            f.strTableAddrs = new int[npcCount];
+            int[] str0Len = new int[npcCount];
+            for (Entry e : template) {
+                f.strCounts[e.npc] = Math.max(f.strCounts[e.npc], e.str + 1);
+                if (e.str == 0) str0Len[e.npc] = e.encoded.length;
+            }
+            // Lay the block out relative to its (even) base. Every index table
+            // has to start on an even address -- the game reads slots with
+            // move.w, and a 68000 takes an address error on an odd word read
+            // -- and a str=0 text can be an odd number of bytes (the bare
+            // "{F3}" strings are five), so each table is aligned up.
+            f.strOffsets = new int[npcCount];
+            int off = npcCount * 2;
+            for (int npc = 0; npc < npcCount; npc++) {
+                off = (off + 1) & ~1;
+                f.strOffsets[npc] = off;
+                off += f.strCounts[npc] * 2 + str0Len[npc];
+            }
+            f.size = off;
+        }
+
+        // Allocate from the writable pool, never over an existing index table,
+        // never before the anchor's own NPC table: the block has to stay
+        // within relative reach of the tables it shares strings with, and its
+        // room-table offset is added to SCRIPT_BASE so it can't sit below it.
+        List<int[]> free = new ArrayList<int[]>();
+        for (int[] r : subtractRanges(mergeRanges(poolSources), mergeRanges(tableRanges))) {
+            free.add(new int[]{r[0], r[1]});
+        }
+        for (Fork f : forks) {
+            f.addr = carveOut(free, f.size, Math.max(f.origNpcTableAddr, SCRIPT_BASE));
+            if (f.addr < 0) {
+                throw new IllegalStateException("no writable space within reach of 0x"
+                        + Integer.toHexString(f.origNpcTableAddr) + " for room=" + f.rooms.get(0)
+                        + "'s forked NPC table (" + f.size + " bytes). " + outPath + " was NOT written.");
+            }
+
+            for (int npc = 0; npc < f.npcCount; npc++) {
+                f.strTableAddrs[npc] = f.addr + f.strOffsets[npc];
+            }
+            for (Entry e : f.entries) {
+                e.strTableAddr = f.strTableAddrs[e.npc];
+                e.ptrFieldAddr = e.strTableAddr + e.str * 2;
+            }
+
+            StringBuilder rooms = new StringBuilder();
+            for (int room : f.rooms) rooms.append(rooms.length() == 0 ? "" : ",").append(room);
+            System.out.println("INFO: room=" + rooms + " diverged from room=" + f.anchorRoom
+                    + ", which it shared the NPC table at 0x" + Integer.toHexString(f.origNpcTableAddr)
+                    + " with -- forked onto its own tables at 0x" + Integer.toHexString(f.addr)
+                    + " (" + f.size + " bytes).");
+        }
+        return forks;
+    }
+
+    /** Identifies a room's text content, for spotting rooms that no longer match. */
+    static String contentKey(List<Entry> roomEntries) {
+        StringBuilder sb = new StringBuilder();
+        for (Entry e : roomEntries) {
+            sb.append(e.npc).append(':').append(e.str).append(':').append(bytesToHex(e.encoded)).append(';');
+        }
+        return sb.toString();
+    }
+
+    /**
+     * Takes {@code size} bytes at or after {@code floor} out of {@code free}
+     * (first fit, mutating it), or returns -1 if nothing fits. The result is
+     * even: the block starts with an index table, and the game reads table
+     * slots with move.w, which a 68000 cannot do at an odd address.
+     */
+    static int carveOut(List<int[]> free, int size, int floor) {
+        for (int i = 0; i < free.size(); i++) {
+            int[] r = free.get(i);
+            int start = (Math.max(r[0], floor) + 1) & ~1;
+            if (start + size > r[1]) continue;
+            List<int[]> replacement = new ArrayList<int[]>();
+            if (r[0] < start) replacement.add(new int[]{r[0], start});
+            if (start + size < r[1]) replacement.add(new int[]{start + size, r[1]});
+            free.remove(i);
+            free.addAll(i, replacement);
+            return start;
+        }
+        return -1;
     }
 
     /**

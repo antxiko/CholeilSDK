@@ -117,7 +117,7 @@ public final class PipelineSmokeTest {
             int npcCount = TextExtractor.readU16(rom, npcTableAddr) / 2;
             for (int npcIndex = 0; npcIndex < npcCount; npcIndex++) {
                 int strTableAddr = npcTableAddr + TextExtractor.readU16(rom, npcTableAddr + npcIndex * 2);
-                int strCount = TextExtractor.readU16(orig, strTableAddr) / 2;
+                int strCount = strCountOf(rom, orig, strTableAddr);
                 for (int str = 0; str < strCount; str++) {
                     if (TextExtractor.readU16(rom, strTableAddr + 2 * str) >= 0x8000) indirectSlots++;
                     int addr = TextInserter.resolveStringAddr(rom, strTableAddr, str);
@@ -135,6 +135,74 @@ public final class PipelineSmokeTest {
         if (allTerminated) ok("all " + resolved + " script slots resolve to 0xFF-terminated strings ("
                 + indirectSlots + " indirect)");
 
+        // --- forking a room off a shared NPC table ---
+        // Rooms 23 and 24 hold the same room-table offset in the stock ROM, so
+        // they share every string slot. Give room 24's npc=1 str=0 its own text
+        // and it must end up on its own tables, without disturbing room 23 or
+        // the strings the two rooms still have in common.
+        Path forkScript = Paths.get("target", "smoke-fork-script.txt");
+        Path forkRom = Paths.get("target", "smoke-fork-rom.md");
+        String marker = "SMOKE FORK PROBE";
+        Files.write(forkScript, replaceEntryBody(
+                new String(Files.readAllBytes(Paths.get("script.txt")), java.nio.charset.StandardCharsets.UTF_8),
+                24, 1, 0, marker).getBytes(java.nio.charset.StandardCharsets.UTF_8));
+        TextInserter.run(baseRom, forkScript.toString(), "soleil.tbl", "free_space.txt", forkRom.toString());
+        byte[] fr = Files.readAllBytes(forkRom);
+
+        int npcTable23 = TextInserter.SCRIPT_BASE + TextExtractor.readU32(fr, TextInserter.SCRIPT_BASE + 23 * 4);
+        int npcTable24 = TextInserter.SCRIPT_BASE + TextExtractor.readU32(fr, TextInserter.SCRIPT_BASE + 24 * 4);
+        check(npcTable23 != npcTable24, String.format(
+                "room 24 forked onto its own NPC table (0x%x) away from room 23's (0x%x)", npcTable24, npcTable23));
+        check(TextExtractor.readU16(fr, npcTable24) == TextExtractor.readU16(fr, npcTable23),
+                "the forked NPC table keeps room 23's NPC count in slot 0 (self-describing size intact)");
+
+        int strTable23 = npcTable23 + TextExtractor.readU16(fr, npcTable23 + 2);
+        int strTable24 = npcTable24 + TextExtractor.readU16(fr, npcTable24 + 2);
+        check(strCountOf(fr, orig, strTable24) == 2,
+                "the forked npc=1 string table still describes 2 strings");
+        int probe = TextInserter.resolveStringAddr(fr, strTable24, 0);
+        check(TextInserter.resolveStringAddr(fr, strTable23, 0) != probe,
+                "room 23 and room 24 now resolve npc=1 str=0 to different addresses");
+        byte[] markerBytes = TblTable.load("soleil.tbl").encode(marker);
+        check(startsWith(fr, probe, markerBytes),
+                "room 24's npc=1 str=0 reads back as the probe text");
+        check(!startsWith(fr, TextInserter.resolveStringAddr(fr, strTable23, 0), markerBytes),
+                "room 23's npc=1 str=0 is untouched by the fork");
+        check(TextInserter.resolveStringAddr(fr, strTable23, 1) == TextInserter.resolveStringAddr(fr, strTable24, 1),
+                "npc=1 str=1, unchanged in both rooms, still shares one copy across the fork");
+
+        // Every room's NPC table must stay self-describing and word-aligned,
+        // forks included: the game reads table slots with move.w, and an odd
+        // table address is an address error on a 68000.
+        boolean tablesSane = true;
+        for (int roomIndex = 0; roomIndex < roomCount; roomIndex++) {
+            int t = TextInserter.SCRIPT_BASE + TextExtractor.readU32(fr, TextInserter.SCRIPT_BASE + roomIndex * 4);
+            int nc = TextExtractor.readU16(fr, t) / 2;
+            if ((t & 1) != 0) {
+                fail(String.format("room=%d's NPC table is at odd address 0x%x", roomIndex, t));
+                tablesSane = false;
+            }
+            for (int npc = 0; npc < nc; npc++) {
+                int st = t + TextExtractor.readU16(fr, t + npc * 2);
+                int sc = strCountOf(fr, orig, st);
+                if ((st & 1) != 0) {
+                    fail(String.format("room=%d npc=%d's string table is at odd address 0x%x", roomIndex, npc, st));
+                    tablesSane = false;
+                }
+                for (int str = 0; str < sc; str++) {
+                    int a = TextInserter.resolveStringAddr(fr, st, str);
+                    int len = 0;
+                    while (a + len < fr.length && (fr[a + len] & 0xFF) != 0xFF && len < 4096) len++;
+                    if (a <= 0 || a + len >= fr.length || (fr[a + len] & 0xFF) != 0xFF) {
+                        fail(String.format("with a fork present, room=%d npc=%d str=%d resolves to 0x%x with no terminator",
+                                roomIndex, npc, str, a));
+                        tablesSane = false;
+                    }
+                }
+            }
+        }
+        if (tablesSane) ok("with a fork present, every index table is word-aligned and every slot resolves to a terminated string");
+
         // --- header checksum ---
         int sum = 0;
         for (int i = 0x200; i + 1 < rom.length; i += 2) {
@@ -147,6 +215,36 @@ public final class PipelineSmokeTest {
         System.out.println("SMOKE: " + passed + " passed, " + failures + " failed ("
                 + patchedWidths + " markers, " + count + " names).");
         System.exit(failures == 0 ? 0 : 1);
+    }
+
+    /**
+     * A string table's size. Slot 0 doubles as the size hint while it holds a
+     * relative offset (str=0 always sits right behind its table), which covers
+     * forked tables the base ROM knows nothing about; only a str=0 that had to
+     * go indirect needs the base ROM's copy.
+     */
+    static int strCountOf(byte[] rom, byte[] orig, int strTableAddr) {
+        int slot0 = TextExtractor.readU16(rom, strTableAddr);
+        return (slot0 < 0x8000 ? slot0 : TextExtractor.readU16(orig, strTableAddr)) / 2;
+    }
+
+    /** Replaces one entry's body in a script.txt, keeping its header line. */
+    static String replaceEntryBody(String script, int room, int npc, int str, String body) {
+        String header = String.format("==== room=%d npc=%d str=%d ", room, npc, str);
+        int at = script.indexOf(header);
+        if (at < 0) throw new IllegalStateException("no room=" + room + " npc=" + npc + " str=" + str + " in script.txt");
+        int bodyStart = script.indexOf('\n', at) + 1;
+        int bodyEnd = script.indexOf("\n====", bodyStart);
+        if (bodyEnd < 0) bodyEnd = script.length();
+        return script.substring(0, bodyStart) + body + "\n" + script.substring(bodyEnd + 1);
+    }
+
+    static boolean startsWith(byte[] rom, int addr, byte[] want) {
+        if (addr < 0 || addr + want.length > rom.length) return false;
+        for (int i = 0; i < want.length; i++) {
+            if (rom[addr + i] != want[i]) return false;
+        }
+        return true;
     }
 
     static void expectBytes(byte[] rom, int addr, int[] want, String what) {
