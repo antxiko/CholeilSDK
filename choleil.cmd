@@ -72,7 +72,7 @@ rem own pinned Maven on first use so a fresh clone builds with no setup.
 where mvn >nul 2>&1 && goto :build_mvn
 
 echo === building with the Maven wrapper ===
-call "%~dp0mvnw.cmd" -q -DskipTests package
+call "%~dp0mvnw.cmd" -q -Dmaven.test.skip=true package
 if errorlevel 1 goto :build_failed
 goto :pipeline
 
@@ -81,7 +81,7 @@ rem mvn is deliberately unquoted: quoting it makes cmd resolve the
 rem extensionless POSIX "mvn" script that ships next to mvn.cmd, which dies
 rem with errorlevel 1 and no output.
 echo === building with mvn ===
-call mvn -q -DskipTests package
+call mvn -q -Dmaven.test.skip=true package
 if errorlevel 1 goto :build_failed
 goto :pipeline
 
