@@ -31,10 +31,10 @@ public final class StrayTextScanner {
     static final int SCRIPT_BASE = 0x1C0000;
 
     public static void main(String[] args) throws IOException {
-        String romPath = args.length > 0 ? args[0] : "Soleil (Spain).md";
-        String scriptPath = args.length > 1 ? args[1] : "script.txt";
-        String graphicsOffsetsPath = args.length > 2 ? args[2] : "graphics_offsets.txt";
-        String outPath = args.length > 3 ? args[3] : "stray_text.txt";
+        String romPath = args.length > 0 ? args[0] : DefaultPaths.ROM;
+        String scriptPath = args.length > 1 ? args[1] : DefaultPaths.SCRIPT;
+        String graphicsOffsetsPath = args.length > 2 ? args[2] : DefaultPaths.GRAPHICS_OFFSETS;
+        String outPath = args.length > 3 ? args[3] : DefaultPaths.STRAY_TEXT;
 
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
 

@@ -22,8 +22,6 @@ public final class KnownPalettes {
 
     private KnownPalettes() {}
 
-    public static final String DEFAULT_PATH = "known_palettes.txt";
-
     public static Map<Integer, Integer> load(String path) throws IOException {
         Map<Integer, Integer> map = new LinkedHashMap<Integer, Integer>();
         if (!Files.exists(Paths.get(path))) return map;

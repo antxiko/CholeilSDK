@@ -61,8 +61,8 @@ public final class DefaultNameInserter {
 
     /** usage: DefaultNameInserter [romPath] [tblPath] [outPath] */
     public static void main(String[] args) throws IOException {
-        String romPath = args.length > 0 ? args[0] : "Choleil.md";
-        String tblPath = args.length > 1 ? args[1] : "soleil.tbl";
+        String romPath = args.length > 0 ? args[0] : DefaultPaths.OUT_ROM;
+        String tblPath = args.length > 1 ? args[1] : DefaultPaths.TBL;
         String outPath = args.length > 2 ? args[2] : romPath;
         run(romPath, tblPath, outPath);
     }

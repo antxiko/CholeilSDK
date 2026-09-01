@@ -215,11 +215,11 @@ public final class TextInserter {
 
     /** usage: TextInserter [romPath] [scriptPath] [tblPath] [freeSpacePath] [outPath] */
     public static void main(String[] args) throws IOException {
-        String romPath = args.length > 0 ? args[0] : "Soleil (Spain).md";
-        String scriptPath = args.length > 1 ? args[1] : "script.txt";
-        String tblPath = args.length > 2 ? args[2] : "soleil.tbl";
-        String freeSpacePath = args.length > 3 ? args[3] : "free_space.txt";
-        String outPath = args.length > 4 ? args[4] : "Choleil.md";
+        String romPath = args.length > 0 ? args[0] : DefaultPaths.ROM;
+        String scriptPath = args.length > 1 ? args[1] : DefaultPaths.SCRIPT;
+        String tblPath = args.length > 2 ? args[2] : DefaultPaths.TBL;
+        String freeSpacePath = args.length > 3 ? args[3] : DefaultPaths.FREE_SPACE;
+        String outPath = args.length > 4 ? args[4] : DefaultPaths.OUT_ROM;
         run(romPath, scriptPath, tblPath, freeSpacePath, outPath);
     }
 

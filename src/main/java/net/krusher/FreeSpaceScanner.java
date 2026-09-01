@@ -57,10 +57,10 @@ public final class FreeSpaceScanner {
      * since anything before that is already covered by TextInserter's default writable pool.
      */
     public static void main(String[] args) throws IOException {
-        String romPath = args.length > 0 ? args[0] : "Soleil (Spain).md";
+        String romPath = args.length > 0 ? args[0] : DefaultPaths.ROM;
         String fromHex = args.length > 1 ? args[1] : "1d8000";
-        String outPath = args.length > 2 ? args[2] : "free_space.txt";
-        String graphicsOffsetsPath = args.length > 3 ? args[3] : "graphics_offsets.txt";
+        String outPath = args.length > 2 ? args[2] : DefaultPaths.FREE_SPACE;
+        String graphicsOffsetsPath = args.length > 3 ? args[3] : DefaultPaths.GRAPHICS_OFFSETS;
         int minRun = args.length > 4 ? Integer.parseInt(args[4]) : DEFAULT_MIN_RUN;
 
         byte[] rom = Files.readAllBytes(Paths.get(romPath));

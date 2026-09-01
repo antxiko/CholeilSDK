@@ -21,20 +21,6 @@ import java.io.IOException;
  */
 public class CholeilSDK
 {
-    static final String ROM = "Soleil (Spain).md";
-    static final String TBL = "soleil.tbl";
-    static final String SCRIPT = "script.txt";
-    static final String POINTERS = "pointers.txt";
-    static final String GRAPHICS_OFFSETS = "graphics_offsets.txt";
-    static final String GFX_OUT = "gfx_out";
-    static final String RAW_GRAPHICS = "raw_graphics.txt";
-    static final String RAW_GFX_OUT = "raw_gfx_out";
-    static final String SPRITE_GRAPHICS = "sprite_graphics.txt";
-    static final String SPRITE_GFX_OUT = "sprite_gfx_out";
-    static final String FREE_SPACE = "free_space.txt";
-    static final String STRAY_TEXT = "stray_text.txt";
-    static final String CREDITS_POINTERS = "credits_pointers.txt";
-    static final String OUT_ROM = "Choleil.md";
 
     public static void main( String[] args ) throws IOException
     {
@@ -42,7 +28,7 @@ public class CholeilSDK
         {
             System.out.println("usage:");
             System.out.println("  x   extract everything (text + graphics + stray text)");
-            System.out.println("  i   insert everything (rebuild " + OUT_ROM + " from " + SCRIPT + " + " + STRAY_TEXT + ")");
+            System.out.println("  i   insert everything (rebuild " + DefaultPaths.OUT_ROM + " from " + DefaultPaths.SCRIPT + " + " + DefaultPaths.STRAY_TEXT + ")");
             return;
         }
 
@@ -67,64 +53,64 @@ public class CholeilSDK
         if ( mode.equals("x") )
         {
             System.out.println("=== extracting text ===");
-            TextExtractor.run( ROM, TBL, SCRIPT, POINTERS );
+            TextExtractor.run( DefaultPaths.ROM, DefaultPaths.TBL, DefaultPaths.SCRIPT, DefaultPaths.POINTERS );
 
             System.out.println();
             System.out.println("=== scanning for compressed graphics ===");
-            net.krusher.graphics.GraphicsExtractor.scan( ROM, GRAPHICS_OFFSETS );
+            net.krusher.graphics.GraphicsExtractor.scan( DefaultPaths.ROM, DefaultPaths.GRAPHICS_OFFSETS );
 
             System.out.println();
             System.out.println("=== extracting graphics ===");
-            net.krusher.graphics.GraphicsExtractor.extract( ROM, GRAPHICS_OFFSETS, GFX_OUT );
+            net.krusher.graphics.GraphicsExtractor.extract( DefaultPaths.ROM, DefaultPaths.GRAPHICS_OFFSETS, DefaultPaths.GFX_OUT );
 
             System.out.println();
             System.out.println("=== extracting raw (uncompressed) graphics ===");
-            net.krusher.graphics.RawGraphicsExtractor.main( new String[] { ROM, RAW_GRAPHICS, RAW_GFX_OUT } );
+            net.krusher.graphics.RawGraphicsExtractor.main( new String[] { DefaultPaths.ROM, DefaultPaths.RAW_GRAPHICS, DefaultPaths.RAW_GFX_OUT } );
 
             System.out.println();
             System.out.println("=== extracting sprite-mosaic graphics ===");
-            net.krusher.graphics.SpriteGraphicsExtractor.main( new String[] { ROM, SPRITE_GRAPHICS, SPRITE_GFX_OUT } );
+            net.krusher.graphics.SpriteGraphicsExtractor.main( new String[] { DefaultPaths.ROM, DefaultPaths.SPRITE_GRAPHICS, DefaultPaths.SPRITE_GFX_OUT } );
 
             System.out.println();
             System.out.println("=== scanning for stray text ===");
-            StrayTextScanner.main( new String[] { ROM, SCRIPT, GRAPHICS_OFFSETS, STRAY_TEXT } );
+            StrayTextScanner.main( new String[] { DefaultPaths.ROM, DefaultPaths.SCRIPT, DefaultPaths.GRAPHICS_OFFSETS, DefaultPaths.STRAY_TEXT } );
         }
         else
         {
             System.out.println("=== scanning for free space ===");
-            FreeSpaceScanner.main( new String[] { ROM, "1d8000", FREE_SPACE, GRAPHICS_OFFSETS } );
+            FreeSpaceScanner.main( new String[] { DefaultPaths.ROM, "1d8000", DefaultPaths.FREE_SPACE, DefaultPaths.GRAPHICS_OFFSETS } );
 
             System.out.println();
             System.out.println("=== inserting credits (pointer-relocatable) ===");
-            CreditsInserter.run( ROM, STRAY_TEXT, TBL, FREE_SPACE, CREDITS_POINTERS, OUT_ROM );
+            CreditsInserter.run( DefaultPaths.ROM, DefaultPaths.STRAY_TEXT, DefaultPaths.TBL, DefaultPaths.FREE_SPACE, DefaultPaths.CREDITS_POINTERS, DefaultPaths.OUT_ROM );
 
             System.out.println();
             System.out.println("=== inserting text ===");
-            TextInserter.run( OUT_ROM, SCRIPT, TBL, FREE_SPACE, OUT_ROM );
+            TextInserter.run( DefaultPaths.OUT_ROM, DefaultPaths.SCRIPT, DefaultPaths.TBL, DefaultPaths.FREE_SPACE, DefaultPaths.OUT_ROM );
 
             System.out.println();
             System.out.println("=== fixing map balloon widths ===");
-            MapBalloonInserter.run( OUT_ROM, TBL, OUT_ROM );
+            MapBalloonInserter.run( DefaultPaths.OUT_ROM, DefaultPaths.TBL, DefaultPaths.OUT_ROM );
 
             System.out.println();
             System.out.println("=== inserting stray text ===");
-            StrayTextInserter.main( new String[] { OUT_ROM, STRAY_TEXT, TBL, OUT_ROM, CREDITS_POINTERS } );
+            StrayTextInserter.main( new String[] { DefaultPaths.OUT_ROM, DefaultPaths.STRAY_TEXT, DefaultPaths.TBL, DefaultPaths.OUT_ROM, DefaultPaths.CREDITS_POINTERS } );
 
             System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");
-            net.krusher.graphics.GraphicsInserter.main( new String[] { OUT_ROM, GFX_OUT, GRAPHICS_OFFSETS, OUT_ROM } );
+            net.krusher.graphics.GraphicsInserter.main( new String[] { DefaultPaths.OUT_ROM, DefaultPaths.GFX_OUT, DefaultPaths.GRAPHICS_OFFSETS, DefaultPaths.OUT_ROM } );
 
             System.out.println();
             System.out.println("=== inserting raw (uncompressed) graphics ===");
-            net.krusher.graphics.RawGraphicsInserter.main( new String[] { OUT_ROM, RAW_GFX_OUT, RAW_GRAPHICS, OUT_ROM } );
+            net.krusher.graphics.RawGraphicsInserter.main( new String[] { DefaultPaths.OUT_ROM, DefaultPaths.RAW_GFX_OUT, DefaultPaths.RAW_GRAPHICS, DefaultPaths.OUT_ROM } );
 
             System.out.println();
             System.out.println("=== inserting sprite-mosaic graphics ===");
-            net.krusher.graphics.SpriteGraphicsInserter.main( new String[] { OUT_ROM, SPRITE_GFX_OUT, SPRITE_GRAPHICS, OUT_ROM } );
+            net.krusher.graphics.SpriteGraphicsInserter.main( new String[] { DefaultPaths.OUT_ROM, DefaultPaths.SPRITE_GFX_OUT, DefaultPaths.SPRITE_GRAPHICS, DefaultPaths.OUT_ROM } );
 
             System.out.println();
             System.out.println("=== setting the default hero name ===");
-            DefaultNameInserter.run( OUT_ROM, TBL, OUT_ROM );
+            DefaultNameInserter.run( DefaultPaths.OUT_ROM, DefaultPaths.TBL, DefaultPaths.OUT_ROM );
         }
     }
 }

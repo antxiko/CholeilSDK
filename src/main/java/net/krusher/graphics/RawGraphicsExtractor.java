@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import net.krusher.DefaultPaths;
+
 /**
  * Extracts uncompressed (raw, unencoded) graphics blocks to PNGs -- for
  * assets like the boot SEGA logo and "PULSA START" prompt that are stored
@@ -29,13 +31,13 @@ public final class RawGraphicsExtractor {
     }
 
     public static void main(String[] args) throws IOException {
-        String romPath = args.length > 0 ? args[0] : "Soleil (Spain).md";
-        String registryPath = args.length > 1 ? args[1] : "raw_graphics.txt";
-        String outDir = args.length > 2 ? args[2] : "raw_gfx_out";
+        String romPath = args.length > 0 ? args[0] : DefaultPaths.ROM;
+        String registryPath = args.length > 1 ? args[1] : DefaultPaths.RAW_GRAPHICS;
+        String outDir = args.length > 2 ? args[2] : DefaultPaths.RAW_GFX_OUT;
 
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         List<Block> blocks = loadBlocks(registryPath);
-        Map<Integer, Integer> knownPalettes = KnownPalettes.load(KnownPalettes.DEFAULT_PATH);
+        Map<Integer, Integer> knownPalettes = KnownPalettes.load(DefaultPaths.KNOWN_PALETTES);
         Path outPath = Paths.get(outDir);
         Files.createDirectories(outPath);
 

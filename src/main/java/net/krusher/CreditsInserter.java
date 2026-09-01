@@ -129,12 +129,12 @@ public final class CreditsInserter {
 
     /** usage: CreditsInserter [romPath] [strayTextPath] [tblPath] [freeSpacePath] [registryPath] [outPath] */
     public static void main(String[] args) throws IOException {
-        String romPath = args.length > 0 ? args[0] : "Soleil (Spain).md";
-        String strayTextPath = args.length > 1 ? args[1] : "stray_text.txt";
-        String tblPath = args.length > 2 ? args[2] : "soleil.tbl";
-        String freeSpacePath = args.length > 3 ? args[3] : "free_space.txt";
-        String registryPath = args.length > 4 ? args[4] : "credits_pointers.txt";
-        String outPath = args.length > 5 ? args[5] : "Choleil.md";
+        String romPath = args.length > 0 ? args[0] : DefaultPaths.ROM;
+        String strayTextPath = args.length > 1 ? args[1] : DefaultPaths.STRAY_TEXT;
+        String tblPath = args.length > 2 ? args[2] : DefaultPaths.TBL;
+        String freeSpacePath = args.length > 3 ? args[3] : DefaultPaths.FREE_SPACE;
+        String registryPath = args.length > 4 ? args[4] : DefaultPaths.CREDITS_POINTERS;
+        String outPath = args.length > 5 ? args[5] : DefaultPaths.OUT_ROM;
         run(romPath, strayTextPath, tblPath, freeSpacePath, registryPath, outPath);
     }
 

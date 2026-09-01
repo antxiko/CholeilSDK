@@ -8,6 +8,8 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
+import net.krusher.DefaultPaths;
+
 /**
  * CLI for finding and dumping LZ-Toshio-compressed graphics blocks.
  *
@@ -30,13 +32,13 @@ public class GraphicsExtractor {
 
         String mode = args[0];
         if (mode.equals("scan")) {
-            String romPath = args.length > 1 ? args[1] : "Soleil (Spain).md";
-            String offsetsPath = args.length > 2 ? args[2] : "graphics_offsets.txt";
+            String romPath = args.length > 1 ? args[1] : DefaultPaths.ROM;
+            String offsetsPath = args.length > 2 ? args[2] : DefaultPaths.GRAPHICS_OFFSETS;
             scan(romPath, offsetsPath);
         } else if (mode.equals("extract")) {
-            String romPath = args.length > 1 ? args[1] : "Soleil (Spain).md";
-            String offsetsPath = args.length > 2 ? args[2] : "graphics_offsets.txt";
-            String outDir = args.length > 3 ? args[3] : "gfx_out";
+            String romPath = args.length > 1 ? args[1] : DefaultPaths.ROM;
+            String offsetsPath = args.length > 2 ? args[2] : DefaultPaths.GRAPHICS_OFFSETS;
+            String outDir = args.length > 3 ? args[3] : DefaultPaths.GFX_OUT;
             extract(romPath, offsetsPath, outDir);
         } else if (mode.equals("single")) {
             String romPath = args[1];
@@ -85,7 +87,7 @@ public class GraphicsExtractor {
         Files.createDirectories(outPath);
 
         int[] defaultPalette = TileRenderer.defaultGrayscalePalette();
-        Map<Integer, Integer> knownPalettes = KnownPalettes.load(KnownPalettes.DEFAULT_PATH);
+        Map<Integer, Integer> knownPalettes = KnownPalettes.load(DefaultPaths.KNOWN_PALETTES);
         int ok = 0, failed = 0, realPalette = 0;
 
         for (int offset : offsets) {

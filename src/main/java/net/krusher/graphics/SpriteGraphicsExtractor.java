@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import net.krusher.DefaultPaths;
+
 /**
  * Extracts uncompressed graphics blocks that are stored as SPRITE MOSAICS
  * (tiles in column-major order within each fixed-size sprite, sprites placed
@@ -50,13 +52,13 @@ public final class SpriteGraphicsExtractor {
     }
 
     public static void main(String[] args) throws IOException {
-        String romPath = args.length > 0 ? args[0] : "Soleil (Spain).md";
-        String registryPath = args.length > 1 ? args[1] : "sprite_graphics.txt";
-        String outDir = args.length > 2 ? args[2] : "sprite_gfx_out";
+        String romPath = args.length > 0 ? args[0] : DefaultPaths.ROM;
+        String registryPath = args.length > 1 ? args[1] : DefaultPaths.SPRITE_GRAPHICS;
+        String outDir = args.length > 2 ? args[2] : DefaultPaths.SPRITE_GFX_OUT;
 
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         List<Block> blocks = loadBlocks(registryPath);
-        Map<Integer, Integer> knownPalettes = KnownPalettes.load(KnownPalettes.DEFAULT_PATH);
+        Map<Integer, Integer> knownPalettes = KnownPalettes.load(DefaultPaths.KNOWN_PALETTES);
         Path outPath = Paths.get(outDir);
         Files.createDirectories(outPath);
 

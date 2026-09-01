@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import net.krusher.DefaultPaths;
+
 /**
  * Reinserts edited sprite-mosaic graphics from sprite_gfx_out/ back into the
  * ROM. Same fixed-length, in-place-only constraint as RawGraphicsInserter --
@@ -20,14 +22,14 @@ public final class SpriteGraphicsInserter {
     private SpriteGraphicsInserter() {}
 
     public static void main(String[] args) throws IOException {
-        String romPath = args.length > 0 ? args[0] : "Choleil.md";
-        String spriteGfxOutDir = args.length > 1 ? args[1] : "sprite_gfx_out";
-        String registryPath = args.length > 2 ? args[2] : "sprite_graphics.txt";
-        String outPath = args.length > 3 ? args[3] : "Choleil.md";
+        String romPath = args.length > 0 ? args[0] : DefaultPaths.OUT_ROM;
+        String spriteGfxOutDir = args.length > 1 ? args[1] : DefaultPaths.SPRITE_GFX_OUT;
+        String registryPath = args.length > 2 ? args[2] : DefaultPaths.SPRITE_GRAPHICS;
+        String outPath = args.length > 3 ? args[3] : DefaultPaths.OUT_ROM;
 
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         List<SpriteGraphicsExtractor.Block> blocks = SpriteGraphicsExtractor.loadBlocks(registryPath);
-        Map<Integer, Integer> knownPalettes = KnownPalettes.load(KnownPalettes.DEFAULT_PATH);
+        Map<Integer, Integer> knownPalettes = KnownPalettes.load(DefaultPaths.KNOWN_PALETTES);
 
         int deleted = 0, unchanged = 0, updated = 0;
 

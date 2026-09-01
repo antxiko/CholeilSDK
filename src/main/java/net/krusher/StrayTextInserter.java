@@ -38,11 +38,11 @@ public final class StrayTextInserter {
 
     /** usage: StrayTextInserter [romPath] [strayTextPath] [tblPath] [outPath] [creditsRegistryPath] */
     public static void main(String[] args) throws IOException {
-        String romPath = args.length > 0 ? args[0] : "Choleil.md";
-        String strayTextPath = args.length > 1 ? args[1] : "stray_text.txt";
-        String tblPath = args.length > 2 ? args[2] : "soleil.tbl";
-        String outPath = args.length > 3 ? args[3] : "Choleil.md";
-        String creditsRegistryPath = args.length > 4 ? args[4] : "credits_pointers.txt";
+        String romPath = args.length > 0 ? args[0] : DefaultPaths.OUT_ROM;
+        String strayTextPath = args.length > 1 ? args[1] : DefaultPaths.STRAY_TEXT;
+        String tblPath = args.length > 2 ? args[2] : DefaultPaths.TBL;
+        String outPath = args.length > 3 ? args[3] : DefaultPaths.OUT_ROM;
+        String creditsRegistryPath = args.length > 4 ? args[4] : DefaultPaths.CREDITS_POINTERS;
 
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         TblTable table = TblTable.load(tblPath);

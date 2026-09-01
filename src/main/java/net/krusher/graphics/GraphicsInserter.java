@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import net.krusher.DefaultPaths;
 import net.krusher.FreeSpaceScanner;
 
 /**
@@ -72,20 +73,20 @@ public final class GraphicsInserter {
             String pngPath = args[3];
             int paletteOffset = (int) Long.parseLong(strip0x(args[4]), 16);
             int columns = Integer.parseInt(args[5]);
-            String graphicsOffsetsPath = args.length > 6 ? args[6] : "graphics_offsets.txt";
+            String graphicsOffsetsPath = args.length > 6 ? args[6] : DefaultPaths.GRAPHICS_OFFSETS;
             String outPath = args.length > 7 ? args[7] : romPath;
             single(romPath, offset, pngPath, paletteOffset, columns, graphicsOffsetsPath, outPath);
             return;
         }
 
-        String romPath = args.length > 0 ? args[0] : "Choleil.md";
-        String gfxOutDir = args.length > 1 ? args[1] : "gfx_out";
-        String graphicsOffsetsPath = args.length > 2 ? args[2] : "graphics_offsets.txt";
-        String outPath = args.length > 3 ? args[3] : "Choleil.md";
+        String romPath = args.length > 0 ? args[0] : DefaultPaths.OUT_ROM;
+        String gfxOutDir = args.length > 1 ? args[1] : DefaultPaths.GFX_OUT;
+        String graphicsOffsetsPath = args.length > 2 ? args[2] : DefaultPaths.GRAPHICS_OFFSETS;
+        String outPath = args.length > 3 ? args[3] : DefaultPaths.OUT_ROM;
 
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         List<Block> blocks = loadBlocks(graphicsOffsetsPath);
-        Map<Integer, Integer> knownPalettes = KnownPalettes.load(KnownPalettes.DEFAULT_PATH);
+        Map<Integer, Integer> knownPalettes = KnownPalettes.load(DefaultPaths.KNOWN_PALETTES);
         System.out.println("Loaded " + blocks.size() + " cataloged graphics block(s).");
 
         Context ctx = new Context(rom, graphicsOffsetsPath);
