@@ -55,6 +55,10 @@
   <profiles>
     <profile>
       <id>native</id>
+      <properties>
+        <!-- -Ob (quick build) roughly halves the build; native-dev turns it on. -->
+        <native.optimization>-O2</native.optimization>
+      </properties>
       <build>
         <plugins>
           <plugin>
@@ -65,6 +69,15 @@
             <configuration>
               <imageName>CholeilSDK</imageName>
               <mainClass>net.krusher.CholeilSDK</mainClass>
+              <buildArgs>
+                <!-- The .exe is handed to collaborators, so it must not bake in
+                     this machine's instruction set: the default (x86-64-v3) dies
+                     with an illegal instruction on an older CPU. -->
+                <buildArg>-march=compatibility</buildArg>
+                <!-- Default max heap is 80% of RAM. This tool reads 2 MiB ROMs. -->
+                <buildArg>-R:MaxHeapSize=1g</buildArg>
+                <buildArg>${native.optimization}</buildArg>
+              </buildArgs>
             </configuration>
             <executions>
               <execution>
@@ -78,6 +91,14 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <!-- mvn -Pnative,native-dev package: same executable, built about twice
+           as fast and optimised about as little. For iterating, not for release. -->
+      <id>native-dev</id>
+      <properties>
+        <native.optimization>-Ob</native.optimization>
+      </properties>
     </profile>
   </profiles>
 </project>

@@ -1,6 +1,5 @@
 package net.krusher.graphics;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -44,7 +43,7 @@ public final class SpriteGraphicsInserter {
             Integer paletteAddr = knownPalettes.get(blk.addr);
             if (paletteAddr != null) palette = TileRenderer.readGenesisPalette(rom, paletteAddr);
 
-            BufferedImage img = TileRenderer.readPng(pngPath);
+            Bitmap img = TileRenderer.readPng(pngPath);
             int tileCount = blk.length / TileRenderer.TILE_BYTES;
             int tilesPerSprite = blk.spriteTilesW * blk.spriteTilesH;
             int spriteCount = tileCount / tilesPerSprite;

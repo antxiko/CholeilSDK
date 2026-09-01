@@ -1,6 +1,5 @@
 package net.krusher.graphics;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -66,7 +65,7 @@ public class GraphicsExtractor {
         int[] palette = paletteOffset != null
                 ? TileRenderer.readGenesisPalette(rom, paletteOffset)
                 : TileRenderer.defaultGrayscalePalette();
-        BufferedImage img = TileRenderer.renderTileSheet(r.data, palette, columns, TileRenderer.SCALE);
+        Bitmap img = TileRenderer.renderTileSheet(r.data, palette, columns, TileRenderer.SCALE);
         TileRenderer.writePng(img, outFile);
         System.out.println("Wrote " + outFile + " (" + (r.decSize / TileRenderer.TILE_BYTES) + " tiles, "
                 + (paletteOffset != null ? "palette @0x" + Integer.toHexString(paletteOffset) : "default grayscale palette") + ")");
@@ -103,7 +102,7 @@ public class GraphicsExtractor {
                 palette = TileRenderer.readGenesisPalette(rom, paletteAddr);
                 realPalette++;
             }
-            BufferedImage img = TileRenderer.renderTileSheet(r.data, palette, 16, TileRenderer.SCALE);
+            Bitmap img = TileRenderer.renderTileSheet(r.data, palette, 16, TileRenderer.SCALE);
             String fileName = String.format("gfx_%06x.png", offset);
             TileRenderer.writePng(img, outPath.resolve(fileName).toString());
             ok++;

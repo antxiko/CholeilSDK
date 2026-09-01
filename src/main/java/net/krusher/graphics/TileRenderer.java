@@ -1,17 +1,15 @@
 package net.krusher.graphics;
 
-import java.awt.image.BufferedImage;
-import java.awt.image.IndexColorModel;
-import java.awt.image.WritableRaster;
-import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
 
 /**
  * Renders decompressed graphics bytes as Mega Drive 8x8, 4bpp packed tiles
  * (two pixels per byte, 4 bytes per row, 32 bytes per tile) into a PNG tile
  * sheet. No CRAM palette is known yet, so a default 16-shade grayscale ramp
  * is used unless a real palette is supplied.
+ *
+ * Images are Bitmaps and PNGs go through Png, not java.awt/ImageIO: see Png
+ * for why the toolchain stays clear of java.desktop.
  */
 public final class TileRenderer {
 
@@ -52,12 +50,12 @@ public final class TileRenderer {
         return pal;
     }
 
-    public static BufferedImage renderTileSheet(byte[] data, int[] palette, int columns, int scale) {
+    public static Bitmap renderTileSheet(byte[] data, int[] palette, int columns, int scale) {
         int tileCount = Math.max(1, data.length / TILE_BYTES);
         int cols = Math.max(1, columns);
         int rows = (tileCount + cols - 1) / cols;
 
-        BufferedImage img = createIndexedImage(cols * TILE_SIZE * scale, rows * TILE_SIZE * scale, palette);
+        Bitmap img = createIndexedImage(cols * TILE_SIZE * scale, rows * TILE_SIZE * scale, palette);
 
         for (int tile = 0; tile < tileCount; tile++) {
             int tileX = (tile % cols) * TILE_SIZE;
@@ -84,35 +82,24 @@ public final class TileRenderer {
      * exactly the given 16 Genesis colors -- so a saved PNG can only ever
      * contain those colors, and editors show/restrict to the real palette.
      */
-    static BufferedImage createIndexedImage(int width, int height, int[] palette) {
-        byte[] r = new byte[palette.length];
-        byte[] g = new byte[palette.length];
-        byte[] b = new byte[palette.length];
-        for (int i = 0; i < palette.length; i++) {
-            r[i] = (byte) ((palette[i] >> 16) & 0xFF);
-            g[i] = (byte) ((palette[i] >> 8) & 0xFF);
-            b[i] = (byte) (palette[i] & 0xFF);
-        }
-        IndexColorModel icm = new IndexColorModel(4, palette.length, r, g, b);
-        WritableRaster raster = icm.createCompatibleWritableRaster(width, height);
-        return new BufferedImage(icm, raster, false, null);
+    static Bitmap createIndexedImage(int width, int height, int[] palette) {
+        return Bitmap.indexed(width, height, palette);
     }
 
-    private static void plotScaled(BufferedImage img, int x, int y, int paletteIndex, int scale) {
-        WritableRaster raster = img.getRaster();
+    private static void plotScaled(Bitmap img, int x, int y, int paletteIndex, int scale) {
         for (int dy = 0; dy < scale; dy++) {
             for (int dx = 0; dx < scale; dx++) {
-                raster.setSample(x * scale + dx, y * scale + dy, 0, paletteIndex);
+                img.setIndex(x * scale + dx, y * scale + dy, paletteIndex);
             }
         }
     }
 
-    public static void writePng(BufferedImage img, String path) throws IOException {
-        ImageIO.write(img, "png", new File(path));
+    public static void writePng(Bitmap img, String path) throws IOException {
+        Png.write(img, path);
     }
 
-    public static BufferedImage readPng(String path) throws IOException {
-        return ImageIO.read(new File(path));
+    public static Bitmap readPng(String path) throws IOException {
+        return Png.read(path);
     }
 
     /**
@@ -122,7 +109,7 @@ public final class TileRenderer {
      * row has trailing blank padding tiles" from "there are genuinely that
      * many tiles" by pixel content alone.
      */
-    public static byte[] decodeTileSheet(BufferedImage img, int[] palette, int columns, int scale, int tileCount) {
+    public static byte[] decodeTileSheet(Bitmap img, int[] palette, int columns, int scale, int tileCount) {
         int cols = Math.max(1, columns);
         byte[] data = new byte[tileCount * TILE_BYTES];
         for (int tile = 0; tile < tileCount; tile++) {
@@ -132,8 +119,8 @@ public final class TileRenderer {
 
             for (int row = 0; row < TILE_SIZE; row++) {
                 for (int col = 0; col < TILE_SIZE; col += 2) {
-                    int leftIdx = nearestPaletteIndex(img.getRGB((tileX + col) * scale, (tileY + row) * scale), palette);
-                    int rightIdx = nearestPaletteIndex(img.getRGB((tileX + col + 1) * scale, (tileY + row) * scale), palette);
+                    int leftIdx = nearestPaletteIndex(img.getRgb((tileX + col) * scale, (tileY + row) * scale), palette);
+                    int rightIdx = nearestPaletteIndex(img.getRgb((tileX + col + 1) * scale, (tileY + row) * scale), palette);
                     data[base + row * 4 + col / 2] = (byte) (((leftIdx & 0xF) << 4) | (rightIdx & 0xF));
                 }
             }
@@ -149,7 +136,7 @@ public final class TileRenderer {
      * spritesPerRow columns. Used for assets that aren't a single flat
      * row-major tile raster (see sprite_graphics.txt).
      */
-    public static BufferedImage renderSpriteSheet(byte[] data, int[] palette, int spriteTilesW, int spriteTilesH, int spritesPerRow, int scale) {
+    public static Bitmap renderSpriteSheet(byte[] data, int[] palette, int spriteTilesW, int spriteTilesH, int spritesPerRow, int scale) {
         int tilesPerSprite = spriteTilesW * spriteTilesH;
         int spriteCount = Math.max(1, data.length / TILE_BYTES / tilesPerSprite);
         int spritesPerRow2 = Math.max(1, spritesPerRow);
@@ -157,7 +144,7 @@ public final class TileRenderer {
 
         int imgW = spritesPerRow2 * spriteTilesW * TILE_SIZE * scale;
         int imgH = macroRows * spriteTilesH * TILE_SIZE * scale;
-        BufferedImage img = createIndexedImage(imgW, imgH, palette);
+        Bitmap img = createIndexedImage(imgW, imgH, palette);
 
         for (int s = 0; s < spriteCount; s++) {
             int blockX = (s % spritesPerRow2) * spriteTilesW * TILE_SIZE;
@@ -187,7 +174,7 @@ public final class TileRenderer {
     /**
      * Reverse of renderSpriteSheet for an EXACT tile count.
      */
-    public static byte[] decodeSpriteSheet(BufferedImage img, int[] palette, int spriteTilesW, int spriteTilesH, int spritesPerRow, int scale, int tileCount) {
+    public static byte[] decodeSpriteSheet(Bitmap img, int[] palette, int spriteTilesW, int spriteTilesH, int spritesPerRow, int scale, int tileCount) {
         int tilesPerSprite = spriteTilesW * spriteTilesH;
         int spriteCount = tileCount / tilesPerSprite;
         int spritesPerRow2 = Math.max(1, spritesPerRow);
@@ -205,8 +192,8 @@ public final class TileRenderer {
                 int base = spriteBase + t * TILE_BYTES;
                 for (int ry = 0; ry < TILE_SIZE; ry++) {
                     for (int rx = 0; rx < TILE_SIZE; rx += 2) {
-                        int leftIdx = nearestPaletteIndex(img.getRGB((tileX + rx) * scale, (tileY + ry) * scale), palette);
-                        int rightIdx = nearestPaletteIndex(img.getRGB((tileX + rx + 1) * scale, (tileY + ry) * scale), palette);
+                        int leftIdx = nearestPaletteIndex(img.getRgb((tileX + rx) * scale, (tileY + ry) * scale), palette);
+                        int rightIdx = nearestPaletteIndex(img.getRgb((tileX + rx + 1) * scale, (tileY + ry) * scale), palette);
                         data[base + ry * 4 + rx / 2] = (byte) (((leftIdx & 0xF) << 4) | (rightIdx & 0xF));
                     }
                 }

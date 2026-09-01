@@ -1,6 +1,5 @@
 package net.krusher.graphics;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -54,7 +53,7 @@ public final class RawGraphicsExtractor {
                 realPaletteCount++;
             }
 
-            BufferedImage img = TileRenderer.renderTileSheet(data, palette, blk.columns, TileRenderer.SCALE);
+            Bitmap img = TileRenderer.renderTileSheet(data, palette, blk.columns, TileRenderer.SCALE);
             String fileName = String.format("raw_%06x.png", blk.addr);
             TileRenderer.writePng(img, outPath.resolve(fileName).toString());
         }

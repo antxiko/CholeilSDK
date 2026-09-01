@@ -1,6 +1,5 @@
 package net.krusher.graphics;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -167,7 +166,7 @@ public final class GraphicsInserter {
             return Outcome.WARNED;
         }
 
-        BufferedImage img = TileRenderer.readPng(pngPath);
+        Bitmap img = TileRenderer.readPng(pngPath);
         if (isWrongResolution(img, blk.decSize, columns)) {
             System.out.println("WARNING: 0x" + Integer.toHexString(blk.offset) + " (" + pngPath
                     + ") has been resized -- PNG resolution must stay as extracted, skipping.");
@@ -261,7 +260,7 @@ public final class GraphicsInserter {
      * tiles" by pixel content alone). This just validates the image wasn't
      * accidentally resized before trusting that assumption.
      */
-    static boolean isWrongResolution(BufferedImage img, int originalDecSize, int columns) {
+    static boolean isWrongResolution(Bitmap img, int originalDecSize, int columns) {
         int originalTileCount = originalDecSize / TileRenderer.TILE_BYTES;
         int expectedRows = Math.max(1, (originalTileCount + columns - 1) / columns);
         int expectedWidth = columns * TileRenderer.TILE_SIZE * SCALE;

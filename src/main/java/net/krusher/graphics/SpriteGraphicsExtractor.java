@@ -1,6 +1,5 @@
 package net.krusher.graphics;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -74,7 +73,7 @@ public final class SpriteGraphicsExtractor {
                 realPaletteCount++;
             }
 
-            BufferedImage img = TileRenderer.renderSpriteSheet(data, palette, blk.spriteTilesW, blk.spriteTilesH, blk.spritesPerRow, TileRenderer.SCALE);
+            Bitmap img = TileRenderer.renderSpriteSheet(data, palette, blk.spriteTilesW, blk.spriteTilesH, blk.spritesPerRow, TileRenderer.SCALE);
             String fileName = String.format("sprite_%06x.png", blk.addr);
             TileRenderer.writePng(img, outPath.resolve(fileName).toString());
         }

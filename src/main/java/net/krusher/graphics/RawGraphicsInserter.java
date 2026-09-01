@@ -1,6 +1,5 @@
 package net.krusher.graphics;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -52,7 +51,7 @@ public final class RawGraphicsInserter {
             Integer paletteAddr = knownPalettes.get(blk.addr);
             if (paletteAddr != null) palette = TileRenderer.readGenesisPalette(rom, paletteAddr);
 
-            BufferedImage img = TileRenderer.readPng(pngPath);
+            Bitmap img = TileRenderer.readPng(pngPath);
             int expectedWidth = blk.columns * TileRenderer.TILE_SIZE * TileRenderer.SCALE;
             int expectedRows = (blk.length / TileRenderer.TILE_BYTES + blk.columns - 1) / blk.columns;
             int expectedHeight = expectedRows * TileRenderer.TILE_SIZE * TileRenderer.SCALE;
