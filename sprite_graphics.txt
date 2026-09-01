@@ -22,3 +22,24 @@
 ; NOT a traced, ground-truth CRAM palette. Replace with a real one (e.g. via
 ; a CRAM write breakpoint in the emulator) when available.
 0xa8d36,7168,7,4,4
+; The ground-money coin ("Malin") pickup: 8 tiles per copy = two 16x16 sprite
+; poses (face with diagonal shine / thin edge, alternated to spin). The zone
+'; sprite strip re-uploads the current pose via DMA to VRAM tiles 760-767;
+; the two blocks below are the two spin poses -- edit BOTH consistently.
+; Found via VRAM diff of an in-game savestate (only animated tiles change)
+; + literal byte search in ROM (blocks are uncompressed).
+; The coin animation actually cycles through EIGHT consecutive 256-byte blocks
+; at 0xd0f60 + n*0x400 (found by dumping VRAM tiles 760-767 every frame and
+; matching against ROM with ALL occurrences, not just the first). In the
+; original ROM they held only two designs: edge-on (d0f60, d1360, d1f60,
+; d2360) and face (d1760, d1b60, d2760, d2b60 -- four identical copies).
+; The per-frame cycle: edge x8, face(d2760/d2b60) x8, edge x8, face(d1760) x4,
+; face(d1b60) x4. Edit copies of the same pose consistently.
+0xd0f60,256,2,2,2
+0xd1360,256,2,2,2
+0xd1760,256,2,2,2
+0xd1b60,256,2,2,2
+0xd1f60,256,2,2,2
+0xd2360,256,2,2,2
+0xd2760,256,2,2,2
+0xd2b60,256,2,2,2
