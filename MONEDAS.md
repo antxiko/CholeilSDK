@@ -80,3 +80,34 @@ animacion refresca los tiles desde la ROM en pocos frames.
    casar cada frame contra TODAS las apariciones en la ROM (`find` en
    bucle, no solo la primera): los bloques duplicados ocultan copias que
    el juego lee de otra direccion.
+
+## Y no eran ocho bloques: eran once
+
+Despues de meter el dibujo nuevo, la moneda salia bien en una zona y con el
+dibujo viejo en otras. La busqueda literal encuentra copias EXACTAS, pero hay
+copias con unos pocos nibbles cambiados que se cuelan. Repitiendo la busqueda
+en difuso (misma pose, tolerando nibbles distintos, y en los DOS ordenes de
+tiles) aparecen tres sitios mas. La pose de cara existe en la ROM en siete
+sitios exactamente:
+
+| donde                      | orden    | arte                                  |
+|----------------------------|----------|---------------------------------------|
+| d1760, d1b60, d2760, d2b60 | rowmajor | las de siempre                        |
+| f4680                      | colmajor | identica; va con f4600 (canto) en un   |
+|                            |          | unico bloque de 256 bytes             |
+| d6f20, d7320               | rowmajor | igual + sombra: 16 nibbles que arriba  |
+|                            |          | son transparentes (0) aqui son el 11  |
+
+Y del canto hay copias en d6d20, d7120, e4660 y e4760 (estas dos con 6 nibbles
+de diferencia, otro sombreado). El canto no se rediseño, asi que esas ya
+estaban bien.
+
+Todas estan ya en `sprite_graphics.txt` y las tres caras que faltaban llevan el
+dibujo nuevo: f4680 y d7320 con el diseño 1, d6f20 con el diseño 2 (mismo orden
+por direccion que la familia original). La sombra se vuelve a aplicar encima del
+dibujo nuevo -- los 16 pixeles siguen siendo transparentes en el diseño nuevo,
+asi que entra limpia. Si el ciclo real de esas zonas pide otro reparto de
+diseños, se cambia editando los PNG.
+
+Hay un test (`SpriteGraphicsTest`) que busca la pose de cara por toda la ROM y
+falla si aparece en algun sitio que no este registrado.

@@ -47,3 +47,26 @@
 0xd2360,256,2,2,2,rowmajor
 0xd2760,256,2,2,2,rowmajor
 0xd2b60,256,2,2,2,rowmajor
+
+; MORE COPIES OF THE SAME COIN, found after the first pass shipped and the
+; coin looked right in one zone and wrong in others. The eight blocks above
+; are not the only place this art lives; searching the ROM for the two poses
+; -- exact, and then allowing a few differing nibbles -- turns up these, and
+; the face pose (the distinctive one) exists in exactly seven places in total:
+; the four above, 0xf4680, and the two shadowed copies below.
+;
+; 0xf4600: one 256-byte block holding BOTH poses back to back, byte-identical
+; to the art above but in COLUMN-MAJOR order (no tileOrder field needed).
+; 0xd6d20 + n*0x200: a second animation family, edge/face/edge/face, whose art
+; is the same drawing plus a drop shadow -- 16 nibbles that are transparent
+; (index 0) above are index 11 here. Row-major, 128 bytes = one pose each.
+; 0xe4660, 0xe4760: two more edge-pose copies, same drawing with a small
+; shading difference (6 nibbles). The edge pose was not redrawn, so these hold
+; the correct art already and are registered only so they are visible.
+0xd6d20,128,1,2,2,rowmajor
+0xd6f20,128,1,2,2,rowmajor
+0xd7120,128,1,2,2,rowmajor
+0xd7320,128,1,2,2,rowmajor
+0xe4660,128,1,2,2,rowmajor
+0xe4760,128,1,2,2,rowmajor
+0xf4600,256,2,2,2

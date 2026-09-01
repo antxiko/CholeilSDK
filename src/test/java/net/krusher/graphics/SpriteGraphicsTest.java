@@ -164,6 +164,66 @@ final class SpriteGraphicsTest {
         }
     }
 
+    @Test
+    @DisplayName("every place the coin art lives is registered")
+    void everyPlaceTheCoinArtLivesIsRegistered() throws Exception {
+        // The bug this guards against: the coin was redrawn in the eight
+        // blocks of the first family and still looked wrong in other zones,
+        // because the same art lives in three more places. The face pose is
+        // the one to search on -- the edge pose is a thin sliver that matches
+        // half the noise in the ROM.
+        Path registry = Paths.get(net.krusher.DefaultPaths.SPRITE_GRAPHICS);
+        Assumptions.assumeTrue(Files.exists(registry), "no sprite registry in the working directory");
+        List<SpriteGraphicsExtractor.Block> blocks = SpriteGraphicsExtractor.loadBlocks(registry.toString());
+
+        for (int at : facePoseAddresses()) {
+            assertTrue(blocks.stream().anyMatch(b -> at >= b.addr && at < b.addr + b.length),
+                    String.format("the coin face at 0x%x is in no registered block -- redrawing the coin "
+                            + "would leave this copy showing the old art", at));
+        }
+    }
+
+    /**
+     * Every 128-byte window holding the coin's face pose, in either tile
+     * order, allowing the few nibbles that differ between zone variants (one
+     * family bakes a drop shadow into otherwise transparent pixels).
+     */
+    private static List<Integer> facePoseAddresses() {
+        byte[] face = Arrays.copyOfRange(rom, 0xD1760, 0xD1760 + 128);
+        int[] rowMajor = nibbles(face);
+        int[] colMajor = nibbles(reorder(face));
+        List<Integer> found = new java.util.ArrayList<Integer>();
+        for (int at = 0; at + 128 <= rom.length; at += 32) {
+            int[] here = nibbles(Arrays.copyOfRange(rom, at, at + 128));
+            if (differences(here, rowMajor) <= 60 || differences(here, colMajor) <= 60) found.add(at);
+        }
+        assertEquals(7, found.size(), "the ROM holds seven copies of the coin face; found " + found);
+        return found;
+    }
+
+    private static int differences(int[] a, int[] b) {
+        int n = 0;
+        for (int i = 0; i < a.length; i++) if (a[i] != b[i]) n++;
+        return n;
+    }
+
+    private static int[] nibbles(byte[] data) {
+        int[] out = new int[data.length * 2];
+        for (int i = 0; i < data.length; i++) {
+            out[i * 2] = (data[i] >> 4) & 0xF;
+            out[i * 2 + 1] = data[i] & 0xF;
+        }
+        return out;
+    }
+
+    /** TL TR BL BR -> TL BL TR BR. */
+    private static byte[] reorder(byte[] pose) {
+        byte[] out = new byte[pose.length];
+        int[] order = {0, 2, 1, 3};
+        for (int t = 0; t < 4; t++) System.arraycopy(pose, order[t] * 32, out, t * 32, 32);
+        return out;
+    }
+
     private static byte[] block(int n) {
         int at = COIN_BASE + n * COIN_STRIDE;
         return Arrays.copyOfRange(rom, at, at + COIN_LENGTH);

@@ -169,6 +169,16 @@ ground-money coin was found — see [MONEDAS.md](MONEDAS.md), in Spanish):
    consecutive 256-byte blocks at `0xd0f60 + n*0x400` holding only two distinct
    designs — four identical copies each. Editing one copy of a pose makes the
    sprite alternate between the new art and the old as it animates.
+5. **Then widen the search and do it again.** An exact byte search finds exact
+   copies; other zones often carry the same drawing with a handful of nibbles
+   changed, and an exact search walks straight past them. Redrawing the coin
+   fixed it in one zone and left it wrong in others until a fuzzy search — same
+   pose, allowing a few differing nibbles, in *both* tile orders — turned up
+   three more copies: `0xf4600` (both poses, column-major, byte-identical) and
+   `0xd6d20 + n*0x200` (a second family whose art bakes in a drop shadow, 16
+   transparent pixels replaced by palette index 11). Search on the most
+   distinctive pose; a thin or mostly-transparent one matches half the noise in
+   the ROM.
 
 ### The dialogue font
 
@@ -283,11 +293,12 @@ next step carry on.
 mvn test
 ```
 
-64 tests across nine suites, run against a ROM built by the real pipeline: the 68k
+65 tests across nine suites, run against a ROM built by the real pipeline: the 68k
 code patches byte for byte, every balloon width against its placed name, every script
 slot resolving to a terminated string, room forking, the font round trip and its
 bounds, the IPS patch verified by an applier written from the format spec, sprite tile
-order in both directions, and the header checksum.
+order in both directions, every copy of the coin art being registered, and
+the header checksum.
 
 The ROM is gitignored, so without it the suites **skip** rather than fail — a fresh
 clone still builds green.
