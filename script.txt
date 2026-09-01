@@ -67,7 +67,7 @@ Castillo Calipo
  Guadalpark 
 
 ==== room=0 npc=3 str=18 textAddr=0x1c0452 ptrFieldAddr=0x1c036c ====
-Chipiona
+Sevilla
 
 ==== room=0 npc=3 str=19 textAddr=0x1c045c ptrFieldAddr=0x1c036e ====
 San Cielo
@@ -2359,7 +2359,7 @@ que andan por el campo?
 
 
 ==== room=27 npc=0 str=1 textAddr=0x1c7550 ptrFieldAddr=0x1c74fc ====
-PEDRO: Disen que en Chipiona
+PEDRO: Disen que en Sevilla
 hay un cholo que los crea
 con magia potagia. Pero es
 tope tocho, me pega una
@@ -3195,8 +3195,8 @@ todo aquí chachi piruli!
 
 ==== room=43 npc=2 str=0 textAddr=0x1c9ba8 ptrFieldAddr=0x1c9ba4 ====
 PENIPE: Me he enterao que
-hay un tempo llamado 
-Cruzcampo, tope hundío
+hay un templo llamado 
+Guadalpark, tope hundío
 endebajo del agua. Dicen que
 está conectado la isla esta,
 pero bueh, puede ser una
@@ -3206,7 +3206,7 @@ milonga guarra.
 ==== room=43 npc=2 str=1 textAddr=0x1c9c2e ptrFieldAddr=0x1c9ba6 ====
 PENIPE: ¡Su puta madre! ¿Se
 ha podido ver el Templo
-Cruzcampo por encima del
+Guadalpark por encima del
 agua!
 
 
