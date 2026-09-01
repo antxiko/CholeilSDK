@@ -203,6 +203,32 @@ public final class PipelineSmokeTest {
         }
         if (tablesSane) ok("with a fork present, every index table is word-aligned and every slot resolves to a terminated string");
 
+        // --- default hero name ---
+        // On a clone: the checksum below is MapBalloonInserter's, and this
+        // step is the pipeline's last, so it fixes the checksum itself.
+        byte[] named = rom.clone();
+        DefaultNameInserter.patch(named, TblTable.load("soleil.tbl"));
+        expectBytes(named, DefaultNameInserter.LEA_ADDR, DefaultNameInserter.LEA_BYTES,
+                "empty-name branch still opens with `lea $fe4a.w, a0`");
+        byte[] want = DefaultNameInserter.encodeName(TblTable.load("soleil.tbl"), DefaultNameInserter.DEFAULT_NAME);
+        boolean nameOk = true;
+        for (int i = 0; i < DefaultNameInserter.MOVE_COUNT; i++) {
+            int at = DefaultNameInserter.FIRST_MOVE_ADDR + i * 4;
+            if (!TextInserter.patchMatches(named, at, DefaultNameInserter.MOVE_OPCODE)
+                    || named[at + 2] != want[i * 2] || named[at + 3] != want[i * 2 + 1]) {
+                nameOk = false;
+            }
+        }
+        check(nameOk, "empty-name branch writes \"" + DefaultNameInserter.DEFAULT_NAME
+                + "\" as six move.w immediates");
+        check(want[DefaultNameInserter.DEFAULT_NAME.length()] == (byte) 0xFF,
+                "the default name is 0xFF-terminated inside the twelve bytes the branch writes");
+        check(DefaultNameInserter.DEFAULT_NAME.length() <= DefaultNameInserter.MAX_NAME_LENGTH,
+                "the default name fits the entry screen's own " + DefaultNameInserter.MAX_NAME_LENGTH + "-character cap");
+        byte[] before = named.clone();
+        DefaultNameInserter.patch(named, TblTable.load("soleil.tbl"));
+        check(java.util.Arrays.equals(before, named), "re-patching an already-named ROM is a no-op");
+
         // --- header checksum ---
         int sum = 0;
         for (int i = 0x200; i + 1 < rom.length; i += 2) {

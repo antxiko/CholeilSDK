@@ -16,7 +16,8 @@ import java.io.IOException;
  *       compressed graphics from gfx_out/, then raw graphics from
  *       raw_gfx_out/, then sprite-mosaic graphics from sprite_gfx_out/ --
  *       delete a PNG to leave that block untouched; edited PNGs must keep
- *       their original resolution)
+ *       their original resolution), and the hero's default name
+ *       (DefaultNameInserter) written over the empty-name branch
  */
 public class CholeilSDK
 {
@@ -120,6 +121,10 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== inserting sprite-mosaic graphics ===");
             net.krusher.graphics.SpriteGraphicsInserter.main( new String[] { OUT_ROM, SPRITE_GFX_OUT, SPRITE_GRAPHICS, OUT_ROM } );
+
+            System.out.println();
+            System.out.println("=== setting the default hero name ===");
+            DefaultNameInserter.run( OUT_ROM, TBL, OUT_ROM );
         }
     }
 }
