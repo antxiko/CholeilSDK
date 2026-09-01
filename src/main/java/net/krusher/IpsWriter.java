@@ -27,6 +27,12 @@ import java.nio.file.Paths;
  * 0x454F46 encodes as the bytes "EOF", and every applier stops there. Such a
  * record is started one byte earlier instead (re-writing one unchanged byte
  * with its own value, which is harmless).
+ *
+ * A patch with no records at all is header + terminator, which the format
+ * allows and this writer emits -- but some appliers only look for the EOF
+ * marker after reading a record, and reject it as truncated. It also means the
+ * build changed nothing, which is a problem in its own right, so run() says so
+ * loudly rather than quietly shipping a patch that may not load.
  */
 public final class IpsWriter {
 
@@ -69,6 +75,10 @@ public final class IpsWriter {
         Files.write(Paths.get(outPath), ips);
         System.out.println("Wrote " + outPath + " (" + ips.length + " bytes, "
                 + changedBytes(base, patched) + " changed of " + patched.length + ").");
+        if (isEmpty(ips)) {
+            System.out.println("WARNING: the patch has no records -- the built ROM is identical to the base ROM. "
+                    + "Some appliers reject an empty patch as truncated.");
+        }
     }
 
     /** The whole patch file, header and EOF marker included. */
@@ -181,6 +191,11 @@ public final class IpsWriter {
     /** A byte past the end of the base ROM counts as changed: the patch appends it. */
     private static boolean differs(byte[] base, byte[] patched, int at) {
         return at >= base.length || base[at] != patched[at];
+    }
+
+    /** A patch that changes nothing: header and terminator, no records. */
+    static boolean isEmpty(byte[] ips) {
+        return ips.length == MAGIC.length + EOF_MARKER.length;
     }
 
     static int changedBytes(byte[] base, byte[] patched) {

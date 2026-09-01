@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -51,6 +52,16 @@ final class IpsWriterTest {
         byte[] ips = IpsWriter.build(base, built);
         assertArrayEquals(IpsWriter.MAGIC, Arrays.copyOf(ips, 5), "PATCH header");
         assertArrayEquals(IpsWriter.EOF_MARKER, Arrays.copyOfRange(ips, ips.length - 3, ips.length), "EOF marker");
+    }
+
+    @Test
+    @DisplayName("an empty patch is recognised as empty")
+    void anEmptyPatchIsRecognisedAsEmpty() {
+        // Worth flagging at build time: it means the build changed nothing,
+        // and some appliers look for the EOF marker only after reading a
+        // record, so they reject a record-less patch as truncated.
+        assertTrue(IpsWriter.isEmpty(IpsWriter.build(base, base.clone())), "no records");
+        assertFalse(IpsWriter.isEmpty(IpsWriter.build(base, built)), "the real patch has records");
     }
 
     @Test

@@ -198,11 +198,21 @@ cannot be detected by scanning but have been verified by hand are listed as
 ### IPS patch
 
 `IpsWriter` diffs the base ROM against the built one and writes `Choleil.ips`
-following the [standard format](https://zerosoft.zophar.net/ips.php): runs separated
-by fewer than five unchanged bytes are merged, repeated bytes go out as RLE, blocks
-longer than the 16-bit size field are split, and a record that would start at
-`0x454F46` — which encodes as the ASCII bytes `EOF` and stops every applier dead —
-is started one byte earlier.
+following the standard format ([zerosoft](https://zerosoft.zophar.net/ips.php),
+[ravener](https://gist.github.com/ravener/95aac30eb7d2fdc5e983bc143a7cfdf0)): runs
+separated by fewer than five unchanged bytes are merged, repeated bytes go out as
+RLE, blocks longer than the 16-bit size field are split, and a record that would
+start at `0x454F46` — which encodes as the ASCII bytes `EOF` and stops every applier
+dead — is started one byte earlier. Neither spec mentions that last one.
+
+A build that changes nothing produces a patch of just header and terminator. That is
+legal, but some appliers only look for the `EOF` marker *after* reading a record and
+reject it as truncated — and it means your build did nothing anyway — so the writer
+warns instead of shipping it silently.
+
+The output is verified two ways: an applier written from the spec inside the test
+suite, and, by hand, [ravener/ips-patcher](https://github.com/ravener/ips-patcher),
+which reproduces the built ROM byte for byte from the base ROM.
 
 ### PNG codec
 
@@ -251,7 +261,7 @@ next step carry on.
 mvn test
 ```
 
-55 tests across eight suites, run against a ROM built by the real pipeline: the 68k
+56 tests across eight suites, run against a ROM built by the real pipeline: the 68k
 code patches byte for byte, every balloon width against its placed name, every script
 slot resolving to a terminated string, room forking, the font round trip and its
 bounds, the IPS patch verified by an applier written from the format spec, and the
