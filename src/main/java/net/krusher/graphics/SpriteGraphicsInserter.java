@@ -55,7 +55,7 @@ public final class SpriteGraphicsInserter {
                 continue;
             }
 
-            byte[] newData = TileRenderer.decodeSpriteSheet(img, palette, blk.spriteTilesW, blk.spriteTilesH, blk.spritesPerRow, TileRenderer.SCALE, tileCount);
+            byte[] newData = TileRenderer.decodeSpriteSheet(img, palette, blk.spriteTilesW, blk.spriteTilesH, blk.spritesPerRow, TileRenderer.SCALE, tileCount, blk.rowMajor);
 
             byte[] original = Arrays.copyOfRange(rom, blk.addr, blk.addr + blk.length);
             if (Arrays.equals(newData, original)) {

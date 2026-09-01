@@ -13,10 +13,12 @@ import net.krusher.DefaultPaths;
 
 /**
  * Extracts uncompressed graphics blocks that are stored as SPRITE MOSAICS
- * (tiles in column-major order within each fixed-size sprite, sprites placed
- * in a macro grid) rather than a flat row-major tile raster -- see
- * sprite_graphics.txt for why these need separate handling from
- * raw_graphics.txt/RawGraphicsExtractor.
+ * (fixed-size sprites placed in a macro grid) rather than a flat row-major
+ * tile raster -- see sprite_graphics.txt for why these need separate handling
+ * from raw_graphics.txt/RawGraphicsExtractor.
+ *
+ * Tile order within a sprite is column-major (the Mega Drive sprite
+ * convention) unless the registry entry says "rowmajor".
  *
  * usage: SpriteGraphicsExtractor [romPath] [registryPath] [outDir]
  */
@@ -26,9 +28,12 @@ public final class SpriteGraphicsExtractor {
 
     public static final class Block {
         public final int addr, length, spritesPerRow, spriteTilesW, spriteTilesH;
-        Block(int addr, int length, int spritesPerRow, int spriteTilesW, int spriteTilesH) {
+        /** Tile order within a sprite; see TileRenderer.renderSpriteSheet. */
+        public final boolean rowMajor;
+        Block(int addr, int length, int spritesPerRow, int spriteTilesW, int spriteTilesH, boolean rowMajor) {
             this.addr = addr; this.length = length;
             this.spritesPerRow = spritesPerRow; this.spriteTilesW = spriteTilesW; this.spriteTilesH = spriteTilesH;
+            this.rowMajor = rowMajor;
         }
     }
 
@@ -73,7 +78,7 @@ public final class SpriteGraphicsExtractor {
                 realPaletteCount++;
             }
 
-            Bitmap img = TileRenderer.renderSpriteSheet(data, palette, blk.spriteTilesW, blk.spriteTilesH, blk.spritesPerRow, TileRenderer.SCALE);
+            Bitmap img = TileRenderer.renderSpriteSheet(data, palette, blk.spriteTilesW, blk.spriteTilesH, blk.spritesPerRow, TileRenderer.SCALE, blk.rowMajor);
             String fileName = String.format("sprite_%06x.png", blk.addr);
             TileRenderer.writePng(img, outPath.resolve(fileName).toString());
         }
@@ -94,9 +99,23 @@ public final class SpriteGraphicsExtractor {
             int spritesPerRow = Integer.parseInt(parts[2].trim());
             int spriteTilesW = Integer.parseInt(parts[3].trim());
             int spriteTilesH = Integer.parseInt(parts[4].trim());
-            blocks.add(new Block(addr, length, spritesPerRow, spriteTilesW, spriteTilesH));
+            blocks.add(new Block(addr, length, spritesPerRow, spriteTilesW, spriteTilesH, parseTileOrder(parts, addr)));
         }
         return blocks;
+    }
+
+    /**
+     * The optional sixth field: "rowmajor" or "colmajor". Absent means
+     * colmajor, which is the Mega Drive sprite convention and what every
+     * entry meant before the field existed.
+     */
+    static boolean parseTileOrder(String[] parts, int addr) {
+        if (parts.length < 6) return false;
+        String order = parts[5].trim().toLowerCase(java.util.Locale.ROOT);
+        if (order.isEmpty() || order.equals("colmajor")) return false;
+        if (order.equals("rowmajor")) return true;
+        throw new IllegalStateException(String.format(
+                "sprite block 0x%x: tile order must be \"rowmajor\" or \"colmajor\", not \"%s\"", addr, parts[5].trim()));
     }
 
     static String strip0x(String s) {

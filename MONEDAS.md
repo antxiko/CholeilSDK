@@ -52,11 +52,17 @@ paso "inserting sprite-mosaic graphics" del pipeline `i`, pero llevan los
 tiles en el orden interno del SDK (column-major por sprite) y las dos
 mitades por separado: editarlos a mano es incomodo y facil de romper.
 
-Flujo comodo (herramientas de Antxiko, fuera de este repo; se aportan si
-interesan): se edita UN PNG de 16x16 por pose en orden visual normal con
-los 4 colores + alpha, y un exportador (`moneda_export.py`) genera las dos
-mitades, el reorden column-major y las copias duplicadas en
-`sprite_gfx_out/`; despues, pipeline `i` normal.
+ACTUALIZACION: el SDK ya entiende este orden de tiles. `sprite_graphics.txt`
+acepta un sexto campo, `rowmajor`, y los ocho bloques de la moneda lo llevan,
+asi que los PNG de `sprite_gfx_out/sprite_0d*.png` salen ya con el dibujo
+bien puesto (32x16: la pose en version sprite y la misma con la hierba
+horneada) y se pueden editar directamente. Ya no hace falta el reorden
+column-major del exportador.
+
+Lo que SI sigue haciendo falta: editar las dos mitades de cada bloque de
+forma coherente, y editar las cuatro copias de cada pose. El exportador de
+Antxiko (`moneda_export.py`, fuera de este repo) sigue siendo comodo para
+eso, partiendo de UN PNG de 16x16 por pose.
 
 Para verificarlo en emulador sin jugar hasta encontrar una moneda: hace
 falta un savestate con una moneda EN PANTALLA (desaparecen a los segundos

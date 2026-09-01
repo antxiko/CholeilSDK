@@ -61,7 +61,7 @@ names in `DefaultPaths` when run without any.
 | `soleil.tbl` | The byte ↔ glyph table for the game's text encoding. |
 | `gfx_out/` | LZ-Toshio-compressed graphics, as editable PNGs. |
 | `raw_gfx_out/` | Uncompressed graphics (SEGA logo, "PULSA START", …). |
-| `sprite_gfx_out/` | Graphics stored as sprite mosaics. |
+| `sprite_gfx_out/` | Graphics stored as sprite mosaics (the title logo, the ground-money coin). |
 | `font.png` | The 8×16 dialogue font, one editable sheet. |
 | `graphics_offsets.txt`, `raw_graphics.txt`, `sprite_graphics.txt` | Registries saying where each graphics block lives. |
 | `known_palettes.txt` | Confirmed CRAM palettes, so blocks render in their real colours. |
@@ -141,12 +141,34 @@ Three storage formats, each with its own extractor and inserter:
 - **Raw** (`raw_gfx_out/`). Plain 4bpp tile bytes with no header — the boot SEGA logo,
   the "PULSA START" prompt. These cannot be auto-detected, so they are hand-verified
   and listed in `raw_graphics.txt`.
-- **Sprite mosaics** (`sprite_gfx_out/`). Tiles in column-major order within each
-  fixed-size sprite, sprites placed in a macro grid.
+- **Sprite mosaics** (`sprite_gfx_out/`). Fixed-size sprites placed in a macro
+  grid. Tile order within a sprite is column-major by default — the Mega Drive
+  sprite convention — but a block that the game DMAs into VRAM as a plain tile
+  run reads TL, TR, BL, BR instead, and needs `rowmajor` as a sixth field in
+  `sprite_graphics.txt`. Getting it wrong still round-trips byte-exact, because
+  extraction and reinsertion cancel out; what breaks is the PNG in between,
+  whose quadrants come out shuffled and cannot be drawn on.
 
 Everything renders as a PNG tile sheet, in the real CRAM palette where one is known
 (`known_palettes.txt`) and a grayscale ramp otherwise. Edited PNGs must keep their
 original resolution.
+
+#### Finding an uncompressed sprite
+
+Only the LZ-Toshio blocks can be auto-detected. Anything uncompressed has to be
+located by hand, and the method that works is worth writing down (it is how the
+ground-money coin was found — see [MONEDAS.md](MONEDAS.md), in Spanish):
+
+1. Take an emulator savestate with the sprite on screen and dump VRAM.
+2. Diff VRAM across several frames — only the animated tiles change, which
+   isolates the sprite from the rest of the scene.
+3. Search the ROM for those tile bytes literally; uncompressed blocks match
+   exactly.
+4. **Match every frame of a full animation cycle against *every* occurrence in
+   the ROM, not just the first.** The coin turned out to cycle through eight
+   consecutive 256-byte blocks at `0xd0f60 + n*0x400` holding only two distinct
+   designs — four identical copies each. Editing one copy of a pose makes the
+   sprite alternate between the new art and the old as it animates.
 
 ### The dialogue font
 
@@ -261,11 +283,11 @@ next step carry on.
 mvn test
 ```
 
-56 tests across eight suites, run against a ROM built by the real pipeline: the 68k
+64 tests across nine suites, run against a ROM built by the real pipeline: the 68k
 code patches byte for byte, every balloon width against its placed name, every script
 slot resolving to a terminated string, room forking, the font round trip and its
-bounds, the IPS patch verified by an applier written from the format spec, and the
-header checksum.
+bounds, the IPS patch verified by an applier written from the format spec, sprite tile
+order in both directions, and the header checksum.
 
 The ROM is gitignored, so without it the suites **skip** rather than fail — a fresh
 clone still builds green.

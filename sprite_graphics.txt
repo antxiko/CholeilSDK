@@ -4,7 +4,11 @@
 ; placed left-to-right/top-to-bottom in a macro grid. Naive row-major
 ; rendering (raw_graphics.txt/RawGraphicsExtractor) produces a scrambled mess
 ; for these -- use SpriteGraphicsExtractor/Inserter instead.
-; Format: 0xADDRESS,lengthBytes,spritesPerRow,spriteTilesWide,spriteTilesTall
+; Format: 0xADDRESS,lengthBytes,spritesPerRow,spriteTilesWide,spriteTilesTall[,tileOrder]
+; tileOrder is "colmajor" (default, the Mega Drive sprite convention) or
+; "rowmajor" for blocks that are DMAd into VRAM as a plain tile run, whose
+; tiles read TL, TR, BL, BR. Get it wrong and the quadrants come out swapped
+; -- the round trip still reinserts byte-exact, but the PNG is unusable.
 ;
 ; 0x00a8d36: the "Soleil" title logo. Found by watching the emulator: a VRAM
 ; write breakpoint at 0x80C0 (sprite tile index 0x406, the first tile of the
@@ -35,11 +39,11 @@
 ; d2360) and face (d1760, d1b60, d2760, d2b60 -- four identical copies).
 ; The per-frame cycle: edge x8, face(d2760/d2b60) x8, edge x8, face(d1760) x4,
 ; face(d1b60) x4. Edit copies of the same pose consistently.
-0xd0f60,256,2,2,2
-0xd1360,256,2,2,2
-0xd1760,256,2,2,2
-0xd1b60,256,2,2,2
-0xd1f60,256,2,2,2
-0xd2360,256,2,2,2
-0xd2760,256,2,2,2
-0xd2b60,256,2,2,2
+0xd0f60,256,2,2,2,rowmajor
+0xd1360,256,2,2,2,rowmajor
+0xd1760,256,2,2,2,rowmajor
+0xd1b60,256,2,2,2,rowmajor
+0xd1f60,256,2,2,2,rowmajor
+0xd2360,256,2,2,2,rowmajor
+0xd2760,256,2,2,2,rowmajor
+0xd2b60,256,2,2,2,rowmajor

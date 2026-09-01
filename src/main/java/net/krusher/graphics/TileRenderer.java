@@ -130,13 +130,17 @@ public final class TileRenderer {
 
     /**
      * Renders tiles stored as a sequence of fixed-size sprites (spriteTilesW x
-     * spriteTilesH tiles each), tiles in COLUMN-MAJOR order within each sprite
-     * (Mega Drive sprite convention: tile 0 = col0/row0, tile1 = col0/row1,
-     * ...), sprites placed left-to-right/top-to-bottom in a macro grid of
-     * spritesPerRow columns. Used for assets that aren't a single flat
-     * row-major tile raster (see sprite_graphics.txt).
+     * spriteTilesH tiles each), sprites placed left-to-right/top-to-bottom in a
+     * macro grid of spritesPerRow columns. Used for assets that aren't a single
+     * flat row-major tile raster (see sprite_graphics.txt).
+     *
+     * Tile order WITHIN a sprite defaults to the Mega Drive sprite convention --
+     * column-major, tile0 = col0/row0, tile1 = col0/row1 -- which is what the
+     * hardware sprite renderer expects. Some blocks are DMAd into VRAM as a plain
+     * tile run instead and are laid out row-major (tile0 = TL, tile1 = TR); pass
+     * rowMajor for those, or their quadrants come out swapped.
      */
-    public static Bitmap renderSpriteSheet(byte[] data, int[] palette, int spriteTilesW, int spriteTilesH, int spritesPerRow, int scale) {
+    public static Bitmap renderSpriteSheet(byte[] data, int[] palette, int spriteTilesW, int spriteTilesH, int spritesPerRow, int scale, boolean rowMajor) {
         int tilesPerSprite = spriteTilesW * spriteTilesH;
         int spriteCount = Math.max(1, data.length / TILE_BYTES / tilesPerSprite);
         int spritesPerRow2 = Math.max(1, spritesPerRow);
@@ -151,8 +155,8 @@ public final class TileRenderer {
             int blockY = (s / spritesPerRow2) * spriteTilesH * TILE_SIZE;
             int spriteBase = s * tilesPerSprite * TILE_BYTES;
             for (int t = 0; t < tilesPerSprite; t++) {
-                int col = t / spriteTilesH;
-                int row = t % spriteTilesH;
+                int col = rowMajor ? t % spriteTilesW : t / spriteTilesH;
+                int row = rowMajor ? t / spriteTilesW : t % spriteTilesH;
                 int tileX = blockX + col * TILE_SIZE;
                 int tileY = blockY + row * TILE_SIZE;
                 int base = spriteBase + t * TILE_BYTES;
@@ -174,7 +178,7 @@ public final class TileRenderer {
     /**
      * Reverse of renderSpriteSheet for an EXACT tile count.
      */
-    public static byte[] decodeSpriteSheet(Bitmap img, int[] palette, int spriteTilesW, int spriteTilesH, int spritesPerRow, int scale, int tileCount) {
+    public static byte[] decodeSpriteSheet(Bitmap img, int[] palette, int spriteTilesW, int spriteTilesH, int spritesPerRow, int scale, int tileCount, boolean rowMajor) {
         int tilesPerSprite = spriteTilesW * spriteTilesH;
         int spriteCount = tileCount / tilesPerSprite;
         int spritesPerRow2 = Math.max(1, spritesPerRow);
@@ -185,8 +189,8 @@ public final class TileRenderer {
             int blockY = (s / spritesPerRow2) * spriteTilesH * TILE_SIZE;
             int spriteBase = s * tilesPerSprite * TILE_BYTES;
             for (int t = 0; t < tilesPerSprite; t++) {
-                int col = t / spriteTilesH;
-                int row = t % spriteTilesH;
+                int col = rowMajor ? t % spriteTilesW : t / spriteTilesH;
+                int row = rowMajor ? t / spriteTilesW : t % spriteTilesH;
                 int tileX = blockX + col * TILE_SIZE;
                 int tileY = blockY + row * TILE_SIZE;
                 int base = spriteBase + t * TILE_BYTES;
