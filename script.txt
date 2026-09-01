@@ -4006,7 +4006,7 @@ ANCIENT ALIENS?
 
 
 ==== room=60 npc=2 str=5 textAddr=0x1cbf0c ptrFieldAddr=0x1cbc22 ====
-DOROTEA: ¿El vino que tiene
+DOROTEA: ¡El vino que tiene
 Asuncióóón, no es blanco ni
 tinto ni tiene coloooor!
 
@@ -4057,7 +4057,7 @@ pistas para el juego.
 ==== room=61 npc=0 str=5 textAddr=0x1cc1dc ptrFieldAddr=0x1cbf4e ====
 FLOR: Ya te he largado todo
 lo que me sabía, asín que
-tira palante, cabezón
+tira palante, cabezón.
 
 
 ==== room=61 npc=0 str=6 textAddr=0x1cc22e ptrFieldAddr=0x1cbf50 ====
@@ -4156,12 +4156,12 @@ y me voy a tomar por culo.
 
 
 ==== room=67 npc=2 str=0 textAddr=0x1cc626 ptrFieldAddr=0x1cc622 ====
-Mi marido dice que ha ido a
+Mi marido dice que va a ir a
 pillar cobre, aluminio y
 latón el campo de Rabesa,
 y dice que no volverá hasta
 que no lo tenga. Me parece
-que lo que ha hecho es ir a
+que lo que quiere es ir a
 por tabaco o irse con una
 pilingui. ¡Mal rayo le
 parta a ese cabronazo!
@@ -4330,7 +4330,7 @@ matarile a más de uno...
 
 ==== room=71 npc=6 str=1 textAddr=0x1ccf6e ptrFieldAddr=0x1ccef6 ====
 ¡Calla, coño! ¿Quieres que
-nos trinquen por chismosos?.
+nos trinquen por chismosos?
 
 
 ==== room=71 npc=7 str=0 textAddr=0x1ccfa6 ptrFieldAddr=0x1ccfa2 ====
