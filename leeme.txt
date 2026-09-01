@@ -1,0 +1,41 @@
+┌──────────────────────────┐
+│         Choleil          │
+│Charnego Translations 2026│
+└──────────────────────────┘
+
+Por: Krusher, ScorpionMSX, Antxiko
+
+Un proyecto aparcado durante años por nuestra falta de habilidad en el RomHacking por fin sale a la luz. No es que
+fuera ingenieria aeroespacial, es que somos más simples que el asa de un cubo. Pero con la ayuda de la IA (Ignacia Antonia)
+y de algunos coleguillas de foros de romhacking hemos conseguío charnegar una "secuela espiritual" de la Cerda, nada menos
+que el Soleil de la MegaDrai, un juego que se parece mucho al de nintendo pero con características molonas y sprites enormes.
+Esperamos que disfrutes un montón de esta charnegación, que ha sido hacida con mucho cariño.
+
+SINOPSIS:
+En un mundo de majaras, existe la constante amenaza de los cholos, una raza de seres extraños que descolocan a los payos.
+En la ciudad de Choleil es costumbre que por tu 14 cumpleaños te regalen una navaja para defenderte de tales amenazas.
+Nuestro protagonista es Jaimito, un niño con más cabeza que un mulo blanco asomao a una esquina, bastante espesito, que acaba
+de cumplir los 14. Su madre le da la navaja de su padre para que vaya a buscar espárragos al campo, ya que su escasa inteligencia
+no da para mucho más.
+
+Recuerda aplicar el parche sobre la ROM española del juego (Soleil (Spain).md). Para más referencia, necesitas una ROM con estos valores:
+CRC-32: 9ED4C323
+SHA-1: 95AE529CECB7DBCA281DF25C3C4E7CB8F48D936C
+MD5: 6CBBB5D870CA386075A96BC727068EC2
+Si te has bajado el juego ya parcheado te puedes saltar esta información, piratosillo.
+
+
+Cambios respecto a la versión original:
+-Correcciones de la traducción chusquera original y de sus pistas, que se liaban más que el testamento de un loco.
+-El nombre por defecto estaba en blanco, ahora es Jaimito como siempre debió ser.
+-Corregido el famoso bug de la niña en Ibis que habla como un perro.
+
+Special tankes de combate:
+-A EvilJagaGenius por su descripción de punteros y de codificación de texto: https://www.romhacking.net/forum/index.php?topic=34617.0
+-A Vladimir Kononovich por su compresión/descompresión de gráficos: https://github.com/lab313ru/lztoshio
+
+Recuerda que puedes visitarnos en:
+
+https://charnego.krusher.net/
+https://t.me/charnegotranslationsfanpus
+https://twitter.com/charnegot

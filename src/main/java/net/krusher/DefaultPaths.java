@@ -23,6 +23,9 @@ public final class DefaultPaths {
     /** The translated ROM the insertion pipeline builds (gitignored). */
     public static final String OUT_ROM = "Choleil.md";
 
+    /** The distributable patch: the built ROM minus everything that was already there. */
+    public static final String PATCH = "Choleil.ips";
+
     /** Byte <-> glyph table for the game's text encoding. */
     public static final String TBL = "soleil.tbl";
 

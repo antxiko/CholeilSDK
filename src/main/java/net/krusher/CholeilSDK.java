@@ -17,7 +17,8 @@ import java.io.IOException;
  *       raw_gfx_out/, then sprite-mosaic graphics from sprite_gfx_out/ --
  *       delete a PNG to leave that block untouched; edited PNGs must keep
  *       their original resolution), and the hero's default name
- *       (DefaultNameInserter) written over the empty-name branch
+ *       (DefaultNameInserter) written over the empty-name branch, and
+ *       Choleil.ips, the distributable patch
  */
 public class CholeilSDK
 {
@@ -111,6 +112,10 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== setting the default hero name ===");
             DefaultNameInserter.run( DefaultPaths.OUT_ROM, DefaultPaths.TBL, DefaultPaths.OUT_ROM );
+
+            System.out.println();
+            System.out.println("=== writing the IPS patch ===");
+            IpsWriter.run( DefaultPaths.ROM, DefaultPaths.OUT_ROM, DefaultPaths.PATCH );
         }
     }
 }
