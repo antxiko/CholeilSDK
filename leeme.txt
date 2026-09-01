@@ -29,6 +29,7 @@ Cambios respecto a la versión original:
 -Correcciones de la traducción chusquera original y de sus pistas, que se liaban más que el testamento de un loco.
 -El nombre por defecto estaba en blanco, ahora es Jaimito como siempre debió ser.
 -Corregido el famoso bug de la niña en Ibis que habla como un perro.
+-Corregido el acento de la "i", que en original no salía bien y me traía por la calle de la amargura.
 
 Special tankes de combate:
 -A EvilJagaGenius por su descripción de punteros y de codificación de texto: https://www.romhacking.net/forum/index.php?topic=34617.0

@@ -58,4 +58,7 @@ public final class DefaultPaths {
 
     /** Palettes the graphics tools reuse when re-encoding a PNG. */
     public static final String KNOWN_PALETTES = "known_palettes.txt";
+
+    /** The dialogue font, one editable sheet of 8x16 glyphs. */
+    public static final String FONT = "font.png";
 }

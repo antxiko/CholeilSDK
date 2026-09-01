@@ -73,6 +73,10 @@ public class CholeilSDK
             net.krusher.graphics.SpriteGraphicsExtractor.main( new String[] { DefaultPaths.ROM, DefaultPaths.SPRITE_GRAPHICS, DefaultPaths.SPRITE_GFX_OUT } );
 
             System.out.println();
+            System.out.println("=== extracting the dialogue font ===");
+            net.krusher.graphics.FontExtractor.run( DefaultPaths.ROM, DefaultPaths.FONT );
+
+            System.out.println();
             System.out.println("=== scanning for stray text ===");
             StrayTextScanner.main( new String[] { DefaultPaths.ROM, DefaultPaths.SCRIPT, DefaultPaths.GRAPHICS_OFFSETS, DefaultPaths.STRAY_TEXT } );
         }
@@ -112,6 +116,10 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== setting the default hero name ===");
             DefaultNameInserter.run( DefaultPaths.OUT_ROM, DefaultPaths.TBL, DefaultPaths.OUT_ROM );
+
+            System.out.println();
+            System.out.println("=== inserting the dialogue font ===");
+            net.krusher.graphics.FontInserter.run( DefaultPaths.OUT_ROM, DefaultPaths.FONT, DefaultPaths.OUT_ROM );
 
             System.out.println();
             System.out.println("=== writing the IPS patch ===");
