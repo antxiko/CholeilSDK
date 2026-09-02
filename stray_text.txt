@@ -244,13 +244,13 @@ SE PEGA MAS
 QUEL PERRO 
 
 ==== ascii addr=0x327dc len=11 ====
-DE DESGUACE
-
-==== ascii addr=0x327e8 len=11 ====
 VELOCIDAD  
 
+==== ascii addr=0x327e8 len=11 ====
+DE NAVAJA  
+
 ==== ascii addr=0x327f4 len=11 ====
-NAVAJA     
+TO TRIPOSA 
 
 ==== ascii addr=0x3281c len=11 ====
 SIGUE      
@@ -343,98 +343,98 @@ ERASE  BB_RAM NUMBER
 PRESENTED BAY 
 
 ==== ascii addr=0x3b2de len=8 ====
-CHARNEGO TRANSLATIONS 
+TEXTOS Y
 
 ==== ascii addr=0x3b2e7 len=20 ====
-TEXTOS Y ROMHACK
+ROMHACK     
 
 ==== ascii addr=0x3b2fc len=7 ====
-KRUSHER
+ KRUSHER
 
 ==== ascii addr=0x3b304 len=12 ====
-GRASFICOS Y COSAS
+GRASFICOS
 
 ==== ascii addr=0x3b311 len=6 ====
-SCORPIONMSX
+ SCORPIONMSX
 
 ==== ascii addr=0x3b318 len=12 ====
-DETALLITOS Y COSAS 
+COSA
 
 ==== ascii addr=0x3b325 len=16 ====
-ANTXIKO 
+Y DETALLITO 
 
 ==== ascii addr=0x3b336 len=8 ====
-TANKES DE COMBATE
+ ANTXIKO
 
 ==== ascii addr=0x3b33f len=12 ====
-Y SALUDOS 
+SALUDITOS 
 
 ==== ascii addr=0x3b34c len=8 ====
-AL CHRONO Y AL POS
+ CHRONO Y POS
 
 ==== ascii addr=0x3b355 len=12 ====
 A LA GENTE DEL CANAL
 
 ==== ascii addr=0x3b362 len=20 ====
-DE CHARNEGO DEL TELEGRAMO 
+DE CHARNEGO DE TELEGRAMO
 
 ==== ascii addr=0x3b377 len=10 ====
-A VLADIMIR KONOVICH
+.GRASIA.A.TOS
 
 ==== ascii addr=0x3b382 len=16 ====
-POR EL CODIGO DE LOS GRAFICOS
+VLADIMIR KONOVICH
 
 ==== ascii addr=0x3b393 len=8 ====
-TAMBIEN A EVILJAGAGENIUS
+.COMPRESIONES
 
 ==== ascii addr=0x3b39c len=12 ====
-POR EL CODIGO DE LOS
+.DE.GRAFICOS
 
 ==== ascii addr=0x3b3a9 len=16 ====
-PUTOS PUNTEROS
+ EVILJAGAGENIUS
 
 ==== ascii addr=0x3b3ba len=9 ====
-Y YASTA NADIE MAS
+.PUNTEROS
 
 ==== ascii addr=0x3b3c4 len=8 ====
-AHORA DEBERIA IR AQUI
+.CHUNGOS
 
 ==== ascii addr=0x3b3cd len=24 ====
-UNA RECETA O ALGO
+ADIO
 
 ==== ascii addr=0x3b3e6 len=6 ====
-PERO SOY MAS TORPE QUE UN
+.ARSA.AHI
 
 ==== ascii addr=0x3b3ed len=12 ====
-COCHINO AMARRAO POR EL RABO
+NO SER QUE MAS PONER
 
 ==== ascii addr=0x3b3fa len=9 ====
-ASI QUE NA
+.ASI.QUE.NA
 
 ==== ascii addr=0x3b404 len=16 ====
-ESPERAMOS QUE TE HAYA
+ESPERAMO QUE TE HAYA
 
 ==== ascii addr=0x3b415 len=9 ====
-MOLAO EL CHOLEIL
+.MOLAO
 
 ==== ascii addr=0x3b41f len=16 ====
-SI ESO DEJATE CAER
+EL PEASO DE
 
 ==== ascii addr=0x3b430 len=9 ====
-POR NUESTRA WEB
+.CHOLEIL
 
 ==== ascii addr=0x3b43a len=16 ====
-PA MAS NOVEDADES
-
-==== ascii addr=0x3b44b len=5 ====
-ALA VA POR USTEDE
-
-==== ascii addr=0x3b451 len=11 ====
 ARSA AHI
 
+==== ascii addr=0x3b44b len=5 ====
+.VA.POR.USTEDE
+
+==== ascii addr=0x3b451 len=11 ====
+ARSA.AHI
+
 ==== ascii addr=0x3b45d len=20 ====
-HASTA LUEGO GENTE
+PRESENTED BY
 
 ==== ascii addr=0x3b472 len=8 ====
-:CHARNEGO TRANSLATIONS:
+.CHARNEGO.
 

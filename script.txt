@@ -31,7 +31,7 @@ Playa Benalmádena
  Cabo Benalmádena 
 
 ==== room=0 npc=3 str=6 textAddr=0x1c03b8 ptrFieldAddr=0x1c0354 ====
-Nenúfar
+Cecófar
 
 ==== room=0 npc=3 str=7 textAddr=0x1c03c2 ptrFieldAddr=0x1c0356 ====
 Córdoba
@@ -46,7 +46,7 @@ Pueblo de Ibi
 Soria
 
 ==== room=0 npc=3 str=11 textAddr=0x1c03ea ptrFieldAddr=0x1c035e ====
-Rosa Mágica
+Polandia
 
 ==== room=0 npc=3 str=12 textAddr=0x1c03f8 ptrFieldAddr=0x1c0360 ====
 Desierto Tabernas
@@ -70,7 +70,7 @@ Castillo Calipo
 Sevilla
 
 ==== room=0 npc=3 str=19 textAddr=0x1c045c ptrFieldAddr=0x1c036e ====
-San Cielo
+Capillita
 
 ==== room=0 npc=3 str=20 textAddr=0x1c0468 ptrFieldAddr=0x1c0370 ====
  Barrio La Mina 
@@ -5205,7 +5205,7 @@ copón.
 ==== room=88 npc=4 str=0 textAddr=0x1cfb44 ptrFieldAddr=0x1cfb40 ====
 ¡Eres el niño cabezon! Me
 acuerdo de lo machote que te
-portaste en el pasado. Voy
+portaste en la iglesia. Voy
 a mandar a traer más piedras
 para hacer una estatua en
 tu honor con tu cabeza y
@@ -5229,9 +5229,9 @@ maromazos.
 ¡Su puta madre! ¡Se han
 metido los cholos en la
 iglesia! Aunque con lo
-quemao que anda el cura lo
-mismo los que salen con
-el ojete abierto son ellos.
+poco que hay en el cepillo
+no se pueden comprar ni
+un chicle de menta.
 
 
 ==== room=89 npc=0 str=0 textAddr=0x1cfcfc ptrFieldAddr=0x1cfcf8 ====
@@ -5466,7 +5466,7 @@ susterráneo, ¡pero tiene
 más peligro que una piraña
 en un bidet! Todos los que
 han entrado han quedado
-Palmolivo y Coronita sin
+Palmolive y Coronita sin
 limón.
 
 
