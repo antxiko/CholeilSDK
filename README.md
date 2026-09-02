@@ -98,11 +98,21 @@ molan, siempre están en plan
   grouped, placed in reclaimed space, and every pointer is rewritten.
 - **Reach beyond the format's limit.** A string slot is a 16-bit *forward* offset from
   its own table, so the original format cannot address anything more than `0x7FFF`
-  away. The inserter installs a small 68k helper at `0xF6000` and patches the nine
+  away. The inserter installs a small 68k helper at `0xF6000` and patches the ten
   inlined table-walk sites to call it, which makes a slot dual-mode: below `0x8000`
   it is still the stock relative offset, at or above it is an index into a table of
   absolute pointers. Strings that fit stay relative; only those that cannot go
   indirect.
+
+  **Every string step must be patched, or indirect slots corrupt silently.** The
+  game's original instruction is `adda.w`, which *sign-extends*: a slot with the high
+  bit set is read as a large negative offset (`0x801c` becomes −32740), so an
+  unpatched site lands mid-way inside some unrelated string and draws it from there.
+  A tenth site at `0x32170` was missing for a long time and broke 84 of 1036 slots
+  this way. The routines walk room → NPC → string with the same instruction shape at
+  each step, so the NPC steps look identical to the string steps and only the latter
+  may be patched; the test `noInlinedStringStepIsMissingFromThePatchTable` tells them
+  apart and fails if a string step is left out.
 - **Sharing.** Identical strings share one copy in the ROM, and `<SAME room=… npc=…
   str=…>` in `script.txt` marks an entry that resolves to another's text.
 - **Forking rooms that share tables.** Fifteen room-table offsets are held by two to
@@ -293,7 +303,7 @@ next step carry on.
 mvn test
 ```
 
-65 tests across nine suites, run against a ROM built by the real pipeline: the 68k
+66 tests across nine suites, run against a ROM built by the real pipeline: the 68k
 code patches byte for byte, every balloon width against its placed name, every script
 slot resolving to a terminated string, room forking, the font round trip and its
 bounds, the IPS patch verified by an applier written from the format spec, sprite tile
@@ -327,7 +337,7 @@ Nothing else should need to change.
 | What | Where |
 |---|---|
 | Script base and bounds | `TextExtractor.SCRIPT_BASE` / `SCRIPT_START` / `SCRIPT_END`, `TextInserter.SCRIPT_BASE` / `DEFAULT_GAP_END` |
-| The nine table-walk sites the fetch helper patches | `TextInserter.FETCH_SITE_PATCHES` |
+| The ten table-walk sites the fetch helper patches | `TextInserter.FETCH_SITE_PATCHES` |
 | Where the fetch helper is installed | `TextInserter.FETCH_HELPER_ADDR` |
 | Verified free-space gaps | `FreeSpaceScanner.VERIFIED_GAPS` |
 | Map balloon marker table and the centring patches | `MapBalloonInserter.MARKER_TABLE`, `CODE_PATCHES` |

@@ -4311,13 +4311,17 @@ exactamente lo que hase.
 
 
 ==== room=71 npc=5 str=0 textAddr=0x1cce6c ptrFieldAddr=0x1cce6a ====
-¡Tú, maricón! ¡Has habierto
+¡Tú, mojaíto! ¡Has abierto
 la habitación! ¡No digas que
 no! ¡Además eres un ilegal
 que ha venido sin papeles
 ni na! ¡Aquí no hay ni
 juicio ni juicia! ¡Al talego
-que vas a ir!
+que vas a ir! ¡Y veremos si
+no te aplicamos la
+repatriación en caliente!
+¡Pero de hoxtias que te
+vamos a dar!
 
 
 ==== room=71 npc=6 str=0 textAddr=0x1ccef8 ptrFieldAddr=0x1ccef4 ====
@@ -4884,9 +4888,8 @@ burpees para redimirse!
 
 
 ==== room=81 npc=0 str=0 textAddr=0x1cecfe ptrFieldAddr=0x1cecfc ====
-¿Animalicos pa alquilar?
-Están como una cabra, pero
-no me queda ninguno suicida.
+No me quedan nimalicos
+suisidas.
 
 
 ==== room=82 npc=0 str=0 textAddr=0x1ced54 ptrFieldAddr=0x1ced50 ====
@@ -4955,7 +4958,7 @@ bandera de Japón!
 BARON: Ay, virgensita, por
 qué, si no hemos hecho na,
 ¡Malditos payos malos!
-¡Asín sus de tos y diarrea!
+¡Asín sus dé tos y diarrea!
 
 
 ==== room=84 npc=0 str=0 textAddr=0x1cf06c ptrFieldAddr=0x1cf068 ====

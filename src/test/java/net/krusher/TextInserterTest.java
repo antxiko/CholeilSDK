@@ -74,4 +74,52 @@ final class TextInserterTest {
         }
         p.assertNone();
     }
+
+    /**
+     * The bug this exists for: a tenth string-table step at 0x32170 was missing
+     * from FETCH_SITE_PATCHES for a long time. It kept reading slots with the
+     * original adda.w, which SIGN-EXTENDS, so an indirect slot (high bit set)
+     * became a large negative offset -- 0x801c read as -32740 -- and the game
+     * drew whatever text happened to sit there, mid-word, from an unrelated
+     * room. 84 of 1036 slots were affected.
+     *
+     * everyTableWalkSiteDetoursThroughTheHelper only checks the sites already
+     * in the table, so it passed throughout. This checks the other direction:
+     * that no string step is left OUT of it.
+     *
+     * The game walks room -> NPC -> string, and each step is the same shape
+     * (add.w dX,dX or moveq #0,dX, then adda.w (aN,dX.w),aN). Only the string
+     * step needs the helper, so an unpatched one is legitimate exactly when it
+     * is an NPC step -- which is recognisable because the string step that
+     * follows it in the same routine is patched, a few bytes later.
+     */
+    @Test
+    @DisplayName("no inlined string step is missing from the patch table")
+    void noInlinedStringStepIsMissingFromThePatchTable() {
+        Problems p = new Problems();
+        for (int at = 4; at + 4 <= rom.length; at += 2) {
+            int word = ((rom[at] & 0xFF) << 8) | (rom[at + 1] & 0xFF);
+            int dest = (word >> 9) & 7;
+            if ((word & 0xF1F8) != 0xD0F0 || dest != (word & 7)) continue; // adda.w (aN,dX.w),aN
+            int ext = ((rom[at + 2] & 0xFF) << 8) | (rom[at + 3] & 0xFF);
+            if ((ext & 0x8FFF) != 0) continue;                             // dX.w, no displacement
+            int idx = (ext >> 12) & 7;
+            int prev = ((rom[at - 2] & 0xFF) << 8) | (rom[at - 1] & 0xFF);
+            if (prev != (0xD040 | (idx << 9) | idx) && prev != (0x7000 | (idx << 9))) continue;
+
+            p.check(patchedSiteWithin(at + 1, at + 16), String.format(
+                    "the table step at 0x%x is not patched and no patched string step follows it "
+                            + "within 16 bytes, so it is a string step missing from FETCH_SITE_PATCHES "
+                            + "-- indirect slots read through it will sign-extend into garbage", at));
+        }
+        p.assertNone();
+    }
+
+    /** True if any patched fetch site starts in (from, to]. */
+    private static boolean patchedSiteWithin(int from, int to) {
+        for (int[][] site : TextInserter.FETCH_SITE_PATCHES) {
+            if (site[0][0] > from && site[0][0] <= to) return true;
+        }
+        return false;
+    }
 }

@@ -30,7 +30,7 @@ import java.util.regex.Pattern;
  * own copy of the table structure, see forkDivergedRooms.
  *
  * Slot values are dual-mode, backed by a small fetch helper this inserter
- * installs at FETCH_HELPER_ADDR and jsr-patches into all nine of the game's
+ * installs at FETCH_HELPER_ADDR and jsr-patches into all ten of the game's
  * inlined table-walk sites (found by scanning the ROM for every $1C0000
  * constant and disassembling each hit with capstone):
  *
@@ -115,7 +115,7 @@ public final class TextInserter {
     // falling through into helper_d0; helper_d2 is the same routine for the
     // one site that keeps the index in d2. In: a0 = string-index table,
     // dN = str index. Out: a0 = string address. Clobbers dN (the original
-    // 6-byte sequences clobbered it too -- verified dead at all nine sites).
+    // 6-byte sequences clobbered it too -- verified dead at all ten sites).
     static final byte[] FETCH_HELPER_CODE = {
         (byte)0x70, 0x00,                                     // f6000 moveq  #0,d0
         (byte)0xD0, 0x40,                                     // f6002 add.w  d0,d0
@@ -141,7 +141,7 @@ public final class TextInserter {
     };
 
     /**
-     * The nine inlined table-walk sites, each ending in the same 6-byte
+     * The ten inlined table-walk sites, each ending in the same 6-byte
      * string step (add.w dN,dN / adda.w (a0,dN.w),a0 -- or moveq #0,d0 for
      * the two constant-str=0 sites), each replaced by an exact-fit 6-byte
      * jsr to the matching helper entry. {address}, {expected original
@@ -154,6 +154,7 @@ public final class TextInserter {
         { {0x3210E}, {0xD0,0x40, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x02} }, // room0/npc3 (0x32102)
         { {0x3212C}, {0xD4,0x42, 0xD0,0xF0,0x20,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x22} }, // general dialogue (0x32118), index in d2
         { {0x32150}, {0x70,0x00, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x00} }, // room1/npc0/str0 (0x3213e)
+        { {0x32170}, {0xD0,0x40, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x02} }, // $b648-indexed dialogue (0x32156)
         { {0x33220}, {0xD0,0x40, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x02} }, // $b62e/$b628/$b62a dialogue (0x331f8)
         { {0x333C6}, {0xD0,0x40, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x02} }, // same vars, address-only variant (0x333a2)
         { {0x33478}, {0x70,0x00, 0xD0,0xF0,0x00,0x00}, {0x4E,0xB9,0x00,0x0F,0x60,0x00} }, // room0/npc0/str0 (0x3346a)
@@ -317,7 +318,7 @@ public final class TextInserter {
         // strCount*2 (immediately after its own index table), making its slot
         // value double as a self-describing table-size encoding. A full
         // disassembly pass found no game code that actually derives a count
-        // from it (all nine fetch sites just add the offset -- the historical
+        // from it (all ten fetch sites just add the offset -- the historical
         // breakage when relocating str=0 is better explained by adda.w's sign
         // extension), but the adjacent slot is still reserved first as
         // belt-and-braces; only a str=0 that no longer fits there falls back
@@ -338,7 +339,7 @@ public final class TextInserter {
         // the translated text no longer fits there -- it would collide with
         // the next fixed table -- the string simply falls back to an indirect
         // slot like any other, since no game code was found that actually
-        // derives a count from it (all nine fetch sites just add the offset).
+        // derives a count from it (all ten fetch sites just add the offset).
         List<int[]> reservations = new ArrayList<int[]>();
         List<Group> indirectGroups = new ArrayList<Group>();
         for (Map.Entry<Integer, Entry> me : str0ByTable.entrySet()) {
@@ -465,6 +466,35 @@ public final class TextInserter {
             totalBytesUsed += g.encoded.length;
         }
 
+        // Indirect slots are known-broken and must never ship. Some code path
+        // still reads a slot with the original sign-extending adda.w, so a
+        // value with the high bit set becomes a large NEGATIVE offset (0x801c
+        // reads as -32740) and the game draws an unrelated string from the
+        // middle. Ten inlined string steps are detoured through the fetch
+        // helper and it still happens, so at least one reader has not been
+        // found -- until it is, the only safe slot is a plain relative offset,
+        // which every path (patched or not) handles identically.
+        //
+        // This is deliberately fatal rather than an INFO line: the old
+        // behaviour was to carry on and emit dialogue that is visibly wrong in
+        // game but perfectly well-formed on disk, which is exactly the kind of
+        // bug that survives every automated check and reaches a player.
+        if (!indirectGroups.isEmpty()) {
+            StringBuilder detail = new StringBuilder();
+            int shown = 0;
+            for (Group g : indirectGroups) {
+                if (shown++ == 10) { detail.append("\n  ... and ").append(indirectGroups.size() - 10).append(" more"); break; }
+                Entry e = g.members.get(0);
+                detail.append(String.format("%n  room=%d npc=%d str=%d (%d bytes), table 0x%x",
+                        e.room, e.npc, e.str, g.encoded.length, e.strTableAddr));
+            }
+            System.out.println("WARNING: " + indirectGroups.size() + " string(s) could not be placed within "
+                    + "0x" + Integer.toHexString(MAX_RELATIVE_REACH) + " bytes of their string table and fall back "
+                    + "to an indirect slot, WHICH THE GAME READS INCORRECTLY -- these entries will show a fragment "
+                    + "of an unrelated string in game. Shortening their text until they fit is the only workaround "
+                    + "until negative relative offsets land (see MAX_RELATIVE_REACH):" + detail);
+        }
+
         // Second pass: indirect groups (and then the pointer table itself) go
         // into whatever the relative pass left over, anywhere, no reach or
         // floor constraint -- the floor-skipping above leaves usable holes,
@@ -582,7 +612,7 @@ public final class TextInserter {
             }
         }
 
-        // Install the dual-mode fetch helper and detour the game's nine
+        // Install the dual-mode fetch helper and detour the game's ten
         // table-walk sites through it. Applied unconditionally (even with an
         // empty pointer table) so every build exercises the same code path.
         System.arraycopy(FETCH_HELPER_CODE, 0, rom, FETCH_HELPER_ADDR, FETCH_HELPER_CODE.length);
@@ -590,7 +620,7 @@ public final class TextInserter {
         writeS32(rom, FETCH_LEA_D2_OPERAND, tableAddr);
         applyCodePatches(rom, FETCH_SITE_PATCHES);
         System.out.println("Fetch helper installed at 0x" + Integer.toHexString(FETCH_HELPER_ADDR)
-                + ", 9 table-walk sites patched.");
+                + ", " + FETCH_SITE_PATCHES.length + " table-walk sites patched.");
 
         fixChecksum(rom);
 
