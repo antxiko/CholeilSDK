@@ -62,6 +62,7 @@ names in `DefaultPaths` when run without any.
 | `gfx_out/` | LZ-Toshio-compressed graphics, as editable PNGs. |
 | `raw_gfx_out/` | Uncompressed graphics (SEGA logo, "PULSA START", …). |
 | `sprite_gfx_out/` | Graphics stored as sprite mosaics (the title logo, the ground-money coin). |
+| `pause_gfx_out/` | Friendly SAVE/TAKE OFF pause-menu icons (see `MENU_PAUSA.md`). |
 | `font.png` | The 8×16 dialogue font, one editable sheet. |
 | `graphics_offsets.txt`, `raw_graphics.txt`, `sprite_graphics.txt` | Registries saying where each graphics block lives. |
 | `known_palettes.txt` | Confirmed CRAM palettes, so blocks render in their real colours. |
