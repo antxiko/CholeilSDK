@@ -59,6 +59,26 @@ bien puesto (32x16: la pose en version sprite y la misma con la hierba
 horneada) y se pueden editar directamente. Ya no hace falta el reorden
 column-major del exportador.
 
+Archivos editables de todas las caras localizadas:
+
+| uso | PNG que hay que editar |
+|-----|-------------------------|
+| animacion principal | `sprite_0d1760.png`, `sprite_0d1b60.png`, `sprite_0d2760.png`, `sprite_0d2b60.png` |
+| variantes con sombra | `sprite_0d6f20.png`, `sprite_0d7320.png` |
+| tiles del mapa de Playa Anemona | `sprite_0e45e0.png`, `sprite_0e46e0.png` |
+| bloque combinado canto + cara | `sprite_0f4600.png` |
+
+Los dos PNG `sprite_0e45e0.png` y `sprite_0e46e0.png` son de 16x16 y se
+editan directamente, aunque en el juego se dibujen como tiles del plano del
+mapa y no como sprites de hardware. Hay que conservar sus dimensiones y usar
+solo los colores de su propia paleta. El pipeline `i` reinserta todos los PNG
+anteriores porque sus direcciones estan registradas en `sprite_graphics.txt`.
+
+Las copias del canto que mantienen el arte original estan en `sprite_0d0f60.png`,
+`sprite_0d1360.png`, `sprite_0d1f60.png`, `sprite_0d2360.png`,
+`sprite_0d6d20.png`, `sprite_0d7120.png`, `sprite_0e4660.png` y
+`sprite_0e4760.png`.
+
 Lo que SI sigue haciendo falta: editar las dos mitades de cada bloque de
 forma coherente, y editar las cuatro copias de cada pose. El exportador de
 Antxiko (`moneda_export.py`, fuera de este repo) sigue siendo comodo para
@@ -68,6 +88,20 @@ Para verificarlo en emulador sin jugar hasta encontrar una moneda: hace
 falta un savestate con una moneda EN PANTALLA (desaparecen a los segundos
 de soltarse; guardar el state antes de recogerla). Al recargar el state la
 animacion refresca los tiles desde la ROM en pocos frames.
+
+## El icono del contador del HUD
+
+El icono de la moneda que sale arriba (junto al contador) es aparte: vive en
+la hoja comprimida LZ `gfx_out/gfx_0f2000.png` (bloque ROM `0xf2000`, con
+paleta real conocida), que se carga 1:1 en VRAM. El icono son los tiles
+236 (arriba-izq), 237 (abajo-izq), 238 (arriba-dcha) y 239 (abajo-dcha) de
+esa hoja; en el PNG estan seguidos en la fila 14 (x=96..128, y=112..120).
+Los tiles 240-243 de al lado son el icono de la fruta roja del HUD.
+
+Se edita el PNG y el paso "recompressing and inserting graphics" del
+pipeline `i` lo reinserta (recolocando el bloque si crece). Para verlo en
+juego desde un savestate hay que forzar la recarga del HUD: abrir y cerrar
+el menu (Start) basta.
 
 ## Como se encontro (metodo reutilizable para otros sprites)
 
@@ -81,30 +115,35 @@ animacion refresca los tiles desde la ROM en pocos frames.
    bucle, no solo la primera): los bloques duplicados ocultan copias que
    el juego lee de otra direccion.
 
-## Y no eran ocho bloques: eran once
+## Y no eran ocho bloques: hay mas familias
 
 Despues de meter el dibujo nuevo, la moneda salia bien en una zona y con el
 dibujo viejo en otras. La busqueda literal encuentra copias EXACTAS, pero hay
-copias con unos pocos nibbles cambiados que se cuelan. Repitiendo la busqueda
-en difuso (misma pose, tolerando nibbles distintos, y en los DOS ordenes de
-tiles) aparecen tres sitios mas. La pose de cara existe en la ROM en siete
-sitios exactamente:
+copias con pixeles cambiados que se cuelan. Repitiendo la busqueda en difuso
+(misma pose, tolerando nibbles distintos, y en los DOS ordenes de tiles), y
+contrastando los tiles que realmente aparecen en VRAM, la pose de cara existe
+en nueve sitios exactamente:
 
-| donde                      | orden    | arte                                  |
-|----------------------------|----------|---------------------------------------|
-| d1760, d1b60, d2760, d2b60 | rowmajor | las de siempre                        |
-| f4680                      | colmajor | identica; va con f4600 (canto) en un   |
-|                            |          | unico bloque de 256 bytes             |
-| d6f20, d7320               | rowmajor | igual + sombra: 16 nibbles que arriba  |
-|                            |          | son transparentes (0) aqui son el 11  |
+| donde                       | orden    | arte                                 |
+|-----------------------------|----------|--------------------------------------|
+| d1760, d1b60, d2760, d2b60 | rowmajor | las de siempre                       |
+| f4680                       | colmajor | identica; comparte bloque con canto  |
+| d6f20, d7320                | rowmajor | igual + sombra en 16 nibbles         |
+| e45e0, e46e0                | rowmajor | variante usada como tiles del mapa   |
+
+Las dos ultimas caras no son sprites de hardware: en Playa Anemona el mapa las
+carga en los tiles VRAM 688-691 y las referencia desde el plano en VRAM c310.
+Por eso no aparecian al revisar solo la banda DMA de sprites. En ROM estan en
+e45e0 y e46e0, inmediatamente antes de sus cantos e4660 y e4760.
 
 Y del canto hay copias en d6d20, d7120, e4660 y e4760 (estas dos con 6 nibbles
 de diferencia, otro sombreado). El canto no se rediseño, asi que esas ya
 estaban bien.
 
-Todas estan ya en `sprite_graphics.txt` y las tres caras que faltaban llevan el
-dibujo nuevo: f4680 y d7320 con el diseño 1, d6f20 con el diseño 2 (mismo orden
-por direccion que la familia original). La sombra se vuelve a aplicar encima del
+Todas estan ya en `sprite_graphics.txt`. Las caras e45e0 y e46e0 llevan los
+diseños 2 y 1 respectivamente, siguiendo el reparto por direccion de las otras
+familias. Las otras tres caras adicionales siguen igual: f4680 y d7320 llevan
+el diseño 1, y d6f20 el diseño 2. La sombra se vuelve a aplicar encima del
 dibujo nuevo -- los 16 pixeles siguen siendo transparentes en el diseño nuevo,
 asi que entra limpia. Si el ciclo real de esas zonas pide otro reparto de
 diseños, se cambia editando los PNG.
