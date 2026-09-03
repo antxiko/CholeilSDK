@@ -185,8 +185,9 @@ final class SpriteGraphicsTest {
 
     /**
      * Every 128-byte window holding the coin's face pose, in either tile
-     * order, allowing the few nibbles that differ between zone variants (one
-     * family bakes a drop shadow into otherwise transparent pixels).
+     * order, allowing the pixels that differ between zone variants (one
+     * family bakes a drop shadow into otherwise transparent pixels, while the
+     * map-plane variant has a slightly different outline).
      */
     private static List<Integer> facePoseAddresses() {
         byte[] face = Arrays.copyOfRange(rom, 0xD1760, 0xD1760 + 128);
@@ -195,9 +196,9 @@ final class SpriteGraphicsTest {
         List<Integer> found = new java.util.ArrayList<Integer>();
         for (int at = 0; at + 128 <= rom.length; at += 32) {
             int[] here = nibbles(Arrays.copyOfRange(rom, at, at + 128));
-            if (differences(here, rowMajor) <= 60 || differences(here, colMajor) <= 60) found.add(at);
+            if (differences(here, rowMajor) <= 95 || differences(here, colMajor) <= 95) found.add(at);
         }
-        assertEquals(7, found.size(), "the ROM holds seven copies of the coin face; found " + found);
+        assertEquals(9, found.size(), "the ROM holds nine copies of the coin face; found " + found);
         return found;
     }
 

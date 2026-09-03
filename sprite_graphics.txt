@@ -28,7 +28,7 @@
 0xa8d36,7168,7,4,4
 ; The ground-money coin ("Malin") pickup: 8 tiles per copy = two 16x16 sprite
 ; poses (face with diagonal shine / thin edge, alternated to spin). The zone
-'; sprite strip re-uploads the current pose via DMA to VRAM tiles 760-767;
+; sprite strip re-uploads the current pose via DMA to VRAM tiles 760-767;
 ; the two blocks below are the two spin poses -- edit BOTH consistently.
 ; Found via VRAM diff of an in-game savestate (only animated tiles change)
 ; + literal byte search in ROM (blocks are uncompressed).
@@ -51,22 +51,27 @@
 ; MORE COPIES OF THE SAME COIN, found after the first pass shipped and the
 ; coin looked right in one zone and wrong in others. The eight blocks above
 ; are not the only place this art lives; searching the ROM for the two poses
-; -- exact, and then allowing a few differing nibbles -- turns up these, and
-; the face pose (the distinctive one) exists in exactly seven places in total:
-; the four above, 0xf4680, and the two shadowed copies below.
+; -- exact, and then allowing variant pixels -- turns up these, and the face
+; pose (the distinctive one) exists in exactly nine places in total: the four
+; above, 0xf4680, the two shadowed copies below, and the two map-plane copies
+; at 0xe45e0/0xe46e0.
 ;
 ; 0xf4600: one 256-byte block holding BOTH poses back to back, byte-identical
 ; to the art above but in COLUMN-MAJOR order (no tileOrder field needed).
 ; 0xd6d20 + n*0x200: a second animation family, edge/face/edge/face, whose art
 ; is the same drawing plus a drop shadow -- 16 nibbles that are transparent
 ; (index 0) above are index 11 here. Row-major, 128 bytes = one pose each.
-; 0xe4660, 0xe4760: two more edge-pose copies, same drawing with a small
-; shading difference (6 nibbles). The edge pose was not redrawn, so these hold
-; the correct art already and are registered only so they are visible.
+; 0xe45e0, 0xe46e0: two face-pose copies used as 16x16 tiles on a map plane,
+; not as hardware sprites. Identified in Playa Anemona from savestate VRAM:
+; tiles 688-691, referenced by the plane map at VRAM 0xc310. Each is followed
+; by an edge-pose copy at 0xe4660/0xe4760. The edge has a small shading
+; difference (6 nibbles) and was not redrawn.
 0xd6d20,128,1,2,2,rowmajor
 0xd6f20,128,1,2,2,rowmajor
 0xd7120,128,1,2,2,rowmajor
 0xd7320,128,1,2,2,rowmajor
+0xe45e0,128,1,2,2,rowmajor
 0xe4660,128,1,2,2,rowmajor
+0xe46e0,128,1,2,2,rowmajor
 0xe4760,128,1,2,2,rowmajor
 0xf4600,256,2,2,2
