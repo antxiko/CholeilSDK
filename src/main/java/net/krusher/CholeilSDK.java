@@ -66,6 +66,13 @@ public class CholeilSDK
             net.krusher.graphics.GraphicsExtractor.extract( DefaultPaths.ROM, DefaultPaths.GRAPHICS_OFFSETS, DefaultPaths.GFX_OUT );
 
             System.out.println();
+            System.out.println("=== extracting pause-menu icons ===");
+            net.krusher.graphics.PauseMenuGraphics.extract(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.PauseMenuGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.PauseMenuGraphics.DEFAULT_VIEW );
+
+            System.out.println();
             System.out.println("=== extracting raw (uncompressed) graphics ===");
             net.krusher.graphics.RawGraphicsExtractor.main( new String[] { DefaultPaths.ROM, DefaultPaths.RAW_GRAPHICS, DefaultPaths.RAW_GFX_OUT } );
 
@@ -101,6 +108,13 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== inserting stray text ===");
             StrayTextInserter.main( new String[] { DefaultPaths.OUT_ROM, DefaultPaths.STRAY_TEXT, DefaultPaths.TBL, DefaultPaths.OUT_ROM, DefaultPaths.CREDITS_POINTERS } );
+
+            System.out.println();
+            System.out.println("=== arranging pause-menu icon edits for compression ===");
+            net.krusher.graphics.PauseMenuGraphics.sync(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.PauseMenuGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.PauseMenuGraphics.DEFAULT_GFX );
 
             System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");
