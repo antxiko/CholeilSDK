@@ -17,8 +17,9 @@ import java.io.IOException;
  *       raw_gfx_out/, then sprite-mosaic graphics from sprite_gfx_out/ --
  *       delete a PNG to leave that block untouched; edited PNGs must keep
  *       their original resolution), and the hero's default name
- *       (DefaultNameInserter) written over the empty-name branch, and
- *       Choleil.ips, the distributable patch
+ *       (DefaultNameInserter) written over the empty-name branch, the
+ *       Charnego Translations intro (IntroInserter) in front of the game,
+ *       and Choleil.ips, the distributable patch
  */
 public class CholeilSDK
 {
@@ -120,6 +121,10 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== inserting the dialogue font ===");
             net.krusher.graphics.FontInserter.run( DefaultPaths.OUT_ROM, DefaultPaths.FONT, DefaultPaths.OUT_ROM );
+
+            System.out.println();
+            System.out.println("=== inserting the intro ===");
+            IntroInserter.run( DefaultPaths.OUT_ROM, DefaultPaths.INTRO, DefaultPaths.ROM, DefaultPaths.FREE_SPACE, DefaultPaths.OUT_ROM );
 
             System.out.println();
             System.out.println("=== writing the IPS patch ===");

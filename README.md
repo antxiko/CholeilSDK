@@ -63,6 +63,7 @@ names in `DefaultPaths` when run without any.
 | `raw_gfx_out/` | Uncompressed graphics (SEGA logo, "PULSA START", …). |
 | `sprite_gfx_out/` | Graphics stored as sprite mosaics (the title logo, the ground-money coin). |
 | `font.png` | The 8×16 dialogue font, one editable sheet. |
+| `charnego_introFinal.md` | The Charnego Translations intro, a standalone Mega Drive ROM. |
 | `graphics_offsets.txt`, `raw_graphics.txt`, `sprite_graphics.txt` | Registries saying where each graphics block lives. |
 | `known_palettes.txt` | Confirmed CRAM palettes, so blocks render in their real colours. |
 | `free_space.txt` | Reclaimable regions, rescanned on every build. |
@@ -230,6 +231,55 @@ earlier font, which land on blank tiles here. `DefaultNameInserter` rewrites tha
 branch's six immediates with a name of your choosing — no instruction moves, and it
 is rejected at build time if it exceeds the 10 characters the entry screen allows.
 
+### Boot intro
+
+`IntroInserter` puts the Charnego Translations intro in front of the game, so a cold
+boot plays the intro and START (or A) — or a 60-frame timeout after its own fade —
+drops into Soleil.
+
+The game cannot move: its code is full of absolute addresses. The intro is a
+standalone 608 KB Mega Drive ROM that also wants to live at `0x000000`, so it is cut
+into pieces — code, 16 animation frames, the PCM sample, the Z80/XGM driver — the
+frames are RLE-compressed by words (560 KB → 155 KB), and the pieces are scattered
+through filler the game itself never reads. The ROM does not grow: all 203 KB lands
+inside the 2 MB. The handful of absolute addresses in the intro's own 68000 code are
+rebased to wherever their piece ended up.
+
+The boot chain is a hand-assembled 68000 stub, built by a mini-assembler in the same
+class. The game's RESET vector points at its "near" half, which lives in the intro's
+now-dead vector table because the intro's final loop can only reach it with a `bra.w`
+(±32 KB); that half unlocks the TMSS and jumps into the intro. The intro's vblank
+wait is redirected to ours, which reads pad 1 on *every* frame, so START skips the
+intro from the first one and not just at the end. Its frame-blit routine is
+redirected to our decompressor, which unpacks straight into the VDP data port with no
+buffer. The "far" half handles the exit: PSG and YM2612 silenced (the YM *before* the
+Z80 reset line is touched — that line cuts the 68000 off its bus, and on real hardware
+the busy flag then sticks at 1 and the exit hangs forever), Z80 reset, screen blanked,
+pad control registers cleared so the game still sees a cold boot. Its epilogue is
+copied to RAM and run from there, because enabling the SRAM can mask the high ROM —
+including the very code doing the enabling.
+
+The boot logo screen is removed at the same time: entry 0 of the boot state machine's
+jump table is pointed straight at state 6, so it never appears, on boot or on the way
+back from the game, and its 1632 bytes of graphics become part of the intro's pool.
+That is why `raw_gfx_out/raw_000e56.png` and `raw_001456.png` — the Charnego logo —
+stop being drawn once the intro is in.
+
+This runs **last**, over a ROM every other step has already rewritten, and the intro's
+filler list overlaps `free_space.txt` in five places. So `free_space.txt` is subtracted
+from its pool up front, and every piece is checked against the untouched ROM before
+being written: a byte an earlier step changed stops the build instead of silently
+eating a relocated string. The freed logo graphics are the one exemption, since
+removing the logo is what makes them dead.
+
+Ported from `insertar_intro.py` by ScorpioN-MsX; the Java step reproduces its output
+byte for byte. Only the path the pipeline uses came across — the uncompressed mode,
+the diagnostic-colour build, the second intro profile and the second game are in git
+history.
+
+The header's "ROM end" field at `0x1A4` is deliberately left alone: Soleil checksums
+itself against it and hangs on a red screen if it changes.
+
 ### Free space
 
 `FreeSpaceScanner` re-scans the ROM on every build for runs of filler, excluding
@@ -291,7 +341,8 @@ grayscale.
 6. `GraphicsInserter`, `RawGraphicsInserter`, `SpriteGraphicsInserter`
 7. `DefaultNameInserter`
 8. `FontInserter`
-9. `IpsWriter` → `Choleil.ips`
+9. `IntroInserter` (last: it checks every piece against the untouched ROM)
+10. `IpsWriter` → `Choleil.ips`
 
 Each step reads the ROM the previous one wrote, fixes the Genesis header checksum,
 and either completes or throws — none of them silently skip their output and let the
@@ -303,12 +354,13 @@ next step carry on.
 mvn test
 ```
 
-66 tests across nine suites, run against a ROM built by the real pipeline: the 68k
+73 tests across ten suites, run against a ROM built by the real pipeline: the 68k
 code patches byte for byte, every balloon width against its placed name, every script
 slot resolving to a terminated string, room forking, the font round trip and its
 bounds, the IPS patch verified by an applier written from the format spec, sprite tile
-order in both directions, every copy of the coin art being registered, and
-the header checksum.
+order in both directions, every copy of the coin art being registered, the intro
+landing entirely inside the filler it declared and refusing a ROM an earlier step has
+already written to, and the header checksum.
 
 The ROM is gitignored, so without it the suites **skip** rather than fail — a fresh
 clone still builds green.
@@ -343,6 +395,7 @@ Nothing else should need to change.
 | Map balloon marker table and the centring patches | `MapBalloonInserter.MARKER_TABLE`, `CODE_PATCHES` |
 | Empty-name branch | `DefaultNameInserter.LEA_ADDR`, `FIRST_MOVE_ADDR`, `MAX_NAME_LENGTH` |
 | Font table | `graphics.Font.FONT_ADDR`, `GLYPH_COUNT` |
+| Boot logo patch and the filler the intro is scattered through | `IntroInserter.LOGO_SLOT` / `LOGO_OLD` / `LOGO_NEW` / `LOGO_FREED`, `HUECOS` |
 | Character encoding | `soleil.tbl` |
 | Graphics block registries | `raw_graphics.txt`, `sprite_graphics.txt`, `known_palettes.txt` |
 

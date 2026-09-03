@@ -1,1 +1,0 @@
-py insertar_intro.py Choleil.md charnego_introFinal.md -o Choleil_introChar.md  --comprimir --huecos --sin-logo

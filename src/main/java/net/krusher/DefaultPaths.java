@@ -61,4 +61,7 @@ public final class DefaultPaths {
 
     /** The dialogue font, one editable sheet of 8x16 glyphs. */
     public static final String FONT = "font.png";
+
+    /** The Charnego Translations intro, a standalone Mega Drive ROM. */
+    public static final String INTRO = "charnego_introFinal.md";
 }
