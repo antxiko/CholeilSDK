@@ -25,4 +25,9 @@
 0x1456,0xde6
 0xacaf6,0x111220
 0x10e6aa,0x548
-
+; Choleil coin/apple pickup strip. State 5 CRAM palette 0 matches 0x548 in all
+; visible entries (color 0 is transparent and is ignored by the sprite).
+0xf4600,0x548
+; Real golden-apple animation block. Snapshot 5's sprite uses CRAM palette 0;
+; its visible entries match the palette at 0x548 (color 0 is transparent).
+0xa5644,0x548

@@ -150,3 +150,16 @@ diseños, se cambia editando los PNG.
 
 Hay un test (`SpriteGraphicsTest`) que busca la pose de cara por toda la ROM y
 falla si aparece en algun sitio que no este registrado.
+
+## La falsa pista de la manzana dorada
+
+La primera busqueda del snapshot 5 confundio `0x0F4680` con la dorada porque el
+paquete se carga al entrar en Choleil y el dibujo se parece mucho. La tabla de
+sprites da la prueba definitiva: la dorada visible es un sprite de 3x3 tiles
+que alterna entre `0x4D4` y `0x4E6`, procedente del bloque comprimido
+`0x0A5644` (tiles 9-17 y 27-35).
+
+Por tanto, la dorada confirmada ya no comparte editor con estas monedas. Tiene
+su propio `apple_gfx_out/manzana_dorada_EDITAME.png`; vease `MANZANAS.md`.
+`0x0F4680` se conserva catalogado como dibujo de aspecto moneda dentro del
+paquete de objetos, pero ya no se documenta como fuente de la dorada.

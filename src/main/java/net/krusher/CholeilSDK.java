@@ -73,6 +73,21 @@ public class CholeilSDK
                     net.krusher.graphics.PauseMenuGraphics.DEFAULT_VIEW );
 
             System.out.println();
+            System.out.println("=== extracting the map apple ===");
+            net.krusher.graphics.AppleGraphics.extractRed(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_RED_EDIT,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_RED_VIEW );
+            net.krusher.graphics.AppleGraphics.extractGreen(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_GREEN_EDIT,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_GREEN_VIEW );
+            net.krusher.graphics.AppleGraphics.extractGolden(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_GOLDEN_EDIT,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_GOLDEN_VIEW );
+
+            System.out.println();
             System.out.println("=== extracting raw (uncompressed) graphics ===");
             net.krusher.graphics.RawGraphicsExtractor.main( new String[] { DefaultPaths.ROM, DefaultPaths.RAW_GRAPHICS, DefaultPaths.RAW_GFX_OUT } );
 
@@ -115,6 +130,18 @@ public class CholeilSDK
                     DefaultPaths.ROM,
                     net.krusher.graphics.PauseMenuGraphics.DEFAULT_EDIT,
                     net.krusher.graphics.PauseMenuGraphics.DEFAULT_GFX );
+
+            System.out.println();
+            System.out.println("=== arranging map-apple edits for compression ===");
+            net.krusher.graphics.AppleGraphics.syncRed(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_RED_EDIT );
+            net.krusher.graphics.AppleGraphics.syncGreen(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_GREEN_EDIT );
+            net.krusher.graphics.AppleGraphics.syncGolden(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_GOLDEN_EDIT );
 
             System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");

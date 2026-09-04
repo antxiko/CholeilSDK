@@ -56,8 +56,13 @@
 ; above, 0xf4680, the two shadowed copies below, and the two map-plane copies
 ; at 0xe45e0/0xe46e0.
 ;
-; 0xf4600: one 256-byte block holding BOTH poses back to back, byte-identical
-; to the art above but in COLUMN-MAJOR order (no tileOrder field needed).
+; 0xf4600: one 512-byte pickup strip loaded by Choleil's graphics family to
+; VRAM tiles 0x7F0-0x7FF. It contains four 16x16 sprites in COLUMN-MAJOR order:
+; coin edge at 0xf4600, a coin-like face at 0xf4680, then two exact red-apple
+; copies at 0xf4700 and 0xf4780. The final two used to fall outside this
+; registry entry, leaving enemy-dropped apples uneditable. Snapshot 5 proved
+; that the visible golden apple does NOT use 0xf4680; its real two-frame art is
+; in compressed block 0xa5644 and has a separate editor (see MANZANAS.md).
 ; 0xd6d20 + n*0x200: a second animation family, edge/face/edge/face, whose art
 ; is the same drawing plus a drop shadow -- 16 nibbles that are transparent
 ; (index 0) above are index 11 here. Row-major, 128 bytes = one pose each.
@@ -74,4 +79,4 @@
 0xe4660,128,1,2,2,rowmajor
 0xe46e0,128,1,2,2,rowmajor
 0xe4760,128,1,2,2,rowmajor
-0xf4600,256,2,2,2
+0xf4600,512,4,2,2
